@@ -1,25 +1,61 @@
 import 'package:flutter/material.dart';
 import '../screens/details.dart';
+import '../components/pokemon.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
+import '../components/pokemon.dart';
 
 class ListPage extends StatefulWidget {
-  const ListPage({super.key, required this.title});
+  ListPage(this.listBase);
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+  String listBase;
 
   @override
   State<ListPage> createState() => _ListPageState();
 }
 
 class _ListPageState extends State<ListPage> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  List<Pokemon> pokemons = [];
+
+  // void loadSamples() async {
+  //   //Single Record
+  //   //final String rawJson = await rootBundle.loadString('data/sample.json');
+  //   //Map<String, dynamic> map = jsonDecode(rawJson);
+  //   //Pokemon pokemon = Pokemon.fromJson(map);
+  //   final String rawJson = await rootBundle.loadString('data/samples.json');
+  //   Iterable l = jsonDecode(rawJson);
+
+  //   pokemons = List<Pokemon>.from(l.map((model) => Pokemon.fromJson(model)));
+
+  //   print(pokemons.length);
+
+  //   // pokemons.forEach((pokemon) {
+  //   //   print(pokemon.name);
+  //   //   print(pokemon.type1);
+  //   //   print(pokemon.type2);
+  //   //   print(pokemon.image);
+  //   // });
+  // }
+  void loadList() async {
+    Iterable l = jsonDecode(widget.listBase);
+    pokemons = List<Pokemon>.from(l.map((model) => Pokemon.fromJson(model)));
+
+    print('Number of pokemons in list');
+    print(pokemons.length);
+
+    pokemons.forEach((pokemon) {
+      print(pokemon.name);
+      print(pokemon.type1);
+      print(pokemon.type2);
+      print(pokemon.image);
+    });
+  }
+
   int _counter = 0;
 
   void _incrementCounter() {
@@ -45,7 +81,7 @@ class _ListPageState extends State<ListPage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text('Choose your destiny!'),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -74,6 +110,41 @@ class _ListPageState extends State<ListPage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            ElevatedButton(
+                onPressed: () {
+                  loadList();
+                },
+                child: Text('TEST!')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return DetailsPage(pokemon: pokemons.first);
+                    }),
+                  );
+                },
+                child: Text('BUBS!')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return DetailsPage(pokemon: pokemons[1]);
+                    }),
+                  );
+                },
+                child: Text('CHARM!')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return DetailsPage(pokemon: pokemons[2]);
+                    }),
+                  );
+                },
+                child: Text('CHARIS!')),
           ],
         ),
       ),
@@ -82,7 +153,7 @@ class _ListPageState extends State<ListPage> {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) {
-              return DetailsPage(title: '');
+              return DetailsPage(pokemon: pokemons.first);
             }),
           );
         },

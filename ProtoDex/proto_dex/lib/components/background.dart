@@ -4,8 +4,8 @@ import '../components/constants.dart';
 class Background extends StatelessWidget {
   Background({required this.type1, this.type2});
 
-  String type1;
-  String? type2;
+  PokemonType type1;
+  PokemonType? type2;
 
   //TODO: Properly pick the colors for Primary and Secondary based on ...something?
   Color selectColorByType(PokemonType type, bool isSecondaryColor) {
@@ -75,7 +75,7 @@ class Background extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.topLeft,
-                colors: fillColors(PokemonType.grass, PokemonType.poison),
+                colors: fillColors(type1, type2),
               ),
             ),
             child: Container(

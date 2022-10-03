@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import '../components/constants.dart';
+import '../components/pokemon.dart';
 
 class BasicInfo extends StatelessWidget {
-  const BasicInfo({
-    Key? key,
-  }) : super(key: key);
+  const BasicInfo({Key? key, required this.pokemon}) : super(key: key);
 
+  final Pokemon pokemon;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,9 +15,9 @@ class BasicInfo extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
-            children: const <Widget>[
+            children: <Widget>[
               Text(
-                'Bulbasaur',
+                pokemon.name,
                 style: TextStyle(
                   fontFamily: 'SigmarOne',
                   fontSize: 30.0,
@@ -25,7 +25,7 @@ class BasicInfo extends StatelessWidget {
                 ),
               ),
               Text(
-                '#001',
+                pokemon.number,
                 style: TextStyle(
                   fontFamily: 'SigmarOne',
                   fontSize: 15,
@@ -40,8 +40,8 @@ class BasicInfo extends StatelessWidget {
             children: <Widget>[
               //TODO: Consume data from previous screen
               //TODO: Make sure null doesn't create another icon
-              PokeAtt(type: PokemonType.grass),
-              PokeAtt(type: PokemonType.poison),
+              PokeAtt(type: pokemon.type1),
+              if (pokemon.type2 != null) PokeAtt(type: pokemon.type2),
             ],
           ),
         ],
@@ -53,8 +53,9 @@ class BasicInfo extends StatelessWidget {
 class PokeAtt extends StatelessWidget {
   PokeAtt({required this.type});
 
-  final PokemonType type;
-  Image getTypeIcon(PokemonType type) {
+  final PokemonType? type;
+
+  Image getTypeIcon(PokemonType? type) {
     switch (type) {
       case PokemonType.bug:
         return Image.asset('images/types/bug.png');

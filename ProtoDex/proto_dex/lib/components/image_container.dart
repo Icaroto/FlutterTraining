@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
 
 class PokeImage extends StatelessWidget {
-  const PokeImage({
-    Key? key,
-  }) : super(key: key);
+  const PokeImage({Key? key, required this.imagePath}) : super(key: key);
 
-  final String imagePath = 'images/mons/bubs.png';
+  final String imagePath;
 //TODO: Bring the url from the image to be used here
 //Make sure to keep the second image disabled until the pokemon is caught
   @override

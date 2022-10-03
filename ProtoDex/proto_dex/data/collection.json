@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Bulbasaur",
+        "number": "001",
+        "image": "images/mons/bubs.png",
+        "type1": "grass",
+        "type2": "poison"
+    },
+    {
+        "name": "Charmeleon",
+        "number": "005",
+        "image": "images/mons/charm.png",
+        "type1": "fire",
+        "type2": null
+    },
+    {
+        "name": "Charizard",
+        "number": "006",
+        "image": "images/mons/charis.png",
+        "type1": "fire",
+        "type2": "flying"
+    }
+]
