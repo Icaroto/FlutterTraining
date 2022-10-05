@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proto_dex/screens/list.dart';
 import 'package:proto_dex/screens/start_screen.dart';
 import '../screens/loading_screen.dart';
+import '../screens/base_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
           ),
           scaffoldBackgroundColor: Colors.blueGrey[900]),
 
-      home: Scaffold(body: LoadingScreen()),
+      home: ListScreen(),
+      // home: Scaffold(body: LoadingScreen()),
       // initialRoute: '/',
       // routes: {
       //   '/': (context) => Scaffold(body: LoadingScreen()),

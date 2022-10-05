@@ -2,22 +2,64 @@
     {
         "name": "Bulbasaur",
         "number": "001",
-        "image": "images/mons/bubs.png",
+        "image": "images/mons/001-bulbasaur.png",
         "type1": "grass",
         "type2": "poison"
     },
     {
+        "name": "Ivysaur",
+        "number": "002",
+        "image": "images/mons/002-ivysaur.png",
+        "type1": "grass",
+        "type2": "poison"
+    },
+    {
+        "name": "Venusaur",
+        "number": "003",
+        "image": "images/mons/003-venusaur.png",
+        "type1": "grass",
+        "type2": "poison"
+    },
+    {
+        "name": "Charmander",
+        "number": "004",
+        "image": "images/mons/004-charmander.png",
+        "type1": "fire",
+        "type2": null
+    },
+    {
         "name": "Charmeleon",
         "number": "005",
-        "image": "images/mons/charm.png",
+        "image": "images/mons/005-charmeleon.png",
         "type1": "fire",
         "type2": null
     },
     {
         "name": "Charizard",
         "number": "006",
-        "image": "images/mons/charis.png",
+        "image": "images/mons/006-charizard.png",
         "type1": "fire",
         "type2": "flying"
+    },
+    {
+        "name": "Squirtle",
+        "number": "007",
+        "image": "images/mons/007-squirtle.png",
+        "type1": "water",
+        "type2": null
+    },
+    {
+        "name": "Wartotle",
+        "number": "008",
+        "image": "images/mons/008-wartotle.png",
+        "type1": "water",
+        "type2": null
+    },
+    {
+        "name": "Blastoise",
+        "number": "009",
+        "image": "images/mons/009-blastoise.png",
+        "type1": "water",
+        "type2": null
     }
 ]
