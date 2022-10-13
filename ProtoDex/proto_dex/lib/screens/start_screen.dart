@@ -2,7 +2,7 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:proto_dex/components/constants.dart';
-import 'package:proto_dex/screens/list.dart';
+import 'package:proto_dex/screens/base_list.dart';
 
 class StartScreen extends StatefulWidget {
   StartScreen({this.files});
@@ -37,7 +37,7 @@ class _StartScreenState extends State<StartScreen> {
                 Row(
                   children: [
                     MainScreenButton(
-                      buttonName: 'Pokedex!',
+                      buttonName: 'Pokedex',
                       imagePath: 'images/background/ball_piece.png',
                       routeName: 'pokedex',
                       file: widget.files[kPokedexKey],
@@ -53,13 +53,13 @@ class _StartScreenState extends State<StartScreen> {
                 Row(
                   children: [
                     MainScreenButton(
-                      buttonName: 'LF',
+                      buttonName: 'LF/FT',
                       imagePath: 'images/background/ball_piece_3.png',
                       routeName: 'looking_for',
                       file: widget.files[kLookingForKey],
                     ),
                     MainScreenButton(
-                      buttonName: 'FT',
+                      buttonName: 'Collection',
                       imagePath: 'images/background/ball_piece_4.png',
                       routeName: 'for_trade',
                       file: widget.files[kForTradeKey],
@@ -102,7 +102,7 @@ class MainScreenButton extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return Scaffold(body: ListPage(file));
+                  return Scaffold(body: ListScreen());
                 },
               ),
             );

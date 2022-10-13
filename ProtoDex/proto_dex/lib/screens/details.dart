@@ -15,18 +15,24 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
+  var imageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          //TODO: Replace with typing from JSON
-          //TODO: Maybe use this same page for Edit and Details
           Background(type1: widget.pokemon.type1, type2: widget.pokemon.type2),
           AppBar(backgroundColor: Colors.transparent, elevation: 0.0),
           BasicInfo(pokemon: widget.pokemon),
-          //PokeInfoCard(),
-          PokeImage(imagePath: widget.pokemon.image),
+          PokeInfoCard(
+            pokemon: widget.pokemon,
+            imageIndex: imageIndex,
+            onImageChange: (int newIndex) {
+              setState(() => imageIndex = newIndex);
+            },
+          ),
+          PokeImage(imagePath: widget.pokemon.image[imageIndex]),
         ],
       ),
     );

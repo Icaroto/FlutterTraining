@@ -22,13 +22,13 @@ class MyApp extends StatelessWidget {
           primaryTextTheme: TextTheme(
             bodyText1: TextStyle(
               fontFamily: 'SigmarOne',
-              fontSize: 15,
+              fontSize: 13,
               color: Colors.blue,
             ),
           ),
           scaffoldBackgroundColor: Colors.blueGrey[900]),
 
-      home: ListScreen(),
+      home: LoadingScreen(), //ListScreen(),
       // home: Scaffold(body: LoadingScreen()),
       // initialRoute: '/',
       // routes: {

@@ -17,14 +17,14 @@ class PokeImage extends StatelessWidget {
             //Shadow
             Center(
               child: Image.asset(
-                imagePath,
+                'images/mons/$imagePath',
                 height: 235,
                 color: Colors.black87,
               ),
             ),
             //Image
             Center(
-              child: Image.asset(imagePath, height: 230),
+              child: Image.asset('images/mons/$imagePath', height: 230),
             ),
           ],
         ),

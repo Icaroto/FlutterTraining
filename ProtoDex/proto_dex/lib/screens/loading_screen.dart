@@ -24,7 +24,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     // print(files['pokedex']);
     // print('This is ft:');
     // print(files['forTrade']);
-    // await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(Duration(seconds: 2));
 
     Navigator.pop(context);
     // Navigator.pushNamed(
@@ -49,18 +49,20 @@ class _LoadingScreenState extends State<LoadingScreen> {
 //TODO: Change background
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Center(
-          child: Image.asset(
-            'images/background/colored_ball.png',
-            height: 100.0,
+    return Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Image.asset(
+              'images/background/colored_ball.png',
+              height: 100.0,
+            ),
           ),
-        ),
-        const Text('Loading...')
-      ],
+          const Text('Loading...')
+        ],
+      ),
     );
   }
 }

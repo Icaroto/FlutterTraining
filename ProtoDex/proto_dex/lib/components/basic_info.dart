@@ -20,7 +20,7 @@ class BasicInfo extends StatelessWidget {
                 pokemon.name,
                 style: TextStyle(
                   fontFamily: 'SigmarOne',
-                  fontSize: 30.0,
+                  fontSize: 25.0,
                   color: Colors.black,
                 ),
               ),
@@ -62,7 +62,7 @@ class PokeAtt extends StatelessWidget {
       case PokemonType.dark:
         return Image.asset('images/types/dark.png');
       case PokemonType.dragon:
-        return Image.asset('images/types/draong.png');
+        return Image.asset('images/types/dragon.png');
       case PokemonType.electric:
         return Image.asset('images/types/electric.png');
       case PokemonType.fire:
