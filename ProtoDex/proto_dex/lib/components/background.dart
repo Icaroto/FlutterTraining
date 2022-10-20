@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import '../components/constants.dart';
 
 class Background extends StatelessWidget {
-  Background({required this.type1, this.type2});
+  const Background({super.key, required this.type1, this.type2});
 
-  PokemonType type1;
-  PokemonType? type2;
+  final PokemonType type1;
+  final PokemonType? type2;
 
-  //TODO: Properly pick the colors for Primary and Secondary based on ...something?
   Color selectColorByType(PokemonType type, bool isSecondaryColor) {
     switch (type) {
       case PokemonType.bug:
@@ -21,7 +20,7 @@ class Background extends StatelessWidget {
       case PokemonType.fire:
         return (!isSecondaryColor)
             ? Colors.red
-            : Color.fromARGB(255, 174, 79, 79);
+            : const Color.fromARGB(255, 174, 79, 79);
       case PokemonType.grass:
         return (!isSecondaryColor) ? Colors.green : Colors.black;
       case PokemonType.fairy:

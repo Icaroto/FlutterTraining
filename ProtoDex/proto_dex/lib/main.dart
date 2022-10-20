@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proto_dex/screens/list.dart';
-import 'package:proto_dex/screens/start_screen.dart';
 import '../screens/loading_screen.dart';
-import '../screens/base_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,15 +8,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
           backgroundColor: Colors.green,
           primaryColor: Colors.green,
-          primaryTextTheme: TextTheme(
+          primaryTextTheme: const TextTheme(
             bodyText1: TextStyle(
               fontFamily: 'SigmarOne',
               fontSize: 13,
@@ -27,20 +22,34 @@ class MyApp extends StatelessWidget {
             ),
           ),
           scaffoldBackgroundColor: Colors.blueGrey[900]),
-
-      home: LoadingScreen(), //ListScreen(),
-      // home: Scaffold(body: LoadingScreen()),
-      // initialRoute: '/',
-      // routes: {
-      //   '/': (context) => Scaffold(body: LoadingScreen()),
-      //   '/start_screen': (context) => Scaffold(body: StartScreen(file: null))N,
-      //   '/pokedex_list': (context) => ListPage(),
-      // },
+      home: const LoadingScreen(),
     );
   }
 }
 
 /*Flutter Notes:
+
+using scaffold
+home: Scaffold(body: LoadingScreen()),
+
+To Navigate with routes:
+    Navigator.pushNamed(
+      context,
+      '/start_screen',
+      arguments: ScreenArguments(
+        'Extract Arguments Screen',
+        'This message is extracted in the build method.',
+      ),
+    );
+
+    How to use Routes on main.dart:
+initialRoute: '/',
+routes: {
+  '/': (context) => const LoadingScreen(),
+  '/start_screen': (context) => StartScreen(),
+  '/pokedex_list': (context) => ListPage(),
+},
+
 Use color from main theme
   color: Theme.of(context).backgroundColor, <-- Inside Container
 

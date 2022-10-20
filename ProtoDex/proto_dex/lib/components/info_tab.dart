@@ -3,7 +3,8 @@ import '../components/pokemon.dart';
 
 class PokeInfoCard extends StatelessWidget {
   const PokeInfoCard(
-      {required this.pokemon,
+      {super.key,
+      required this.pokemon,
       required this.imageIndex,
       required this.onImageChange});
 
@@ -148,7 +149,7 @@ class PokeInfoCard extends StatelessWidget {
                                                 Row(
                                                   children: [
                                                     RichText(
-                                                      text: TextSpan(
+                                                      text: const TextSpan(
                                                         text: 'Other ',
                                                         children: <TextSpan>[
                                                           TextSpan(
@@ -197,13 +198,13 @@ class PokeInfoCard extends StatelessWidget {
                                             Column(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.stretch,
-                                              children: [
-                                                const Text(
+                                              children: const [
+                                                Text(
                                                   ">  Grass",
                                                   style: TextStyle(
                                                       color: Colors.white),
                                                 ),
-                                                const Text(
+                                                Text(
                                                   ">  Monster",
                                                   style: TextStyle(
                                                       color: Colors.white),
@@ -219,7 +220,7 @@ class PokeInfoCard extends StatelessWidget {
                                             Row(
                                               children: [
                                                 RichText(
-                                                  text: TextSpan(
+                                                  text: const TextSpan(
                                                     text: '20 ',
                                                     children: <TextSpan>[
                                                       TextSpan(
@@ -266,7 +267,7 @@ class PokeInfoCard extends StatelessWidget {
                               color: Colors.black26,
                               child: Text(
                                 pokemon.games[index2].name,
-                                style: TextStyle(color: Colors.white),
+                                style: const TextStyle(color: Colors.white),
                               ),
                             );
                           },
@@ -343,39 +344,40 @@ class PokeInfoCard extends StatelessWidget {
               : onImageChange(findImageIndexBasedOnString('-normal-')),
         },
         child: (currentColor() == "normal")
-            ? Icon(Icons.star_border)
-            : Icon(Icons.circle_outlined),
+            ? const Icon(Icons.star_border)
+            : const Icon(Icons.circle_outlined),
       )
     ];
   }
 }
 
 class ReusableCard extends StatelessWidget {
-  const ReusableCard({required this.cardChild, required this.blockTitle});
+  const ReusableCard(
+      {super.key, required this.cardChild, required this.blockTitle});
 
-  final blockTitle;
+  final String blockTitle;
   final Widget cardChild;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
+        margin: const EdgeInsets.all(6.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.black12,
+        ),
         child: Column(
           children: [
             Text(
               blockTitle,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 15,
                 color: Colors.white,
               ),
             ),
             cardChild,
           ],
-        ),
-        margin: EdgeInsets.all(6.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.black12,
         ),
       ),
     );

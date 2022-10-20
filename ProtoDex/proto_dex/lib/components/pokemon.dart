@@ -1,6 +1,5 @@
 import 'constants.dart';
 import 'dart:convert';
-import 'package:flutter/services.dart';
 
 class Pokemon {
   Pokemon(this.type1, this.type2, this.image, this.species,
@@ -36,6 +35,19 @@ class Pokemon {
             ? List<Game>.from(
                 json['games'].map((model) => Game.fromJson(model)))
             : [];
+
+  static createPokemonList(String file) async {
+    // final String rawJson = await rootBundle.loadString('data/pokedex.json');
+    Iterable l = jsonDecode(file);
+    List<Pokemon> pokemons =
+        List<Pokemon>.from(l.map((model) => Pokemon.fromJson(model)));
+    for (var pokemon in pokemons) {
+      {
+        if (pokemon.forms.isNotEmpty) pokemon.forms.insert(0, pokemon);
+      }
+    }
+    return pokemons;
+  }
 
   formattedTypes() {
     var union = type1.name;

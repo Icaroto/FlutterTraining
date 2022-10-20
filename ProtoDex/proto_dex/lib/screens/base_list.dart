@@ -1,62 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/screens/details.dart';
 import '../components/pokemon.dart';
-import 'dart:convert';
-import 'package:flutter/services.dart';
 
 class ListScreen extends StatefulWidget {
-  // ListScreen({required this.pokemons});
+  const ListScreen({super.key, required this.pokemons});
 
+  final List<Pokemon> pokemons;
   @override
   State<ListScreen> createState() => _ListScreenState();
 }
 
 class _ListScreenState extends State<ListScreen> {
+  List<Pokemon> originalList = [];
   @override
   void initState() {
-    loadList();
+    originalList.addAll(widget.pokemons);
     super.initState();
   }
 
-  List<Pokemon> pokemons = [];
   TextEditingController editingController = TextEditingController();
-  void loadList() async {
-    final String rawJson = await rootBundle.loadString('data/pokedex.json');
-    Iterable l = jsonDecode(rawJson);
-    pokemons = List<Pokemon>.from(l.map((model) => Pokemon.fromJson(model)));
-    for (var pokemon in pokemons) {
-      {
-        if (pokemon.forms.isNotEmpty) pokemon.forms.insert(0, pokemon);
-      }
-    }
-    print('Number of pokemons in list');
-    print(pokemons.length);
-
-    // print(pokemons.last.forms.length);
-    // // print(pokemons[0].forms[0].);
-
-    setState(() {});
-  }
 
   void filterSearchResults(String query) {
     List<Pokemon> dummySearchList = [];
-    dummySearchList.addAll(pokemons);
+    dummySearchList.addAll(originalList);
     if (query.isNotEmpty) {
       List<Pokemon> dummyListData = [];
-      dummySearchList.forEach((item) {
-        if (item.name.contains(query)) {
+      for (var item in dummySearchList) {
+        if (item.name.toLowerCase().contains(query.toLowerCase())) {
           dummyListData.add(item);
         }
-      });
+      }
       setState(() {
-        pokemons.clear();
-        pokemons.addAll(dummyListData);
+        widget.pokemons.clear();
+        widget.pokemons.addAll(dummyListData);
       });
       return;
     } else {
       setState(() {
-        pokemons.clear();
-        loadList();
+        widget.pokemons.clear();
+        widget.pokemons.addAll(originalList);
       });
     }
   }
@@ -85,7 +67,7 @@ class _ListScreenState extends State<ListScreen> {
             Expanded(
               child: ListView.builder(
                 itemBuilder: doubleTrouble,
-                itemCount: pokemons.length,
+                itemCount: widget.pokemons.length,
                 shrinkWrap: true,
                 padding: const EdgeInsets.all(5),
                 scrollDirection: Axis.vertical,
@@ -110,9 +92,9 @@ class _ListScreenState extends State<ListScreen> {
       }
     }
 
-    if (pokemons[index].forms.isEmpty) {
+    if (widget.pokemons[index].forms.isEmpty) {
       return PokemonCard(
-        pokemon: pokemons[index],
+        pokemon: widget.pokemons[index],
         color: Colors.black26,
       );
     } else {
@@ -126,23 +108,25 @@ class _ListScreenState extends State<ListScreen> {
           },
           collapsedBackgroundColor: Colors.black26,
           backgroundColor: Colors.black26,
-          leading: ShadowImage(image: pokemons[index].image[0]),
-          title: Text(pokemons[index].name),
-          trailing: Text('+${pokemons[index].forms.length - 1}'),
+          leading: ShadowImage(image: widget.pokemons[index].image[0]),
+          title: Text(widget.pokemons[index].name),
+          trailing: Text('+${widget.pokemons[index].forms.length - 1}'),
           subtitle: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(pokemons[index].formattedTypes()),
-              Text(pokemons[index].number)
+              Text(widget.pokemons[index].formattedTypes()),
+              Text(widget.pokemons[index].number)
             ],
           ),
           children: [
             ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index2) {
-                return PokemonCard(pokemon: pokemons[index].forms[index2]);
+                return PokemonCard(
+                    color: Colors.black26,
+                    pokemon: widget.pokemons[index].forms[index2]);
               },
-              itemCount: pokemons[index].forms.length,
+              itemCount: widget.pokemons[index].forms.length,
               shrinkWrap: true,
               padding: const EdgeInsets.all(5),
               scrollDirection: Axis.vertical,
@@ -155,9 +139,9 @@ class _ListScreenState extends State<ListScreen> {
 }
 
 class PokemonCard extends StatelessWidget {
-  const PokemonCard({this.color, required this.pokemon});
+  const PokemonCard({super.key, required this.color, required this.pokemon});
 
-  final color;
+  final Color color;
   final Pokemon pokemon;
 
   @override

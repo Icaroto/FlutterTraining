@@ -18,7 +18,7 @@ class BasicInfo extends StatelessWidget {
             children: <Widget>[
               Text(
                 pokemon.name,
-                style: TextStyle(
+                style: const TextStyle(
                   fontFamily: 'SigmarOne',
                   fontSize: 25.0,
                   color: Colors.black,
@@ -26,7 +26,7 @@ class BasicInfo extends StatelessWidget {
               ),
               Text(
                 pokemon.number,
-                style: TextStyle(
+                style: const TextStyle(
                   fontFamily: 'SigmarOne',
                   fontSize: 15,
                   color: Colors.black,
@@ -38,8 +38,6 @@ class BasicInfo extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              //TODO: Consume data from previous screen
-              //TODO: Make sure null doesn't create another icon
               PokeAtt(type: pokemon.type1),
               if (pokemon.type2 != null) PokeAtt(type: pokemon.type2),
             ],
@@ -51,7 +49,7 @@ class BasicInfo extends StatelessWidget {
 }
 
 class PokeAtt extends StatelessWidget {
-  PokeAtt({required this.type});
+  const PokeAtt({super.key, required this.type});
 
   final PokemonType? type;
 

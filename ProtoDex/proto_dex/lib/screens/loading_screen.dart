@@ -1,68 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:proto_dex/screens/list.dart';
+import 'package:flutter/services.dart';
 import 'start_screen.dart';
-import 'package:proto_dex/file_manager.dart';
+import '../components/pokemon.dart';
+import '../components/constants.dart';
 
 class LoadingScreen extends StatefulWidget {
+  const LoadingScreen({super.key});
+
   @override
-  _LoadingScreenState createState() => _LoadingScreenState();
+  State<LoadingScreen> createState() => _LoadingScreenState();
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
   @override
   void initState() {
+    loadFiles();
     super.initState();
-    getFiles();
   }
 
-  void getFiles() async {
-    var files = await FileManager().loadFiles();
+  void loadFiles() async {
+    Map<String, String> files = {
+      kPokedexKey: await rootBundle.loadString(kPokedexFileLocation),
+      kCollectionKey: await rootBundle.loadString(kCollectionFileLocation),
+      kLookingForKey: await rootBundle.loadString(kLookingForFileLocation),
+      kForTradeKey: await rootBundle.loadString(kForTradeFileLocation)
+    };
 
-    // print('How Many files:');
-    // print(files.length);
-    // print('This is pokedex:');
-    // print(files['pokedex']);
-    // print('This is ft:');
-    // print(files['forTrade']);
-    await Future.delayed(Duration(seconds: 2));
+    List<Pokemon> pokedex =
+        await Pokemon.createPokemonList(files[kPokedexKey]!);
+    await Future.delayed(const Duration(seconds: 2));
 
+    pushNextScreen(pokedex, files);
+  }
+
+  void pushNextScreen(pokedex, files) {
     Navigator.pop(context);
-    // Navigator.pushNamed(
-    //   context,
-    //   '/start_screen',
-    //   arguments: ScreenArguments(
-    //     'Extract Arguments Screen',
-    //     'This message is extracted in the build method.',
-    //   ),
-    // );
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) {
-          return StartScreen(files: files);
+          return StartScreen(pokedex: pokedex, files: files);
         },
       ),
     );
   }
 
-//TODO: Make the ball spin
-//TODO: Change background
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Image.asset(
-              'images/background/colored_ball.png',
-              height: 100.0,
-            ),
-          ),
-          const Text('Loading...')
-        ],
-      ),
-    );
+    return Scaffold(body: kLoading);
   }
 }

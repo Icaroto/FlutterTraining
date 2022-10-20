@@ -1,13 +1,13 @@
-import 'dart:collection';
-
 import 'package:flutter/material.dart';
-import 'package:proto_dex/components/constants.dart';
-import 'package:proto_dex/screens/base_list.dart';
+import '../screens/base_list.dart';
+import '../components/pokemon.dart';
+import '../components/constants.dart';
 
 class StartScreen extends StatefulWidget {
-  StartScreen({this.files});
+  const StartScreen({super.key, required this.files, required this.pokedex});
 
-  final files;
+  final Map<String, String> files;
+  final List<Pokemon> pokedex;
 
   @override
   State<StartScreen> createState() => _StartScreenState();
@@ -19,55 +19,48 @@ class _StartScreenState extends State<StartScreen> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: const AssetImage('images/background/ball_3.png'),
-                colorFilter: ColorFilter.mode(
-                  Colors.white.withOpacity(0.1),
-                  BlendMode.modulate,
-                ),
+          kBasicBackground,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  MainScreenButton(
+                    buttonName: '(Soon)',
+                    imagePath: 'images/background/ball_piece.png',
+                    pokemons: widget.pokedex,
+                  ),
+                  MainScreenButton(
+                    buttonName: '(Soon)',
+                    imagePath: 'images/background/ball_piece_2.png',
+                    pokemons: widget.pokedex,
+                  ),
+                ],
               ),
-            ),
-          ),
-          SafeArea(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  children: [
-                    MainScreenButton(
-                      buttonName: 'Pokedex',
-                      imagePath: 'images/background/ball_piece.png',
-                      routeName: 'pokedex',
-                      file: widget.files[kPokedexKey],
-                    ),
-                    MainScreenButton(
-                      buttonName: 'Tracker',
-                      imagePath: 'images/background/ball_piece_2.png',
-                      routeName: 'tracker',
-                      file: widget.files[kCollectionKey],
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    MainScreenButton(
-                      buttonName: 'LF/FT',
-                      imagePath: 'images/background/ball_piece_3.png',
-                      routeName: 'looking_for',
-                      file: widget.files[kLookingForKey],
-                    ),
-                    MainScreenButton(
-                      buttonName: 'Collection',
-                      imagePath: 'images/background/ball_piece_4.png',
-                      routeName: 'for_trade',
-                      file: widget.files[kForTradeKey],
-                    ),
-                  ],
-                ),
-              ],
-            ),
+              Row(
+                children: [
+                  MainScreenButton(
+                    buttonName: 'Pokedex',
+                    imagePath: 'images/background/colored_ball.png',
+                    pokemons: widget.pokedex,
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  MainScreenButton(
+                    buttonName: '(Soon)',
+                    imagePath: 'images/background/ball_piece_3.png',
+                    pokemons: widget.pokedex,
+                  ),
+                  MainScreenButton(
+                    buttonName: '(Soon)',
+                    imagePath: 'images/background/ball_piece_4.png',
+                    pokemons: widget.pokedex,
+                  ),
+                ],
+              ),
+            ],
           ),
         ],
       ),
@@ -76,25 +69,32 @@ class _StartScreenState extends State<StartScreen> {
 }
 
 class MainScreenButton extends StatelessWidget {
-  MainScreenButton(
-      {required this.buttonName,
+  const MainScreenButton(
+      {super.key,
+      required this.buttonName,
       required this.imagePath,
-      required this.routeName,
-      required this.file});
+      required this.pokemons});
 
   final String buttonName;
   final String imagePath;
-  final String routeName;
-  final String file;
+  final List<Pokemon> pokemons;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        margin: EdgeInsets.all(15.0),
+        margin: const EdgeInsets.all(15.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Color(0xFF1D1E33),
+          color: const Color(0xFF1D1E33),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.white,
+              blurRadius: 0.5,
+              spreadRadius: 0.5,
+              offset: Offset(2, 3),
+            ),
+          ],
         ),
         child: TextButton(
           onPressed: () {
@@ -102,17 +102,20 @@ class MainScreenButton extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return Scaffold(body: ListScreen());
+                  return ListScreen(pokemons: pokemons);
                 },
               ),
             );
           },
           child: Column(
             children: [
-              Image.asset(imagePath),
+              Image.asset(
+                imagePath,
+                height: 100,
+              ),
               Text(
                 buttonName,
-                style: TextStyle(fontSize: 30),
+                style: const TextStyle(fontSize: 30),
               ),
             ],
           ),
