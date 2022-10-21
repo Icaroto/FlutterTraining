@@ -12,16 +12,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          backgroundColor: Colors.green,
-          primaryColor: Colors.green,
-          primaryTextTheme: const TextTheme(
-            bodyText1: TextStyle(
-              fontFamily: 'SigmarOne',
-              fontSize: 13,
-              color: Colors.blue,
-            ),
-          ),
-          scaffoldBackgroundColor: Colors.blueGrey[900]),
+        // backgroundColor: Colors.green,
+        // primaryColor: Colors.green,
+        // primaryTextTheme: const TextTheme(
+        //   bodyText1: TextStyle(
+        //     fontFamily: 'SigmarOne',
+        //     fontSize: 13,
+        //     color: Colors.blue,
+        //   ),
+        // ),
+        scaffoldBackgroundColor: Colors.blueGrey[900],
+      ),
       home: const LoadingScreen(),
     );
   }

@@ -1,36 +1,48 @@
 class Todos {
   Todos(this.listBase);
 /*
-TODO: Routes
-TODO: Remove the wait 2 seconds from loading
-TODO: Make loading generic to load ANY page
-TODO: Remove the Theme from the main dart
+TODO: Style
+  --> TODO: Style for search bar on list (background too)
+  --> TODO: List style, text color is different
+  --> TODO: Remove the Theme from the main dart
+  --> TODO: Fix Name breaking on Giga and Mega pokes
+
+TODO: Functionality
+  --> TODO: Try to fit weakness in the current detail page
+  --> TODO: Improve list in the Games tab.
+    --> TODO: Add number to each game
+    --> TODO: Improve Game object (Game -> DLC/Sub Area Dex)
+  --> TODO: Make loading generic to load ANY page
+  --> TODO: Add keywords for search
+
+TODO: Bugs
+  --> If you keep a search text and go back to main screen and back to list, list is empty
+  --> Keyboard opened raises image in the background. Need to keep in the same place.
+  
 TODO: Clean code creating components, constants and etc
-TODO: Details Page to receive a list of pokemon in the right index
-TODO: Add swipe on detail page based on list
-TODO: Styles
-TODO: Try to fit weakness in the current detail page
-TODO: Style for search bar on list
-TODO: Add keywords for search
-TODO: Details to have Catch Data
-TODO: Unify the backgrounds with kBasicBackground
--- Ball, OT, Ability
-TODO: List to have a back button on iOS
 TODO: Properly pick the colors for Primary and Secondary based on ...something?
-TODO: Details page remove static height/width as it breaks on iOS
-TODO: Get rest of database
-TODO: Fix Name breaking on Giga and Mega pokes
-TODO: Pick primary and secondary colors for Types
+
+
+Later:
+TODO: iOS fixes
+  --> TODO: List to have a back button on iOS
+  --> TODO: Details page remove static height/width as it breaks on iOS
+  --> TODO: Check why image looks smaller on iOS????
+TODO: Remove the wait 2 seconds from loading
 TODO: Trackers, Collection, FT/LF
-TODO: Style as list (color is different, no background?)
-TODO: Add background color to text field 
-TODO: Component: Tab to switch between Shiny/Normal in tracker
-TODO: Check why image looks smaller on iOS????
-TODO: Improve list style in the Games tab.
-TODO: Improve Game object (Game -> DLC/Sub Area Dex)
-TODO: Make sure to keep the second image disabled until the pokemon is caught
-TODO: Make the ball spin
-TODO: Change background
+  --> TODO: Details to have Catch Data (Ball, OT, Ability)
+  --> TODO: Component: Tab to switch between Shiny/Normal in tracker
+  --> TODO: Make sure to keep the second image disabled until the pokemon is caught
+TODO: Remove Stacks with kBasicBackground and move to Theme
+TODO: Details Page to receive a list of pokemon in the right index
+  --> TODO: Add swipe on detail page based on list
+TODO: Get rest of database
+TODO: Animations
+  --> TODO: Make the ball spin
+  --> TODO: List to Details image scaling (hero animation)
+
+Maybe
+TODO: Routes
 */
   String listBase;
 }

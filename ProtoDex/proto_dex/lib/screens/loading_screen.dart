@@ -47,6 +47,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: kLoading);
+    return Scaffold(body: kLoadingBackground);
   }
 }

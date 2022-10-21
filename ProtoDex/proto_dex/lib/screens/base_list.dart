@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/screens/details.dart';
 import '../components/pokemon.dart';
+import '../components/constants.dart';
 
 class ListScreen extends StatefulWidget {
   const ListScreen({super.key, required this.pokemons});
@@ -46,35 +47,59 @@ class _ListScreenState extends State<ListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                onChanged: (value) {
-                  filterSearchResults(value);
-                },
-                controller: editingController,
-                decoration: const InputDecoration(
-                    labelText: "Search",
-                    hintText: "Search",
-                    prefixIcon: Icon(Icons.search),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(25.0)))),
-              ),
+      body: Stack(
+        children: <Widget>[
+          kBasicBackground,
+          SafeArea(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    style: const TextStyle(color: Colors.white),
+                    onChanged: (value) {
+                      filterSearchResults(value);
+                    },
+                    controller: editingController,
+                    decoration: InputDecoration(
+                      hintStyle: const TextStyle(color: Colors.white),
+                      labelStyle: const TextStyle(color: Colors.white),
+                      labelText: "Search",
+                      hintText: "Search",
+                      prefixIcon: const Icon(
+                        Icons.search,
+                        color: Colors.white,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: const BorderSide(color: Colors.white),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: const BorderSide(color: Colors.white),
+                      ),
+                      border: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(25.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemBuilder: doubleTrouble,
+                    itemCount: widget.pokemons.length,
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.all(5),
+                    scrollDirection: Axis.vertical,
+                  ),
+                ),
+              ],
             ),
-            Expanded(
-              child: ListView.builder(
-                itemBuilder: doubleTrouble,
-                itemCount: widget.pokemons.length,
-                shrinkWrap: true,
-                padding: const EdgeInsets.all(5),
-                scrollDirection: Axis.vertical,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -94,8 +119,8 @@ class _ListScreenState extends State<ListScreen> {
 
     if (widget.pokemons[index].forms.isEmpty) {
       return PokemonCard(
-        pokemon: widget.pokemons[index],
         color: Colors.black26,
+        pokemon: widget.pokemons[index],
       );
     } else {
       return Card(
@@ -123,7 +148,6 @@ class _ListScreenState extends State<ListScreen> {
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index2) {
                 return PokemonCard(
-                    color: Colors.black26,
                     pokemon: widget.pokemons[index].forms[index2]);
               },
               itemCount: widget.pokemons[index].forms.length,
@@ -139,9 +163,9 @@ class _ListScreenState extends State<ListScreen> {
 }
 
 class PokemonCard extends StatelessWidget {
-  const PokemonCard({super.key, required this.color, required this.pokemon});
+  const PokemonCard({super.key, required this.pokemon, this.color});
 
-  final Color color;
+  final Color? color;
   final Pokemon pokemon;
 
   @override

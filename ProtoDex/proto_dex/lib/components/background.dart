@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/constants.dart';
+import '../components/pokemon.dart';
 
 class Background extends StatelessWidget {
   const Background({super.key, required this.type1, this.type2});

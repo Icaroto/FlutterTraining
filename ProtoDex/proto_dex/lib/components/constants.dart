@@ -12,7 +12,7 @@ const String kLookingForKey = 'lookingFor';
 const String kForTradeFileLocation = 'data/ft.json';
 const String kForTradeKey = 'forTrade';
 
-Column kLoading = Column(
+Column kLoadingBackground = Column(
   crossAxisAlignment: CrossAxisAlignment.center,
   mainAxisAlignment: MainAxisAlignment.center,
   children: [
@@ -40,24 +40,3 @@ Container kBasicBackground = Container(
     ),
   ),
 );
-
-enum PokemonType {
-  bug,
-  dark,
-  dragon,
-  electric,
-  fire,
-  grass,
-  fairy,
-  fighting,
-  flying,
-  ghost,
-  ground,
-  ice,
-  normal,
-  poison,
-  psychic,
-  rock,
-  steel,
-  water,
-}

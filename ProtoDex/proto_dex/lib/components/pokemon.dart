@@ -1,5 +1,25 @@
-import 'constants.dart';
 import 'dart:convert';
+
+enum PokemonType {
+  bug,
+  dark,
+  dragon,
+  electric,
+  fire,
+  grass,
+  fairy,
+  fighting,
+  flying,
+  ghost,
+  ground,
+  ice,
+  normal,
+  poison,
+  psychic,
+  rock,
+  steel,
+  water,
+}
 
 class Pokemon {
   Pokemon(this.type1, this.type2, this.image, this.species,

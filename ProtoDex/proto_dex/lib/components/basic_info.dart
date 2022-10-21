@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../components/constants.dart';
 import '../components/pokemon.dart';
 
 class BasicInfo extends StatelessWidget {
