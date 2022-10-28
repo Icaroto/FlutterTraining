@@ -90,130 +90,56 @@ class PokeInfoCard extends StatelessWidget {
                   Expanded(
                     child: SizedBox(
                       height: MediaQuery.of(context).size.height,
-                      child: TabBarView(children: [
-                        Column(
-                          children: [
-                            Expanded(
-                              child: Row(
-                                children: [
-                                  ReusableCard(
-                                    blockTitle: "General",
-                                    cardChild: Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(left: 6),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.stretch,
-                                              children: const [
-                                                Text(
-                                                  "> Seed Pokemon",
-                                                  style: TextStyle(
-                                                      color: Colors.white),
-                                                ),
-                                                Text(
-                                                  "> 0.7m",
-                                                  style: TextStyle(
-                                                      color: Colors.white),
-                                                ),
-                                                Text(
-                                                  "> 6.9kg",
-                                                  style: TextStyle(
-                                                      color: Colors.white),
-                                                ),
-                                              ],
-                                            ),
-                                            const Divider(color: Colors.black),
-                                            const Text(
-                                              "Abilities",
+                      child: TabBarView(
+                        children: [
+                          Row(
+                            children: [
+                              ReusableCard(
+                                blockTitle: "General",
+                                cardChild: Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 6),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.stretch,
+                                          children: const [
+                                            Text(
+                                              "> Seed Pokemon",
                                               style: TextStyle(
                                                   color: Colors.white),
                                             ),
-                                            Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.stretch,
-                                              children: [
-                                                const Text(
-                                                  "1. Overgrow",
-                                                  style: TextStyle(
-                                                      color: Colors.white),
-                                                ),
-                                                const Text(
-                                                  "2. Overgrow",
-                                                  style: TextStyle(
-                                                      color: Colors.white),
-                                                ),
-                                                Row(
-                                                  children: [
-                                                    RichText(
-                                                      text: const TextSpan(
-                                                        text: 'Other ',
-                                                        children: <TextSpan>[
-                                                          TextSpan(
-                                                            text:
-                                                                ' (hidden ability)',
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .white,
-                                                                fontStyle:
-                                                                    FontStyle
-                                                                        .italic,
-                                                                fontSize: 11),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
+                                            Text(
+                                              "> 0.7m",
+                                              style: TextStyle(
+                                                  color: Colors.white),
                                             ),
-                                            const Divider(color: Colors.black),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: shinyButton(),
+                                            Text(
+                                              "> 6.9kg",
+                                              style: TextStyle(
+                                                  color: Colors.white),
                                             ),
                                           ],
                                         ),
-                                      ),
-                                    ),
-                                  ),
-                                  ReusableCard(
-                                    blockTitle: "Breeding",
-                                    cardChild: Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(left: 6),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
+                                        const Divider(color: Colors.black),
+                                        const Text(
+                                          "Abilities",
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.stretch,
                                           children: [
                                             const Text(
-                                              "Groups",
+                                              "1. Overgrow",
                                               style: TextStyle(
                                                   color: Colors.white),
                                             ),
-                                            Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.stretch,
-                                              children: const [
-                                                Text(
-                                                  ">  Grass",
-                                                  style: TextStyle(
-                                                      color: Colors.white),
-                                                ),
-                                                Text(
-                                                  ">  Monster",
-                                                  style: TextStyle(
-                                                      color: Colors.white),
-                                                ),
-                                              ],
-                                            ),
-                                            const Divider(color: Colors.black),
                                             const Text(
-                                              "Cycles",
+                                              "2. Overgrow",
                                               style: TextStyle(
                                                   color: Colors.white),
                                             ),
@@ -221,11 +147,11 @@ class PokeInfoCard extends StatelessWidget {
                                               children: [
                                                 RichText(
                                                   text: const TextSpan(
-                                                    text: '20 ',
+                                                    text: 'Other ',
                                                     children: <TextSpan>[
                                                       TextSpan(
                                                         text:
-                                                            ' (4,884–5,140 steps)',
+                                                            ' (hidden ability)',
                                                         style: TextStyle(
                                                             color: Colors.white,
                                                             fontStyle: FontStyle
@@ -237,47 +163,176 @@ class PokeInfoCard extends StatelessWidget {
                                                 ),
                                               ],
                                             ),
-                                            const Divider(color: Colors.black),
-                                            const Text(
-                                              "Gender Ratio",
+                                          ],
+                                        ),
+                                        const Divider(color: Colors.black),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: shinyButton(),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              ReusableCard(
+                                blockTitle: "Breeding",
+                                cardChild: Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 6),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        const Text(
+                                          "Groups",
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.stretch,
+                                          children: const [
+                                            Text(
+                                              ">  Grass",
                                               style: TextStyle(
                                                   color: Colors.white),
                                             ),
-                                            Row(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.end,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              children: genderButtons(),
+                                            Text(
+                                              ">  Monster",
+                                              style: TextStyle(
+                                                  color: Colors.white),
                                             ),
                                           ],
                                         ),
-                                      ),
+                                        const Divider(color: Colors.black),
+                                        const Text(
+                                          "Cycles",
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                        Row(
+                                          children: [
+                                            RichText(
+                                              text: const TextSpan(
+                                                text: '20 ',
+                                                children: <TextSpan>[
+                                                  TextSpan(
+                                                    text:
+                                                        ' (4,884–5,140 steps)',
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontStyle:
+                                                            FontStyle.italic,
+                                                        fontSize: 11),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        const Divider(color: Colors.black),
+                                        const Text(
+                                          "Gender Ratio",
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                        Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: genderButtons(),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                ],
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        ListView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemBuilder: (context, index2) {
-                            return Card(
-                              color: Colors.black26,
-                              child: Text(
-                                pokemon.games[index2].name,
-                                style: const TextStyle(color: Colors.white),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              ReusableCard(
+                                blockTitle: "",
+                                cardChild: Expanded(
+                                  child: ListView.builder(
+                                    itemBuilder: (context, index2) {
+                                      return ListTile(
+                                        tileColor: Colors.black,
+                                        leading: Image.asset(
+                                          "images/games/pokemon_sun.png",
+                                          height: 40,
+                                        ),
+                                        title: Text(
+                                          pokemon.games[index2].name,
+                                          style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 15),
+                                        ),
+                                        trailing: const Text(
+                                          '001',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      );
+                                      // Card(
+                                      //                                 color: Colors.black26,
+                                      //                                 child: Text(
+                                      //                                   pokemon.games[index2].name,
+                                      //                                   style: const TextStyle(
+                                      //                                       color: Colors.white),
+                                      //                                 ),
+                                      //                               );
+                                    },
+                                    itemCount: pokemon.games.length,
+                                    shrinkWrap: true,
+                                    padding: const EdgeInsets.all(5),
+                                    scrollDirection: Axis.vertical,
+                                  ),
+                                ),
                               ),
-                            );
-                          },
-                          itemCount: pokemon.games.length,
-                          shrinkWrap: true,
-                          padding: const EdgeInsets.all(5),
-                          scrollDirection: Axis.vertical,
-                        ),
-                        // Text("User Body"),
-                      ]),
+                              ReusableCard(
+                                blockTitle: "Weakness",
+                                cardChild: Column(
+                                  children: [
+                                    const TextDivider(text: "x0"),
+                                    Wrap(
+                                      alignment: WrapAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          "images/types/fire.png",
+                                          height: 50,
+                                        ),
+                                        Image.asset(
+                                          "images/types/dragon.png",
+                                          height: 50,
+                                        ),
+                                        Image.asset(
+                                          "images/types/dragon.png",
+                                          height: 50,
+                                        ),
+                                        Image.asset(
+                                          "images/types/dragon.png",
+                                          height: 50,
+                                        ),
+                                        Image.asset(
+                                          "images/types/dragon.png",
+                                          height: 50,
+                                        ),
+                                        Image.asset(
+                                          "images/types/dragon.png",
+                                          height: 50,
+                                        ),
+                                      ],
+                                    ),
+                                    const TextDivider(text: "x2"),
+                                    const TextDivider(text: "x4"),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          // Text("User Body"),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -348,6 +403,37 @@ class PokeInfoCard extends StatelessWidget {
             : const Icon(Icons.circle_outlined),
       )
     ];
+  }
+}
+
+class TextDivider extends StatelessWidget {
+  const TextDivider({super.key, required this.text});
+
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        Expanded(
+          child: Container(
+              margin: const EdgeInsets.only(left: 10.0, right: 5.0),
+              child: const Divider(
+                color: Colors.black,
+                height: 36,
+              )),
+        ),
+        Text(text),
+        Expanded(
+          child: Container(
+            margin: const EdgeInsets.only(left: 5.0, right: 10.0),
+            child: const Divider(
+              color: Colors.black,
+              height: 36,
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
 

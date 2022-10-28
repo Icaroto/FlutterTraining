@@ -69,6 +69,14 @@ class Pokemon {
     return pokemons;
   }
 
+  abilities() {
+    return <String>() {
+      "d";
+      "d";
+      "d";
+    };
+  }
+
   formattedTypes() {
     var union = type1.name;
     if (type2 != null) {
