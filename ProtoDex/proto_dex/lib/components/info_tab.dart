@@ -84,7 +84,7 @@ class PokeInfoCard extends StatelessWidget {
                 children: <Widget>[
                   const TabBar(tabs: [
                     Tab(text: "Details"),
-                    Tab(text: "Games"),
+                    Tab(text: "More"),
                     // Tab(text: "Useful"),
                   ]),
                   Expanded(
@@ -252,7 +252,8 @@ class PokeInfoCard extends StatelessWidget {
                           Row(
                             children: [
                               ReusableCard(
-                                blockTitle: "",
+                                flex: 2,
+                                blockTitle: "Games",
                                 cardChild: Expanded(
                                   child: ListView.builder(
                                     itemBuilder: (context, index2) {
@@ -299,32 +300,78 @@ class PokeInfoCard extends StatelessWidget {
                                       children: [
                                         Image.asset(
                                           "images/types/fire.png",
-                                          height: 50,
+                                          height: 40,
                                         ),
                                         Image.asset(
                                           "images/types/dragon.png",
-                                          height: 50,
+                                          height: 40,
                                         ),
                                         Image.asset(
                                           "images/types/dragon.png",
-                                          height: 50,
+                                          height: 40,
                                         ),
                                         Image.asset(
                                           "images/types/dragon.png",
-                                          height: 50,
+                                          height: 40,
                                         ),
                                         Image.asset(
                                           "images/types/dragon.png",
-                                          height: 50,
+                                          height: 40,
                                         ),
                                         Image.asset(
                                           "images/types/dragon.png",
-                                          height: 50,
+                                          height: 40,
                                         ),
                                       ],
                                     ),
                                     const TextDivider(text: "x2"),
+                                    Wrap(
+                                      alignment: WrapAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          "images/types/fire.png",
+                                          height: 40,
+                                        ),
+                                        Image.asset(
+                                          "images/types/dragon.png",
+                                          height: 40,
+                                        ),
+                                        Image.asset(
+                                          "images/types/dragon.png",
+                                          height: 40,
+                                        ),
+                                        Image.asset(
+                                          "images/types/dragon.png",
+                                          height: 40,
+                                        ),
+                                        Image.asset(
+                                          "images/types/dragon.png",
+                                          height: 40,
+                                        ),
+                                        Image.asset(
+                                          "images/types/dragon.png",
+                                          height: 40,
+                                        ),
+                                      ],
+                                    ),
                                     const TextDivider(text: "x4"),
+                                    Wrap(
+                                      alignment: WrapAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          "images/types/fire.png",
+                                          height: 40,
+                                        ),
+                                        Image.asset(
+                                          "images/types/dragon.png",
+                                          height: 40,
+                                        ),
+                                        Image.asset(
+                                          "images/types/dragon.png",
+                                          height: 40,
+                                        ),
+                                      ],
+                                    ),
                                   ],
                                 ),
                               ),
@@ -439,14 +486,18 @@ class TextDivider extends StatelessWidget {
 
 class ReusableCard extends StatelessWidget {
   const ReusableCard(
-      {super.key, required this.cardChild, required this.blockTitle});
+      {super.key,
+      required this.cardChild,
+      required this.blockTitle,
+      this.flex = 1});
 
   final String blockTitle;
   final Widget cardChild;
-
+  final int flex;
   @override
   Widget build(BuildContext context) {
     return Expanded(
+      flex: flex,
       child: Container(
         margin: const EdgeInsets.all(6.0),
         decoration: BoxDecoration(
