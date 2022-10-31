@@ -2,26 +2,33 @@
   {
     "name": "Bulbasaur",
     "species": "Seed Pokémon",
-    "height" : "0.7m",
-    "weight" : "6.9kg",
+    "height": "0.7m",
+    "weight": "6.9kg",
     "number": "001",
     "type1": "grass",
     "type2": "poison",
     "image": ["001-normal-mf.png", "001-shiny-mf.png"],
-    "abilities": ["Overgrow","AnotherAbility"],
+    "abilities": ["Overgrow", "AnotherAbility"],
     "hiddenAbility": "Chlorophyll",
+
     "forms": [],
+
     "games": [
+      { "name": "Pokemon Sword", "dex": "The Isle of Armor", "number": "068" },
+      { "name": "Pokemon Shield", "dex": "The Isle of Armor", "number": "068" },
       { "name": "Let's Go Pikachu", "dex": "", "number": "001" },
-      { "name": "Let's Go Eevee", "dex": "", "number": "001" },
-      { "name": "Sword", "dex":"The Isle of Armor", "number": "068" },
-      { "name": "Shield", "dex":"The Isle of Armor", "number": "068" }
+      { "name": "Let's Go Eevee", "dex": "", "number": "001" }
     ],
-    
-    "weakness-quarter":["grass"],
-    "weakness-half":["water","electric","fighting"],
-    "weakness-double":["ice","fire","flying"],
-    "weakness-quadruple":["dragon"],
+
+    "breeding": {
+      "groups": ["Grass", "Monster"],
+      "cycles": "20"
+    },
+
+    "weakness-quarter": ["grass"],
+    "weakness-half": ["water", "electric", "fighting", "fairy"],
+    "weakness-double": ["ice", "fire", "flying", "psychic"],
+    "weakness-quadruple": ["grass"],
 
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" }
   }

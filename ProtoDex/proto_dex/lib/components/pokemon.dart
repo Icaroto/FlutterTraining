@@ -11,7 +11,9 @@ class Pokemon {
       required this.games,
       required this.weakness,
       required this.abilities,
-      required this.hiddenAbility});
+      required this.hiddenAbility,
+      required this.breeding,
+      required this.genderRatio});
 
   final String name;
   final String species;
@@ -26,6 +28,8 @@ class Pokemon {
   final Weakness weakness;
   final List<dynamic> abilities;
   final String hiddenAbility;
+  final Breeding breeding;
+  final GenderRatio genderRatio;
   // named constructor
   Pokemon.fromJson(Map<String, dynamic> json)
       : name = json['name'],
@@ -53,7 +57,9 @@ class Pokemon {
           quadruple: json['weakness-quadruple'] ?? [],
         ),
         abilities = json['abilities'],
-        hiddenAbility = json['hiddenAbility'];
+        hiddenAbility = json['hiddenAbility'],
+        breeding = Breeding.fromJson(json['breeding']),
+        genderRatio = GenderRatio.fromJson(json['genderRatio']);
 
   static createPokemonList(String file) async {
     Iterable l = jsonDecode(file);
@@ -116,15 +122,70 @@ class Game {
       case "Let's Go Eevee":
         path += "pokemon_lets_go_eevee.png";
         break;
-      case "Sword":
+      case "Pokemon Sword":
         path += "pokemon_sword.png";
         break;
-      case "Shield":
+      case "Pokemon Shield":
         path += "pokemon_shield.png";
         break;
       default:
     }
     return path;
+  }
+}
+
+class GenderRatio {
+  GenderRatio(
+      {required this.male, required this.female, required this.genderless});
+
+  final String male;
+  final String female;
+  final String genderless;
+
+  GenderRatio.fromJson(Map<String, dynamic> json)
+      : male = json['male'],
+        female = json['female'],
+        genderless = json['genderless'];
+
+  Map<String, dynamic> toJson() {
+    return {
+      'male': male,
+      'female': female,
+      'genderless': genderless,
+    };
+  }
+}
+
+class Breeding {
+  Breeding({required this.groups, required this.cycles});
+
+  final List<dynamic> groups;
+  final String cycles;
+
+  Breeding.fromJson(Map<String, dynamic> json)
+      : groups = json['groups'],
+        cycles = json['cycles'];
+
+  Map<String, dynamic> toJson() {
+    return {
+      'groups': groups,
+      'cycles': cycles,
+    };
+  }
+
+  getSteps() {
+    switch (cycles) {
+      case "20":
+        return "(4,884-5,140 steps)";
+      case "10":
+        break;
+      case "5":
+        break;
+      case "1":
+        break;
+      default:
+    }
+    return "";
   }
 }
 

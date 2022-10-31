@@ -207,34 +207,30 @@ class PokeInfoCard extends StatelessWidget {
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.stretch,
-                                          children: const [
-                                            Text(
-                                              ">  Grass",
-                                              style: TextStyle(
-                                                  color: Colors.white),
-                                            ),
-                                            Text(
-                                              ">  Monster",
-                                              style: TextStyle(
-                                                  color: Colors.white),
-                                            ),
-                                          ],
+                                        Wrap(
+                                          direction: Axis.vertical,
+                                          children: pokemon.breeding.groups
+                                              .map((i) => Text(
+                                                    "- $i",
+                                                    style: const TextStyle(
+                                                        color: Colors.white),
+                                                  ))
+                                              .toList(),
                                         ),
                                         const TextDivider(text: "Cycles"),
                                         Row(
                                           children: [
                                             RichText(
-                                              text: const TextSpan(
-                                                text: '20 ',
+                                              text: TextSpan(
+                                                text: pokemon.breeding.cycles,
                                                 children: <TextSpan>[
                                                   TextSpan(
                                                     text:
-                                                        ' (4,884–5,140 steps)',
-                                                    style: TextStyle(
+                                                        "  ${pokemon.breeding.getSteps()}",
+                                                    style: const TextStyle(
                                                         color: Colors.white,
                                                         fontStyle:
                                                             FontStyle.italic,
@@ -251,7 +247,7 @@ class PokeInfoCard extends StatelessWidget {
                                               CrossAxisAlignment.end,
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceEvenly,
-                                          children: genderButtons(),
+                                          children: genderButtons(pokemon),
                                         ),
                                       ],
                                     ),
@@ -304,8 +300,13 @@ class PokeInfoCard extends StatelessWidget {
                                 blockTitle: "Weakness",
                                 cardChild: Expanded(
                                   child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      const TextDivider(text: "x 1\\4"),
+                                      if (pokemon.weakness.quarter.isNotEmpty)
+                                        const TextDivider(text: "x 1\\4"),
                                       Wrap(
                                         direction: Axis.horizontal,
                                         children: pokemon.weakness.quarter
@@ -315,7 +316,8 @@ class PokeInfoCard extends StatelessWidget {
                                                 ))
                                             .toList(),
                                       ),
-                                      const TextDivider(text: "x 1\\2"),
+                                      if (pokemon.weakness.half.isNotEmpty)
+                                        const TextDivider(text: "x 1\\2"),
                                       Wrap(
                                         direction: Axis.horizontal,
                                         children: pokemon.weakness.half
@@ -325,7 +327,8 @@ class PokeInfoCard extends StatelessWidget {
                                                 ))
                                             .toList(),
                                       ),
-                                      const TextDivider(text: " x2"),
+                                      if (pokemon.weakness.double.isNotEmpty)
+                                        const TextDivider(text: " x2"),
                                       Wrap(
                                         direction: Axis.horizontal,
                                         children: pokemon.weakness.double
@@ -335,7 +338,8 @@ class PokeInfoCard extends StatelessWidget {
                                                 ))
                                             .toList(),
                                       ),
-                                      const TextDivider(text: " x4"),
+                                      if (pokemon.weakness.quadruple.isNotEmpty)
+                                        const TextDivider(text: " x4"),
                                       Wrap(
                                         direction: Axis.horizontal,
                                         children: pokemon.weakness.quadruple
@@ -364,7 +368,7 @@ class PokeInfoCard extends StatelessWidget {
     );
   }
 
-  List<ElevatedButton> genderButtons() {
+  List<ElevatedButton> genderButtons(Pokemon pokemon) {
     if (pokemon.image.any((element) => element.contains('-g.'))) {
       return [
         ElevatedButton.icon(
@@ -389,7 +393,7 @@ class PokeInfoCard extends StatelessWidget {
           Icons.male,
           color: Colors.blueAccent,
         ),
-        label: const Text('87.5'),
+        label: Text(pokemon.genderRatio.male),
       ),
       ElevatedButton.icon(
         style: ButtonStyle(
@@ -402,7 +406,7 @@ class PokeInfoCard extends StatelessWidget {
           Icons.female,
           color: Colors.redAccent,
         ),
-        label: const Text('12.5'),
+        label: Text(pokemon.genderRatio.female),
       )
     ];
   }
