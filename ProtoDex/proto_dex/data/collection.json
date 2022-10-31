@@ -1,23 +1,604 @@
 [
     {
-        "name": "Bulbasaur",
-        "number": "001",
-        "image": "images/mons/bubs.png",
-        "type1": "grass",
-        "type2": "poison"
+      "name": "Bulbasaur",
+      "species": "Seed Pokémon",
+      "number": "001",
+      "type1": "grass",
+      "type2": "poison",
+      "image": ["001-normal-mf.png", "001-shiny-mf.png"],
+      "abilities": ["Overgrow"],
+      "hiddenAbility": "Chlorophyll",
+      "forms": [],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "001" },
+        { "name": "(Gold/Silver/Crystal)", "number": "226" },
+        { "name": "(FireRed/LeafGreen)", "number": "001" },
+        { "name": "(HeartGold/SoulSilver)", "number": "231" },
+        { "name": "(X/Y — Central Kalos)", "number": "080" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "001" },
+        { "name": "(The Isle of Armor)", "number": "068" }
+      ],
+      "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" }
     },
     {
-        "name": "Charmeleon",
-        "number": "005",
-        "image": "images/mons/charm.png",
-        "type1": "fire",
-        "type2": null
+      "name": "Ivysaur",
+      "species": "Seed Pokémon",
+      "number": "002",
+      "type1": "grass",
+      "type2": "poison",
+      "image": ["002-normal-mf.png", "002-shiny-mf.png"],
+      "abilities": ["Overgrow"],
+      "hiddenAbility": "Chlorophyll",
+      "forms": [],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "002" },
+        { "name": "(Gold/Silver/Crystal)", "number": "227" },
+        { "name": "(FireRed/LeafGreen)", "number": "002" },
+        { "name": "(HeartGold/SoulSilver)", "number": "232" },
+        { "name": "(X/Y — Central Kalos)", "number": "081" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "002" },
+        { "name": "(The Isle of Armor)", "number": "069" }
+      ],
+      "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" }
     },
     {
-        "name": "Charizard",
-        "number": "006",
-        "image": "images/mons/charis.png",
-        "type1": "fire",
-        "type2": "flying"
+      "name": "Venusaur",
+      "species": "Seed Pokémon",
+      "number": "003",
+      "type1": "grass",
+      "type2": "poison",
+      "image": [
+        "003-normal-m.png",
+        "003-normal-f.png",
+        "003-shiny-m.png",
+        "003-shiny-f.png"
+      ],
+      "abilities": ["Overgrow"],
+      "hiddenAbility": "Chlorophyll",
+      "forms": [
+        {
+          "name": "Mega Venusaur",
+          "species": "Seed Pokémon",
+          "number": "003",
+          "type1": "grass",
+          "type2": "poison",
+          "image": ["003-mega-normal-mf.png", "003-mega-shiny-mf.png"],
+          "abilities": ["Thick Fat"],
+          "hiddenAbility": null
+        },
+        {
+          "name": "Gigantamax Venusaur",
+          "species": "Seed Pokémon",
+          "number": "003",
+          "type1": "grass",
+          "type2": "poison",
+          "image": ["003-giga-normal-mf.png", "003-giga-shiny-mf.png"],
+          "abilities": ["Thick Fat"],
+          "hiddenAbility": null
+        }
+      ],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "003" },
+        { "name": "(Gold/Silver/Crystal)", "number": "228" },
+        { "name": "(FireRed/LeafGreen)", "number": "003" },
+        { "name": "(HeartGold/SoulSilver)", "number": "233" },
+        { "name": "(X/Y — Central Kalos)", "number": "082" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "003" },
+        { "name": "(The Isle of Armor)", "number": "070" }
+      ],
+      "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" }
+    },
+    {
+      "name": "Charmander",
+      "species": "Lizard Pokémon",
+      "number": "004",
+      "type1": "fire",
+      "type2": null,
+      "image": ["004-normal-mf.png", "004-shiny-mf.png"],
+      "abilities": ["Blaze"],
+      "hiddenAbility": "Solar Power",
+      "forms": [],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "004" },
+        { "name": "(Gold/Silver/Crystal)", "number": "229" },
+        { "name": "(FireRed/LeafGreen)", "number": "004" },
+        { "name": "(HeartGold/SoulSilver)", "number": "234" },
+        { "name": "(X/Y — Central Kalos)", "number": "083" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "004" },
+        { "name": "(Sword/Shield)", "number": "378" }
+      ],
+      "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" }
+    },
+    {
+      "name": "Charmeleon",
+      "species": "Flame Pokémon",
+      "number": "005",
+      "type1": "fire",
+      "type2": null,
+      "image": ["005-normal-mf.png", "005-shiny-mf.png"],
+      "abilities": ["Blaze"],
+      "hiddenAbility": "Solar Power",
+      "forms": [],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "005" },
+        { "name": "(Gold/Silver/Crystal)", "number": "230" },
+        { "name": "(FireRed/LeafGreen)", "number": "005" },
+        { "name": "(HeartGold/SoulSilver)", "number": "235" },
+        { "name": "(X/Y — Central Kalos)", "number": "084" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "005" },
+        { "name": "(Sword/Shield)", "number": "379" }
+      ],
+      "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" }
+    },
+    {
+      "name": "Charizard",
+      "species": "Flame Pokémon",
+      "number": "006",
+      "type1": "fire",
+      "type2": "flying",
+      "image": ["006-normal-mf.png", "006-shiny-mf.png"],
+      "abilities": ["Blaze"],
+      "hiddenAbility": "Solar Power",
+      "forms": [
+        {
+          "name": "Mega Charizard X",
+          "species": "Flame Pokémon",
+          "number": "006",
+          "type1": "fire",
+          "type2": "dragon",
+          "image": ["006-megax-normal-mf.png", "006-megax-shiny-mf.png"],
+          "abilities": ["Tough Claws"],
+          "hiddenAbility": null
+        },
+        {
+          "name": "Mega Charizard Y",
+          "species": "Flame Pokémon",
+          "number": "006",
+          "type1": "fire",
+          "type2": "flying",
+          "image": ["006-megay-normal-mf.png", "006-megay-shiny-mf.png"],
+          "abilities": ["Drought"],
+          "hiddenAbility": null
+        },
+        {
+          "name": "Gigantamax Charizard",
+          "species": "Flame Pokémon",
+          "number": "006",
+          "type1": "fire",
+          "type2": "flying",
+          "image": ["006-giga-normal-mf.png", "006-giga-shiny-mf.png"],
+          "abilities": ["Drought"],
+          "hiddenAbility": null
+        }
+      ],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "006" },
+        { "name": "(Gold/Silver/Crystal)", "number": "231" },
+        { "name": "(FireRed/LeafGreen)", "number": "006" },
+        { "name": "(HeartGold/SoulSilver)", "number": "236" },
+        { "name": "(X/Y — Central Kalos)", "number": "085" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "006" },
+        { "name": "(Sword/Shield)", "number": "380" }
+      ],
+      "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" }
+    },
+    {
+      "name": "Squirtle",
+      "species": "Tiny Turtle Pokémon",
+      "number": "007",
+      "type1": "water",
+      "type2": null,
+      "image": ["007-normal-mf.png", "007-shiny-mf.png"],
+      "abilities": ["Torrent"],
+      "hiddenAbility": "Rain Dish",
+      "forms": [],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "007" },
+        { "name": "(Gold/Silver/Crystal)", "number": "232" },
+        { "name": "(FireRed/LeafGreen)", "number": "007" },
+        { "name": "(HeartGold/SoulSilver)", "number": "237" },
+        { "name": "(X/Y — Central Kalos)", "number": "086" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "007" },
+        { "name": "(The Isle of Armor)", "number": "071" }
+      ],
+      "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" }
+    },
+    {
+      "name": "Wartortle",
+      "species": "Turtle Pokémon",
+      "number": "008",
+      "type1": "water",
+      "type2": null,
+      "image": ["008-normal-mf.png", "008-shiny-mf.png"],
+      "abilities": ["Torrent"],
+      "hiddenAbility": "Rain Dish",
+      "forms": [],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "008" },
+        { "name": "(Gold/Silver/Crystal)", "number": "233" },
+        { "name": "(FireRed/LeafGreen)", "number": "008" },
+        { "name": "(HeartGold/SoulSilver)", "number": "238" },
+        { "name": "(X/Y — Central Kalos)", "number": "087" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "008" },
+        { "name": "(The Isle of Armor)", "number": "072" }
+      ],
+      "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" }
+    },
+    {
+      "name": "Blastoise",
+      "species": "Shellfish Pokémon",
+      "number": "009",
+      "type1": "water",
+      "type2": null,
+      "image": ["009-normal-mf.png", "009-shiny-mf.png"],
+      "abilities": ["Torrent"],
+      "hiddenAbility": "Rain Dish",
+      "forms": [
+        {
+          "name": "Mega Blastoise",
+          "species": "Shellfish Pokémon",
+          "number": "009",
+          "type1": "water",
+          "type2": null,
+          "image": ["009-mega-normal-mf.png", "009-mega-shiny-mf.png"],
+          "abilities": ["Mega Launcher"],
+          "hiddenAbility": null
+        },
+        {
+          "name": "Gigantamax Blastoise",
+          "species": "Shellfish Pokémon",
+          "number": "009",
+          "type1": "water",
+          "type2": null,
+          "image": ["009-giga-normal-mf.png", "009-giga-shiny-mf.png"],
+          "abilities": ["Mega Launcher"],
+          "hiddenAbility": null
+        }
+      ],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "009" },
+        { "name": "(Gold/Silver/Crystal)", "number": "234" },
+        { "name": "(FireRed/LeafGreen)", "number": "009" },
+        { "name": "(HeartGold/SoulSilver)", "number": "239" },
+        { "name": "(X/Y — Central Kalos)", "number": "088" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "009" },
+        { "name": "(The Isle of Armor)", "number": "073" }
+      ],
+      "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" }
+    },
+    {
+      "name": "Caterpie",
+      "species": "Worm Pokémon",
+      "number": "010",
+      "type1": "bug",
+      "type2": null,
+      "image": ["010-normal-mf.png", "010-shiny-mf.png"],
+      "abilities": ["Shield Dust"],
+      "hiddenAbility": "Run Away",
+      "forms": [],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "010" },
+        { "name": "(Gold/Silver/Crystal)", "number": "024" },
+        { "name": "(FireRed/LeafGreen)", "number": "010" },
+        { "name": "(HeartGold/SoulSilver)", "number": "024" },
+        { "name": "(X/Y — Central Kalos)", "number": "023" },
+        { "name": "(Sun/Moon — Alola dex)", "number": "017" },
+        { "name": "(U.Sun/U.Moon — Alola dex)", "number": "017" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "010" },
+        { "name": "(Sword/Shield)", "number": "013" }
+      ],
+      "genderRatio": { "male": "50", "female": "50", "genderless": "0" }
+    },
+    {
+      "name": "Metapod",
+      "species": "Cocoon Pokémon",
+      "number": "011",
+      "type1": "bug",
+      "type2": null,
+      "image": ["011-normal-mf.png", "011-shiny-mf.png"],
+      "abilities": ["Shed Skin"],
+      "hiddenAbility": null,
+      "forms": [],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "011" },
+        { "name": "(Gold/Silver/Crystal)", "number": "025" },
+        { "name": "(FireRed/LeafGreen)", "number": "011" },
+        { "name": "(HeartGold/SoulSilver)", "number": "025" },
+        { "name": "(X/Y — Central Kalos)", "number": "024" },
+        { "name": "(Sun/Moon — Alola dex)", "number": "018" },
+        { "name": "(U.Sun/U.Moon — Alola dex)", "number": "018" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "011" },
+        { "name": "(Sword/Shield)", "number": "014" }
+      ],
+      "genderRatio": { "male": "50", "female": "50", "genderless": "0" }
+    },
+    {
+      "name": "Butterfree",
+      "species": "Butterfly Pokémon",
+      "number": "012",
+      "type1": "bug",
+      "type2": "flying",
+      "image": [
+        "012-normal-m.png",
+        "012-shiny-m.png",
+        "012-normal-f.png",
+        "012-shiny-f.png"
+      ],
+      "abilities": ["Compound Eyes"],
+      "hiddenAbility": "Tinted Lens",
+      "forms": [
+        {
+          "name": "Gigantamax Butterfree",
+          "species": "Butterfly Pokémon",
+          "number": "012",
+          "type1": "bug",
+          "type2": "flying",
+          "image": ["012-giga-normal-mf.png", "012-giga-shiny-mf.png"],
+          "abilities": ["Compound Eyes"],
+          "hiddenAbility": "Tinted Lens"
+        }
+      ],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "012" },
+        { "name": "(Gold/Silver/Crystal)", "number": "026" },
+        { "name": "(FireRed/LeafGreen)", "number": "012" },
+        { "name": "(HeartGold/SoulSilver)", "number": "026" },
+        { "name": "(X/Y — Central Kalos)", "number": "025" },
+        { "name": "(Sun/Moon — Alola dex)", "number": "019" },
+        { "name": "(U.Sun/U.Moon — Alola dex)", "number": "019" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "012" },
+        { "name": "(Sword/Shield)", "number": "015" }
+      ],
+      "genderRatio": { "male": "50", "female": "50", "genderless": "0" }
+    },
+    {
+      "name": "Weedle",
+      "species": "Hairy Bug Pokémon",
+      "number": "013",
+      "type1": "bug",
+      "type2": "poison",
+      "image": ["013-normal-mf.png", "013-shiny-mf.png"],
+      "abilities": ["Shield Dust"],
+      "hiddenAbility": "Run Away",
+      "forms": [],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "013" },
+        { "name": "(Gold/Silver/Crystal)", "number": "027" },
+        { "name": "(FireRed/LeafGreen)", "number": "013" },
+        { "name": "(HeartGold/SoulSilver)", "number": "027" },
+        { "name": "(X/Y — Central Kalos)", "number": "026" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "013" }
+      ],
+      "genderRatio": { "male": "50", "female": "50", "genderless": "0" }
+    },
+    {
+      "name": "Kakuna",
+      "species": "Cocoon Pokémon",
+      "number": "014",
+      "type1": "bug",
+      "type2": "poison",
+      "image": ["014-normal-mf.png", "014-shiny-mf.png"],
+      "abilities": ["Shed Skin"],
+      "hiddenAbility": null,
+      "forms": [],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "014" },
+        { "name": "(Gold/Silver/Crystal)", "number": "028" },
+        { "name": "(FireRed/LeafGreen)", "number": "014" },
+        { "name": "(HeartGold/SoulSilver)", "number": "028" },
+        { "name": "(X/Y — Central Kalos)", "number": "027" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "014" }
+      ],
+      "genderRatio": { "male": "50", "female": "50", "genderless": "0" }
+    },
+    {
+      "name": "Beedrill",
+      "species": "Poison Bee Pokémon",
+      "number": "015",
+      "type1": "bug",
+      "type2": "poison",
+      "image": ["015-normal-mf.png", "015-shiny-mf.png"],
+      "abilities": ["Swarm"],
+      "hiddenAbility": "Sniper",
+      "forms": [
+        {
+          "name": "Mega Beedrill",
+          "species": "Poison Bee Pokémon",
+          "number": "015",
+          "type1": "bug",
+          "type2": "poison",
+          "image": ["015-mega-normal-mf.png", "015-mega-shiny-mf.png"],
+          "abilities": ["Adaptability"],
+          "hiddenAbility": null
+        }
+      ],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "015" },
+        { "name": "(Gold/Silver/Crystal)", "number": "029" },
+        { "name": "(FireRed/LeafGreen)", "number": "015" },
+        { "name": "(HeartGold/SoulSilver)", "number": "029" },
+        { "name": "(X/Y — Central Kalos)", "number": "028" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "015" }
+      ],
+      "genderRatio": { "male": "50", "female": "50", "genderless": "0" }
+    },
+    {
+      "name": "Pidgey",
+      "species": "Tiny Bird Pokémon",
+      "number": "016",
+      "type1": "normal",
+      "type2": "flying",
+      "image": ["016-normal-mf.png", "016-shiny-mf.png"],
+      "abilities": ["Keen Eye", "Tangled Feet"],
+      "hiddenAbility": "Big Pecks",
+      "forms": [],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "016" },
+        { "name": "(Gold/Silver/Crystal)", "number": "010" },
+        { "name": "(FireRed/LeafGreen)", "number": "016" },
+        { "name": "(HeartGold/SoulSilver)", "number": "010" },
+        { "name": "(X/Y — Central Kalos)", "number": "017" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "016" }
+      ],
+      "genderRatio": { "male": "50", "female": "50", "genderless": "0" }
+    },
+    {
+      "name": "Pidgeotto",
+      "species": "Bird Pokémon",
+      "number": "017",
+      "type1": "normal",
+      "type2": "flying",
+      "image": ["017-normal-mf.png", "017-shiny-mf.png"],
+      "abilities": ["Keen Eye", "Tangled Feet"],
+      "hiddenAbility": "Big Pecks",
+      "forms": [],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "017" },
+        { "name": "(Gold/Silver/Crystal)", "number": "011" },
+        { "name": "(FireRed/LeafGreen)", "number": "017" },
+        { "name": "(HeartGold/SoulSilver)", "number": "011" },
+        { "name": "(X/Y — Central Kalos)", "number": "018" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "017" }
+      ],
+      "genderRatio": { "male": "50", "female": "50", "genderless": "0" }
+    },
+    {
+      "name": "Pidgeot",
+      "species": "Bird Pokémon",
+      "number": "018",
+      "type1": "normal",
+      "type2": "flying",
+      "image": ["018-normal-mf.png", "018-shiny-mf.png"],
+      "abilities": ["Keen Eye", "Tangled Feet"],
+      "hiddenAbility": "Big Pecks",
+      "forms": [
+        {
+          "name": "Mega Pidgeot",
+          "species": "Bird Pokémon",
+          "number": "018",
+          "type1": "normal",
+          "type2": "flying",
+          "image": ["018-mega-normal-mf.png", "018-mega-shiny-mf.png"],
+          "abilities": ["No Guard"],
+          "hiddenAbility": null
+        }
+      ],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "018" },
+        { "name": "(Gold/Silver/Crystal)", "number": "012" },
+        { "name": "(FireRed/LeafGreen)", "number": "018" },
+        { "name": "(HeartGold/SoulSilver)", "number": "012" },
+        { "name": "(X/Y — Central Kalos)", "number": "019" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "018" }
+      ],
+      "genderRatio": { "male": "50", "female": "50", "genderless": "0" }
+    },
+    {
+      "name": "Rattata",
+      "species": "Mouse Pokémon",
+      "number": "019",
+      "type1": "normal",
+      "type2": null,
+      "image": ["019-normal-m.png","019-normal-f.png","019-shiny-m.png","019-shiny-f.png"],
+      "abilities": ["Run Away", "Guts"],
+      "hiddenAbility": "Hustle",
+      "forms": [
+        {
+          "name": "Alolan Rattata",
+          "species": "Mouse Pokémon",
+          "number": "019",
+          "type1": "dark",
+          "type2": "normal",
+          "image": ["019-alola-normal-mf.png","019-alola-shiny-mf.png"],
+          "abilities": ["Gluttony", "Hustle"],
+          "hiddenAbility": "Thick Fat"
+        }
+      ],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "019" },
+        { "name": "(Gold/Silver/Crystal)", "number": "017" },
+        { "name": "(FireRed/LeafGreen)", "number": "019" },
+        { "name": "(HeartGold/SoulSilver)", "number": "017" },
+        { "name": "(Black 2/White 2)", "number": "059" },
+        { "name": "(Sun/Moon — Alola dex)", "number": "015" },
+        { "name": "(U.Sun/U.Moon — Alola dex)", "number": "015" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "019" }
+      ],
+      "genderRatio": { "male": "50", "female": "50", "genderless": "0" }
+    },
+    {
+      "name": "Raticate",
+      "species": "Mouse Pokémon",
+      "number": "020",
+      "type1": "normal",
+      "type2": null,
+      "image": ["020-normal-m.png","020-normal-f.png","020-shiny-m.png","020-shiny-f.png"],
+      "abilities": ["Run Away", "Guts"],
+      "hiddenAbility": "Hustle",
+      "forms": [
+        {
+          "name": "Alolan Raticate",
+          "species": "Mouse Pokémon",
+          "number": "020",
+          "type1": "dark",
+          "type2": "normal",
+          "image": ["020-alola-normal-mf.png","020-alola-shiny-mf.png"],
+          "abilities": ["Gluttony", "Hustle"],
+          "hiddenAbility": "Thick Fat"
+        }
+      ],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "020" },
+        { "name": "(Gold/Silver/Crystal)", "number": "018" },
+        { "name": "(FireRed/LeafGreen)", "number": "020" },
+        { "name": "(HeartGold/SoulSilver)", "number": "018" },
+        { "name": "(Black 2/White 2)", "number": "060" },
+        { "name": "(Sun/Moon — Alola dex)", "number": "016" },
+        { "name": "(U.Sun/U.Moon — Alola dex)", "number": "016" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "020" }
+      ],
+      "genderRatio": { "male": "50", "female": "50", "genderless": "0" }
+    },
+    {
+      "name": "Mewtwo",
+      "species": "Genetic Pokémon",
+      "number": "150",
+      "type1": "psychic",
+      "type2": null,
+      "image": ["150-normal-g.png", "150-shiny-g.png"],
+      "abilities": ["Pressure"],
+      "hiddenAbility": "Unnerve",
+      "forms": [
+        {
+          "name": "Mega Mewtwo X",
+          "species": "Genetic Pokémon",
+          "number": "150",
+          "type1": "psychic",
+          "type2": "fighting",
+          "image": ["150-megax-normal-g.png", "150-megax-shiny-g.png"],
+          "abilities": ["Steadfast"],
+          "hiddenAbility": null
+        },
+        {
+          "name": "Mega Mewtwo Y",
+          "species": "Genetic Pokémon",
+          "number": "150",
+          "type1": "psychic",
+          "type2": null,
+          "image": ["150-megay-normal-g.png", "150-megay-shiny-g.png"],
+          "abilities": ["Insomnia"],
+          "hiddenAbility": null
+        }
+      ],
+      "games": [
+        { "name": "(Red/Blue/Yellow)", "number": "150" },
+        { "name": "(Gold/Silver/Crystal)", "number": "249" },
+        { "name": "(FireRed/LeafGreen)", "number": "150" },
+        { "name": "(HeartGold/SoulSilver)", "number": "254" },
+        { "name": "(X/Y — Mountain Kalos)", "number": "151" },
+        { "name": "(Let's Go Pikachu/Let's Go Eevee)", "number": "150" }
+      ],
+      "genderRatio": { "male": "0", "female": "0", "genderless": "100" }
     }
-]
+  ]
+  

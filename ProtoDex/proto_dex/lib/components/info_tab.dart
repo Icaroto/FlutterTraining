@@ -106,49 +106,49 @@ class PokeInfoCard extends StatelessWidget {
                                         Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.stretch,
-                                          children: const [
+                                          children: [
                                             Text(
-                                              "> Seed Pokemon",
-                                              style: TextStyle(
+                                              "- ${pokemon.species}",
+                                              style: const TextStyle(
                                                   color: Colors.white),
                                             ),
                                             Text(
-                                              "> 0.7m",
-                                              style: TextStyle(
+                                              "- ${pokemon.height}",
+                                              style: const TextStyle(
                                                   color: Colors.white),
                                             ),
                                             Text(
-                                              "> 6.9kg",
-                                              style: TextStyle(
+                                              "- ${pokemon.weight}",
+                                              style: const TextStyle(
                                                   color: Colors.white),
                                             ),
                                           ],
                                         ),
-                                        const Divider(color: Colors.black),
-                                        const Text(
-                                          "Abilities",
-                                          style: TextStyle(color: Colors.white),
-                                        ),
+                                        const TextDivider(text: "Abilities"),
                                         Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.stretch,
                                           children: [
-                                            const Text(
-                                              "1. Overgrow",
-                                              style: TextStyle(
-                                                  color: Colors.white),
-                                            ),
-                                            const Text(
-                                              "2. Overgrow",
-                                              style: TextStyle(
-                                                  color: Colors.white),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: pokemon.abilities
+                                                  .map(
+                                                    (i) => Text(
+                                                      "- $i",
+                                                      style: const TextStyle(
+                                                          color: Colors.white),
+                                                    ),
+                                                  )
+                                                  .toList(),
                                             ),
                                             Row(
                                               children: [
                                                 RichText(
-                                                  text: const TextSpan(
-                                                    text: 'Other ',
-                                                    children: <TextSpan>[
+                                                  text: TextSpan(
+                                                    text:
+                                                        "- ${pokemon.hiddenAbility}",
+                                                    children: const <TextSpan>[
                                                       TextSpan(
                                                         text:
                                                             ' (hidden ability)',
@@ -165,11 +165,34 @@ class PokeInfoCard extends StatelessWidget {
                                             ),
                                           ],
                                         ),
-                                        const Divider(color: Colors.black),
+                                        const TextDivider(text: "Variant"),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
-                                          children: shinyButton(),
+                                          children: [
+                                            ElevatedButton(
+                                              style: ButtonStyle(
+                                                backgroundColor:
+                                                    MaterialStateProperty.all<
+                                                        Color>(Colors.blueGrey),
+                                              ),
+                                              onPressed: () => {
+                                                (currentColor() == "normal")
+                                                    ? onImageChange(
+                                                        findImageIndexBasedOnString(
+                                                            '-shiny-'))
+                                                    : onImageChange(
+                                                        findImageIndexBasedOnString(
+                                                            '-normal-')),
+                                              },
+                                              child: (currentColor() ==
+                                                      "normal")
+                                                  ? const Icon(
+                                                      Icons.star_border)
+                                                  : const Icon(
+                                                      Icons.circle_outlined),
+                                            )
+                                          ],
                                         ),
                                       ],
                                     ),
@@ -185,10 +208,6 @@ class PokeInfoCard extends StatelessWidget {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
                                       children: [
-                                        const Text(
-                                          "Groups",
-                                          style: TextStyle(color: Colors.white),
-                                        ),
                                         Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.stretch,
@@ -205,11 +224,7 @@ class PokeInfoCard extends StatelessWidget {
                                             ),
                                           ],
                                         ),
-                                        const Divider(color: Colors.black),
-                                        const Text(
-                                          "Cycles",
-                                          style: TextStyle(color: Colors.white),
-                                        ),
+                                        const TextDivider(text: "Cycles"),
                                         Row(
                                           children: [
                                             RichText(
@@ -230,11 +245,7 @@ class PokeInfoCard extends StatelessWidget {
                                             ),
                                           ],
                                         ),
-                                        const Divider(color: Colors.black),
-                                        const Text(
-                                          "Gender Ratio",
-                                          style: TextStyle(color: Colors.white),
-                                        ),
+                                        const TextDivider(text: "Gender Ratio"),
                                         Row(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.end,
@@ -260,7 +271,7 @@ class PokeInfoCard extends StatelessWidget {
                                       return ListTile(
                                         tileColor: Colors.black,
                                         leading: Image.asset(
-                                          "images/games/pokemon_sun.png",
+                                          pokemon.games[index2].getIcon(),
                                           height: 40,
                                         ),
                                         title: Text(
@@ -269,19 +280,18 @@ class PokeInfoCard extends StatelessWidget {
                                               color: Colors.white,
                                               fontSize: 15),
                                         ),
-                                        trailing: const Text(
-                                          '001',
-                                          style: TextStyle(color: Colors.white),
+                                        subtitle: Text(
+                                          pokemon.games[index2].dex,
+                                          style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 15),
+                                        ),
+                                        trailing: Text(
+                                          pokemon.games[index2].number,
+                                          style: const TextStyle(
+                                              color: Colors.white),
                                         ),
                                       );
-                                      // Card(
-                                      //                                 color: Colors.black26,
-                                      //                                 child: Text(
-                                      //                                   pokemon.games[index2].name,
-                                      //                                   style: const TextStyle(
-                                      //                                       color: Colors.white),
-                                      //                                 ),
-                                      //                               );
                                     },
                                     itemCount: pokemon.games.length,
                                     shrinkWrap: true,
@@ -292,92 +302,55 @@ class PokeInfoCard extends StatelessWidget {
                               ),
                               ReusableCard(
                                 blockTitle: "Weakness",
-                                cardChild: Column(
-                                  children: [
-                                    const TextDivider(text: "x0"),
-                                    Wrap(
-                                      alignment: WrapAlignment.center,
-                                      children: [
-                                        Image.asset(
-                                          "images/types/fire.png",
-                                          height: 40,
-                                        ),
-                                        Image.asset(
-                                          "images/types/dragon.png",
-                                          height: 40,
-                                        ),
-                                        Image.asset(
-                                          "images/types/dragon.png",
-                                          height: 40,
-                                        ),
-                                        Image.asset(
-                                          "images/types/dragon.png",
-                                          height: 40,
-                                        ),
-                                        Image.asset(
-                                          "images/types/dragon.png",
-                                          height: 40,
-                                        ),
-                                        Image.asset(
-                                          "images/types/dragon.png",
-                                          height: 40,
-                                        ),
-                                      ],
-                                    ),
-                                    const TextDivider(text: "x2"),
-                                    Wrap(
-                                      alignment: WrapAlignment.center,
-                                      children: [
-                                        Image.asset(
-                                          "images/types/fire.png",
-                                          height: 40,
-                                        ),
-                                        Image.asset(
-                                          "images/types/dragon.png",
-                                          height: 40,
-                                        ),
-                                        Image.asset(
-                                          "images/types/dragon.png",
-                                          height: 40,
-                                        ),
-                                        Image.asset(
-                                          "images/types/dragon.png",
-                                          height: 40,
-                                        ),
-                                        Image.asset(
-                                          "images/types/dragon.png",
-                                          height: 40,
-                                        ),
-                                        Image.asset(
-                                          "images/types/dragon.png",
-                                          height: 40,
-                                        ),
-                                      ],
-                                    ),
-                                    const TextDivider(text: "x4"),
-                                    Wrap(
-                                      alignment: WrapAlignment.center,
-                                      children: [
-                                        Image.asset(
-                                          "images/types/fire.png",
-                                          height: 40,
-                                        ),
-                                        Image.asset(
-                                          "images/types/dragon.png",
-                                          height: 40,
-                                        ),
-                                        Image.asset(
-                                          "images/types/dragon.png",
-                                          height: 40,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                cardChild: Expanded(
+                                  child: Column(
+                                    children: [
+                                      const TextDivider(text: "x 1\\4"),
+                                      Wrap(
+                                        direction: Axis.horizontal,
+                                        children: pokemon.weakness.quarter
+                                            .map((i) => Image.asset(
+                                                  'images/types/$i.png',
+                                                  height: 25,
+                                                ))
+                                            .toList(),
+                                      ),
+                                      const TextDivider(text: "x 1\\2"),
+                                      Wrap(
+                                        direction: Axis.horizontal,
+                                        children: pokemon.weakness.half
+                                            .map((i) => Image.asset(
+                                                  'images/types/$i.png',
+                                                  height: 25,
+                                                ))
+                                            .toList(),
+                                      ),
+                                      const TextDivider(text: " x2"),
+                                      Wrap(
+                                        direction: Axis.horizontal,
+                                        children: pokemon.weakness.double
+                                            .map((i) => Image.asset(
+                                                  'images/types/$i.png',
+                                                  height: 25,
+                                                ))
+                                            .toList(),
+                                      ),
+                                      const TextDivider(text: " x4"),
+                                      Wrap(
+                                        direction: Axis.horizontal,
+                                        children: pokemon.weakness.quadruple
+                                            .map((i) => Image.asset(
+                                                  'images/types/$i.png',
+                                                  height: 25,
+                                                ))
+                                            .toList(),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],
                           ),
-                          // Text("User Body"),
                         ],
                       ),
                     ),
@@ -433,24 +406,6 @@ class PokeInfoCard extends StatelessWidget {
       )
     ];
   }
-
-  List<ElevatedButton> shinyButton() {
-    return [
-      ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.blueGrey),
-        ),
-        onPressed: () => {
-          (currentColor() == "normal")
-              ? onImageChange(findImageIndexBasedOnString('-shiny-'))
-              : onImageChange(findImageIndexBasedOnString('-normal-')),
-        },
-        child: (currentColor() == "normal")
-            ? const Icon(Icons.star_border)
-            : const Icon(Icons.circle_outlined),
-      )
-    ];
-  }
 }
 
 class TextDivider extends StatelessWidget {
@@ -466,16 +421,22 @@ class TextDivider extends StatelessWidget {
               margin: const EdgeInsets.only(left: 10.0, right: 5.0),
               child: const Divider(
                 color: Colors.black,
-                height: 36,
+                height: 25,
               )),
         ),
-        Text(text),
+        Text(
+          text,
+          style: const TextStyle(
+            fontSize: 15,
+            color: Colors.white,
+          ),
+        ),
         Expanded(
           child: Container(
             margin: const EdgeInsets.only(left: 5.0, right: 10.0),
             child: const Divider(
               color: Colors.black,
-              height: 36,
+              height: 25,
             ),
           ),
         ),
@@ -506,13 +467,7 @@ class ReusableCard extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Text(
-              blockTitle,
-              style: const TextStyle(
-                fontSize: 15,
-                color: Colors.white,
-              ),
-            ),
+            TextDivider(text: blockTitle),
             cardChild,
           ],
         ),

@@ -9,11 +9,6 @@ class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key, required this.pokemon});
 
   final Pokemon pokemon;
-  // final List<Pokemon> pokemons;
-  // final int pokemonIndex;
-  // final int pokemonFormIndex;
-  // final int pokemonImageIndex;
-  // final int pokemonFormImageIndex;
 
   @override
   State<DetailsPage> createState() => _DetailsPageState();
