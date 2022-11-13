@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../components/background.dart';
-import '../components/basic_info.dart';
-import '../components/image_container.dart';
-import '../components/info_tab.dart';
-import '../components/pokemon.dart';
+import 'details/details_background.dart';
+import 'details/basic_info.dart';
+import '../components/image.dart';
+import 'details/lower_screen.dart';
+import '../models/pokemon.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key, required this.pokemon});
@@ -27,12 +27,11 @@ class _DetailsPageState extends State<DetailsPage> {
           BasicInfo(pokemon: widget.pokemon),
           PokeInfoCard(
             pokemon: widget.pokemon,
-            imageIndex: imageIndex,
             onImageChange: (int newIndex) {
               setState(() => imageIndex = newIndex);
             },
           ),
-          PokeImage(imagePath: widget.pokemon.image[imageIndex]),
+          MainImage(imagePath: widget.pokemon.image[imageIndex]),
         ],
       ),
     );
