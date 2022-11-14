@@ -28,22 +28,22 @@ class _LoadingScreenState extends State<LoadingScreen> {
     // };
 
     String file = await rootBundle.loadString(kPokedexFileLocation);
-    List<Pokemon> pokedex = await Pokemon.createPokedex(file);
+    kPokedex = await Pokemon.createPokedex(file);
 
     await FileManager.loadDirectory();
     //TODO:Remove the seconds from here
     //await Future.delayed(const Duration(seconds: 2));
 
-    pushNextScreen(pokedex);
+    pushNextScreen();
   }
 
-  void pushNextScreen(pokedex) {
+  void pushNextScreen() {
     Navigator.pop(context);
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) {
-          return StartScreen(pokedex: pokedex);
+          return const StartScreen();
         },
       ),
     );

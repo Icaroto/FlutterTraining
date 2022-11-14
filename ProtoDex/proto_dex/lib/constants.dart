@@ -1,3 +1,5 @@
+import 'models/pokemon.dart';
+
 const String kPokedexFileLocation = 'data/pokedex.json';
 const String kPokedexKey = 'pokedex';
 
@@ -11,3 +13,5 @@ const String kPokedexKey = 'pokedex';
 // const String kForTradeKey = 'forTrade';
 
 const String kValueNotFound = "?????";
+
+List<Pokemon> kPokedex = [];

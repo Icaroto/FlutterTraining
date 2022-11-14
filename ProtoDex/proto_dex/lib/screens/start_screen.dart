@@ -1,6 +1,8 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:proto_dex/models/collection.dart';
 import '../components/background.dart';
+import '../constants.dart';
 import '../models/game.dart';
 import '../models/item.dart';
 import '../models/pokemon.dart';
@@ -8,9 +10,9 @@ import 'checklist_screen.dart';
 import 'list_screen.dart';
 
 class StartScreen extends StatefulWidget {
-  const StartScreen({super.key, required this.pokedex});
+  const StartScreen({super.key});
 
-  final List<Pokemon> pokedex;
+  // final List<Pokemon> pokedex;
 
   @override
   State<StartScreen> createState() => _StartScreenState();
@@ -37,7 +39,7 @@ class _StartScreenState extends State<StartScreen> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return ListScreen(pokemons: widget.pokedex);
+                            return ListScreen(pokemons: kPokedex);
                           },
                         ),
                       );
@@ -50,7 +52,7 @@ class _StartScreenState extends State<StartScreen> {
                       showModalBottomSheet(
                         context: context,
                         builder: (context) {
-                          return availableDexes(widget.pokedex);
+                          return availableDexes();
                         },
                       );
                     },
@@ -65,7 +67,7 @@ class _StartScreenState extends State<StartScreen> {
   }
 }
 
-availableDexes(List<Pokemon> pokedex) {
+availableDexes() {
   var games = Dex.availableDexes();
   return ListView.builder(
     itemBuilder: (context, index) {
@@ -91,7 +93,6 @@ availableDexes(List<Pokemon> pokedex) {
               builder: (context) {
                 return CheckListScreen(
                   collection: retrieveCollection(
-                    pokedex,
                     games[index].name,
                     games[index].dex,
                   ),
@@ -109,17 +110,17 @@ availableDexes(List<Pokemon> pokedex) {
   );
 }
 
-retrieveCollection(List<Pokemon> pokedex, String gameName, String dexName) {
+retrieveCollection(String gameName, String dexName) {
   List<Collection> collections =
       <Collection>[].findCollection("${gameName}_$dexName");
 
   if (collections.isEmpty) {
     List<Item> pokemons = [];
-    for (var pokemon in pokedex) {
+    for (var pokemon in kPokedex) {
       if (pokemon.forms.isEmpty) {
         Game? game = pokemon.findGameDex(gameName, dexName);
         if (game != null) {
-          pokemons.add(Item.fromDex(pokemon));
+          pokemons.add(Item.fromDex(pokemon, replaceNumber: game.number));
         }
       } else {
         Item? item;
@@ -127,10 +128,10 @@ retrieveCollection(List<Pokemon> pokedex, String gameName, String dexName) {
           Game? game = form.findGameDex(gameName, dexName);
           if (game != null) {
             if (item == null) {
-              item = Item.fromDex(form);
+              item = Item.fromDex(form, replaceNumber: game.number);
               item.forms.add(Item.copy(item));
             } else {
-              item.forms.add(Item.fromDex(form));
+              item.forms.add(Item.fromDex(form, replaceNumber: game.number));
             }
           }
         }
@@ -139,6 +140,7 @@ retrieveCollection(List<Pokemon> pokedex, String gameName, String dexName) {
       }
     }
     Collection newCollection = Collection.create(gameName, dexName, pokemons);
+    newCollection.pokemons.sortBy((element) => element.number);
     collections.add(newCollection);
     collections.saveToFile("${gameName}_$dexName");
   }

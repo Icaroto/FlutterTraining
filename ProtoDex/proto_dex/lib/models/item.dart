@@ -32,15 +32,15 @@ class Item {
                 json['forms'].map((model) => Item.fromJson(model)))
             : [];
 
-  Item.fromDex(Pokemon dexPokemon)
+  Item.fromDex(Pokemon dexPokemon, {String replaceNumber = ""})
       : name = dexPokemon.name,
-        number = dexPokemon.number,
+        number = (replaceNumber == "") ? dexPokemon.number : replaceNumber,
         image = dexPokemon.image,
         type1 = dexPokemon.type1,
         type2 = dexPokemon.type2,
         forms = dexPokemon.forms.isNotEmpty
-            ? List<Item>.from(
-                dexPokemon.forms.map((model) => Item.fromDex(model)))
+            ? List<Item>.from(dexPokemon.forms.map(
+                (model) => Item.fromDex(model, replaceNumber: replaceNumber)))
             : [],
         gender = PokemonGender.undefinied,
         ball = PokeballType.undefined,
