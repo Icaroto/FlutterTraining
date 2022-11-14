@@ -91,7 +91,7 @@ class Pokemon {
         breeding = pokemon.breeding,
         genderRatio = pokemon.genderRatio;
 
-  static createPokemonList(String file) async {
+  static createPokedex(String file) async {
     Iterable l = jsonDecode(file);
     List<Pokemon> pokemons =
         List<Pokemon>.from(l.map((model) => Pokemon.fromJson(model)));
@@ -319,13 +319,13 @@ class Pokemon {
         (element) => element.name == gameName && element.dex == dexName);
   }
 
-  Map<String, dynamic> toJson() {
-    return {
-      'name': name,
-      'image': image,
-      'number': number,
-      'type1': type1,
-      'type2': type2
-    };
-  }
+  // Map<String, dynamic> toJson() {
+  //   return {
+  //     'name': name,
+  //     'image': image,
+  //     'number': number,
+  //     'type1': type1,
+  //     'type2': type2
+  //   };
+  // }
 }

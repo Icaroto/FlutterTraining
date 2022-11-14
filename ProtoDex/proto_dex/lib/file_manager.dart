@@ -10,9 +10,9 @@ class FileManager {
   File findFile(String fileName) {
     File file = File("${directory.path}/$fileName.json");
     bool exist = file.existsSync();
-    if (exist) return file;
 
-    file.createSync();
+    if (!exist) file.createSync();
+
     return file;
   }
 }

@@ -28,11 +28,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
-/*Flutter Notes:
+/*
+Flutter Notes:
 
 using scaffold
 home: Scaffold(body: LoadingScreen()),
-
 To Navigate with routes:
     Navigator.pushNamed(
       context,

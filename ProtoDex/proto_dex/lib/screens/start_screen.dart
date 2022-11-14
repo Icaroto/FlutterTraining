@@ -1,10 +1,6 @@
-import 'dart:io';
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:proto_dex/models/collection.dart';
 import '../components/background.dart';
-import '../file_manager.dart';
 import '../models/game.dart';
 import '../models/item.dart';
 import '../models/pokemon.dart';
@@ -12,9 +8,8 @@ import 'checklist_screen.dart';
 import 'list_screen.dart';
 
 class StartScreen extends StatefulWidget {
-  const StartScreen({super.key, required this.files, required this.pokedex});
+  const StartScreen({super.key, required this.pokedex});
 
-  final Map<String, String> files;
   final List<Pokemon> pokedex;
 
   @override
