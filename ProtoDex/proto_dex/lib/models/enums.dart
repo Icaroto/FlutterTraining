@@ -44,4 +44,5 @@ enum Attributes {
   canDinamax,
   isOriginalTrainer,
   isAlpha,
+  isShiny,
 }

@@ -9,7 +9,10 @@ class Todos {
 - Minor - All forms needs to be added (001)
 - Oricorio - Name and Image
 
-
+TODO: Checklist:
+  - Add 3 tab buttons: All, Missing, Captured
+  - Add more options to floating button: Save, All shiny?, Create LF, FT
+TODO: Replace the cards with the data they need instead of passing the whole pokemon object, that way it can be used on either screen (details or catch)
 TODO: Replace nulls with ?????
 TODO: Switch case for games
 Style

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'catch_card.dart';
+import '../../models/item.dart';
 import 'breeding_card.dart';
 import 'games_card.dart';
 import 'general_card.dart';
@@ -7,10 +9,14 @@ import '../../models/pokemon.dart';
 
 class PokeInfoCard extends StatelessWidget {
   const PokeInfoCard(
-      {super.key, required this.pokemon, required this.onImageChange});
+      {super.key,
+      required this.pokemon,
+      required this.onImageChange,
+      this.myPokemon});
 
   final Pokemon pokemon;
   final Function(int) onImageChange;
+  final Item? myPokemon;
 
   @override
   Widget build(BuildContext context) {
@@ -55,12 +61,13 @@ class PokeInfoCard extends StatelessWidget {
                         children: [
                           Row(
                             children: [
+                              CatchInformationCard(pokemon: myPokemon!),
                               GeneralInformationCard(
                                   pokemon: pokemon,
                                   onImageChange: onImageChange),
-                              BreedingInformationCard(
-                                  pokemon: pokemon,
-                                  onImageChange: onImageChange),
+                              // BreedingInformationCard(
+                              //     pokemon: pokemon,
+                              //     onImageChange: onImageChange),
                             ],
                           ),
                           Row(

@@ -3,6 +3,7 @@ import 'package:proto_dex/screens/details_screen.dart';
 import '../../components/image.dart';
 import '../../models/item.dart';
 import '../../models/pokemon.dart';
+import '../catch_details_screen.dart';
 
 class PokemonTile extends StatefulWidget {
   const PokemonTile({super.key, required this.pokemon, this.tileColor});
@@ -64,14 +65,14 @@ class _PokemonCheckTile extends State<PokemonCheckTile> {
         tileColor: widget.tileColor,
         textColor: Colors.black,
         onTap: () => {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) {
-          //       return DetailsPage(pokemon: widget.pokemon);
-          //     },
-          //   ),
-          // )
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return CatchDetailsPage(pokemon: widget.pokemon);
+              },
+            ),
+          )
         },
         leading: ListImage(image: widget.pokemon.image[0]),
         title: Text(widget.pokemon.name),

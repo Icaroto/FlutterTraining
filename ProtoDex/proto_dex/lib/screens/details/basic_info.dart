@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/components/image.dart';
-import '../../models/pokemon.dart';
+import 'package:proto_dex/models/enums.dart';
 
 class BasicInfo extends StatelessWidget {
-  const BasicInfo({Key? key, required this.pokemon}) : super(key: key);
+  const BasicInfo(
+      {Key? key,
+      required this.name,
+      required this.number,
+      required this.type1,
+      required this.type2})
+      : super(key: key);
 
-  final Pokemon pokemon;
+  // final Pokemon pokemon;
+  final String name;
+  final String number;
+  final PokemonType type1;
+  final PokemonType? type2;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,7 +28,7 @@ class BasicInfo extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               Text(
-                pokemon.name,
+                name,
                 style: const TextStyle(
                   fontFamily: 'SigmarOne',
                   fontSize: 25.0,
@@ -25,7 +36,7 @@ class BasicInfo extends StatelessWidget {
                 ),
               ),
               Text(
-                pokemon.number,
+                number,
                 style: const TextStyle(
                   fontFamily: 'SigmarOne',
                   fontSize: 15,
@@ -39,12 +50,12 @@ class BasicInfo extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               TypeIcon(
-                type: pokemon.type1,
+                type: type1,
                 size: 60,
               ),
-              if (pokemon.type2 != null)
+              if (type2 != null)
                 TypeIcon(
-                  type: pokemon.type2,
+                  type: type2,
                   size: 60,
                 ),
             ],
