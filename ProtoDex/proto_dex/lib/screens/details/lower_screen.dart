@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../components/basic.dart';
 import 'catch_card.dart';
 import '../../models/item.dart';
 import 'breeding_card.dart';
@@ -62,14 +63,31 @@ class PokeInfoCard extends StatelessWidget {
                           Row(
                             children: [
                               CatchInformationCard(pokemon: myPokemon!),
-                              GeneralInformationCard(
-                                  pokemon: pokemon,
-                                  onImageChange: onImageChange),
-                              // BreedingInformationCard(
-                              //     pokemon: pokemon,
-                              //     onImageChange: onImageChange),
+                              DetailsCard(
+                                blockTitle: "Attributes",
+                                cardChild: Expanded(
+                                  child: ElevatedButton(
+                                    onPressed: () => {print("test")},
+                                    child: const Icon(
+                                      Icons.add,
+                                      color: Colors.redAccent,
+                                      size: 100,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
+                          // Row(
+                          //   children: [
+                          //     GeneralInformationCard(
+                          //         pokemon: pokemon,
+                          //         onImageChange: onImageChange),
+                          //     BreedingInformationCard(
+                          //         pokemon: pokemon,
+                          //         onImageChange: onImageChange),
+                          //   ],
+                          // ),
                           Row(
                             children: [
                               GamesInformationCard(pokemon: pokemon),

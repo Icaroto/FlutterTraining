@@ -6,13 +6,14 @@ import '../constants.dart';
 class Item {
   final String name;
   final String number;
-  final List<dynamic> image;
-  final PokemonGender gender;
   final PokemonType type1;
   final PokemonType? type2;
-  final String ability;
-  final PokeballType ball;
   final List<Item> forms;
+  final List<dynamic> image;
+  PokemonGender gender;
+  String ability;
+  PokeballType ball;
+  String level;
   bool captured;
 
   Item.fromJson(Map<String, dynamic> json)
@@ -27,6 +28,7 @@ class Item {
         ability = json['ability'],
         ball = PokeballType.values.byName(json['ball']),
         captured = json['captured'],
+        level = json['level'],
         forms = json['forms'] != null
             ? List<Item>.from(
                 json['forms'].map((model) => Item.fromJson(model)))
@@ -45,6 +47,7 @@ class Item {
         gender = PokemonGender.undefinied,
         ball = PokeballType.undefined,
         captured = false,
+        level = kValueNotFound,
         ability = kValueNotFound;
 
   Item.copy(Item item)
@@ -57,6 +60,7 @@ class Item {
         gender = item.gender,
         ball = item.ball,
         captured = item.captured,
+        level = item.level,
         ability = item.ability;
 
   Map<String, dynamic> toJson() {
@@ -71,6 +75,7 @@ class Item {
       'ball': ball.name,
       'captured': captured,
       'ability': ability,
+      'level': level,
     };
   }
 }

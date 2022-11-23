@@ -37,6 +37,14 @@ enum PokeballType {
   greatBall,
   ultraBall,
   masterBall,
+  premierball,
+  duskball,
+  cherishball,
+  quickball,
+  beastball,
+  luxuryball,
+  repeatball,
+  timerball,
 }
 
 enum Attributes {

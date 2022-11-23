@@ -5,13 +5,14 @@ import 'details/details_background.dart';
 import 'details/basic_info.dart';
 import '../components/image.dart';
 import 'details/lower_screen.dart';
-import '../models/pokemon.dart';
 
 class CatchDetailsPage extends StatefulWidget {
-  const CatchDetailsPage({super.key, required this.pokemon});
+  const CatchDetailsPage({
+    super.key,
+    required this.pokemon,
+  });
 
   final Item pokemon;
-
   @override
   State<CatchDetailsPage> createState() => _CatchDetailsPageState();
 }
