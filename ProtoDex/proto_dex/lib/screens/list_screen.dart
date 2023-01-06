@@ -1,52 +1,90 @@
 import 'package:flutter/material.dart';
+import '../models/collection.dart';
+import '../models/item.dart';
 import '../models/pokemon.dart';
 import '../components/background.dart';
 import 'lists/cards.dart';
 
 class ListScreen extends StatefulWidget {
-  const ListScreen({super.key, required this.pokemons});
+  const ListScreen({super.key, this.pokemons, this.collection});
 
-  final List<Pokemon> pokemons;
+  final List<Pokemon>? pokemons;
+  final Collection? collection;
   @override
   State<ListScreen> createState() => _ListScreenState();
 }
 
 class _ListScreenState extends State<ListScreen> {
-  List<Pokemon> originalList = [];
+  List<Pokemon> originalPokedex = [];
+  List<Item> originalCollection = [];
   @override
   void initState() {
-    originalList.addAll(widget.pokemons);
+    if (widget.pokemons != null) originalPokedex.addAll(widget.pokemons!);
+    if (widget.collection != null) {
+      originalCollection.addAll(widget.collection!.pokemons);
+    }
     super.initState();
   }
 
   TextEditingController editingController = TextEditingController();
 
   void filterSearchResults(String query) {
-    List<Pokemon> dummySearchList = [];
-    dummySearchList.addAll(originalList);
-    if (query.isNotEmpty) {
-      List<Pokemon> dummyListData = [];
-      for (var item in dummySearchList) {
-        if (item.name.toLowerCase().contains(query.toLowerCase())) {
-          dummyListData.add(item);
+    if (originalPokedex.isNotEmpty) {
+      List<Pokemon> dummySearchList = [];
+      dummySearchList.addAll(originalPokedex);
+      if (query.isNotEmpty) {
+        List<Pokemon> dummyListData = [];
+        for (var item in dummySearchList) {
+          if (item.name.toLowerCase().contains(query.toLowerCase())) {
+            dummyListData.add(item);
+          }
         }
+        setState(() {
+          widget.pokemons!.clear();
+          widget.pokemons!.addAll(dummyListData);
+        });
+        return;
+      } else {
+        setState(() {
+          widget.pokemons!.clear();
+          widget.pokemons!.addAll(originalPokedex);
+        });
       }
-      setState(() {
-        widget.pokemons.clear();
-        widget.pokemons.addAll(dummyListData);
-      });
-      return;
     } else {
-      setState(() {
-        widget.pokemons.clear();
-        widget.pokemons.addAll(originalList);
-      });
+      List<Item> dummySearchList = [];
+      dummySearchList.addAll(originalCollection);
+      if (query.isNotEmpty) {
+        List<Item> dummyListData = [];
+        for (var item in dummySearchList) {
+          if (item.name.toLowerCase().contains(query.toLowerCase())) {
+            dummyListData.add(item);
+          }
+        }
+        setState(() {
+          widget.collection!.pokemons.clear();
+          widget.collection!.pokemons.addAll(dummyListData);
+        });
+        return;
+      } else {
+        setState(() {
+          widget.collection!.pokemons.clear();
+          widget.collection!.pokemons.addAll(originalCollection);
+        });
+      }
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     widget.collection!.updateCollection();
+      //   },
+      //   backgroundColor: Colors.green,
+      //   child: const Icon(Icons.save),
+      // ),
       body: Stack(
         children: <Widget>[
           kBasicBackground,
@@ -94,23 +132,35 @@ class _ListScreenState extends State<ListScreen> {
                     ),
                   ],
                 ),
-                Expanded(
-                  child: ListView.builder(
-                    itemBuilder: ((context, index) {
-                      return (widget.pokemons[index].forms.isEmpty)
-                          ? singleCard(context, index, widget.pokemons)
-                          : multipleCards(context, index, widget.pokemons);
-                    }),
-                    itemCount: widget.pokemons.length,
-                    shrinkWrap: true,
-                    padding: const EdgeInsets.all(5),
-                    scrollDirection: Axis.vertical,
-                  ),
-                ),
+                giveMeAList(),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Expanded giveMeAList() {
+    return Expanded(
+      child: ListView.builder(
+        itemBuilder: ((context, index) {
+          if (widget.pokemons != null) {
+            return (widget.pokemons![index].forms.isEmpty)
+                ? singleCard(context, index, widget.pokemons)
+                : multipleCards(context, index, widget.pokemons);
+          } else {
+            return (widget.collection!.pokemons[index].forms.isEmpty)
+                ? singleCard(context, index, widget.collection?.pokemons)
+                : multipleCards(context, index, widget.collection!.pokemons);
+          }
+        }),
+        itemCount: (widget.pokemons != null)
+            ? widget.pokemons!.length
+            : widget.collection!.pokemons.length,
+        shrinkWrap: true,
+        padding: const EdgeInsets.all(5),
+        scrollDirection: Axis.vertical,
       ),
     );
   }

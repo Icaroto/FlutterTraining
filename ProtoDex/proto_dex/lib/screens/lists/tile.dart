@@ -3,13 +3,14 @@ import 'package:proto_dex/screens/details_screen.dart';
 import '../../components/image.dart';
 import '../../models/item.dart';
 import '../../models/pokemon.dart';
-import '../catch_details_screen.dart';
 
 class PokemonTile extends StatefulWidget {
-  const PokemonTile({super.key, required this.pokemon, this.tileColor});
+  const PokemonTile({super.key, this.pokemon, this.tileColor});
 
   final Color? tileColor;
-  final Pokemon pokemon;
+  final dynamic pokemon;
+  // final Pokemon? pokemon;
+  // final Item? item;
 
   @override
   State<PokemonTile> createState() => _PokemonTile();
@@ -18,61 +19,51 @@ class PokemonTile extends StatefulWidget {
 class _PokemonTile extends State<PokemonTile> {
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: ListTile(
-        tileColor: widget.tileColor,
-        textColor: Colors.black,
-        onTap: () => {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return DetailsPage(pokemon: widget.pokemon);
-              },
-            ),
-          )
-        },
-        leading: ListImage(image: widget.pokemon.image[0]),
-        title: Text(widget.pokemon.name),
-        trailing: const Text(''),
-        subtitle: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(widget.pokemon.formattedTypes()),
-            Text(widget.pokemon.number)
-          ],
+    if (widget.pokemon is Pokemon) {
+      print("Is Pokemon Type");
+      return Card(
+        child: ListTile(
+          tileColor: widget.tileColor,
+          textColor: Colors.black,
+          onTap: () => {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return DetailsPage(pokemon: widget.pokemon);
+                },
+              ),
+            )
+          },
+          leading: ListImage(image: widget.pokemon.image[0]),
+          title: Text(widget.pokemon.name),
+          trailing: const Text(''),
+          subtitle: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(widget.pokemon.formattedTypes()),
+              Text(widget.pokemon.number)
+            ],
+          ),
         ),
-      ),
-    );
-  }
-}
+      );
+    }
 
-class PokemonCheckTile extends StatefulWidget {
-  const PokemonCheckTile({super.key, required this.pokemon, this.tileColor});
-
-  final Color? tileColor;
-  final Item pokemon;
-
-  @override
-  State<PokemonCheckTile> createState() => _PokemonCheckTile();
-}
-
-class _PokemonCheckTile extends State<PokemonCheckTile> {
-  @override
-  Widget build(BuildContext context) {
+    print("Is Item Type");
     return Card(
       child: ListTile(
         tileColor: widget.tileColor,
         textColor: Colors.black,
         onTap: () => {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return CatchDetailsPage(pokemon: widget.pokemon);
-              },
-            ),
-          )
+          if (widget.pokemon.captured)
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return DetailsPage(pokemon: widget.pokemon);
+                },
+              ),
+            )
         },
         leading: ListImage(image: widget.pokemon.image[0]),
         title: Text(widget.pokemon.name),
@@ -90,7 +81,8 @@ class _PokemonCheckTile extends State<PokemonCheckTile> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             //TODO: formatedTypes
-            Text(widget.pokemon.type1.name),
+
+            Text(widget.pokemon.formattedTypes()),
             Text(widget.pokemon.number)
           ],
         ),

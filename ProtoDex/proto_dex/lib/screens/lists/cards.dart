@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/screens/lists/tile.dart';
-
 import '../../components/image.dart';
-import '../../models/item.dart';
 
 Widget singleCard(context, index, pokemons) {
   return PokemonTile(
@@ -49,69 +47,6 @@ Widget multipleCards(context, index, pokemons) {
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index2) {
             return PokemonTile(
-              pokemon: pokemons[index].forms[index2],
-            );
-          },
-          itemCount: pokemons[index].forms.length,
-          shrinkWrap: true,
-          padding: const EdgeInsets.all(5),
-          scrollDirection: Axis.vertical,
-        )
-      ],
-    ),
-  );
-}
-
-Widget singleCheckCard(context, index, pokemons) {
-  return PokemonCheckTile(
-    tileColor: Colors.black26,
-    pokemon: pokemons[index],
-  );
-}
-
-Widget multipleCheckCards(context, index, List<Item> pokemons) {
-  final GlobalKey expansionTileKey = GlobalKey();
-
-  void scrollToSelectedContent({required GlobalKey expansionTileKey}) {
-    final keyContext = expansionTileKey.currentContext;
-    if (keyContext != null) {
-      Future.delayed(const Duration(milliseconds: 240)).then((value) {
-        Scrollable.ensureVisible(keyContext,
-            duration: const Duration(milliseconds: 200));
-      });
-    }
-  }
-
-  return Card(
-    child: ExpansionTile(
-      key: expansionTileKey,
-      onExpansionChanged: (value) {
-        if (value) {
-          scrollToSelectedContent(expansionTileKey: expansionTileKey);
-        }
-      },
-      collapsedBackgroundColor: Colors.black26,
-      backgroundColor: Colors.black26,
-      leading: ListImage(image: pokemons[index].image[0]),
-      title: Text(pokemons[index].name),
-      trailing: SizedBox(
-        width: 48,
-        child: Center(child: Text('+${pokemons[index].forms.length - 1}')),
-      ),
-      subtitle: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          // Text(pokemons[index].formattedTypes()),
-          //TODO: formatedTypes
-          Text(pokemons[index].type1.name),
-          Text(pokemons[index].number)
-        ],
-      ),
-      children: [
-        ListView.builder(
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index2) {
-            return PokemonCheckTile(
               pokemon: pokemons[index].forms[index2],
             );
           },

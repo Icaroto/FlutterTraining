@@ -30,7 +30,8 @@ class Pokemon {
   final String height;
   final String weight;
   final List<dynamic> image;
-  String number;
+  final String number;
+  final String ref;
   final PokemonType type1;
   final PokemonType? type2;
   final List<Pokemon> forms;
@@ -50,6 +51,7 @@ class Pokemon {
         weight = json['weight'],
         image = json['image'],
         number = json['number'],
+        ref = json['ref'],
         type1 = PokemonType.values.byName(json['type1']),
         type2 = json['type2'] == null
             ? null
@@ -81,6 +83,7 @@ class Pokemon {
         weight = pokemon.weight,
         image = pokemon.image,
         number = pokemon.number,
+        ref = pokemon.ref,
         type1 = pokemon.type1,
         type2 = pokemon.type2,
         forms = (keepForms) ? pokemon.forms : [],

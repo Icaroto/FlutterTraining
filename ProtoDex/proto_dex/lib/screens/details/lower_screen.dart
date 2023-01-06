@@ -1,23 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../components/basic.dart';
-import 'catch_card.dart';
-import '../../models/item.dart';
-import 'breeding_card.dart';
-import 'games_card.dart';
-import 'general_card.dart';
-import 'weakness_card.dart';
-import '../../models/pokemon.dart';
+import '../../models/tab.dart';
 
-class PokeInfoCard extends StatelessWidget {
-  const PokeInfoCard(
-      {super.key,
-      required this.pokemon,
-      required this.onImageChange,
-      this.myPokemon});
+class TabControl extends StatelessWidget {
+  const TabControl({super.key, required this.tabs});
 
-  final Pokemon pokemon;
-  final Function(int) onImageChange;
-  final Item? myPokemon;
+  final List<PokeTab> tabs;
 
   @override
   Widget build(BuildContext context) {
@@ -46,38 +33,35 @@ class PokeInfoCard extends StatelessWidget {
               ),
             ),
             child: DefaultTabController(
-              length: 2,
+              length: tabs.length,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  const TabBar(tabs: [
-                    Tab(text: "Details"),
-                    Tab(text: "More"),
-                    // Tab(text: "Useful"),
-                  ]),
+                  TabBar(tabs: createTabs()),
                   Expanded(
                     child: SizedBox(
                       height: MediaQuery.of(context).size.height,
-                      child: TabBarView(
-                        children: [
-                          Row(
-                            children: [
-                              CatchInformationCard(pokemon: myPokemon!),
-                              DetailsCard(
-                                blockTitle: "Attributes",
-                                cardChild: Expanded(
-                                  child: ElevatedButton(
-                                    onPressed: () => {print("test")},
-                                    child: const Icon(
-                                      Icons.add,
-                                      color: Colors.redAccent,
-                                      size: 100,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                      child: TabBarView(children: createContent()
+                          // [
+                          // Row(
+                          //   children: [
+                          //     CatchInformationCard(pokemon: myPokemon!),
+                          //     DetailsCard(
+                          //       blockTitle: "Attributes",
+                          //       cardChild: Expanded(
+                          //         child: ElevatedButton(
+                          //           onPressed: () => {print("test")},
+                          //           child: const Icon(
+                          //             Icons.add,
+                          //             color: Colors.redAccent,
+                          //             size: 100,
+                          //           ),
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
+
                           // Row(
                           //   children: [
                           //     GeneralInformationCard(
@@ -88,14 +72,15 @@ class PokeInfoCard extends StatelessWidget {
                           //         onImageChange: onImageChange),
                           //   ],
                           // ),
-                          Row(
-                            children: [
-                              GamesInformationCard(pokemon: pokemon),
-                              WeaknessInformationCard(pokemon: pokemon),
-                            ],
+
+                          // Row(
+                          //   children: [
+                          //     GamesInformationCard(pokemon: pokemon),
+                          //     WeaknessInformationCard(pokemon: pokemon),
+                          //   ],
+                          // ),
+                          // ],
                           ),
-                        ],
-                      ),
                     ),
                   ),
                 ],
@@ -105,5 +90,25 @@ class PokeInfoCard extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  createTabs() {
+    List<Widget> tabHeaders = [];
+
+    for (var element in tabs) {
+      tabHeaders.add(element.head());
+    }
+
+    return tabHeaders;
+  }
+
+  createContent() {
+    List<Widget> tabHeaders = [];
+
+    for (var element in tabs) {
+      tabHeaders.add(element.cards());
+    }
+
+    return tabHeaders;
   }
 }

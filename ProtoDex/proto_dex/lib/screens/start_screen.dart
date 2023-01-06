@@ -5,8 +5,6 @@ import '../components/background.dart';
 import '../constants.dart';
 import '../models/game.dart';
 import '../models/item.dart';
-import '../models/pokemon.dart';
-import 'checklist_screen.dart';
 import 'list_screen.dart';
 
 class StartScreen extends StatefulWidget {
@@ -91,7 +89,7 @@ availableDexes() {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return CheckListScreen(
+                return ListScreen(
                   collection: retrieveCollection(
                     games[index].name,
                     games[index].dex,
