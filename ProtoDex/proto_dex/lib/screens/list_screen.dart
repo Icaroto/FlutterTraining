@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:proto_dex/styles.dart';
 import '../models/collection.dart';
 import '../models/item.dart';
 import '../models/pokemon.dart';
-import '../components/background.dart';
 import 'lists/cards.dart';
 
 class ListScreen extends StatefulWidget {
@@ -77,14 +77,16 @@ class _ListScreenState extends State<ListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     widget.collection!.updateCollection();
-      //   },
-      //   backgroundColor: Colors.green,
-      //   child: const Icon(Icons.save),
-      // ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
+      floatingActionButton: (widget.pokemons == null)
+          ? FloatingActionButton(
+              onPressed: () {
+                widget.collection!.updateCollection();
+              },
+              backgroundColor: Colors.green,
+              child: const Icon(Icons.save),
+            )
+          : null,
       body: Stack(
         children: <Widget>[
           kBasicBackground,

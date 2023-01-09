@@ -2,6 +2,7 @@ import 'models/pokemon.dart';
 
 const String kPokedexFileLocation = 'data/pokedex.json';
 const String kPokedexKey = 'pokedex';
+const String kImagesRoot = 'images/';
 
 // const String kCollectionFileLocation = 'data/collection.json';
 // const String kCollectionKey = 'collection';

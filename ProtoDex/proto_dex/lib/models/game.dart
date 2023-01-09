@@ -48,17 +48,43 @@ class Dex {
     ];
   }
 
-  static availableDexes2() {
+  static availableGames() {
     return [
-      Dex(name: "Let's Go Pikachu", dex: "Base"),
-      Dex(name: "Let's Go Eevee", dex: "Base"),
-      Dex(name: "Pokemon Sword", dex: "Base"),
-      Dex(name: "Pokemon Sword", dex: "The Isle of Armor"),
-      Dex(name: "Pokemon Sword", dex: "The Crown Tundra"),
-      Dex(name: "Pokemon Shield", dex: "Base"),
-      Dex(name: "Pokemon Shield", dex: "The Isle of Armor"),
-      Dex(name: "Pokemon Shield", dex: "The Crown Tundra"),
-      // Dex(name: "Pokemon Ultra Moon", dex: "Base"),
+      "Pokemon Scarlet",
+      "Pokemon Violet",
+      "Let's Go Pikachu",
+      "Let's Go Eevee",
+      "Pokemon Sword",
+      "Pokemon Shield"
+    ];
+  }
+
+  static availableDex(String game) {
+    List<String> dex = ["Regional"];
+
+    switch (game) {
+      case "Pokemon Scarlet":
+      case "Pokemon Violet":
+      case "Let's Go Pikachu":
+      case "Let's Go Eevee":
+        break;
+      case "Pokemon Sword":
+      case "Pokemon Shield":
+        dex.addAll(["Isle of Armor", "Crown Trunda"]);
+        break;
+      default:
+    }
+
+    return dex;
+  }
+
+  static availableTrackerTypes() {
+    return [
+      "Basic",
+      "Shiny Basic",
+      "Living Dex",
+      "Shiny Living Dex",
+      "Give Me A Challenge"
     ];
   }
 

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../file_manager.dart';
 import 'start_screen.dart';
-import '../models/pokemon.dart';
-import '../constants.dart';
+import 'package:proto_dex/file_manager.dart';
+import 'package:proto_dex/styles.dart';
+import 'package:proto_dex/models/pokemon.dart';
+import 'package:proto_dex/constants.dart';
 
 class LoadingScreen extends StatefulWidget {
   const LoadingScreen({super.key});
@@ -20,20 +21,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   void loadFiles() async {
-    // Map<String, String> files = {
-    //   kPokedexKey: await rootBundle.loadString(kPokedexFileLocation),
-    // kCollectionKey: await rootBundle.loadString(kCollectionFileLocation),
-    // kLookingForKey: await rootBundle.loadString(kLookingForFileLocation),
-    // kForTradeKey: await rootBundle.loadString(kForTradeFileLocation)
-    // };
-
-    String file = await rootBundle.loadString(kPokedexFileLocation);
+    var file = await rootBundle.loadString(kPokedexFileLocation);
     kPokedex = await Pokemon.createPokedex(file);
 
     await FileManager.loadDirectory();
     //TODO:Remove the seconds from here
     //await Future.delayed(const Duration(seconds: 2));
-
     pushNextScreen();
   }
 
@@ -59,8 +52,10 @@ class _LoadingScreenState extends State<LoadingScreen> {
           Center(
             child: Image.asset('images/background/colored_ball.png'),
           ),
-          const Text('Loading...',
-              style: TextStyle(fontSize: 30, color: Colors.amber))
+          const Text(
+            'Loading...',
+            style: loadingTextStyle,
+          )
         ],
       ),
     );

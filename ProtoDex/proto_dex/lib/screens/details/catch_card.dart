@@ -34,7 +34,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                 children: [
                   const Expanded(
                     child: Text(
-                      "Balls:",
+                      "Ball:",
                       style: TextStyle(color: Colors.white),
                     ),
                   ),

@@ -1,0 +1,16 @@
+{
+  "name": "datafetcher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "testlist" : "npx playwright test --list"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.29.2"
+  }
+}
