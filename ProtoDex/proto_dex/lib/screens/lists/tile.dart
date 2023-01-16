@@ -20,7 +20,6 @@ class _PokemonTile extends State<PokemonTile> {
   @override
   Widget build(BuildContext context) {
     if (widget.pokemon is Pokemon) {
-      print("Is Pokemon Type");
       return Card(
         child: ListTile(
           tileColor: widget.tileColor,
@@ -49,7 +48,6 @@ class _PokemonTile extends State<PokemonTile> {
       );
     }
 
-    print("Is Item Type");
     return Card(
       child: ListTile(
         tileColor: widget.tileColor,
@@ -65,7 +63,7 @@ class _PokemonTile extends State<PokemonTile> {
               ),
             )
         },
-        leading: ListImage(image: widget.pokemon.image[0]),
+        leading: ListImage(image: widget.pokemon.displayImage),
         title: Text(widget.pokemon.name),
         trailing: Checkbox(
           value: widget.pokemon.captured,

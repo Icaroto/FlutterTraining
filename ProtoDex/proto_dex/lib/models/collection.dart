@@ -4,13 +4,15 @@ import 'package:proto_dex/file_manager.dart';
 import 'item.dart';
 
 class Collection {
+  String name;
   String game;
   String dex;
   String type;
   List<Item> pokemons;
 
   Collection.fromJson(Map<String, dynamic> json)
-      : game = json['game'],
+      : name = json['name'],
+        game = json['game'],
         dex = json['dex'],
         type = json['type'],
         pokemons = json['pokemons'] != null
@@ -20,13 +22,18 @@ class Collection {
 
   Collection.create(String gameName, String dexName, String trackerType,
       List<Item> pokemonList)
-      : game = gameName,
+      : name = "tracker_${gameName}_${dexName}_$trackerType"
+            .replaceAll(" ", "")
+            .replaceAll("'", "")
+            .toLowerCase(),
+        game = gameName,
         dex = dexName,
         type = trackerType,
         pokemons = pokemonList;
 
   Map<String, dynamic> toJson() {
     return {
+      'name': name,
       'game': game,
       'dex': dex,
       'type': type,
@@ -37,7 +44,7 @@ class Collection {
 
 extension Utils on Collection {
   updateCollection() {
-    String fileName = "${game}_${dex}_$type";
+    String fileName = name;
     List<Collection> collections = <Collection>[].findCollection(fileName);
     collections.clear();
     collections.add(this);
@@ -46,23 +53,20 @@ extension Utils on Collection {
 }
 
 extension CollectionsExtensions on List<Collection> {
-  findCollections() async {
+  Future<List<Collection>> findCollections() async {
     List<Collection> collections = [];
 
-    var files = await FileManager().findFiles("trying", "");
-
-    for (var element in files) {
+    var files = await FileManager().findFiles("tracker_", "");
+    await Future.delayed(const Duration(seconds: 2));
+    for (var element in files!) {
       String content = element.readAsStringSync();
       if (content.isNotEmpty) {
-        // Iterable l = jsonDecode(file);
-        // List<Pokemon> pokemons =
-        // List<Pokemon>.from(l.map((model) => Pokemon.fromJson(model)));
-
         Iterable l = jsonDecode(content);
         collections.addAll(List<Collection>.from(
             l.map((model) => Collection.fromJson(model))));
       }
     }
+
     return collections;
   }
 

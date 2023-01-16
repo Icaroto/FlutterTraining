@@ -107,8 +107,10 @@ export default class DexPage {
       basePokemon.type1 = (await types.nth(0).textContent())!.toLocaleLowerCase();
     if (typesCount > 1 ) basePokemon.type2 = (await types.nth(1).textContent())!.toLocaleLowerCase();
     
+    var count = await this.ability1.count();
+    if(count > index)
     basePokemon.abilities.push(await this.ability1.nth(index).textContent());
-    if (await this.ability2.count() > 0) basePokemon.abilities.push(await this.ability2.nth(index).textContent()); 
+    if (await this.ability2.count() > index) basePokemon.abilities.push(await this.ability2.nth(index).textContent()); 
 
     if (await this.hiddenAbilityText.nth(index).count() > 0) basePokemon.hiddenAbility = await this.hiddenAbilityText.nth(index).textContent();
 

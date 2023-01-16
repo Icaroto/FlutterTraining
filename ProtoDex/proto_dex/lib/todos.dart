@@ -9,6 +9,13 @@ class Todos {
 - Minor - All forms needs to be added (001)
 - Oricorio - Name and Image
 
+TODO BUG: Leaving Detail after select Shiny will not reset index, so you will need to double click to see next shiny.
+Reproduce:
+- open a pokemon with forms
+- select one form, change to shiny,
+- go back, select other form
+- click on shiny
+
 TODO: Checklist:
   - Add 3 tab buttons: All, Missing, Captured
   - Add more options to floating button: Save, All shiny?, Create LF, FT

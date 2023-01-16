@@ -23,13 +23,13 @@ class FileManager {
     return file;
   }
 
-  Future<List<File>> findFiles(String? prefix, String? sufix) async {
+  Future<List<File>>? findFiles(String? prefix, String? sufix) async {
     List<File> files = [];
     await for (var entity
         in directory.list(recursive: true, followLinks: false)) {
       File file = File(entity.path);
       if (p.extension(file.path) == ".json") {
-        print("Found in:" + entity.path);
+        // print("Found in:${entity.path}");
         if (p.basename(file.path).startsWith(prefix!)) files.add(file);
       }
     }

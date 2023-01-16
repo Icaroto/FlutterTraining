@@ -58,20 +58,21 @@ class GeneralInformationCard extends StatelessWidget {
                   if (pokemon.hiddenAbility != null)
                     Row(
                       children: [
-                        RichText(
-                          text: TextSpan(
-                            text: "- ${pokemon.hiddenAbility}",
-                            children: const <TextSpan>[
-                              TextSpan(
-                                text: ' (hidden ability)',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontStyle: FontStyle.italic,
-                                    fontSize: 11),
-                              ),
-                            ],
+                        if (pokemon.hiddenAbility != "")
+                          RichText(
+                            text: TextSpan(
+                              text: "- ${pokemon.hiddenAbility}",
+                              children: const <TextSpan>[
+                                TextSpan(
+                                  text: ' (hidden ability)',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontStyle: FontStyle.italic,
+                                      fontSize: 11),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
                       ],
                     ),
                 ],

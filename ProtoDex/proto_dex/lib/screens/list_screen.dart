@@ -152,6 +152,7 @@ class _ListScreenState extends State<ListScreen> {
                 ? singleCard(context, index, widget.pokemons)
                 : multipleCards(context, index, widget.pokemons);
           } else {
+            print("It's item");
             return (widget.collection!.pokemons[index].forms.isEmpty)
                 ? singleCard(context, index, widget.collection?.pokemons)
                 : multipleCards(context, index, widget.collection!.pokemons);

@@ -59,7 +59,9 @@ class _DetailsPageState extends State<DetailsPage> {
             type2: displayPokemon.type2,
           ),
           TabControl(tabs: giveMeATab(displayPokemon, widget.pokemon)),
-          MainImage(imagePath: displayPokemon.image[imageIndex]),
+          (widget.pokemon is Item)
+              ? MainImage(imagePath: widget.pokemon.displayImage)
+              : MainImage(imagePath: displayPokemon.image[imageIndex]),
         ],
       ),
     );
@@ -101,7 +103,7 @@ class _DetailsPageState extends State<DetailsPage> {
             blockTitle: "Attributes",
             cardChild: Expanded(
               child: ElevatedButton(
-                onPressed: () => {print("test")},
+                onPressed: () => {},
                 child: const Icon(
                   Icons.add,
                   color: Colors.redAccent,

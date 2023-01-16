@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/components/main_button.dart';
-import 'package:proto_dex/components/options.dart';
 import 'package:proto_dex/constants.dart';
-import 'package:proto_dex/models/collection.dart';
 import 'package:proto_dex/screens/select_tracker_screen.dart';
 import 'package:proto_dex/styles.dart';
 import 'list_screen.dart';

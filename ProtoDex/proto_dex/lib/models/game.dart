@@ -1,10 +1,13 @@
 class Game extends Dex {
-  Game({name, dex, required this.number}) : super(name: name, dex: dex);
+  Game({name, dex, required this.number, required this.notes})
+      : super(name: name, dex: dex);
 
   final String number;
+  final String notes;
 
   Game.fromJson(Map<String, dynamic> json)
       : number = json['number'],
+        notes = json['notes'],
         super.fromJson(json);
 
   @override
@@ -13,6 +16,7 @@ class Game extends Dex {
       'name': name,
       'dex': dex,
       'number': number,
+      'notes': notes,
     };
   }
 }
@@ -34,39 +38,32 @@ class Dex {
     };
   }
 
-  static availableDexes() {
-    return [
-      Dex(name: "Let's Go Pikachu", dex: "Base"),
-      Dex(name: "Let's Go Eevee", dex: "Base"),
-      Dex(name: "Pokemon Sword", dex: "Base"),
-      Dex(name: "Pokemon Sword", dex: "The Isle of Armor"),
-      Dex(name: "Pokemon Sword", dex: "The Crown Tundra"),
-      Dex(name: "Pokemon Shield", dex: "Base"),
-      Dex(name: "Pokemon Shield", dex: "The Isle of Armor"),
-      Dex(name: "Pokemon Shield", dex: "The Crown Tundra"),
-      // Dex(name: "Pokemon Ultra Moon", dex: "Base"),
-    ];
-  }
-
   static availableGames() {
     return [
-      "Pokemon Scarlet",
-      "Pokemon Violet",
+      // "Pokemon Scarlet",
+      // "Pokemon Violet",
+      // "Pokemon Sword",
+      // "Pokemon Shield",
       "Let's Go Pikachu",
       "Let's Go Eevee",
-      "Pokemon Sword",
-      "Pokemon Shield"
+      // "Pokemon X",
+      // "Pokemon Y",
+      // "Pokemon Sun",
+      // "Pokemon Moon",
+      // "Pokemon Ultra Sun",
+      // "Pokemon Ultra Moon"
     ];
   }
 
   static availableDex(String game) {
-    List<String> dex = ["Regional"];
+    List<String> dex = ["Base"];
 
     switch (game) {
       case "Pokemon Scarlet":
       case "Pokemon Violet":
       case "Let's Go Pikachu":
       case "Let's Go Eevee":
+        dex.addAll(["Others"]);
         break;
       case "Pokemon Sword":
       case "Pokemon Shield":

@@ -105,6 +105,9 @@ class Pokemon {
         }
       }
     }
+
+    // return pokemons.where((element) => element.forms.isNotEmpty).toList();
+    // return pokemons.skip(980).toList();
     return pokemons;
   }
 

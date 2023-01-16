@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/screens/lists/tile.dart';
 import '../../components/image.dart';
+import '../../models/item.dart';
 
 Widget singleCard(context, index, pokemons) {
   return PokemonTile(
@@ -22,6 +23,13 @@ Widget multipleCards(context, index, pokemons) {
     }
   }
 
+  var image = "";
+  if (pokemons is List<Item>) {
+    image = pokemons[index].displayImage;
+  } else {
+    image = pokemons[index].image[0];
+  }
+
   return Card(
     child: ExpansionTile(
       key: expansionTileKey,
@@ -32,7 +40,7 @@ Widget multipleCards(context, index, pokemons) {
       },
       collapsedBackgroundColor: Colors.black26,
       backgroundColor: Colors.black26,
-      leading: ListImage(image: pokemons[index].image[0]),
+      leading: ListImage(image: image),
       title: Text(pokemons[index].name),
       trailing: Text('+${pokemons[index].forms.length - 1}'),
       subtitle: Row(
