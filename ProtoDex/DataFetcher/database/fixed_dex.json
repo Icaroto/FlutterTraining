@@ -19,8 +19,13 @@
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
     "games": [
-        { "name": "Let's Go Pikachu", "dex": "Base", "number": "001", "notes": "" },
-        { "name": "Let's Go Eevee", "dex": "Base", "number": "001", "notes": "" }
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "001",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "001", "notes": "" }
     ],
     "forms": []
   },
@@ -43,7 +48,15 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "002",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "002", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -70,7 +83,15 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "003",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "003", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Mega Venusaur",
@@ -114,7 +135,15 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "004",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "004", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -136,7 +165,15 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "005",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "005", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -158,7 +195,15 @@
     "weaknessdouble": ["water", "electric"],
     "weaknessquadruple": ["rock"],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "006",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "006", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Mega Charizard X",
@@ -223,7 +268,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "007",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "007", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -245,7 +298,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "008",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "008", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -267,7 +328,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "009",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "009", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Mega Blastoise",
@@ -311,7 +380,15 @@
     "weaknessdouble": ["fire", "flying", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "010",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "010", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -333,7 +410,15 @@
     "weaknessdouble": ["fire", "flying", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "011",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "011", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -360,7 +445,15 @@
     "weaknessdouble": ["fire", "electric", "ice", "flying"],
     "weaknessquadruple": ["rock"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "012",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "012", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -382,7 +475,15 @@
     "weaknessdouble": ["fire", "flying", "psychic", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "013",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "013", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -404,7 +505,15 @@
     "weaknessdouble": ["fire", "flying", "psychic", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "014",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "014", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -426,7 +535,15 @@
     "weaknessdouble": ["fire", "flying", "psychic", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "015",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "015", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Mega Beedrill",
@@ -470,7 +587,15 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "016",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "016", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -492,7 +617,15 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "017",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "017", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -514,7 +647,15 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "018",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "018", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Mega Pidgeot",
@@ -563,7 +704,15 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "019",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "019", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Alolan Rattata",
@@ -584,7 +733,20 @@
         "weaknessdouble": ["bug", "fairy"],
         "weaknessquadruple": ["fighting"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "019",
+            "notes": "In Game Trade"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "019",
+            "notes": "In Game Trade"
+          }
+        ]
       }
     ]
   },
@@ -612,7 +774,15 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "020",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "020", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Alolan Raticate",
@@ -633,7 +803,20 @@
         "weaknessdouble": ["bug", "fairy"],
         "weaknessquadruple": ["fighting"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "020",
+            "notes": "In Game Trade - Evolve"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "020",
+            "notes": "In Game Trade - Evolve"
+          }
+        ]
       }
     ]
   },
@@ -656,7 +839,15 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "021",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "021", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -678,7 +869,15 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "022",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "022", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -700,7 +899,20 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "023",
+        "notes": "Let's Go Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "023",
+        "notes": "Let's Go Eevee Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -722,7 +934,20 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "024",
+        "notes": "Let's Go Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "024",
+        "notes": "Let's Go Eevee Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -749,7 +974,15 @@
     "weaknessdouble": ["ground"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "025",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "025", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -776,7 +1009,15 @@
     "weaknessdouble": ["ground"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "026",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "026", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Alolan Raichu",
@@ -797,7 +1038,20 @@
         "weaknessdouble": ["ground"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "026",
+            "notes": "In Game Trade"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "026",
+            "notes": "In Game Trade"
+          }
+        ]
       }
     ]
   },
@@ -820,7 +1074,20 @@
     "weaknessdouble": ["water", "grass", "ice"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "027",
+        "notes": "Let's Go Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "027",
+        "notes": "Let's Go Pikachu Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Sandshrew",
@@ -849,7 +1116,20 @@
         "weaknessdouble": ["ground"],
         "weaknessquadruple": ["fire", "fighting"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "027",
+            "notes": "Let's Go Pikachu Exclusive - In Game Trade"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "027",
+            "notes": "Let's Go Pikachu Exclusive - In Game Trade"
+          }
+        ]
       }
     ]
   },
@@ -872,7 +1152,20 @@
     "weaknessdouble": ["water", "grass", "ice"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "028",
+        "notes": "Let's Go Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "028",
+        "notes": "Let's Go Pikachu Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Sandslash",
@@ -901,7 +1194,20 @@
         "weaknessdouble": ["ground"],
         "weaknessquadruple": ["fire", "fighting"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "028",
+            "notes": "Let's Go Pikachu Exclusive - In Game Trade - Evolve"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "028",
+            "notes": "Let's Go Pikachu Exclusive - In Game Trade - Evolve"
+          }
+        ]
       }
     ]
   },
@@ -924,7 +1230,15 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "029",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "029", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -946,7 +1260,15 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "030",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "030", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -968,7 +1290,15 @@
     "weaknessdouble": ["water", "ice", "ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "031",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "031", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -990,7 +1320,15 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "100", "female": "0", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "032",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "032", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1012,7 +1350,15 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "100", "female": "0", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "033",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "033", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1034,7 +1380,15 @@
     "weaknessdouble": ["water", "ice", "ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "100", "female": "0", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "034",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "034", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1056,7 +1410,15 @@
     "weaknessdouble": ["poison", "steel"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "035",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "035", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1078,7 +1440,15 @@
     "weaknessdouble": ["poison", "steel"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "036",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "036", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1100,7 +1470,20 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "037",
+        "notes": "Let's Go Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "037",
+        "notes": "Let's Go Eevee Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Vulpix",
@@ -1121,7 +1504,20 @@
         "weaknessdouble": ["water", "ground", "rock"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "037",
+            "notes": "Let's Go Eevee Exclusive - In Game Trade"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "037",
+            "notes": "Let's Go Eevee Exclusive - In Game Trade"
+          }
+        ]
       }
     ]
   },
@@ -1144,7 +1540,20 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "038",
+        "notes": "Let's Go Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "038",
+        "notes": "Let's Go Eevee Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Ninetales",
@@ -1165,7 +1574,20 @@
         "weaknessdouble": ["water", "ground", "rock"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "038",
+            "notes": "Let's Go Eevee Exclusive - In Game Trade - Evolve"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "038",
+            "notes": "Let's Go Eevee Exclusive - In Game Trade - Evolve"
+          }
+        ]
       }
     ]
   },
@@ -1188,7 +1610,15 @@
     "weaknessdouble": ["poison", "steel"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "039",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "039", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1210,7 +1640,15 @@
     "weaknessdouble": ["poison", "steel"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "040",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "040", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1237,7 +1675,15 @@
     "weaknessdouble": ["electric", "ice", "psychic", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "041",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "041", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1264,7 +1710,15 @@
     "weaknessdouble": ["electric", "ice", "psychic", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "042",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "042", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1286,7 +1740,20 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "043",
+        "notes": "Let's Go Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "043",
+        "notes": "Let's Go Pikachu Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -1313,7 +1780,20 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "044",
+        "notes": "Let's Go Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "044",
+        "notes": "Let's Go Pikachu Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -1340,7 +1820,20 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "045",
+        "notes": "Let's Go Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "045",
+        "notes": "Let's Go Pikachu Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -1362,7 +1855,15 @@
     "weaknessdouble": ["ice", "poison", "bug", "rock"],
     "weaknessquadruple": ["fire", "flying"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "046",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "046", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1384,7 +1885,15 @@
     "weaknessdouble": ["ice", "poison", "bug", "rock"],
     "weaknessquadruple": ["fire", "flying"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "047",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "047", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1406,7 +1915,15 @@
     "weaknessdouble": ["fire", "flying", "psychic", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "048",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "048", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1428,7 +1945,15 @@
     "weaknessdouble": ["fire", "flying", "psychic", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "049",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "049", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1450,7 +1975,15 @@
     "weaknessdouble": ["water", "grass", "ice"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "050",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "050", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Alolan Diglett",
@@ -1479,7 +2012,20 @@
         "weaknessdouble": ["fire", "water", "fighting", "ground"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "050",
+            "notes": "In Game Trade"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "050",
+            "notes": "In Game Trade"
+          }
+        ]
       }
     ]
   },
@@ -1502,7 +2048,15 @@
     "weaknessdouble": ["water", "grass", "ice"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "051",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "051", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Alolan Dugtrio",
@@ -1531,7 +2085,20 @@
         "weaknessdouble": ["fire", "water", "fighting", "ground"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "051",
+            "notes": "In Game Trade - Evolve"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "051",
+            "notes": "In Game Trade - Evolve"
+          }
+        ]
       }
     ]
   },
@@ -1554,7 +2121,20 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "052",
+        "notes": "Let's Go Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "052",
+        "notes": "Let's Go Eevee Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Meowth",
@@ -1575,7 +2155,20 @@
         "weaknessdouble": ["fighting", "bug", "fairy"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "052",
+            "notes": "Let's Go Eevee Exclusive - In Game Trade"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "052",
+            "notes": "Let's Go Eevee Exclusive - In Game Trade"
+          }
+        ]
       },
       {
         "name": "Galarian Meowth",
@@ -1630,7 +2223,20 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "053",
+        "notes": "Let's Go Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "053",
+        "notes": "Let's Go Eevee Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Persian",
@@ -1651,7 +2257,20 @@
         "weaknessdouble": ["fighting", "bug", "fairy"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "053",
+            "notes": "Let's Go Eevee Exclusive - In Game Trade - Evolve"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "053",
+            "notes": "Let's Go Eevee Exclusive - In Game Trade - Evolve"
+          }
+        ]
       }
     ]
   },
@@ -1674,7 +2293,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "054",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "054", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1696,7 +2323,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "055",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "055", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1718,7 +2353,20 @@
     "weaknessdouble": ["flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "056",
+        "notes": "Let's Go Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "056",
+        "notes": "Let's Go Pikachu Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -1740,7 +2388,20 @@
     "weaknessdouble": ["flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "057",
+        "notes": "Let's Go Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "057",
+        "notes": "Let's Go Pikachu Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -1762,7 +2423,20 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "058",
+        "notes": "Let's Go Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "058",
+        "notes": "Let's Go Pikachu Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Hisuian Growlithe",
@@ -1806,7 +2480,20 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "059",
+        "notes": "Let's Go Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "059",
+        "notes": "Let's Go Pikachu Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Hisuian Arcanine",
@@ -1850,7 +2537,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "060",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "060", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1872,7 +2567,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "061",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "061", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1894,7 +2597,15 @@
     "weaknessdouble": ["electric", "grass", "flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "062",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "062", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1916,7 +2627,15 @@
     "weaknessdouble": ["bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "063",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "063", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1943,7 +2662,15 @@
     "weaknessdouble": ["bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "064",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "064", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -1970,7 +2697,15 @@
     "weaknessdouble": ["bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "065",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "065", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Mega Alakazam",
@@ -2014,7 +2749,15 @@
     "weaknessdouble": ["flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "066",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "066", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2036,7 +2779,15 @@
     "weaknessdouble": ["flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "067",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "067", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2058,7 +2809,15 @@
     "weaknessdouble": ["flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "068",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "068", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2080,7 +2839,20 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "069",
+        "notes": "Let's Go Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "069",
+        "notes": "Let's Go Eevee Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -2102,7 +2874,20 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "070",
+        "notes": "Let's Go Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "070",
+        "notes": "Let's Go Eevee Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -2124,7 +2909,20 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "071",
+        "notes": "Let's Go Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "071",
+        "notes": "Let's Go Eevee Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -2155,7 +2953,15 @@
     "weaknessdouble": ["electric", "ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "072",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "072", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2186,7 +2992,15 @@
     "weaknessdouble": ["electric", "ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "073",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "073", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2208,7 +3022,15 @@
     "weaknessdouble": ["ice", "fighting", "ground", "steel"],
     "weaknessquadruple": ["water", "grass"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "074",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "074", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Alolan Geodude",
@@ -2229,7 +3051,20 @@
         "weaknessdouble": ["water", "grass", "fighting"],
         "weaknessquadruple": ["ground"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "074",
+            "notes": "In Game Trade"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "074",
+            "notes": "In Game Trade"
+          }
+        ]
       }
     ]
   },
@@ -2252,7 +3087,15 @@
     "weaknessdouble": ["ice", "fighting", "ground", "steel"],
     "weaknessquadruple": ["water", "grass"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "075",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "075", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Alolan Graveler",
@@ -2273,7 +3116,20 @@
         "weaknessdouble": ["water", "grass", "fighting"],
         "weaknessquadruple": ["ground"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "075",
+            "notes": "In Game Trade - Evolve"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "075",
+            "notes": "In Game Trade - Evolve"
+          }
+        ]
       }
     ]
   },
@@ -2296,7 +3152,15 @@
     "weaknessdouble": ["ice", "fighting", "ground", "steel"],
     "weaknessquadruple": ["water", "grass"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "076",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "076", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Alolan Golem",
@@ -2317,7 +3181,20 @@
         "weaknessdouble": ["water", "grass", "fighting"],
         "weaknessquadruple": ["ground"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "076",
+            "notes": "In Game Trade - Evolve"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "076",
+            "notes": "In Game Trade - Evolve"
+          }
+        ]
       }
     ]
   },
@@ -2340,7 +3217,15 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "077",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "077", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Galarian Ponyta",
@@ -2384,7 +3269,15 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "078",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "078", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Galarian Rapidash",
@@ -2428,7 +3321,15 @@
     "weaknessdouble": ["electric", "grass", "bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "079",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "079", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Galarian Slowpoke",
@@ -2472,7 +3373,15 @@
     "weaknessdouble": ["electric", "grass", "bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "080",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "080", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Mega Slowbro",
@@ -2554,7 +3463,15 @@
     "weaknessdouble": ["fire", "fighting"],
     "weaknessquadruple": ["ground"],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "081",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "081", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2586,7 +3503,15 @@
     "weaknessdouble": ["fire", "fighting"],
     "weaknessquadruple": ["ground"],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "082",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "082", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2608,7 +3533,15 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "083",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "083", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Galarian Farfetch'd",
@@ -2657,7 +3590,15 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "084",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "084", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2684,7 +3625,15 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "085",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "085", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2706,7 +3655,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "086",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "086", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2728,7 +3685,15 @@
     "weaknessdouble": ["electric", "grass", "fighting", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "087",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "087", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2750,7 +3715,20 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "088",
+        "notes": "Let's Go Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "088",
+        "notes": "Let's Go Pikachu Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Grimer",
@@ -2771,7 +3749,20 @@
         "weaknessdouble": ["ground"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "088",
+            "notes": "Let's Go Pikachu Exclusive - In Game Trade"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "088",
+            "notes": "Let's Go Pikachu Exclusive - In Game Trade"
+          }
+        ]
       }
     ]
   },
@@ -2794,7 +3785,20 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "089",
+        "notes": "Let's Go Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "089",
+        "notes": "Let's Go Pikachu Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Muk",
@@ -2815,7 +3819,20 @@
         "weaknessdouble": ["ground"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "089",
+            "notes": "Let's Go Pikachu Exclusive - In Game Trade - Evolve"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "089",
+            "notes": "Let's Go Pikachu Exclusive - In Game Trade - Evolve"
+          }
+        ]
       }
     ]
   },
@@ -2838,7 +3855,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "090",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "090", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2860,7 +3885,15 @@
     "weaknessdouble": ["electric", "grass", "fighting", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "091",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "091", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2882,7 +3915,15 @@
     "weaknessdouble": ["psychic", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "092",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "092", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2904,7 +3945,15 @@
     "weaknessdouble": ["psychic", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "093",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "093", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2926,7 +3975,15 @@
     "weaknessdouble": ["ground", "psychic", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "094",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "094", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Mega Gengar",
@@ -2970,7 +4027,15 @@
     "weaknessdouble": ["ice", "fighting", "ground", "steel"],
     "weaknessquadruple": ["water", "grass"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "095",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "095", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -2992,7 +4057,15 @@
     "weaknessdouble": ["bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "096",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "096", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3019,7 +4092,15 @@
     "weaknessdouble": ["bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "097",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "097", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3041,7 +4122,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "098",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "098", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3063,7 +4152,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "099",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "099", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3085,7 +4182,15 @@
     "weaknessdouble": ["ground"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "100",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "100", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Hisuian Voltorb",
@@ -3129,7 +4234,15 @@
     "weaknessdouble": ["ground"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "101",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "101", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Hisuian Electrode",
@@ -3180,7 +4293,15 @@
     "weaknessdouble": ["fire", "ice", "poison", "flying", "ghost", "dark"],
     "weaknessquadruple": ["bug"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "102",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "102", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3209,7 +4330,15 @@
     "weaknessdouble": ["fire", "ice", "poison", "flying", "ghost", "dark"],
     "weaknessquadruple": ["bug"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "103",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "103", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Alolan Exeggutor",
@@ -3230,7 +4359,20 @@
         "weaknessdouble": ["poison", "flying", "bug", "dragon", "fairy"],
         "weaknessquadruple": ["ice"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "103",
+            "notes": "In Game Trade"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "103",
+            "notes": "In Game Trade"
+          }
+        ]
       }
     ]
   },
@@ -3253,7 +4395,15 @@
     "weaknessdouble": ["water", "grass", "ice"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "104",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "104", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3275,7 +4425,15 @@
     "weaknessdouble": ["water", "grass", "ice"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "105",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "105", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Alolan Marowak",
@@ -3296,7 +4454,20 @@
         "weaknessdouble": ["water", "ground", "rock", "ghost", "dark"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Others",
+            "number": "105",
+            "notes": "In Game Trade"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Others",
+            "number": "105",
+            "notes": "In Game Trade"
+          }
+        ]
       }
     ]
   },
@@ -3319,7 +4490,15 @@
     "weaknessdouble": ["flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "100", "female": "0", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "106",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "106", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3341,7 +4520,15 @@
     "weaknessdouble": ["flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "100", "female": "0", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "107",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "107", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3363,7 +4550,15 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "108",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "108", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3385,7 +4580,20 @@
     "weaknessdouble": ["psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "109",
+        "notes": "Let's Go Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "109",
+        "notes": "Let's Go Eevee Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -3407,7 +4615,20 @@
     "weaknessdouble": ["psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "110",
+        "notes": "Let's Go Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "110",
+        "notes": "Let's Go Eevee Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Galarian Weezing",
@@ -3456,7 +4677,15 @@
     "weaknessdouble": ["ice", "fighting", "ground", "steel"],
     "weaknessquadruple": ["water", "grass"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "111",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "111", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3483,7 +4712,15 @@
     "weaknessdouble": ["ice", "fighting", "ground", "steel"],
     "weaknessquadruple": ["water", "grass"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "112",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "112", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3505,7 +4742,15 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "113",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "113", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3527,7 +4772,15 @@
     "weaknessdouble": ["fire", "ice", "poison", "flying", "bug"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "114",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "114", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3549,7 +4802,15 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "115",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "115", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Mega Kangaskhan",
@@ -3593,7 +4854,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "116",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "116", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3615,7 +4884,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "117",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "117", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3642,7 +4919,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "118",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "118", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3669,7 +4954,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "119",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "119", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3691,7 +4984,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "120",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "120", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3713,7 +5014,15 @@
     "weaknessdouble": ["electric", "grass", "bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "121",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "121", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3735,7 +5044,15 @@
     "weaknessdouble": ["poison", "ghost", "steel"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "122",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "122", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Galarian Mr. Mime",
@@ -3784,7 +5101,20 @@
     "weaknessdouble": ["fire", "electric", "ice", "flying"],
     "weaknessquadruple": ["rock"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "123",
+        "notes": "Let's Go Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "123",
+        "notes": "Let's Go Pikachu Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -3806,7 +5136,15 @@
     "weaknessdouble": ["fire", "bug", "rock", "ghost", "dark", "steel"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "124",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "124", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3828,7 +5166,15 @@
     "weaknessdouble": ["ground"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "125",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "125", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3850,7 +5196,15 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "126",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "126", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -3872,7 +5226,20 @@
     "weaknessdouble": ["fire", "flying", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "127",
+        "notes": "Let's Go Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Base",
+        "number": "127",
+        "notes": "Let's Go Eevee Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Mega Pinsir",
@@ -3916,7 +5283,15 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "100", "female": "0", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "128",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "128", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Paldean Tauros Combat Breed",
@@ -4024,7 +5399,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "129",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "129", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4051,7 +5434,15 @@
     "weaknessdouble": ["rock"],
     "weaknessquadruple": ["electric"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "130",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "130", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Mega Gyarados",
@@ -4095,7 +5486,15 @@
     "weaknessdouble": ["electric", "grass", "fighting", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "131",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "131", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4117,7 +5516,15 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "132",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "132", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4144,7 +5551,15 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "133",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "133", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4166,7 +5581,15 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "134",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "134", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4188,7 +5611,15 @@
     "weaknessdouble": ["ground"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "135",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "135", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4210,7 +5641,15 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "136",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "136", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4232,7 +5671,15 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "137",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "137", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4254,7 +5701,15 @@
     "weaknessdouble": ["electric", "fighting", "ground"],
     "weaknessquadruple": ["grass"],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "138",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "138", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4276,7 +5731,15 @@
     "weaknessdouble": ["electric", "fighting", "ground"],
     "weaknessquadruple": ["grass"],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "139",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "139", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4298,7 +5761,15 @@
     "weaknessdouble": ["electric", "fighting", "ground"],
     "weaknessquadruple": ["grass"],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "140",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "140", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4320,7 +5791,15 @@
     "weaknessdouble": ["electric", "fighting", "ground"],
     "weaknessquadruple": ["grass"],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "141",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "141", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4342,7 +5821,15 @@
     "weaknessdouble": ["water", "electric", "ice", "rock", "steel"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "142",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "142", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Mega Aerodactyl",
@@ -4386,7 +5873,15 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "143",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "143", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4408,7 +5903,15 @@
     "weaknessdouble": ["fire", "electric", "steel"],
     "weaknessquadruple": ["rock"],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "144",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "144", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Galarian Articuno",
@@ -4452,7 +5955,15 @@
     "weaknessdouble": ["ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "145",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "145", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Galarian Zapdos",
@@ -4496,7 +6007,15 @@
     "weaknessdouble": ["water", "electric"],
     "weaknessquadruple": ["rock"],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "146",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "146", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Galarian Moltres",
@@ -4540,7 +6059,15 @@
     "weaknessdouble": ["ice", "dragon", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "147",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "147", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4562,7 +6089,15 @@
     "weaknessdouble": ["ice", "dragon", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "148",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "148", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4584,7 +6119,15 @@
     "weaknessdouble": ["rock", "dragon", "fairy"],
     "weaknessquadruple": ["ice"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "149",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "149", "notes": "" }
+    ],
     "forms": []
   },
   {
@@ -4606,7 +6149,15 @@
     "weaknessdouble": ["bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Base",
+        "number": "150",
+        "notes": ""
+      },
+      { "name": "Let's Go Eevee", "dex": "Base", "number": "150", "notes": "" }
+    ],
     "forms": [
       {
         "name": "Mega Mewtwo X",
@@ -4671,7 +6222,20 @@
     "weaknessdouble": ["bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Others",
+        "number": "151",
+        "notes": "Pokemon Go Plus"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Others",
+        "number": "151",
+        "notes": "Pokemon Go Plus"
+      }
+    ],
     "forms": []
   },
   {
@@ -23119,7 +24683,20 @@
     "weaknessdouble": ["fire", "fighting", "ground"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Others",
+        "number": "152",
+        "notes": "From Pokemon Go"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Others",
+        "number": "152",
+        "notes": "From Pokemon Go"
+      }
+    ],
     "forms": []
   },
   {
@@ -23152,7 +24729,20 @@
     "weaknessdouble": ["fire", "fighting", "ground"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Others",
+        "number": "153",
+        "notes": "From Pokemon Go"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Others",
+        "number": "153",
+        "notes": "From Pokemon Go"
+      }
+    ],
     "forms": []
   },
   {

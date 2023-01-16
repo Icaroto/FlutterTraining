@@ -2,33 +2,21 @@ import { test } from '@playwright/test';
 import data from '../database/fixed_dex.json';
 import * as fs from 'fs';
 
-test('Clear Game Data', async ({ baseURL, page }) => {
+// test('Clear Game Data', async ({ baseURL, page }) => {
 
-  for (let index = 0; index < data.length; index++) {
-    data[index].games = [];
-    if (data[index].forms.length > 0){
-      data[index].forms.forEach(form => {
-        form.games = [];
-        console.log("Deleted games for " + form.name); 
-      });
-    }
-    console.log("Deleted games for " + data[index].name); 
-  }
+//   for (let index = 0; index < data.length; index++) {
+//     data[index].games = [];
+//     if (data[index].forms.length > 0){
+//       data[index].forms.forEach(form => {
+//         form.games = [];
+//         console.log("Deleted games for " + form.name); 
+//       });
+//     }
+//     console.log("Deleted games for " + data[index].name); 
+//   }
 
-  writeToFile("database/last_result.json", data);
-});
-
-function writeToFile(file, content){
-  fs.writeFile(file, JSON.stringify(content), (err) => {
-    if (err)
-      console.log(err);
-    else {
-      console.log("File written successfully\n");
-      console.log("The written has the following contents:");
-      // console.log(fs.readFileSync("books.txt", "utf8"));
-    }
-  });
-}
+//   writeToFile("database/last_result.json", data);
+// });
 
 test('Add Lets Go Games', async ({ baseURL, page }) => {
   for (let index = 0; index < 150; index++) {
@@ -184,3 +172,16 @@ test('Add Lets Go Games', async ({ baseURL, page }) => {
 
   writeToFile("database/last_result.json", data);
 });
+
+
+function writeToFile(file, content){
+  fs.writeFile(file, JSON.stringify(content), (err) => {
+    if (err)
+      console.log(err);
+    else {
+      console.log("File written successfully\n");
+      console.log("The written has the following contents:");
+      // console.log(fs.readFileSync("books.txt", "utf8"));
+    }
+  });
+}
