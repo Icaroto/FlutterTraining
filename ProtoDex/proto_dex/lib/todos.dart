@@ -9,6 +9,11 @@ class Todos {
 - Minor - All forms needs to be added (001)
 - Oricorio - Name and Image
 
+-- LINKS:
+BANNER: https://www.geeksforgeeks.org/flutter-banner-widget/
+TABBAR: https://stackoverflow.com/questions/51824959/tabbar-on-bottom-of-app-with-column
+https://blog.logrocket.com/how-to-build-a-bottom-navigation-bar-in-flutter/#:~:text=BottomNavigationBar%20is%20a%20widget%20that,navigate%20to%20a%20given%20page.
+
 TODO BUG:
   Alolan Sandslash breaks weakness
   Big names on details break
