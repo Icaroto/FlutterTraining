@@ -42,11 +42,14 @@ Widget multipleCards(context, index, pokemons) {
       backgroundColor: Colors.black26,
       leading: ListImage(image: image),
       title: Text(pokemons[index].name),
-      trailing: Text('+${pokemons[index].forms.length - 1}'),
+      //The space is to try to align the number from a Card with forms with a card without forms
+      trailing: Text('         +${pokemons[index].forms.length - 1}'),
       subtitle: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(pokemons[index].formattedTypes()),
+          (pokemons is List<Item>)
+              ? Text(pokemons[index].game.notes)
+              : Text(pokemons[index].formattedTypes()),
           Text(pokemons[index].number)
         ],
       ),

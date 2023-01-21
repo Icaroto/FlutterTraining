@@ -1,6 +1,8 @@
 import { test } from '@playwright/test';
+import * as path from "path";
 import data from '../database/fixed_dex.json';
 import * as fs from 'fs';
+import { parse } from 'csv-parse';
 
 // test('Clear Game Data', async ({ baseURL, page }) => {
 
@@ -18,160 +20,309 @@ import * as fs from 'fs';
 //   writeToFile("database/last_result.json", data);
 // });
 
-test('Add Lets Go Games', async ({ baseURL, page }) => {
-  for (let index = 0; index < 150; index++) {
+// test('Add Lets Go Games', async ({ baseURL, page }) => {
+//   for (let index = 0; index < 150; index++) {
     
-    var number = (index + 1).toString();
+//     var number = (index + 1).toString();
     
-    while (number.length < 3) number = "0" + number;
+//     while (number.length < 3) number = "0" + number;
 
-    //Pikachu Exclusives
-    var notes = "";
-    if(['Oddish',
-    'Gloom',
-    'Vileplume',
-    'Sandshrew',
-    'Sandslash',
-    'Growlithe',
-    'Arcanine',
-    'Grimer',
-    'Muk',
-    'Scyther',
-    'Mankey',
-    'Primeape'].includes(data[index].name)){
-        notes = "Let's Go Pikachu Exclusive"
+//     //Pikachu Exclusives
+//     var notes = "";
+//     if(['Oddish',
+//     'Gloom',
+//     'Vileplume',
+//     'Sandshrew',
+//     'Sandslash',
+//     'Growlithe',
+//     'Arcanine',
+//     'Grimer',
+//     'Muk',
+//     'Scyther',
+//     'Mankey',
+//     'Primeape'].includes(data[index].name)){
+//         notes = "Let's Go Pikachu Exclusive"
+//     }
+
+//     //Eevee Exclusives
+//     if(['Bellsprout',
+//     'Weepinbell',
+//     'Victreebel',
+//     'Vulpix',
+//     'Ninetales',
+//     'Meowth',
+//     'Persian',
+//     'Koffing',
+//     'Weezing',
+//     'Pinsir',
+//     'Ekans',
+//     'Arbok'].includes(data[index].name)){
+//       notes = "Let's Go Eevee Exclusive"
+//     }
+
+//     const  toAdd = [{'name':'Let\'s Go Pikachu','dex':'Base','number': number, 'notes': notes},
+//                  {'name':'Let\'s Go Eevee','dex':'Base','number': number, 'notes': notes}
+//                 ];
+//     data[index].games = [];
+//     data[index].games = [...data[index].games, ...toAdd];
+
+//     //Alolan All
+//     if(['Rattata', 'Geodude', 'Diglett', 'Raichu', 'Marowak','Exeggutor'].includes(data[index].name)){
+//       data[index].forms.forEach(forms => {
+//         if(forms.name.startsWith("Alolan")){
+
+//           notes = "In Game Trade";
+//           const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': number, 'notes': notes},
+//                  {'name':'Let\'s Go Eevee','dex':'Others','number': number, 'notes': notes}
+//                 ];
+//           forms.games = [];
+//           forms.games = toAdd;
+//         }
+//       });
+//     }
+
+//     if(['Raticate', 'Graveler', 'Golem', 'Dugtrio'].includes(data[index].name)){
+//       data[index].forms.forEach(forms => {
+//         if(forms.name.startsWith("Alolan")){
+
+//           notes = "In Game Trade - Evolve";
+//           const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': number, 'notes': notes},
+//                  {'name':'Let\'s Go Eevee','dex':'Others','number': number, 'notes': notes}
+//                 ];
+//           forms.games = [];
+//           forms.games = toAdd;
+//         }
+//       });
+//     }
+
+//     //Alolan Pikachu
+//     if(['Sandshrew', 'Grimer'].includes(data[index].name)){
+//       data[index].forms.forEach(forms => {
+//         if(forms.name.startsWith("Alolan")){
+
+//           notes = "Let's Go Pikachu Exclusive - In Game Trade";
+//           const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': number, 'notes': notes},
+//                  {'name':'Let\'s Go Eevee','dex':'Others','number': number, 'notes': notes}
+//                 ];
+//           forms.games = [];
+//           forms.games = toAdd;
+//         }
+//       });
+//     }
+//     if(['Sandslash', 'Muk'].includes(data[index].name)){
+//       data[index].forms.forEach(forms => {
+//         if(forms.name.startsWith("Alolan")){
+
+//           notes = "Let's Go Pikachu Exclusive - In Game Trade - Evolve";
+//           const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': number, 'notes': notes},
+//                  {'name':'Let\'s Go Eevee','dex':'Others','number': number, 'notes': notes}
+//                 ];
+//           forms.games = [];
+//           forms.games = toAdd;
+//         }
+//       });
+//     }
+
+//     //Alolan Eevee
+//     if(['Vulpix','Meowth'].includes(data[index].name)){
+//       data[index].forms.forEach(forms => {
+//         if(forms.name.startsWith("Alolan")){
+
+//           notes = "Let's Go Eevee Exclusive - In Game Trade";
+//           const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': number, 'notes': notes},
+//                  {'name':'Let\'s Go Eevee','dex':'Others','number': number, 'notes': notes}
+//                 ];
+//           forms.games = [];
+//           forms.games = toAdd;
+//         }
+//       });
+//     }
+//     if(['Ninetales','Persian'].includes(data[index].name)){
+//       data[index].forms.forEach(forms => {
+//         if(forms.name.startsWith("Alolan")){
+
+//           notes = "Let's Go Eevee Exclusive - In Game Trade - Evolve";
+//           const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': number, 'notes': notes},
+//                  {'name':'Let\'s Go Eevee','dex':'Others','number': number, 'notes': notes}
+//                 ];
+//           forms.games = [];
+//           forms.games = toAdd;
+//         }
+//       });
+//     }
+
+//   }
+
+//   //Additional (outside the 150 loop
+//   //Mew
+//   var  toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': '151', 'notes': 'Pokemon Go Plus'},
+//   {'name':'Let\'s Go Eevee','dex':'Others','number': '151', 'notes': 'Pokemon Go Plus'}];
+//   data[150].games = [];
+//   data[150].games = [...data[150].games, ...toAdd];
+
+//   //Meltan
+//   var  toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': '152', 'notes': 'From Pokemon Go'},
+//   {'name':'Let\'s Go Eevee','dex':'Others','number': '152', 'notes': 'From Pokemon Go'}];
+//   data[807].games = [];
+//   data[807].games = [...data[807].games, ...toAdd];
+
+//   //Melmetal
+//   toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': '153', 'notes': 'From Pokemon Go'},
+//   {'name':'Let\'s Go Eevee','dex':'Others','number': '153', 'notes': 'From Pokemon Go'}];
+//   data[808].games = [];
+//   data[808].games = [...data[808].games, ...toAdd];
+
+//   writeToFile("database/last_result.json", data);
+// });
+
+test('Scarlet Violet', async ({ baseURL, page }) => {
+
+  const csvFilePath = "D:/Side-Projects/FlutterTraining/ProtoDex/DataFetcher/database/dexes/svDex.csv";
+
+  const headers = ['number','ref','name','shinyLocked','exclusive'];
+
+  const fileContent = fs.readFileSync(csvFilePath, { encoding: 'utf-8' });
+
+  parse(fileContent, {
+    delimiter: ',',
+    columns: headers,
+  }, (error, dex: record[]) => {
+    if (error) {
+      console.error(error);
     }
 
-    //Eevee Exclusives
-    if(['Bellsprout',
-    'Weepinbell',
-    'Victreebel',
-    'Vulpix',
-    'Ninetales',
-    'Meowth',
-    'Persian',
-    'Koffing',
-    'Weezing',
-    'Pinsir',
-    'Ekans',
-    'Arbok'].includes(data[index].name)){
-      notes = "Let's Go Eevee Exclusive"
-    }
+    for (let index = 0; index < dex.length; index++) {
+      for (let i = 0; i < data.length; i++) {
+        if(data[i].name == dex[index].name){ //pokemon found in biglist
+          if(dex[index].ref == ""){ //means ALL forms are included
+            
+            var sNotes = "";
+            var vNotes = "";
 
-    const  toAdd = [{'name':'Let\'s Go Pikachu','dex':'Base','number': number, 'notes': notes},
-                 {'name':'Let\'s Go Eevee','dex':'Base','number': number, 'notes': notes}
-                ];
-    data[index].games = [];
-    data[index].games = [...data[index].games, ...toAdd];
+            if (dex[index].exclusive == "SCARLET"){
+              vNotes = "Pokemon Scarlet Exclusive";
+            }
+            else if(dex[index].exclusive == "VIOLET"){
+              sNotes = "Pokemon Violet Exclusive";
+            }
+            
+            // var notes = svExclusive(dex[index].exclusive);
+            
+            var lock = convertStatus(dex[index].shinyLocked);
+            var num = toDexNumber(dex[index].number);
+            var toAdd = 
+              [
+                {"name":"Scarlet","dex":"Base","number": num, "shinyLocked": lock, "notes": sNotes},
+                {"name":"Violet","dex":"Base","number": num, "shinyLocked": lock, "notes": vNotes}
+              ]
+             data[i].games = [...data[i].games, ...toAdd];
 
-    //Alolan All
-    if(['Rattata', 'Geodude', 'Diglett', 'Raichu', 'Marowak','Exeggutor'].includes(data[index].name)){
-      data[index].forms.forEach(forms => {
-        if(forms.name.startsWith("Alolan")){
+             console.log(data[i].name);
+             console.log(data[i].games);
 
-          notes = "In Game Trade";
-          const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': number, 'notes': notes},
-                 {'name':'Let\'s Go Eevee','dex':'Others','number': number, 'notes': notes}
-                ];
-          forms.games = [];
-          forms.games = toAdd;
+             for (let j = 0; j < data[i].forms.length; j++) {
+              var form = data[i].forms[j];
+              if(form.name.indexOf("Mega") === -1 && 
+                  form.name.indexOf("Gigantamax") === -1 &&
+                  form.name.indexOf("Alola") === -1 &&
+                  form.name.indexOf("Hisui") === -1 &&
+                  form.name.indexOf("Galar") === -1  ){
+
+                    form.games = [...form.games, ...toAdd];
+              }
+             }
+          }
+          else {
+            for (let j = 0; j < data[i].forms.length; j++) {
+              var form = data[i].forms[j];
+              var refs = dex[index].ref.split("|");
+
+              if(refs.includes(form.ref)){
+                var sNotes = "";
+                var vNotes = "";
+                if (dex[index].exclusive == "SCARLET"){
+                  vNotes = "Pokemon Scarlet Exclusive";
+                }
+                else if(dex[index].exclusive == "VIOLET"){
+                  sNotes = "Pokemon Violet Exclusive";
+                }
+
+                var lock = convertStatus(dex[index].shinyLocked);
+                var num = toDexNumber(dex[index].number);
+                var toAdd = 
+                  [
+                    {"name":"Scarlet","dex":"Base","number": num, "shinyLocked": lock, "notes": sNotes},
+                    {"name":"Violet","dex":"Base","number": num, "shinyLocked": lock, "notes": vNotes}
+                  ]
+                  
+                  form.games = [...form.games, ...toAdd];
+              }
+             }
+          }
         }
-      });
-    }
+      }
+     }
 
-    if(['Raticate', 'Graveler', 'Golem', 'Dugtrio'].includes(data[index].name)){
-      data[index].forms.forEach(forms => {
-        if(forms.name.startsWith("Alolan")){
+     writeToFile("database/last_result.json", data);
 
-          notes = "In Game Trade - Evolve";
-          const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': number, 'notes': notes},
-                 {'name':'Let\'s Go Eevee','dex':'Others','number': number, 'notes': notes}
-                ];
-          forms.games = [];
-          forms.games = toAdd;
-        }
-      });
-    }
+    // console.log("Result", data);
+  });
 
-    //Alolan Pikachu
-    if(['Sandshrew', 'Grimer'].includes(data[index].name)){
-      data[index].forms.forEach(forms => {
-        if(forms.name.startsWith("Alolan")){
-
-          notes = "Let's Go Pikachu Exclusive - In Game Trade";
-          const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': number, 'notes': notes},
-                 {'name':'Let\'s Go Eevee','dex':'Others','number': number, 'notes': notes}
-                ];
-          forms.games = [];
-          forms.games = toAdd;
-        }
-      });
-    }
-    if(['Sandslash', 'Muk'].includes(data[index].name)){
-      data[index].forms.forEach(forms => {
-        if(forms.name.startsWith("Alolan")){
-
-          notes = "Let's Go Pikachu Exclusive - In Game Trade - Evolve";
-          const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': number, 'notes': notes},
-                 {'name':'Let\'s Go Eevee','dex':'Others','number': number, 'notes': notes}
-                ];
-          forms.games = [];
-          forms.games = toAdd;
-        }
-      });
-    }
-
-    //Alolan Eevee
-    if(['Vulpix','Meowth'].includes(data[index].name)){
-      data[index].forms.forEach(forms => {
-        if(forms.name.startsWith("Alolan")){
-
-          notes = "Let's Go Eevee Exclusive - In Game Trade";
-          const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': number, 'notes': notes},
-                 {'name':'Let\'s Go Eevee','dex':'Others','number': number, 'notes': notes}
-                ];
-          forms.games = [];
-          forms.games = toAdd;
-        }
-      });
-    }
-    if(['Ninetales','Persian'].includes(data[index].name)){
-      data[index].forms.forEach(forms => {
-        if(forms.name.startsWith("Alolan")){
-
-          notes = "Let's Go Eevee Exclusive - In Game Trade - Evolve";
-          const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': number, 'notes': notes},
-                 {'name':'Let\'s Go Eevee','dex':'Others','number': number, 'notes': notes}
-                ];
-          forms.games = [];
-          forms.games = toAdd;
-        }
-      });
-    }
-
+  function toDexNumber(num)
+  {
+    while(num.length < 3) num = "0" + num;
+    return num;
   }
 
-  //Additional (outside the 150 loop
-  //Mew
-  var  toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': '151', 'notes': 'Pokemon Go Plus'},
-  {'name':'Let\'s Go Eevee','dex':'Others','number': '151', 'notes': 'Pokemon Go Plus'}];
-  data[150].games = [];
-  data[150].games = [...data[150].games, ...toAdd];
+  function convertStatus(status){
+    switch (status) {
+      case "FALSE":
+        return "UNLOCKED";
+      case "TRUE":
+        return "LOCKED";
+      case "EVENT_ONLY":
+        return "EVENT_ONLY";
+      default:
+        return "";
+    }
+  }
 
-  //Meltan
-  var  toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': '152', 'notes': 'From Pokemon Go'},
-  {'name':'Let\'s Go Eevee','dex':'Others','number': '152', 'notes': 'From Pokemon Go'}];
-  data[807].games = [];
-  data[807].games = [...data[807].games, ...toAdd];
+  // function svExclusive(val){
+  //   switch (val) {
+  //     case "VIOLET":
+  //       return "Pokemon Violet Exclusive";
+  //     case "SCARLET":
+  //       return "Pokemon Scarlet Exclusive";
+  //     default:
+  //       return "";
+  //   }
+  // }
 
-  //Melmetal
-  toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': '153', 'notes': 'From Pokemon Go'},
-  {'name':'Let\'s Go Eevee','dex':'Others','number': '153', 'notes': 'From Pokemon Go'}];
-  data[808].games = [];
-  data[808].games = [...data[808].games, ...toAdd];
+  type record = {
+    number: string;
+    ref: string;
+    name: string;
+    shinyLocked: string;
+    exclusive: string;
+  };
 
-  writeToFile("database/last_result.json", data);
+  // result (let index = 0; index < data.length; index++) {
+
+    
+
+  //   data[index].games = [];
+  //   if (data[index].forms.length > 0){
+  //     data[index].forms.forEach(form => {
+  //       form.games = [];
+  //       console.log("Deleted games for " + form.name); 
+  //     });
+  //   }
+  //   console.log("Deleted games for " + data[index].name); 
+  // }
+
+  // writeToFile("database/last_result.json", data);
 });
+
 
 
 function writeToFile(file, content){

@@ -350,20 +350,33 @@ createColletion(String gameName, String dexName, String trackerType) {
     if (pokemon.forms.isEmpty) {
       Game? game = pokemon.findGameDex(gameName, dexName);
       if (game != null) {
-        item = Item.fromDex(pokemon, replaceNumber: game.number);
+        if (trackerType.contains("Shiny") && game.shinyLocked == "UNLOCKED") {
+          item = Item.fromDex(pokemon, game, useGameDexNumber: true);
+        } else {
+          item = Item.fromDex(pokemon, game, useGameDexNumber: true);
+        }
         // pokemons.add(poke);
       }
     } else {
       for (var form in pokemon.forms) {
         Game? game = form.findGameDex(gameName, dexName);
         if (game != null) {
-          //if no form has been added yet
-          //first form becomes base
-          if (item == null) {
-            item = Item.fromDex(form, replaceNumber: game.number);
-            item.forms.add(Item.copy(item));
+          if (trackerType.contains("Shiny") && game.shinyLocked == "UNLOCKED") {
+            //if no form has been added yet
+            //first form becomes base
+            if (item == null) {
+              item = Item.fromDex(form, game, useGameDexNumber: true);
+              item.forms.add(Item.copy(item));
+            } else {
+              item.forms.add(Item.fromDex(form, game, useGameDexNumber: true));
+            }
           } else {
-            item.forms.add(Item.fromDex(form, replaceNumber: game.number));
+            if (item == null) {
+              item = Item.fromDex(form, game, useGameDexNumber: true);
+              item.forms.add(Item.copy(item));
+            } else {
+              item.forms.add(Item.fromDex(form, game, useGameDexNumber: true));
+            }
           }
         }
       }
@@ -382,21 +395,23 @@ createColletion(String gameName, String dexName, String trackerType) {
 
       if (trackerType.contains("Living")) {
         if (item.hasGenderDiff()) {
-          String variant =
-              (trackerType.contains("Shiny")) ? "-shiny-" : "-normal-";
+          if (item.name != "Oinkologne" && item.name != "Indeedee") {
+            String variant =
+                (trackerType.contains("Shiny")) ? "-shiny-" : "-normal-";
 
-          Item female = Item.copy(item);
-          female.gender = PokemonGender.female;
-          female.displayImage = item.image.firstWhere(
-              (img) => img.contains("-f.") && img.contains(variant));
+            Item female = Item.copy(item);
+            female.gender = PokemonGender.female;
+            female.displayImage = item.image.firstWhere(
+                (img) => img.contains("-f.") && img.contains(variant));
 
-          Item male = Item.copy(item);
-          male.gender = PokemonGender.male;
-          male.displayImage = item.image.firstWhere(
-              (img) => img.contains("-m.") && img.contains(variant));
+            Item male = Item.copy(item);
+            male.gender = PokemonGender.male;
+            male.displayImage = item.image.firstWhere(
+                (img) => img.contains("-m.") && img.contains(variant));
 
-          item.forms.insert(0, male);
-          item.forms.insert(1, female);
+            item.forms.insert(0, male);
+            item.forms.insert(1, female);
+          }
         }
       } else {
         item.forms.clear();
@@ -405,6 +420,7 @@ createColletion(String gameName, String dexName, String trackerType) {
       pokemons.add(item);
     }
   }
+
   Collection collection =
       Collection.create(gameName, dexName, trackerType, pokemons);
 

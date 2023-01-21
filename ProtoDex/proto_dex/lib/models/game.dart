@@ -1,13 +1,20 @@
 class Game extends Dex {
-  Game({name, dex, required this.number, required this.notes})
+  Game(
+      {name,
+      dex,
+      required this.number,
+      required this.notes,
+      required this.shinyLocked})
       : super(name: name, dex: dex);
 
   final String number;
   final String notes;
+  final String shinyLocked;
 
   Game.fromJson(Map<String, dynamic> json)
       : number = json['number'],
         notes = json['notes'],
+        shinyLocked = json['shinyLocked'],
         super.fromJson(json);
 
   @override
@@ -16,6 +23,7 @@ class Game extends Dex {
       'name': name,
       'dex': dex,
       'number': number,
+      'shinyLocked': shinyLocked,
       'notes': notes,
     };
   }
@@ -40,8 +48,8 @@ class Dex {
 
   static availableGames() {
     return [
-      // "Pokemon Scarlet",
-      // "Pokemon Violet",
+      "Scarlet",
+      "Violet",
       // "Pokemon Sword",
       // "Pokemon Shield",
       "Let's Go Pikachu",
@@ -59,8 +67,8 @@ class Dex {
     List<String> dex = ["Base"];
 
     switch (game) {
-      case "Pokemon Scarlet":
-      case "Pokemon Violet":
+      case "Scarlet":
+      case "Violet":
       case "Let's Go Pikachu":
       case "Let's Go Eevee":
         dex.addAll(["Others"]);

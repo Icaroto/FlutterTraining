@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "testlist" : "npx playwright test --list"
-
+    "testlist": "npx playwright test --list"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.29.2"
+    "@playwright/test": "^1.29.2",
+    "@types/node": "^18.11.18"
+  },
+  "dependencies": {
+    "csv-parse": "^5.3.3"
   }
 }

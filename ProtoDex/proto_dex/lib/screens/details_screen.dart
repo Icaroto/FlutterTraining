@@ -49,9 +49,12 @@ class _DetailsPageState extends State<DetailsPage> {
 
     return Scaffold(
       body: Stack(
-        children: <Widget>[
+        children: [
           Background(type1: displayPokemon.type1, type2: displayPokemon.type2),
-          AppBar(backgroundColor: Colors.transparent, elevation: 0.0),
+          AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0.0,
+          ),
           BasicInfo(
             name: displayPokemon.name,
             number: displayPokemon.number,
@@ -61,7 +64,14 @@ class _DetailsPageState extends State<DetailsPage> {
           TabControl(tabs: giveMeATab(displayPokemon, widget.pokemon)),
           (widget.pokemon is Item)
               ? MainImage(imagePath: widget.pokemon.displayImage)
-              : MainImage(imagePath: displayPokemon.image[imageIndex]),
+              : WillPopScope(
+                  onWillPop: () async {
+                    displayPokemon.resetImage();
+                    Navigator.pop(context, false);
+                    return false;
+                  },
+                  child:
+                      MainImage(imagePath: displayPokemon.image[imageIndex])),
         ],
       ),
     );

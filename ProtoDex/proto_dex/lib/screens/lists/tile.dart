@@ -80,7 +80,11 @@ class _PokemonTile extends State<PokemonTile> {
           children: [
             //TODO: formatedTypes
 
-            Text(widget.pokemon.formattedTypes()),
+            Text(
+              widget.pokemon.game.notes,
+              style: const TextStyle(
+                  fontWeight: FontWeight.w200, fontStyle: FontStyle.italic),
+            ),
             Text(widget.pokemon.number)
           ],
         ),

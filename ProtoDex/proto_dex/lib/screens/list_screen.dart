@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:proto_dex/styles.dart';
 import '../models/collection.dart';
@@ -145,25 +146,27 @@ class _ListScreenState extends State<ListScreen> {
 
   Expanded giveMeAList() {
     return Expanded(
-      child: ListView.builder(
-        itemBuilder: ((context, index) {
-          if (widget.pokemons != null) {
-            return (widget.pokemons![index].forms.isEmpty)
-                ? singleCard(context, index, widget.pokemons)
-                : multipleCards(context, index, widget.pokemons);
-          } else {
-            print("It's item");
-            return (widget.collection!.pokemons[index].forms.isEmpty)
-                ? singleCard(context, index, widget.collection?.pokemons)
-                : multipleCards(context, index, widget.collection!.pokemons);
-          }
-        }),
-        itemCount: (widget.pokemons != null)
-            ? widget.pokemons!.length
-            : widget.collection!.pokemons.length,
-        shrinkWrap: true,
-        padding: const EdgeInsets.all(5),
-        scrollDirection: Axis.vertical,
+      child: CupertinoScrollbar(
+        child: ListView.builder(
+          itemBuilder: ((context, index) {
+            if (widget.pokemons != null) {
+              return (widget.pokemons![index].forms.isEmpty)
+                  ? singleCard(context, index, widget.pokemons)
+                  : multipleCards(context, index, widget.pokemons);
+            } else {
+              print("It's item");
+              return (widget.collection!.pokemons[index].forms.isEmpty)
+                  ? singleCard(context, index, widget.collection?.pokemons)
+                  : multipleCards(context, index, widget.collection!.pokemons);
+            }
+          }),
+          itemCount: (widget.pokemons != null)
+              ? widget.pokemons!.length
+              : widget.collection!.pokemons.length,
+          shrinkWrap: true,
+          padding: const EdgeInsets.all(5),
+          scrollDirection: Axis.vertical,
+        ),
       ),
     );
   }

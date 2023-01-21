@@ -19,7 +19,9 @@
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
     "games": [
-      {"name":"","dex":"","number": "00", "shinyLocked": "", "notes": ""}
+      {"name":"","dex":"","number": "number", "shinyLocked": "UNLOCKED", "notes": "notes"},
+      {"name":"","dex":"","number": "number", "shinyLocked": "LOCKED", "notes": "notes"},
+      {"name":"","dex":"","number": "number", "shinyLocked": "EVENT_ONLY", "notes": "notes"}
     ],
     "forms": []
   },
@@ -90,9 +92,7 @@
         "weaknessdouble": ["flying", "psychic"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-        "games": [
-          {"name":"","dex":"","number": "00", "shinyLocked": "", "notes": ""}
-        ]
+        "games": []
       },
       {
         "name": "Gigantamax Venusaur",

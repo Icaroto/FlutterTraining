@@ -120,6 +120,10 @@ class Pokemon {
     return union;
   }
 
+  resetImage() {
+    currentImageIndex = 0;
+  }
+
   findImageIndexByVariant(PokemonVariant desiredVariant) {
     String genderCode = "-mf.";
     switch (imageGender()) {

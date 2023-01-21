@@ -415,7 +415,8 @@ extension PokemonGenderExtensions on PokemonGender {
 
 extension ItemExtensions on Item {
   List<dynamic> allAbilities() {
-    Pokemon dexMon = kPokedex.firstWhere((element) => element.number == number);
+    Pokemon dexMon =
+        kPokedex.firstWhere((element) => element.number == natDexNumber);
     List<dynamic> list = [];
     list.addAll(dexMon.abilities);
     list.add(dexMon.hiddenAbility!);
