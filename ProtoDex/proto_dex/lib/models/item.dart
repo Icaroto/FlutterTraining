@@ -6,6 +6,7 @@ import 'game.dart';
 
 class Item {
   final String name;
+  final String formName;
   final String number;
   final String natDexNumber;
   final String ref;
@@ -15,6 +16,7 @@ class Item {
   final List<dynamic> image;
   final Game game;
 
+  String displayName;
   String displayImage;
   PokemonGender gender;
   String ability;
@@ -24,9 +26,11 @@ class Item {
 
   Item.fromJson(Map<String, dynamic> json)
       : name = json['name'],
+        formName = json['formName'],
         number = json['number'],
         natDexNumber = json['natDexNumber'],
         ref = json['ref'],
+        displayName = json['displayName'],
         displayImage = json['displayImage'],
         image = json['image'],
         gender = PokemonGender.values.byName(json['gender']),
@@ -47,9 +51,11 @@ class Item {
   Item.fromDex(Pokemon dexPokemon, Game gameSelected,
       {bool useGameDexNumber = false})
       : name = dexPokemon.name,
+        formName = dexPokemon.formName,
         number = (useGameDexNumber) ? gameSelected.number : dexPokemon.number,
         natDexNumber = dexPokemon.number,
         ref = dexPokemon.ref,
+        displayName = dexPokemon.name,
         displayImage = dexPokemon.image[0],
         image = dexPokemon.image.toList(),
         type1 = dexPokemon.type1,
@@ -68,10 +74,12 @@ class Item {
 
   Item.copy(Item item)
       : name = item.name,
+        formName = item.formName,
         number = item.number,
         natDexNumber = item.natDexNumber,
         ref = item.ref,
         image = item.image.toList(),
+        displayName = item.displayName,
         displayImage = item.displayImage,
         type1 = item.type1,
         type2 = item.type2,
@@ -86,9 +94,11 @@ class Item {
   Map<String, dynamic> toJson() {
     return {
       'name': name,
+      'formName': formName,
       'number': number,
       'natDexNumber': natDexNumber,
       'ref': ref,
+      'displayName': displayName,
       'displayImage': displayImage,
       'image': image,
       'type1': type1.name,
@@ -113,6 +123,9 @@ class Item {
   }
 
   bool hasGenderDiff() {
+    if (name == "Oinkologne" || name == "Indeedee" || name == "Meowstic") {
+      return false;
+    }
     return image.any((img) => !img.contains("-mf.") && !img.contains("-g."));
   }
 }

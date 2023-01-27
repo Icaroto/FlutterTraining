@@ -26,6 +26,7 @@ class Pokemon {
   //     required this.genderRatio});
 
   final String name;
+  final String formName;
   final String species;
   final String height;
   final String weight;
@@ -46,6 +47,7 @@ class Pokemon {
 
   Pokemon.fromJson(Map<String, dynamic> json)
       : name = json['name'],
+        formName = json['formName'],
         species = json['species'],
         height = json['height'],
         weight = json['weight'],
@@ -78,6 +80,7 @@ class Pokemon {
 
   Pokemon.copy(Pokemon pokemon, bool keepForms)
       : name = pokemon.name,
+        formName = pokemon.formName,
         species = pokemon.species,
         height = pokemon.height,
         weight = pokemon.weight,
@@ -101,13 +104,41 @@ class Pokemon {
     for (var pokemon in pokemons) {
       {
         if (pokemon.forms.isNotEmpty) {
-          pokemon.forms.insert(0, Pokemon.copy(pokemon, false));
+          for (var form in pokemon.forms) {
+            if (form.forms.isNotEmpty) {
+              form.forms.insert(0, Pokemon.copy(form, false));
+            }
+          }
+          //Pokemon with forms on their form don't need to be added
+          if (pokemon.name != "Alcremie" && pokemon.name != "Urshifu") {
+            pokemon.forms.insert(0, Pokemon.copy(pokemon, false));
+          }
         }
       }
     }
 
-    // return pokemons.where((element) => element.forms.isNotEmpty).toList();
+    // var test = pokemons
+    //     .where((element) =>
+    //         // element.forms.isNotEmpty &&
+    //         (element.name == "Tauros" || //form in form
+    //             element.name == "Bulbasaur" || //forms ,
+    //             element.name == "Buizel" || //forms ,
+
+    //             element.name == "Squawkabilly" || //forms ,
+    //             element.name == "Chien-Pao" || //forms
+    //             element.name == "Roaring Moon" || //exclusive
+    //             element.name == "Iron Valiant" || //exclusive
+    //             element.name == "Oricorio" || //forms
+    //             element.name == "Miraidon")) //no shiny available
+    //     .toList();
+    // return test;
+
+    // return pokemons
+    //     .skip(200)
+    //     .where((element) => element.forms.isNotEmpty)
+    //     .toList();
     // return pokemons.skip(980).toList();
+
     return pokemons;
   }
 
@@ -328,14 +359,4 @@ class Pokemon {
     return games.firstWhereOrNull(
         (element) => element.name == gameName && element.dex == dexName);
   }
-
-  // Map<String, dynamic> toJson() {
-  //   return {
-  //     'name': name,
-  //     'image': image,
-  //     'number': number,
-  //     'type1': type1,
-  //     'type2': type2
-  //   };
-  // }
 }

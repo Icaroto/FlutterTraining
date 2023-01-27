@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:proto_dex/models/pokemon.dart';
 import 'package:proto_dex/screens/lists/tile.dart';
 import '../../components/image.dart';
 import '../../models/item.dart';
 
-Widget singleCard(context, index, pokemons) {
+Widget singleCard(context, index, pokemons, {color = Colors.black26}) {
   return PokemonTile(
-    tileColor: Colors.black26,
+    tileColor: color,
     pokemon: pokemons[index],
   );
 }
 
-Widget multipleCards(context, index, pokemons) {
+Widget multipleCards(context, index, pokemons, {subLevel = false}) {
   final GlobalKey expansionTileKey = GlobalKey();
 
   void scrollToSelectedContent({required GlobalKey expansionTileKey}) {
@@ -38,28 +39,35 @@ Widget multipleCards(context, index, pokemons) {
           scrollToSelectedContent(expansionTileKey: expansionTileKey);
         }
       },
-      collapsedBackgroundColor: Colors.black26,
-      backgroundColor: Colors.black26,
+      collapsedBackgroundColor: (subLevel) ? null : Colors.black26,
+      backgroundColor: (subLevel) ? Colors.black12 : Colors.black26,
       leading: ListImage(image: image),
-      title: Text(pokemons[index].name),
-      //The space is to try to align the number from a Card with forms with a card without forms
-      trailing: Text('         +${pokemons[index].forms.length - 1}'),
-      subtitle: Row(
+      title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          (pokemons is List<Item>)
-              ? Text(pokemons[index].game.notes)
-              : Text(pokemons[index].formattedTypes()),
-          Text(pokemons[index].number)
+          Text(
+            pokemons[index].name,
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Text("#${pokemons[index].number}")
         ],
       ),
+      trailing: Text('         +${pokemons[index].forms.length - 1}'),
+      subtitle: (pokemons is List<Pokemon>)
+          ? Text(pokemons[index].formattedTypes())
+          : null,
       children: [
         ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index2) {
-            return PokemonTile(
-              pokemon: pokemons[index].forms[index2],
-            );
+            return (pokemons[index].forms[index2].forms.isEmpty)
+                // ? PokemonTile(
+                //     pokemon: pokemons[index].forms[index2],
+                //   )
+                ? singleCard(context, index2, pokemons[index].forms,
+                    color: null)
+                : multipleCards(context, index2, pokemons[index].forms,
+                    subLevel: true);
           },
           itemCount: pokemons[index].forms.length,
           shrinkWrap: true,
