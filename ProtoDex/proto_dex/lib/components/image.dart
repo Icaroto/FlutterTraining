@@ -3,7 +3,7 @@ import '../models/enums.dart';
 import '../models/pokemon.dart';
 
 String imageLocalPrefix =
-    "https://raw.githubusercontent.com/Icaroto/FlutterTraining/main/ProtoDex/proto_dex/";
+    "https://raw.githubusercontent.com/Icaroto/FlutterTraining/main/ProtoDex/Art/";
 
 class MainImage extends StatelessWidget {
   const MainImage({Key? key, required this.imagePath}) : super(key: key);
@@ -21,14 +21,14 @@ class MainImage extends StatelessWidget {
             //Shadow
             Center(
               child: Image.network(
-                '${imageLocalPrefix}images/mons/$imagePath',
+                '${imageLocalPrefix}mons/$imagePath',
                 height: 305,
                 color: Colors.black87,
               ),
             ),
             //Image
             Center(
-              child: Image.network('${imageLocalPrefix}images/mons/$imagePath',
+              child: Image.network('${imageLocalPrefix}mons/$imagePath',
                   height: 300),
             ),
           ],
@@ -52,12 +52,12 @@ class ListImage extends StatelessWidget {
     return Stack(
       children: [
         Image.network(
-          '${imageLocalPrefix}images/mons/$image',
+          '${imageLocalPrefix}mons/$image',
           color: Colors.black87,
           height: 60,
         ),
         Image.network(
-          '${imageLocalPrefix}images/mons/$image',
+          '${imageLocalPrefix}mons/$image',
           height: 55,
         ),
       ],

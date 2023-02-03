@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Game extends Dex {
   Game(
       {name,
@@ -27,75 +29,40 @@ class Game extends Dex {
       'notes': notes,
     };
   }
-}
 
-class Dex {
-  Dex({required this.name, required this.dex});
-
-  final String name;
-  final String dex;
-
-  Dex.fromJson(Map<String, dynamic> json)
-      : name = json['name'],
-        dex = json['dex'];
-
-  Map<String, dynamic> toJson() {
-    return {
-      'name': name,
-      'dex': dex,
-    };
-  }
-
-  static availableGames() {
-    return [
-      "Scarlet",
-      "Violet",
-      // "Pokemon Sword",
-      // "Pokemon Shield",
-      "Let's Go Pikachu",
-      "Let's Go Eevee",
-      // "Pokemon X",
-      // "Pokemon Y",
-      // "Pokemon Sun",
-      // "Pokemon Moon",
-      // "Pokemon Ultra Sun",
-      // "Pokemon Ultra Moon"
-    ];
-  }
-
-  static availableDex(String game) {
-    List<String> dex = ["Base"];
-
-    switch (game) {
-      case "Scarlet":
-      case "Violet":
+  static gameColor(gameName) {
+    switch (gameName) {
+      case "Pokemon Scarlet":
+        return Colors.red;
+      case "Pokemon Violet":
+        return Colors.purple;
       case "Let's Go Pikachu":
+        return Colors.yellow;
       case "Let's Go Eevee":
-        dex.addAll(["Others"]);
-        break;
+        return Colors.brown;
       case "Pokemon Sword":
       case "Pokemon Shield":
-        dex.addAll(["Isle of Armor", "Crown Trunda"]);
-        break;
+      case "Pokemon Home":
+      case "Pokemon Moon":
+      case "Pokemon Sun":
+      case "Pokemon Ultra Moon":
+      case "Pokemon Ultra Sun":
+      case "Pokemon Legends: Arceus":
+      case "Pokemon Omega Ruby":
+      case "Pokemon Alpha Sapphire":
+      case "Pokemon Brillian Diamond":
+      case "Pokemon Shining Pearl":
+      case "Pokemon Go":
+      case "Pokemon Y":
+      case "Pokemon X":
       default:
+        return Colors.blue;
     }
-
-    return dex;
   }
 
-  static availableTrackerTypes() {
-    return [
-      "Basic",
-      "Shiny Basic",
-      "Living Dex",
-      "Shiny Living Dex",
-      "Give Me A Challenge"
-    ];
-  }
-
-  getIcon() {
+  static gameIcon(gameName) {
     String path = "images/games/";
-    switch (name) {
+    switch (gameName) {
       case "Let's Go Pikachu":
         return path += "pokemon_lets_go_pikachu.png";
       case "Let's Go Eevee":
@@ -131,7 +98,72 @@ class Dex {
       case "Pokemon X":
         return path += "pokemon_x.png";
       default:
-        return path += "pokemon_not_found.png";
+        return path += "colored_ball.png";
     }
+  }
+}
+
+class Dex {
+  Dex({required this.name, required this.dex});
+
+  final String name;
+  final String dex;
+
+  Dex.fromJson(Map<String, dynamic> json)
+      : name = json['name'],
+        dex = json['dex'];
+
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'dex': dex,
+    };
+  }
+
+  static availableGames() {
+    return [
+      "Pokemon Scarlet",
+      "Pokemon Violet",
+      // "Pokemon Sword",
+      // "Pokemon Shield",
+      "Let's Go Pikachu",
+      "Let's Go Eevee",
+      // "Pokemon X",
+      // "Pokemon Y",
+      // "Pokemon Sun",
+      // "Pokemon Moon",
+      // "Pokemon Ultra Sun",
+      // "Pokemon Ultra Moon"
+    ];
+  }
+
+  static availableDex(String game) {
+    List<String> dex = ["Base"];
+
+    switch (game) {
+      case "Pokemon Scarlet":
+      case "Pokemon Violet":
+      case "Let's Go Pikachu":
+      case "Let's Go Eevee":
+        dex.addAll(["Others"]);
+        break;
+      case "Pokemon Sword":
+      case "Pokemon Shield":
+        dex.addAll(["Isle of Armor", "Crown Trunda"]);
+        break;
+      default:
+    }
+
+    return dex;
+  }
+
+  static availableTrackerTypes() {
+    return [
+      "Basic",
+      "Shiny Basic",
+      "Living Dex",
+      "Shiny Living Dex",
+      "Give Me A Challenge"
+    ];
   }
 }

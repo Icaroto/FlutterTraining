@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../components/basic.dart';
+import '../../models/game.dart';
 import '../../models/pokemon.dart';
 
 class GamesInformationCard extends StatelessWidget {
@@ -21,7 +22,7 @@ class GamesInformationCard extends StatelessWidget {
             return ListTile(
               tileColor: Colors.black,
               leading: Image.asset(
-                pokemon.games[index2].getIcon(),
+                Game.gameIcon(pokemon.games[index2]),
                 height: 40,
               ),
               title: Text(

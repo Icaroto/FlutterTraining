@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/screens/details_screen.dart';
 import '../../components/image.dart';
+import '../../models/game.dart';
 import '../../models/pokemon.dart';
 
 class PokemonTile extends StatefulWidget {
-  const PokemonTile({super.key, this.pokemon, this.tileColor});
+  const PokemonTile(
+      {super.key, this.pokemon, this.tileColor, this.onStateChange});
 
   final Color? tileColor;
   final dynamic pokemon;
+  final Function()? onStateChange;
 
   @override
   State<PokemonTile> createState() => _PokemonTile();
@@ -56,7 +59,7 @@ class _PokemonTile extends State<PokemonTile> {
     return Card(
       child: ClipRect(
         child: Banner(
-          message: widget.pokemon.game.notes,
+          message: "Trade Only",
           location: BannerLocation.topEnd,
           color: getBannerColor(widget.pokemon.game.notes),
           child: createCard(context),
@@ -97,6 +100,7 @@ class _PokemonTile extends State<PokemonTile> {
           setState(
             () {
               widget.pokemon.captured = value!;
+              widget.onStateChange!();
             },
           );
         },
@@ -118,9 +122,9 @@ class _PokemonTile extends State<PokemonTile> {
   getBannerColor(gameNotes) {
     switch (gameNotes) {
       case "Violet Exclusive":
-        return Colors.purple;
+        return Game.gameColor("Pokemon Violet");
       case "Scarlet Exclusive":
-        return Colors.red;
+        return Game.gameColor("Pokemon Scarlet");
       default:
         return Colors.black;
     }

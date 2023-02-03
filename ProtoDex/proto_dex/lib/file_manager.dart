@@ -23,6 +23,10 @@ class FileManager {
     return file;
   }
 
+  removeFile(File file) {
+    file.delete();
+  }
+
   Future<List<File>>? findFiles(String? prefix, String? sufix) async {
     List<File> files = [];
     await for (var entity

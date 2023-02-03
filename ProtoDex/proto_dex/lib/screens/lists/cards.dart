@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:proto_dex/models/collection.dart';
 import 'package:proto_dex/models/pokemon.dart';
 import 'package:proto_dex/screens/lists/tile.dart';
 import '../../components/image.dart';
 import '../../models/item.dart';
 
-Widget singleCard(context, index, pokemons, {color = Colors.black26}) {
+Widget singleCard(context, index, pokemons, Function() onStateChange,
+    {color = Colors.black26}) {
   return PokemonTile(
     tileColor: color,
     pokemon: pokemons[index],
+    onStateChange: onStateChange,
   );
 }
 
-Widget multipleCards(context, index, pokemons, {subLevel = false}) {
+Widget multipleCards(context, index, pokemons, Function() onStateChange,
+    {subLevel = false}) {
   final GlobalKey expansionTileKey = GlobalKey();
 
   void scrollToSelectedContent({required GlobalKey expansionTileKey}) {
@@ -30,10 +34,12 @@ Widget multipleCards(context, index, pokemons, {subLevel = false}) {
   } else {
     image = pokemons[index].image[0];
   }
-
   return Card(
     child: ExpansionTile(
       key: expansionTileKey,
+      //TODO: Rename this and plug with the original method
+      // initiallyExpanded:
+      //     Collection.keepTabOpen(pokemons[index]) == CaptureType.partial,
       onExpansionChanged: (value) {
         if (value) {
           scrollToSelectedContent(expansionTileKey: expansionTileKey);
@@ -61,12 +67,11 @@ Widget multipleCards(context, index, pokemons, {subLevel = false}) {
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index2) {
             return (pokemons[index].forms[index2].forms.isEmpty)
-                // ? PokemonTile(
-                //     pokemon: pokemons[index].forms[index2],
-                //   )
-                ? singleCard(context, index2, pokemons[index].forms,
+                ? singleCard(
+                    context, index2, pokemons[index].forms, onStateChange,
                     color: null)
-                : multipleCards(context, index2, pokemons[index].forms,
+                : multipleCards(
+                    context, index2, pokemons[index].forms, onStateChange,
                     subLevel: true);
           },
           itemCount: pokemons[index].forms.length,

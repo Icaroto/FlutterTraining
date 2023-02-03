@@ -66,8 +66,8 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
                                     padding: const EdgeInsets.all(2.5),
                                     child: TrackerButton(
                                         buttonName: gamesAvailable[index],
-                                        imagePath:
-                                            'images/background/colored_ball.png',
+                                        imagePath: Game.gameIcon(
+                                            gamesAvailable[index]),
                                         onPressed: (() => {
                                               setState(() {
                                                 gamePicked =
@@ -352,9 +352,6 @@ createColletion(String gameName, String dexName, String trackerType) {
   for (var pokemon in kPokedex) {
     Item? item = checkPokemon(
         pokemon, gameName, dexName, isShinyTracker, isLivingDexTracker);
-    if (item?.name == "Indeedee" || item?.name == "Oinkologne") {
-      var test = 1;
-    }
     if (item != null) {
       if (isLivingDexTracker) {
         if (item.hasGenderDiff()) {
@@ -380,7 +377,6 @@ createColletion(String gameName, String dexName, String trackerType) {
           item.forms.insert(0, Item.copy(item));
         }
       }
-
       pokemons.add(item);
     }
   }
