@@ -58,7 +58,7 @@ Widget multipleCards(context, index, pokemons, Function() onStateChange,
           Text("#${pokemons[index].number}")
         ],
       ),
-      trailing: Text('         +${pokemons[index].forms.length - 1}'),
+      trailing: Text('+${pokemons[index].forms.length - 1}'),
       subtitle: (pokemons is List<Pokemon>)
           ? Text(pokemons[index].formattedTypes())
           : null,

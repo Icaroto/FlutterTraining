@@ -63,7 +63,6 @@ class _ListScreenState extends State<ListScreen> {
       }
 
       if (_selectedIndex != 0) {
-        var isCaptured = (_selectedIndex == 1) ? true : false;
         CaptureType capture =
             (_selectedIndex == 1) ? CaptureType.full : CaptureType.empty;
         tempList.removeWhere((element) =>
