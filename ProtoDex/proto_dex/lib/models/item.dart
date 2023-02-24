@@ -2,6 +2,7 @@ import 'package:proto_dex/models/enums.dart';
 import 'package:proto_dex/models/pokemon.dart';
 
 import '../constants.dart';
+import 'collection.dart';
 import 'game.dart';
 
 class Item {
@@ -127,5 +128,21 @@ class Item {
       return false;
     }
     return image.any((img) => !img.contains("-mf.") && !img.contains("-g."));
+  }
+
+  static isCaptured(Item pokemon) {
+    if (pokemon.forms.isNotEmpty) {
+      if (pokemon.forms.every((element) => element.captured == true)) {
+        return CaptureType.full;
+      }
+
+      if (pokemon.forms.every((element) => element.captured == false)) {
+        return CaptureType.empty;
+      }
+
+      return CaptureType.partial;
+    } else {
+      return (pokemon.captured) ? CaptureType.full : CaptureType.empty;
+    }
   }
 }

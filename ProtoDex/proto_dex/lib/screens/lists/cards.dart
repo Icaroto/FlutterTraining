@@ -29,8 +29,10 @@ Widget multipleCards(context, index, pokemons, Function() onStateChange,
   }
 
   var image = "";
+  bool shadow = false;
   if (pokemons is List<Item>) {
     image = pokemons[index].displayImage;
+    shadow = Item.isCaptured(pokemons[index]) != CaptureType.full;
   } else {
     image = pokemons[index].image[0];
   }
@@ -47,7 +49,10 @@ Widget multipleCards(context, index, pokemons, Function() onStateChange,
       },
       collapsedBackgroundColor: (subLevel) ? null : Colors.black26,
       backgroundColor: (subLevel) ? Colors.black12 : Colors.black26,
-      leading: ListImage(image: image),
+      leading: ListImage(
+        image: image,
+        shadowOnly: shadow,
+      ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -58,7 +63,9 @@ Widget multipleCards(context, index, pokemons, Function() onStateChange,
           Text("#${pokemons[index].number}")
         ],
       ),
-      trailing: Text('+${pokemons[index].forms.length - 1}'),
+      trailing: (pokemons is List<Pokemon>)
+          ? Text('+${pokemons[index].forms.length - 1}')
+          : Text('         +${pokemons[index].forms.length - 1}'),
       subtitle: (pokemons is List<Pokemon>)
           ? Text(pokemons[index].formattedTypes())
           : null,

@@ -54,3 +54,8 @@ enum Attributes {
   isAlpha,
   isShiny,
 }
+
+enum ScreenType {
+  pokedex,
+  tracker,
+}

@@ -83,7 +83,9 @@ class _PokemonTile extends State<PokemonTile> {
             ),
           )
       },
-      leading: ListImage(image: widget.pokemon.displayImage),
+      leading: ListImage(
+          image: widget.pokemon.displayImage,
+          shadowOnly: !widget.pokemon.captured),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
