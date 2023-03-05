@@ -117,56 +117,115 @@ class Collection {
     collections.saveToFile(name);
   }
 
-  filterCollection(FilterType filter,
-      {String value = "", List<String>? values}) {
-    switch (filter) {
-      case FilterType.captured:
-        return pokemons
-            .where((element) =>
-                isPokemonCaptured(element) == CaptureType.full ||
-                isPokemonCaptured(element) == CaptureType.partial)
-            .toList();
-      case FilterType.notCaptured:
-        return pokemons
-            .where((element) =>
-                isPokemonCaptured(element) == CaptureType.empty ||
-                isPokemonCaptured(element) == CaptureType.partial)
-            .toList();
-      case FilterType.exclusiveOnly:
-        return pokemons.where((element) => element.game.notes != "").toList();
-      case FilterType.byValue:
-        return pokemons.where((element) =>
-            element.name.toLowerCase().contains(value.toLowerCase()));
-      case FilterType.byType:
-        if (values == null || values.isEmpty) {
+  applyAllFilters(
+      List<FilterType> filters, String? words, List<String>? types) {
+    List<Item> temp = [];
+    temp.addAll(pokemons.toList());
+
+    for (var filter in filters) {
+      switch (filter) {
+        case FilterType.captured:
+          temp = temp
+              .where((element) =>
+                  isPokemonCaptured(element) == CaptureType.full ||
+                  isPokemonCaptured(element) == CaptureType.partial)
+              .toList();
+          break;
+        case FilterType.notCaptured:
+          temp = temp
+              .where((element) =>
+                  isPokemonCaptured(element) == CaptureType.empty ||
+                  isPokemonCaptured(element) == CaptureType.partial)
+              .toList();
+          break;
+        case FilterType.exclusiveOnly:
+          temp = temp.where((element) => element.game.notes != "").toList();
+          break;
+        case FilterType.byValue:
+          temp = temp
+              .where((element) =>
+                  element.name.toLowerCase().contains(words!.toLowerCase()))
+              .toList();
+          break;
+        case FilterType.byType:
+          if (types != null && types.isNotEmpty) {
+            temp = temp
+                .where((element) =>
+                    containsType(types, element.type1) ||
+                    containsType(types, element.type2))
+                .toList();
+          }
+          break;
+        case FilterType.numAsc:
+          temp.sort((a, b) => a.number.compareTo(b.number));
+          break;
+        case FilterType.numDesc:
+          temp.sort((a, b) => b.number.compareTo(a.number));
+          break;
+        case FilterType.nameAsc:
+          temp.sort((a, b) => a.name.compareTo(b.name));
+          break;
+        case FilterType.nameDesc:
+          temp.sort((a, b) => b.name.compareTo(a.name));
+          break;
+        default:
           return pokemons;
-        }
-        return pokemons
-            .where((element) =>
-                containsType(values, element.type1) ||
-                containsType(values, element.type2))
-            .toList();
-      case FilterType.numAsc:
-        pokemons.sort((a, b) => a.number.compareTo(b.number));
-        return pokemons;
-      case FilterType.numDesc:
-        pokemons.sort((a, b) => b.number.compareTo(a.number));
-        return pokemons;
-      case FilterType.nameAsc:
-        pokemons.sort((a, b) => a.name.compareTo(b.name));
-        return pokemons;
-      case FilterType.nameDesc:
-        pokemons.sort((a, b) => b.name.compareTo(a.name));
-        return pokemons;
-      case FilterType.all:
-      default:
-        return pokemons;
+      }
     }
+
+    return temp;
   }
 
-  containsType(List<String> values, PokemonType? type) {
+  // filterCollection(FilterType filter,
+  //     {String value = "", List<String>? values}) {
+  //   switch (filter) {
+  //     case FilterType.captured:
+  //       return pokemons
+  //           .where((element) =>
+  //               isPokemonCaptured(element) == CaptureType.full ||
+  //               isPokemonCaptured(element) == CaptureType.partial)
+  //           .toList();
+  //     case FilterType.notCaptured:
+  //       return pokemons
+  //           .where((element) =>
+  //               isPokemonCaptured(element) == CaptureType.empty ||
+  //               isPokemonCaptured(element) == CaptureType.partial)
+  //           .toList();
+  //     case FilterType.exclusiveOnly:
+  //       return pokemons.where((element) => element.game.notes != "").toList();
+  //     case FilterType.byValue:
+  //       return pokemons.where((element) =>
+  //           element.name.toLowerCase().contains(value.toLowerCase()));
+  //     case FilterType.byType:
+  //       if (values == null || values.isEmpty) {
+  //         return pokemons;
+  //       }
+  //       return pokemons
+  //           .where((element) =>
+  //               containsType(values, element.type1) ||
+  //               containsType(values, element.type2))
+  //           .toList();
+  //     case FilterType.numAsc:
+  //       pokemons.sort((a, b) => a.number.compareTo(b.number));
+  //       return pokemons;
+  //     case FilterType.numDesc:
+  //       pokemons.sort((a, b) => b.number.compareTo(a.number));
+  //       return pokemons;
+  //     case FilterType.nameAsc:
+  //       pokemons.sort((a, b) => a.name.compareTo(b.name));
+  //       return pokemons;
+  //     case FilterType.nameDesc:
+  //       pokemons.sort((a, b) => b.name.compareTo(a.name));
+  //       return pokemons;
+  //     case FilterType.all:
+  //     default:
+  //       return pokemons;
+  //   }
+  // }
+
+  containsType(List<String>? values, PokemonType? type) {
     if (type == null) return false;
-    return values.contains(type.name);
+    return values!.contains(type.name);
   }
   //check if all forms are captured to say a pokemon is captured
   // isPokemonCaptured(Item pokemon) {

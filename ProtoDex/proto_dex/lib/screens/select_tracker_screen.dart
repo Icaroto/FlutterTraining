@@ -305,7 +305,7 @@ class TrackerButton extends StatelessWidget {
         child: TextButton(
           onPressed: onPressed,
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               if (imagePath != "") Image.asset(imagePath, scale: 2),

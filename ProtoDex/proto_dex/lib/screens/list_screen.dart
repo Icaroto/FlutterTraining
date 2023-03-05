@@ -27,6 +27,7 @@ class ListScreen extends StatefulWidget {
 class _ListScreenState extends State<ListScreen> {
   List<Pokemon> originalPokedex = [];
   List<Item> filteredList = [];
+  List<FilterType> filters = [];
 
   @override
   void initState() {
@@ -40,14 +41,18 @@ class _ListScreenState extends State<ListScreen> {
   TextEditingController editingController = TextEditingController();
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
-  void filterSearchResults(String query) {
+  void addFilter(FilterType filter) {
+    if (!filters.contains(filter)) filters.add(filter);
+  }
+
+  void filterSearchResults() {
     if (originalPokedex.isNotEmpty) {
       List<Pokemon> dummySearchList = [];
       dummySearchList.addAll(originalPokedex);
-      if (query.isNotEmpty) {
+      if (_query.isNotEmpty) {
         List<Pokemon> dummyListData = [];
         for (var item in dummySearchList) {
-          if (item.name.toLowerCase().contains(query.toLowerCase())) {
+          if (item.name.toLowerCase().contains(_query.toLowerCase())) {
             dummyListData.add(item);
           }
         }
@@ -63,24 +68,15 @@ class _ListScreenState extends State<ListScreen> {
         });
       }
     } else {
-      List<Item> tempList = [];
-      if (query == "") {
-        tempList.addAll(widget.collection!.filterCollection(FilterType.all));
-      } else {
-        tempList.addAll(widget.collection!
-            .filterCollection(FilterType.byValue, value: query));
-      }
+      //TODO: Perhaps remove the _query and user editingController.text
+      setState(() {
+        (_query == "")
+            ? filters.remove(FilterType.byValue)
+            : addFilter(FilterType.byValue);
 
-      if (_selectedIndex != 0) {
-        CaptureType capture =
-            (_selectedIndex == 1) ? CaptureType.full : CaptureType.empty;
-        tempList.removeWhere((element) =>
-            widget.collection!.isPokemonCaptured(element) != capture &&
-            widget.collection!.isPokemonCaptured(element) !=
-                CaptureType.partial);
-      }
-      filteredList = tempList;
-      setState(() {});
+        filteredList = widget.collection!
+            .applyAllFilters(filters, _query, _drawerByTypesSelected);
+      });
     }
   }
 
@@ -109,7 +105,7 @@ class _ListScreenState extends State<ListScreen> {
                             style: const TextStyle(color: Colors.white),
                             onChanged: (value) {
                               _query = value;
-                              filterSearchResults(_query);
+                              filterSearchResults();
                             },
                             controller: editingController,
                             decoration: InputDecoration(
@@ -127,7 +123,8 @@ class _ListScreenState extends State<ListScreen> {
                                     (editingController.text == "")
                                         ? _isSearchOpened = false
                                         : editingController.clear();
-                                    filterSearchResults("");
+                                    _query = "";
+                                    filterSearchResults();
                                   });
                                 },
                                 child: const Icon(
@@ -240,12 +237,11 @@ class _ListScreenState extends State<ListScreen> {
                         setState(() {
                           _exclusiveOnly = !_exclusiveOnly;
                           if (_exclusiveOnly) {
-                            filteredList = widget.collection!
-                                .filterCollection(FilterType.exclusiveOnly);
+                            filters.add(FilterType.exclusiveOnly);
                           } else {
-                            filteredList = widget.collection!
-                                .filterCollection(FilterType.all);
+                            filters.remove(FilterType.exclusiveOnly);
                           }
+                          filterSearchResults();
                         });
                       },
                     )
@@ -277,7 +273,6 @@ class _ListScreenState extends State<ListScreen> {
                               (_drawerByTypesSelected.contains(item.name))
                                   ? 5
                                   : 0,
-
                           onPressed: () => {
                             setState(() {
                               if (_drawerByTypesSelected.contains(item.name)) {
@@ -285,13 +280,14 @@ class _ListScreenState extends State<ListScreen> {
                               } else {
                                 _drawerByTypesSelected.add(item.name);
                               }
-                              filteredList = widget.collection!
-                                  .filterCollection(FilterType.byType,
-                                      values: _drawerByTypesSelected);
+
+                              (_drawerByTypesSelected.isEmpty)
+                                  ? filters.remove(FilterType.byType)
+                                  : addFilter(FilterType.byType);
+
+                              filterSearchResults();
                             })
                           },
-                          // backgroundColor: Colors.red,
-                          // label: Text(item.name),
                           label: TypeIcon(
                               type: PokemonType.values.byName(item.name),
                               size: 23,
@@ -306,8 +302,8 @@ class _ListScreenState extends State<ListScreen> {
                   onPressed: () {
                     setState(() {
                       _drawerByTypesSelected.clear();
-                      filteredList =
-                          widget.collection!.filterCollection(FilterType.all);
+                      filters.remove(FilterType.byType);
+                      filterSearchResults();
                     });
                   },
                 ),
@@ -315,82 +311,78 @@ class _ListScreenState extends State<ListScreen> {
             ],
           ),
           const Divider(thickness: 2),
-          Expanded(
-            child: Column(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Center(child: Text("Sort By")),
-                ),
+          Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Center(child: Text("Sort By")),
+              ),
+              Wrap(
+                alignment: WrapAlignment.center,
+                children: [
+                  TextButton(
+                    child: const FaIcon(FontAwesomeIcons.arrowDown19),
+                    onPressed: () {
+                      setState(() {
+                        addFilter(FilterType.numAsc);
 
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  children: [
-                    TextButton(
-                      child: const FaIcon(FontAwesomeIcons.arrowDown19),
-                      onPressed: () {
-                        setState(() {
-                          filteredList = widget.collection!
-                              .filterCollection(FilterType.numAsc);
-                        });
-                      },
-                    ),
-                    TextButton(
-                      child: const FaIcon(FontAwesomeIcons.arrowDown91),
-                      onPressed: () {
-                        setState(() {
-                          filteredList = widget.collection!
-                              .filterCollection(FilterType.numDesc);
-                        });
-                      },
-                    ),
-                    TextButton(
-                      child: const FaIcon(FontAwesomeIcons.arrowDownAZ),
-                      onPressed: () {
-                        setState(() {
-                          filteredList = widget.collection!
-                              .filterCollection(FilterType.nameAsc);
-                        });
-                      },
-                    ),
-                    TextButton(
-                      child: const FaIcon(FontAwesomeIcons.arrowDownZA),
-                      onPressed: () {
-                        setState(() {
-                          filteredList = widget.collection!
-                              .filterCollection(FilterType.nameDesc);
-                        });
-                      },
-                    ),
-                    TextButton(
-                      child: Text("Default"),
-                      onPressed: () {
-                        setState(() {
-                          filteredList = widget.collection!
-                              .filterCollection(FilterType.all);
-                        });
-                      },
-                    ),
-                  ],
-                ),
+                        filters.removeWhere((element) =>
+                            element == FilterType.numDesc ||
+                            element == FilterType.nameAsc ||
+                            element == FilterType.nameDesc);
 
-                // ListView(
-                //   scrollDirection: Axis.vertical,
-                //   shrinkWrap: true,
-                //   children: [
-                //     ListTile(
-                //       title: const Text('Item 2'),
-                //       onTap: () {
-                //         // Update the state of the app
-                //         // ...
-                //         // Then close the drawer
-                //         Navigator.pop(context);
-                //       },
-                //     ),
-                //   ],
-                // ),
-              ],
-            ),
+                        filterSearchResults();
+                      });
+                    },
+                  ),
+                  TextButton(
+                    child: const FaIcon(FontAwesomeIcons.arrowDown91),
+                    onPressed: () {
+                      setState(() {
+                        addFilter(FilterType.numDesc);
+
+                        filters.removeWhere((element) =>
+                            element == FilterType.numAsc ||
+                            element == FilterType.nameAsc ||
+                            element == FilterType.nameDesc);
+
+                        filterSearchResults();
+                      });
+                    },
+                  ),
+                  TextButton(
+                    child: const FaIcon(FontAwesomeIcons.arrowDownAZ),
+                    onPressed: () {
+                      setState(() {
+                        addFilter(FilterType.nameAsc);
+
+                        filters.removeWhere((element) =>
+                            element == FilterType.numAsc ||
+                            element == FilterType.numDesc ||
+                            element == FilterType.nameDesc);
+
+                        filterSearchResults();
+                      });
+                    },
+                  ),
+                  TextButton(
+                    child: const FaIcon(FontAwesomeIcons.arrowDownZA),
+                    onPressed: () {
+                      setState(() {
+                        addFilter(FilterType.nameDesc);
+
+                        filters.removeWhere((element) =>
+                            element == FilterType.numAsc ||
+                            element == FilterType.numDesc ||
+                            element == FilterType.nameAsc);
+
+                        filterSearchResults();
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ],
           ),
           const Divider(thickness: 2),
         ],
@@ -497,75 +489,81 @@ class _ListScreenState extends State<ListScreen> {
   applyFilter(int index) {
     switch (index) {
       case 0:
-        filteredList = widget.collection!.filterCollection(FilterType.all);
+        filters.removeWhere((element) =>
+            element == FilterType.captured ||
+            element == FilterType.notCaptured);
+        // filteredList = widget.collection!.filterCollection(FilterType.all);
         _selectedIndex = index;
         break;
       case 1:
-        filteredList = widget.collection!.filterCollection(FilterType.captured);
+        filters.remove(FilterType.notCaptured);
+        addFilter(FilterType.captured);
+        // filteredList = widget.collection!.filterCollection(FilterType.captured);
         _selectedIndex = index;
         break;
       case 2:
-        filteredList =
-            widget.collection!.filterCollection(FilterType.notCaptured);
+        filters.remove(FilterType.captured);
+        addFilter(FilterType.notCaptured);
+        // filteredList =
+        //     widget.collection!.filterCollection(FilterType.notCaptured);
         _selectedIndex = index;
         break;
     }
+    filterSearchResults();
   }
 
   Expanded giveMeAList() {
     return Expanded(
-      child: CupertinoScrollbar(
-        child: ListView.builder(
-          itemBuilder: ((context, index) {
-            if (widget.pokemons != null) {
-              return (widget.pokemons![index].forms.isEmpty)
-                  ? singleCard(
-                      context,
-                      index,
-                      widget.pokemons,
-                      () {},
-                    )
-                  : multipleCards(
-                      context,
-                      index,
-                      widget.pokemons,
-                      () {},
-                    );
-            } else {
-              return (filteredList[index].forms.isEmpty)
-                  ? singleCard(
-                      context,
-                      index,
-                      filteredList,
-                      () {
-                        setState(() {
-                          widget.collection!.updateCollection();
-                          applyFilter(_selectedIndex);
-                          filterSearchResults(_query);
-                        });
-                      },
-                    )
-                  : multipleCards(
-                      context,
-                      index,
-                      filteredList,
-                      () {
-                        setState(() {
-                          widget.collection!.updateCollection();
-                          applyFilter(_selectedIndex);
-                          filterSearchResults(_query);
-                        });
-                      },
-                    );
-            }
-          }),
-          itemCount: (widget.pokemons != null)
-              ? widget.pokemons!.length
-              : filteredList.length,
-          shrinkWrap: true,
-          padding: const EdgeInsets.all(5),
-          scrollDirection: Axis.vertical,
-        ),
+      child: ListView.builder(
+        itemBuilder: ((context, index) {
+          if (widget.pokemons != null) {
+            return (widget.pokemons![index].forms.isEmpty)
+                ? singleCard(
+                    context,
+                    index,
+                    widget.pokemons,
+                    () {},
+                  )
+                : multipleCards(
+                    context,
+                    index,
+                    widget.pokemons,
+                    () {},
+                  );
+          } else {
+            return (filteredList[index].forms.isEmpty)
+                ? singleCard(
+                    context,
+                    index,
+                    filteredList,
+                    () {
+                      setState(() {
+                        widget.collection!.updateCollection();
+                        applyFilter(_selectedIndex);
+                        filterSearchResults();
+                      });
+                    },
+                  )
+                : multipleCards(
+                    context,
+                    index,
+                    filteredList,
+                    () {
+                      setState(() {
+                        widget.collection!.updateCollection();
+                        applyFilter(_selectedIndex);
+                        filterSearchResults();
+                      });
+                    },
+                  );
+          }
+        }),
+        itemCount: (widget.pokemons != null)
+            ? widget.pokemons!.length
+            : filteredList.length,
+        shrinkWrap: true,
+        padding: const EdgeInsets.all(5),
+        scrollDirection: Axis.vertical,
       ),
     );
   }
