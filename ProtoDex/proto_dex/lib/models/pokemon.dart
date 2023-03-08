@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:proto_dex/constants.dart';
 import 'breeding.dart';
 import 'gender_ratio.dart';
 import 'weakness.dart';
@@ -8,23 +9,6 @@ import 'game.dart';
 import 'enums.dart';
 
 class Pokemon {
-  // Pokemon(
-  //     {required this.type1,
-  //     required this.type2,
-  //     required this.image,
-  //     required this.species,
-  //     required this.height,
-  //     required this.weight,
-  //     required this.name,
-  //     required this.number,
-  //     required this.forms,
-  //     required this.games,
-  //     required this.weakness,
-  //     required this.abilities,
-  //     required this.hiddenAbility,
-  //     required this.breeding,
-  //     required this.genderRatio});
-
   final String name;
   final String formName;
   final String species;
@@ -123,7 +107,6 @@ class Pokemon {
     //         (element.name == "Tauros" || //form in form
     //             element.name == "Bulbasaur" || //forms ,
     //             element.name == "Buizel" || //forms ,
-
     //             element.name == "Squawkabilly" || //forms ,
     //             element.name == "Chien-Pao" || //forms
     //             element.name == "Roaring Moon" || //exclusive
@@ -132,7 +115,6 @@ class Pokemon {
     //             element.name == "Miraidon")) //no shiny available
     //     .toList();
     // return test;
-
     // return pokemons
     //     .skip(200)
     //     .where((element) => element.forms.isNotEmpty)
@@ -359,4 +341,55 @@ class Pokemon {
     return games.firstWhereOrNull(
         (element) => element.name == gameName && element.dex == dexName);
   }
+}
+
+extension Filter on List<Pokemon>? {
+  applyAllFilters(
+      List<FilterType> filters, String? words, List<String>? types) {
+    List<Pokemon> temp = [];
+    temp.addAll(kPokedex);
+
+    for (var filter in filters) {
+      switch (filter) {
+        case FilterType.byValue:
+          temp = temp
+              .where((element) =>
+                  element.name.toLowerCase().contains(words!.toLowerCase()))
+              .toList();
+          break;
+        case FilterType.byType:
+          if (types != null && types.isNotEmpty) {
+            temp = temp
+                .where((element) =>
+                    containsType(types, element.type1) ||
+                    containsType(types, element.type2))
+                .toList();
+          }
+          break;
+        case FilterType.numAsc:
+          temp.sort(
+              (a, b) => int.parse(a.number).compareTo(int.parse(b.number)));
+          break;
+        case FilterType.numDesc:
+          temp.sort(
+              (a, b) => int.parse(b.number).compareTo(int.parse(a.number)));
+          break;
+        case FilterType.nameAsc:
+          temp.sort((a, b) => a.name.compareTo(b.name));
+          break;
+        case FilterType.nameDesc:
+          temp.sort((a, b) => b.name.compareTo(a.name));
+          break;
+        default:
+          return this;
+      }
+    }
+
+    return temp;
+  }
+}
+
+containsType(List<String>? values, PokemonType? type) {
+  if (type == null) return false;
+  return values!.contains(type.name);
 }

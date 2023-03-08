@@ -176,65 +176,10 @@ class Collection {
     return temp;
   }
 
-  // filterCollection(FilterType filter,
-  //     {String value = "", List<String>? values}) {
-  //   switch (filter) {
-  //     case FilterType.captured:
-  //       return pokemons
-  //           .where((element) =>
-  //               isPokemonCaptured(element) == CaptureType.full ||
-  //               isPokemonCaptured(element) == CaptureType.partial)
-  //           .toList();
-  //     case FilterType.notCaptured:
-  //       return pokemons
-  //           .where((element) =>
-  //               isPokemonCaptured(element) == CaptureType.empty ||
-  //               isPokemonCaptured(element) == CaptureType.partial)
-  //           .toList();
-  //     case FilterType.exclusiveOnly:
-  //       return pokemons.where((element) => element.game.notes != "").toList();
-  //     case FilterType.byValue:
-  //       return pokemons.where((element) =>
-  //           element.name.toLowerCase().contains(value.toLowerCase()));
-  //     case FilterType.byType:
-  //       if (values == null || values.isEmpty) {
-  //         return pokemons;
-  //       }
-  //       return pokemons
-  //           .where((element) =>
-  //               containsType(values, element.type1) ||
-  //               containsType(values, element.type2))
-  //           .toList();
-  //     case FilterType.numAsc:
-  //       pokemons.sort((a, b) => a.number.compareTo(b.number));
-  //       return pokemons;
-  //     case FilterType.numDesc:
-  //       pokemons.sort((a, b) => b.number.compareTo(a.number));
-  //       return pokemons;
-  //     case FilterType.nameAsc:
-  //       pokemons.sort((a, b) => a.name.compareTo(b.name));
-  //       return pokemons;
-  //     case FilterType.nameDesc:
-  //       pokemons.sort((a, b) => b.name.compareTo(a.name));
-  //       return pokemons;
-  //     case FilterType.all:
-  //     default:
-  //       return pokemons;
-  //   }
-  // }
-
   containsType(List<String>? values, PokemonType? type) {
     if (type == null) return false;
     return values!.contains(type.name);
   }
-  //check if all forms are captured to say a pokemon is captured
-  // isPokemonCaptured(Item pokemon) {
-  //   if (pokemon.forms.isNotEmpty) {
-  //     return pokemon.forms.every((element) => element.captured == true);
-  //   } else {
-  //     return pokemon.captured;
-  //   }
-  // }
 
   CaptureType isPokemonCaptured(Item pokemon) {
     if (pokemon.forms.isNotEmpty) {
@@ -268,30 +213,6 @@ class Collection {
     }
   }
 }
-
-enum FilterType {
-  captured,
-  notCaptured,
-  all,
-  exclusiveOnly,
-  byValue,
-  byType,
-  nameAsc,
-  nameDesc,
-  numAsc,
-  numDesc
-}
-
-enum CaptureType { full, partial, empty }
-// extension Utils on Collection {
-//   updateCollection() {
-//     String fileName = name;
-//     List<Collection> collections = <Collection>[].findCollection(fileName);
-//     collections.clear();
-//     collections.add(this);
-//     collections.saveToFile(fileName);
-//   }
-// }
 
 extension CollectionsExtensions on List<Collection> {
   Future<List<Collection>> findCollections() async {

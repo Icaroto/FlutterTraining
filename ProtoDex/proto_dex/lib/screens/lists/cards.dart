@@ -3,6 +3,7 @@ import 'package:proto_dex/models/collection.dart';
 import 'package:proto_dex/models/pokemon.dart';
 import 'package:proto_dex/screens/lists/tile.dart';
 import '../../components/image.dart';
+import '../../models/enums.dart';
 import '../../models/item.dart';
 
 Widget singleCard(context, index, pokemons, Function() onStateChange,

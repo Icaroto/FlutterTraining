@@ -28,150 +28,143 @@ class _ListScreenState extends State<ListScreen> {
   List<Pokemon> originalPokedex = [];
   List<Item> filteredList = [];
   List<FilterType> filters = [];
-
-  @override
-  void initState() {
-    if (widget.pokemons != null) originalPokedex.addAll(widget.pokemons!);
-    if (widget.collection != null) {
-      filteredList.addAll(widget.collection!.pokemons.toList());
-    }
-    super.initState();
-  }
-
+  bool isPokedex = true;
+  String _query = "";
+  int _selectedIndex = 0;
+  bool _exclusiveOnly = false;
+  bool _isSearchOpened = false;
+  final List<String> _drawerByTypesSelected = [];
   TextEditingController editingController = TextEditingController();
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
-  void addFilter(FilterType filter) {
-    if (!filters.contains(filter)) filters.add(filter);
+  @override
+  void initState() {
+    isPokedex = (widget.pokemons != null) ? true : false;
+
+    (isPokedex)
+        ? originalPokedex.addAll(widget.pokemons!)
+        : filteredList.addAll(widget.collection!.pokemons.toList());
+
+    super.initState();
   }
 
-  void filterSearchResults() {
-    if (originalPokedex.isNotEmpty) {
-      List<Pokemon> dummySearchList = [];
-      dummySearchList.addAll(originalPokedex);
-      if (_query.isNotEmpty) {
-        List<Pokemon> dummyListData = [];
-        for (var item in dummySearchList) {
-          if (item.name.toLowerCase().contains(_query.toLowerCase())) {
-            dummyListData.add(item);
-          }
-        }
-        setState(() {
-          widget.pokemons!.clear();
-          widget.pokemons!.addAll(dummyListData);
-        });
-        return;
-      } else {
-        setState(() {
-          widget.pokemons!.clear();
-          widget.pokemons!.addAll(originalPokedex);
-        });
-      }
-    } else {
-      //TODO: Perhaps remove the _query and user editingController.text
-      setState(() {
-        (_query == "")
-            ? filters.remove(FilterType.byValue)
-            : addFilter(FilterType.byValue);
-
-        filteredList = widget.collection!
-            .applyAllFilters(filters, _query, _drawerByTypesSelected);
-      });
-    }
-  }
-
-  int _selectedIndex = 0;
-  bool _isSearchOpened = false;
-  String _query = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      endDrawer: listDrawer(context),
+      appBar: appTopBar(context),
+      endDrawer: rightDrawer(context),
       body: Stack(
         children: <Widget>[
           kBasicBackground,
           SafeArea(
             child: Column(
               children: [
-                Visibility(
-                  visible: _isSearchOpened,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: TextField(
-                            style: const TextStyle(color: Colors.white),
-                            onChanged: (value) {
-                              _query = value;
-                              filterSearchResults();
-                            },
-                            controller: editingController,
-                            decoration: InputDecoration(
-                              hintStyle: const TextStyle(color: Colors.white),
-                              labelStyle: const TextStyle(color: Colors.white),
-                              labelText: "Search",
-                              hintText: "Search",
-                              prefixIcon: const Icon(
-                                Icons.search,
-                                color: Colors.white,
-                              ),
-                              suffixIcon: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    (editingController.text == "")
-                                        ? _isSearchOpened = false
-                                        : editingController.clear();
-                                    _query = "";
-                                    filterSearchResults();
-                                  });
-                                },
-                                child: const Icon(
-                                  Icons.close,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.white),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.white),
-                              ),
-                              border: const OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(25.0),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                giveMeAList(),
+                searchBar(),
+                list(),
               ],
             ),
           ),
         ],
       ),
-      bottomNavigationBar:
-          (widget.pokemons == null) ? bottomNavigationBar() : null,
-      appBar:
-          (widget.pokemons == null) ? listAppBar(context) : dexAppBar(context),
+      bottomNavigationBar: (isPokedex) ? null : bottomFilterBar(),
     );
   }
 
-  List<String> _drawerByTypesSelected = [];
-  bool _exclusiveOnly = false;
+  void applyFilters() {
+    setState(() {
+      if (isPokedex) {
+        (_query == "")
+            ? removeFilters([FilterType.byValue])
+            : addFilter(FilterType.byValue);
 
-  Drawer listDrawer(BuildContext context) {
+        originalPokedex = widget.pokemons
+            .applyAllFilters(filters, _query, _drawerByTypesSelected);
+      } else {
+        (_query == "")
+            ? removeFilters([FilterType.byValue])
+            : addFilter(FilterType.byValue);
+
+        filteredList = widget.collection!
+            .applyAllFilters(filters, _query, _drawerByTypesSelected);
+      }
+    });
+  }
+
+  void addFilter(FilterType filter) {
+    if (!filters.contains(filter)) filters.add(filter);
+  }
+
+  void removeFilters(List<FilterType> filtersToRemove) {
+    for (var element in filtersToRemove) {
+      filters.remove(element);
+    }
+  }
+
+  Visibility searchBar() {
+    return Visibility(
+      visible: _isSearchOpened,
+      child: Row(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                style: const TextStyle(color: Colors.white),
+                autofocus: true,
+                onChanged: (value) {
+                  _query = value;
+                  applyFilters();
+                },
+                controller: editingController,
+                decoration: InputDecoration(
+                  hintStyle: const TextStyle(color: Colors.white),
+                  labelStyle: const TextStyle(color: Colors.white),
+                  labelText: "Search",
+                  hintText: "Search",
+                  prefixIcon: const Icon(
+                    Icons.search,
+                    color: Colors.white,
+                  ),
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        (editingController.text == "")
+                            ? _isSearchOpened = false
+                            : editingController.clear();
+                        _query = "";
+                        applyFilters();
+                      });
+                    },
+                    child: const Icon(
+                      Icons.close,
+                      color: Colors.white,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: const BorderSide(color: Colors.white),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: const BorderSide(color: Colors.white),
+                  ),
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(25.0),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Drawer rightDrawer(BuildContext context) {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -180,17 +173,16 @@ class _ListScreenState extends State<ListScreen> {
             height: 80,
             child: DrawerHeader(
               decoration: BoxDecoration(
-                color: (widget.pokemons == null)
-                    ? Game.gameColor(widget.collection!.game)
-                    : Colors.blue,
+                color: (isPokedex)
+                    ? Colors.blue
+                    : Game.gameColor(widget.collection!.game),
               ),
               child: const Text('Filters'),
             ),
           ),
           const Divider(thickness: 2),
-          if (widget.pokemons == null)
+          if (!isPokedex)
             Card(
-              // color: Colors.lightBlue,
               shadowColor: Colors.blue,
               borderOnForeground: true,
               child: Row(
@@ -202,11 +194,9 @@ class _ListScreenState extends State<ListScreen> {
                       child: Text("Reveal Uncaught"),
                     ),
                     Switch(
-                      // This bool value toggles the switch.
                       value: revealUncaught,
                       activeColor: Colors.red,
                       onChanged: (bool value) {
-                        // This is called when the user toggles the switch.
                         setState(() {
                           revealUncaught = !revealUncaught;
                         });
@@ -214,8 +204,8 @@ class _ListScreenState extends State<ListScreen> {
                     )
                   ]),
             ),
-          if (widget.pokemons == null) const Divider(thickness: 2),
-          if (widget.pokemons == null)
+          if (!isPokedex) const Divider(thickness: 2),
+          if (!isPokedex)
             Card(
               // color: Colors.lightBlue,
               shadowColor: Colors.blue,
@@ -239,15 +229,15 @@ class _ListScreenState extends State<ListScreen> {
                           if (_exclusiveOnly) {
                             filters.add(FilterType.exclusiveOnly);
                           } else {
-                            filters.remove(FilterType.exclusiveOnly);
+                            removeFilters([FilterType.exclusiveOnly]);
                           }
-                          filterSearchResults();
+                          applyFilters();
                         });
                       },
                     )
                   ]),
             ),
-          if (widget.pokemons == null) const Divider(thickness: 2),
+          if (!isPokedex) const Divider(thickness: 2),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -282,10 +272,10 @@ class _ListScreenState extends State<ListScreen> {
                               }
 
                               (_drawerByTypesSelected.isEmpty)
-                                  ? filters.remove(FilterType.byType)
+                                  ? removeFilters([FilterType.byType])
                                   : addFilter(FilterType.byType);
 
-                              filterSearchResults();
+                              applyFilters();
                             })
                           },
                           label: TypeIcon(
@@ -302,8 +292,8 @@ class _ListScreenState extends State<ListScreen> {
                   onPressed: () {
                     setState(() {
                       _drawerByTypesSelected.clear();
-                      filters.remove(FilterType.byType);
-                      filterSearchResults();
+                      removeFilters([FilterType.byType]);
+                      applyFilters();
                     });
                   },
                 ),
@@ -326,12 +316,13 @@ class _ListScreenState extends State<ListScreen> {
                       setState(() {
                         addFilter(FilterType.numAsc);
 
-                        filters.removeWhere((element) =>
-                            element == FilterType.numDesc ||
-                            element == FilterType.nameAsc ||
-                            element == FilterType.nameDesc);
+                        removeFilters([
+                          FilterType.numDesc,
+                          FilterType.nameAsc,
+                          FilterType.nameDesc
+                        ]);
 
-                        filterSearchResults();
+                        applyFilters();
                       });
                     },
                   ),
@@ -341,12 +332,13 @@ class _ListScreenState extends State<ListScreen> {
                       setState(() {
                         addFilter(FilterType.numDesc);
 
-                        filters.removeWhere((element) =>
-                            element == FilterType.numAsc ||
-                            element == FilterType.nameAsc ||
-                            element == FilterType.nameDesc);
+                        removeFilters([
+                          FilterType.numAsc,
+                          FilterType.nameAsc,
+                          FilterType.nameDesc
+                        ]);
 
-                        filterSearchResults();
+                        applyFilters();
                       });
                     },
                   ),
@@ -356,12 +348,13 @@ class _ListScreenState extends State<ListScreen> {
                       setState(() {
                         addFilter(FilterType.nameAsc);
 
-                        filters.removeWhere((element) =>
-                            element == FilterType.numAsc ||
-                            element == FilterType.numDesc ||
-                            element == FilterType.nameDesc);
+                        removeFilters([
+                          FilterType.numAsc,
+                          FilterType.numDesc,
+                          FilterType.nameDesc
+                        ]);
 
-                        filterSearchResults();
+                        applyFilters();
                       });
                     },
                   ),
@@ -371,12 +364,13 @@ class _ListScreenState extends State<ListScreen> {
                       setState(() {
                         addFilter(FilterType.nameDesc);
 
-                        filters.removeWhere((element) =>
-                            element == FilterType.numAsc ||
-                            element == FilterType.numDesc ||
-                            element == FilterType.nameAsc);
+                        removeFilters([
+                          FilterType.numAsc,
+                          FilterType.numDesc,
+                          FilterType.nameAsc
+                        ]);
 
-                        filterSearchResults();
+                        applyFilters();
                       });
                     },
                   ),
@@ -385,18 +379,28 @@ class _ListScreenState extends State<ListScreen> {
             ],
           ),
           const Divider(thickness: 2),
+          Center(
+            child: TextButton(
+              child: const Text("Close"),
+              onPressed: () {
+                setState(() {
+                  scaffoldKey.currentState!.closeEndDrawer();
+                });
+              },
+            ),
+          )
         ],
       ),
     );
   }
 
-  AppBar listAppBar(BuildContext context) {
+  AppBar appTopBar(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: true,
       actions: [
         IconButton(
           icon: const Icon(Icons.search_outlined),
-          tooltip: 'Show Snackbar',
+          // tooltip: 'Show Snackbar',
           onPressed: () {
             setState(() {
               _isSearchOpened = !_isSearchOpened;
@@ -414,45 +418,21 @@ class _ListScreenState extends State<ListScreen> {
           },
         ),
       ],
-      backgroundColor: Game.gameColor(widget.collection!.game),
       centerTitle: true,
-      title: Column(
-        children: [
-          Text(widget.collection!.game),
-          Text("(${widget.collection!.percentage()}%)")
-        ],
-      ),
+      backgroundColor:
+          (isPokedex) ? null : Game.gameColor(widget.collection!.game),
+      title: (isPokedex)
+          ? const Text("Pokedex")
+          : Column(
+              children: [
+                Text(widget.collection!.game),
+                Text("(${widget.collection!.percentage()}%)")
+              ],
+            ),
     );
   }
 
-  AppBar dexAppBar(BuildContext context) {
-    return AppBar(
-      automaticallyImplyLeading: true,
-      actions: [
-        IconButton(
-          icon: const Icon(Icons.filter_alt_outlined),
-          onPressed: () {
-            setState(() {
-              scaffoldKey.currentState!.openEndDrawer();
-            });
-          },
-        ),
-        IconButton(
-          icon: const Icon(Icons.search),
-          onPressed: () {
-            setState(() {
-              _isSearchOpened = !_isSearchOpened;
-            });
-          },
-        ),
-      ],
-      // backgroundColor: Game.gameColor(widget.collection!.game),
-      centerTitle: true,
-      title: const Text("Pokedex"),
-    );
-  }
-
-  BottomNavigationBar bottomNavigationBar() {
+  BottomNavigationBar bottomFilterBar() {
     return BottomNavigationBar(
       items: <BottomNavigationBarItem>[
         const BottomNavigationBarItem(
@@ -479,55 +459,43 @@ class _ListScreenState extends State<ListScreen> {
       onTap: (int index) {
         setState(
           () {
-            applyFilter(index);
+            switch (index) {
+              case 0:
+                removeFilters([FilterType.captured, FilterType.notCaptured]);
+                break;
+              case 1:
+                removeFilters([FilterType.notCaptured]);
+                addFilter(FilterType.captured);
+                break;
+              case 2:
+                removeFilters([FilterType.captured]);
+                addFilter(FilterType.notCaptured);
+                break;
+            }
+            _selectedIndex = index;
+            applyFilters();
           },
         );
       },
     );
   }
 
-  applyFilter(int index) {
-    switch (index) {
-      case 0:
-        filters.removeWhere((element) =>
-            element == FilterType.captured ||
-            element == FilterType.notCaptured);
-        // filteredList = widget.collection!.filterCollection(FilterType.all);
-        _selectedIndex = index;
-        break;
-      case 1:
-        filters.remove(FilterType.notCaptured);
-        addFilter(FilterType.captured);
-        // filteredList = widget.collection!.filterCollection(FilterType.captured);
-        _selectedIndex = index;
-        break;
-      case 2:
-        filters.remove(FilterType.captured);
-        addFilter(FilterType.notCaptured);
-        // filteredList =
-        //     widget.collection!.filterCollection(FilterType.notCaptured);
-        _selectedIndex = index;
-        break;
-    }
-    filterSearchResults();
-  }
-
-  Expanded giveMeAList() {
+  Expanded list() {
     return Expanded(
       child: ListView.builder(
         itemBuilder: ((context, index) {
-          if (widget.pokemons != null) {
-            return (widget.pokemons![index].forms.isEmpty)
+          if (isPokedex) {
+            return (originalPokedex[index].forms.isEmpty)
                 ? singleCard(
                     context,
                     index,
-                    widget.pokemons,
+                    originalPokedex,
                     () {},
                   )
                 : multipleCards(
                     context,
                     index,
-                    widget.pokemons,
+                    originalPokedex,
                     () {},
                   );
           } else {
@@ -539,8 +507,7 @@ class _ListScreenState extends State<ListScreen> {
                     () {
                       setState(() {
                         widget.collection!.updateCollection();
-                        applyFilter(_selectedIndex);
-                        filterSearchResults();
+                        applyFilters();
                       });
                     },
                   )
@@ -551,16 +518,13 @@ class _ListScreenState extends State<ListScreen> {
                     () {
                       setState(() {
                         widget.collection!.updateCollection();
-                        applyFilter(_selectedIndex);
-                        filterSearchResults();
+                        applyFilters();
                       });
                     },
                   );
           }
         }),
-        itemCount: (widget.pokemons != null)
-            ? widget.pokemons!.length
-            : filteredList.length,
+        itemCount: (isPokedex) ? originalPokedex.length : filteredList.length,
         shrinkWrap: true,
         padding: const EdgeInsets.all(5),
         scrollDirection: Axis.vertical,

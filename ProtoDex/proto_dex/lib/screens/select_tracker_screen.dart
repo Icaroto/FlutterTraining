@@ -49,22 +49,15 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
                       Expanded(
                         child: Column(
                           children: [
-                            const Padding(
-                              padding: EdgeInsets.all(5.0),
-                              child: Text(
-                                "GAMES",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15),
-                              ),
+                            const TrackerScreenTitles(
+                              title: "GAMES",
                             ),
                             Expanded(
                               child: ListView.builder(
                                 itemCount: gamesAvailable.length,
                                 itemBuilder: (BuildContext context, int index) {
                                   return Padding(
-                                    padding: const EdgeInsets.all(2.5),
+                                    padding: const EdgeInsets.all(3),
                                     child: TrackerButton(
                                         buttonName: gamesAvailable[index],
                                         imagePath: Game.gameIcon(
@@ -90,15 +83,8 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
                       Expanded(
                           child: Column(
                         children: [
-                          const Padding(
-                            padding: EdgeInsets.all(5.0),
-                            child: Text(
-                              "DEX",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15),
-                            ),
+                          const TrackerScreenTitles(
+                            title: "DEX",
                           ),
                           Expanded(
                             child: ListView.builder(
@@ -132,15 +118,8 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
                       Expanded(
                         child: Column(
                           children: [
-                            const Padding(
-                              padding: EdgeInsets.all(5.0),
-                              child: Text(
-                                "TRACKERS",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15),
-                              ),
+                            const TrackerScreenTitles(
+                              title: "TRACKERS",
                             ),
                             Expanded(
                               child: ListView.builder(
@@ -170,15 +149,8 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
                       Expanded(
                         child: Column(
                           children: [
-                            const Padding(
-                              padding: EdgeInsets.all(5.0),
-                              child: Text(
-                                "RECENT TRACKERS",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15),
-                              ),
+                            const TrackerScreenTitles(
+                              title: "RECENT",
                             ),
                             Expanded(
                               child: FutureBuilder(
@@ -265,6 +237,27 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class TrackerScreenTitles extends StatelessWidget {
+  const TrackerScreenTitles({
+    required this.title,
+    Key? key,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: Text(
+        title,
+        style: const TextStyle(
+            color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
       ),
     );
   }
@@ -431,89 +424,3 @@ createItem(pokemon, gameName, dexName, isShinyTracker) {
   }
   return null;
 }
-
-// createColletion(String gameName, String dexName, String trackerType) {
-//   List<Item> pokemons = [];
-//   for (var pokemon in kPokedex) {
-//     Item? item;
-//     if (pokemon.forms.isEmpty) {
-//       Game? game = pokemon.findGameDex(gameName, dexName);
-//       if (game != null) {
-//         if (trackerType.contains("Shiny") && game.shinyLocked == "UNLOCKED") {
-//           item = Item.fromDex(pokemon, game, useGameDexNumber: true);
-//         } else {
-//           item = Item.fromDex(pokemon, game, useGameDexNumber: true);
-//         }
-//         // pokemons.add(poke);
-//       }
-//     } else {
-//       for (var form in pokemon.forms) {
-//         Game? game = form.findGameDex(gameName, dexName);
-//         if (game != null) {
-//           if (trackerType.contains("Shiny") && game.shinyLocked == "UNLOCKED") {
-//             //if no form has been added yet
-//             //first form becomes base
-//             if (item == null) {
-//               item = Item.fromDex(form, game, useGameDexNumber: true);
-//               item.forms.add(Item.copy(item));
-//             } else {
-//               item.forms.add(Item.fromDex(form, game, useGameDexNumber: true));
-//             }
-//           } else {
-//             if (item == null) {
-//               item = Item.fromDex(form, game, useGameDexNumber: true);
-//               item.forms.add(Item.copy(item));
-//             } else {
-//               item.forms.add(Item.fromDex(form, game, useGameDexNumber: true));
-//             }
-//           }
-//         }
-//       }
-//     }
-//     if (item?.forms.length == 1) item?.forms.clear();
-
-//     if (item != null) {
-//       if (trackerType.contains("Shiny")) {
-//         item.displayImage =
-//             item.image.firstWhere((img) => img.contains("-shiny-"));
-//         item.forms.forEach((form) {
-//           form.displayImage =
-//               form.image.firstWhere((img) => img.contains("-shiny-"));
-//         });
-//       }
-
-//       if (trackerType.contains("Living")) {
-//         if (item.hasGenderDiff()) {
-//           if (item.name != "Oinkologne" && item.name != "Indeedee") {
-//             String variant =
-//                 (trackerType.contains("Shiny")) ? "-shiny-" : "-normal-";
-
-//             Item female = Item.copy(item);
-//             female.gender = PokemonGender.female;
-//             female.displayImage = item.image.firstWhere(
-//                 (img) => img.contains("-f.") && img.contains(variant));
-
-//             Item male = Item.copy(item);
-//             male.gender = PokemonGender.male;
-//             male.displayImage = item.image.firstWhere(
-//                 (img) => img.contains("-m.") && img.contains(variant));
-
-//             item.forms.insert(0, male);
-//             item.forms.insert(1, female);
-//           }
-//         }
-//       } else {
-//         item.forms.clear();
-//       }
-
-//       pokemons.add(item);
-//     }
-//   }
-
-//   Collection collection =
-//       Collection.create(gameName, dexName, trackerType, pokemons);
-
-//   collection.pokemons.sortBy((element) => element.number);
-
-//   return collection;
-// }

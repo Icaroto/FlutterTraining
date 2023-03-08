@@ -59,3 +59,18 @@ enum ScreenType {
   pokedex,
   tracker,
 }
+
+enum FilterType {
+  captured,
+  notCaptured,
+  all,
+  exclusiveOnly,
+  byValue,
+  byType,
+  nameAsc,
+  nameDesc,
+  numAsc,
+  numDesc
+}
+
+enum CaptureType { full, partial, empty }
