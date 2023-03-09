@@ -289,7 +289,7 @@ class TrackerButton extends StatelessWidget {
             color: color,
             blurRadius: 0.5,
             spreadRadius: 0.5,
-            offset: Offset(2, 3),
+            offset: const Offset(2, 3),
           ),
         ],
       ),
