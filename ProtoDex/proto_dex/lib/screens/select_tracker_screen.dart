@@ -71,8 +71,9 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
   }
 
   Expanded startTrackingButton(BuildContext context) {
-    String suggestedName =
-        '$gamePicked-$dexPicked-$trackerPicked'.replaceAll("Pokemon ", "");
+    String suggestedName = '$gamePicked-$dexPicked-$trackerPicked'
+        .replaceAll("Pokemon ", "")
+        .replaceAll(" ", "");
 
     TextEditingController textController =
         TextEditingController(text: suggestedName);

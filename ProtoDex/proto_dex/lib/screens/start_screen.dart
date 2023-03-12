@@ -16,11 +16,24 @@ class _StartScreenState extends State<StartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: const Color(0xFF1D1E33),
+        // foregroundColor: Colors.white,
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Under Construction'),
+            ),
+          );
+        },
+        child: const Icon(Icons.settings),
+      ),
       body: Stack(
         children: <Widget>[
           kBasicBackground,
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -39,15 +52,8 @@ class _StartScreenState extends State<StartScreen> {
                       );
                     },
                   ),
-                  // MainScreenButton(
-                  //   buttonName: 'Tracker',
-                  //   imagePath: 'images/background/colored_ball.png',
-                  //   onPressed: () async {
-                  //     test(context);
-                  //   },
-                  // ),
                   MainScreenButton(
-                    buttonName: 'Tracker',
+                    buttonName: 'Trackers',
                     imagePath: 'images/background/colored_ball.png',
                     onPressed: () {
                       Navigator.push(
@@ -58,6 +64,40 @@ class _StartScreenState extends State<StartScreen> {
                           },
                         ),
                       );
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  MainScreenButton(
+                    buttonName: 'Collection',
+                    imagePath: 'images/background/colored_ball.png',
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Under Construction')));
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  MainScreenButton(
+                    buttonName: 'LF',
+                    imagePath: 'images/background/colored_ball.png',
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Under Construction')));
+                    },
+                  ),
+                  MainScreenButton(
+                    buttonName: 'FT',
+                    imagePath: 'images/background/colored_ball.png',
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Under Construction')));
                     },
                   ),
                 ],
