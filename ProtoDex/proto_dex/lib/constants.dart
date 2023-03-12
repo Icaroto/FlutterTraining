@@ -4,6 +4,7 @@ const String kPokedexFileLocation = 'data/pokedex.json';
 const String kPokedexKey = 'pokedex';
 const String kImagesRoot = 'images/';
 
+const String kTrackerPrefix = 't_';
 // const String kCollectionFileLocation = 'data/collection.json';
 // const String kCollectionKey = 'collection';
 

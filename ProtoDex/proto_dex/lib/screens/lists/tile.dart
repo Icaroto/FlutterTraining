@@ -74,14 +74,33 @@ class _PokemonTile extends State<PokemonTile> {
       textColor: Colors.black,
       onTap: () => {
         if (widget.pokemon.captured)
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return DetailsPage(pokemon: widget.pokemon);
-              },
+          {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return DetailsPage(pokemon: widget.pokemon);
+                },
+              ),
             ),
-          )
+          }
+        else
+          {
+            setState(
+              () {
+                widget.pokemon.captured = true;
+                widget.onStateChange!();
+              },
+            )
+          }
+      },
+      onLongPress: () {
+        setState(
+          () {
+            widget.pokemon.captured = false;
+            widget.onStateChange!();
+          },
+        );
       },
       leading: ListImage(
           image: widget.pokemon.displayImage,

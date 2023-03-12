@@ -9,6 +9,7 @@ import '../models/collection.dart';
 import '../models/enums.dart';
 import '../models/item.dart';
 import '../models/pokemon.dart';
+import '../utils/collections_manager.dart';
 import 'lists/cards.dart';
 
 class ListScreen extends StatefulWidget {
@@ -506,7 +507,7 @@ class _ListScreenState extends State<ListScreen> {
                     filteredList,
                     () {
                       setState(() {
-                        widget.collection!.updateCollection();
+                        saveTracker(widget.collection!);
                         applyFilters();
                       });
                     },
@@ -517,7 +518,7 @@ class _ListScreenState extends State<ListScreen> {
                     filteredList,
                     () {
                       setState(() {
-                        widget.collection!.updateCollection();
+                        saveTracker(widget.collection!);
                         applyFilters();
                       });
                     },

@@ -1,12 +1,8 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:proto_dex/constants.dart';
-import 'package:proto_dex/models/enums.dart';
 import 'package:proto_dex/styles.dart';
 import '../models/collection.dart';
 import '../models/game.dart';
-import '../models/item.dart';
-import '../models/pokemon.dart';
+import '../utils/collections_manager.dart';
 import 'list_screen.dart';
 
 class SelectTrackerScreen extends StatefulWidget {
@@ -25,6 +21,7 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
   String gamePicked = "";
   String dexPicked = "";
   String trackerPicked = "";
+  String trackerName = "";
   List<String> gamesAvailable = Dex.availableGames();
   List<String> trackers = Dex.availableTrackerTypes();
   List<String> dexAvailable = [];
@@ -46,68 +43,8 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
                   flex: 3,
                   child: Row(
                     children: [
-                      Expanded(
-                        child: Column(
-                          children: [
-                            const TrackerScreenTitles(
-                              title: "GAMES",
-                            ),
-                            Expanded(
-                              child: ListView.builder(
-                                itemCount: gamesAvailable.length,
-                                itemBuilder: (BuildContext context, int index) {
-                                  return Padding(
-                                    padding: const EdgeInsets.all(3),
-                                    child: TrackerButton(
-                                        buttonName: gamesAvailable[index],
-                                        imagePath: Game.gameIcon(
-                                            gamesAvailable[index]),
-                                        onPressed: (() => {
-                                              setState(() {
-                                                gamePicked =
-                                                    gamesAvailable[index];
-                                                dexAvailable = Dex.availableDex(
-                                                    gamePicked);
-                                                dexPicked = "";
-                                              })
-                                            }),
-                                        isPicked: (gamePicked ==
-                                            gamesAvailable[index])),
-                                  );
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                          child: Column(
-                        children: [
-                          const TrackerScreenTitles(
-                            title: "DEX",
-                          ),
-                          Expanded(
-                            child: ListView.builder(
-                              itemCount: dexAvailable.length,
-                              itemBuilder: (BuildContext context, int index2) {
-                                return Padding(
-                                  padding: const EdgeInsets.all(2.5),
-                                  child: TrackerButton(
-                                      buttonName: dexAvailable[index2],
-                                      imagePath: '',
-                                      onPressed: (() => {
-                                            setState(() {
-                                              dexPicked = dexAvailable[index2];
-                                            })
-                                          }),
-                                      isPicked:
-                                          (dexPicked == dexAvailable[index2])),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      )),
+                      gameList(),
+                      dexList(),
                     ],
                   ),
                 ),
@@ -115,125 +52,267 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
                   flex: 2,
                   child: Row(
                     children: [
-                      Expanded(
-                        child: Column(
-                          children: [
-                            const TrackerScreenTitles(
-                              title: "TRACKERS",
-                            ),
-                            Expanded(
-                              child: ListView.builder(
-                                itemCount: trackers.length,
-                                itemBuilder:
-                                    (BuildContext context, int index3) {
-                                  return Padding(
-                                    padding: const EdgeInsets.all(2.5),
-                                    child: TrackerButton(
-                                        buttonName: trackers[index3],
-                                        imagePath: '',
-                                        onPressed: (() => {
-                                              setState(() {
-                                                trackerPicked =
-                                                    trackers[index3];
-                                              })
-                                            }),
-                                        isPicked: (trackerPicked ==
-                                            trackers[index3])),
-                                  );
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Column(
-                          children: [
-                            const TrackerScreenTitles(
-                              title: "RECENT",
-                            ),
-                            Expanded(
-                              child: FutureBuilder(
-                                future: <Collection>[].findCollections(),
-                                builder: (BuildContext context,
-                                    AsyncSnapshot<List<Collection>> snapshot) {
-                                  if (snapshot.hasData) {
-                                    return ListView.builder(
-                                      itemCount: snapshot.data?.length,
-                                      itemBuilder:
-                                          (BuildContext context, int index) {
-                                        return Padding(
-                                          padding: const EdgeInsets.all(2.5),
-                                          child: TrackerButton(
-                                              buttonName:
-                                                  snapshot.data![index].name,
-                                              imagePath: '',
-                                              onPressed: (() => {
-                                                    Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder: (context) {
-                                                          return ListScreen(
-                                                              collection: retrieveCollection(
-                                                                  snapshot
-                                                                      .data![
-                                                                          index]
-                                                                      .game,
-                                                                  snapshot
-                                                                      .data![
-                                                                          index]
-                                                                      .dex,
-                                                                  snapshot
-                                                                      .data![
-                                                                          index]
-                                                                      .type));
-                                                        },
-                                                      ),
-                                                    ),
-                                                  }),
-                                              isPicked: false),
-                                        );
-                                      },
-                                    );
-                                  } else if (snapshot.hasError) {
-                                    return Text("Error: ${snapshot.error}");
-                                  }
-                                  return Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: const [
-                                      CircularProgressIndicator(),
-                                    ],
-                                  );
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      trackersList(),
+                      recentList(),
                     ],
                   ),
                 ),
-                TextButton(
-                  onPressed: () => {
-                    if (gamePicked != "" &&
-                        dexPicked != "" &&
-                        trackerPicked != "")
-                      {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return ListScreen(
-                                  collection: retrieveCollection(
-                                      gamePicked, dexPicked, trackerPicked));
-                            },
+                Row(
+                  children: [
+                    startTrackingButton(context),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Expanded startTrackingButton(BuildContext context) {
+    String suggestedName =
+        '$gamePicked-$dexPicked-$trackerPicked'.replaceAll("Pokemon ", "");
+
+    TextEditingController textController =
+        TextEditingController(text: suggestedName);
+    textController.selection = TextSelection(
+      baseOffset: 0,
+      extentOffset: suggestedName.length,
+    );
+    return Expanded(
+      child: Card(
+        child: TextButton(
+          style: TextButton.styleFrom(
+            backgroundColor: Colors.blue,
+            foregroundColor: Colors.white,
+          ),
+          onPressed:
+              (gamePicked != "" && dexPicked != "" && trackerPicked != "")
+                  ? () => {
+                        showDialog(
+                          context: context,
+                          builder: (_) => AlertDialog(
+                            title: const Text('Give a name'),
+                            content: TextField(
+                              autofocus: true,
+                              controller: textController,
+                              onChanged: (value) {
+                                trackerName = textController.text;
+                              },
+                            ),
+                            actions: [
+                              TextButton(
+                                child: const Text("Confirm"),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  setState(() {});
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return ListScreen(
+                                            collection: createTracker(
+                                                textController.text,
+                                                gamePicked,
+                                                dexPicked,
+                                                trackerPicked));
+                                      },
+                                    ),
+                                  );
+                                },
+                              ),
+                              TextButton(
+                                child: const Text("Cancel"),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            ],
                           ),
                         ),
                       }
-                  },
-                  child: const Text("START TRACKING!"),
-                ),
-              ],
+                  : null,
+          child: const Text("START TRACKING!"),
+        ),
+      ),
+    );
+  }
+
+  Expanded gameList() {
+    return Expanded(
+      child: Column(
+        children: [
+          const TrackerScreenTitles(
+            title: "GAMES",
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: gamesAvailable.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.all(2.5),
+                  child: TrackerButton(
+                      buttonName: gamesAvailable[index],
+                      imagePath: Game.gameIcon(gamesAvailable[index]),
+                      onPressed: (() => {
+                            setState(() {
+                              gamePicked = gamesAvailable[index];
+                              dexAvailable = Dex.availableDex(gamePicked);
+                              dexPicked = "";
+                            })
+                          }),
+                      isPicked: (gamePicked == gamesAvailable[index])),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Expanded dexList() {
+    return Expanded(
+        child: Column(
+      children: [
+        const TrackerScreenTitles(
+          title: "DEX",
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemCount: dexAvailable.length,
+            itemBuilder: (BuildContext context, int index2) {
+              return Padding(
+                padding: const EdgeInsets.all(2.5),
+                child: TrackerButton(
+                    buttonName: dexAvailable[index2],
+                    imagePath: '',
+                    onPressed: (() => {
+                          setState(() {
+                            dexPicked = dexAvailable[index2];
+                          })
+                        }),
+                    isPicked: (dexPicked == dexAvailable[index2])),
+              );
+            },
+          ),
+        ),
+      ],
+    ));
+  }
+
+  Expanded trackersList() {
+    return Expanded(
+      child: Column(
+        children: [
+          const TrackerScreenTitles(
+            title: "TRACKERS",
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: trackers.length,
+              itemBuilder: (BuildContext context, int index3) {
+                return Padding(
+                  padding: const EdgeInsets.all(2.5),
+                  child: TrackerButton(
+                      buttonName: trackers[index3],
+                      imagePath: '',
+                      onPressed: (() => {
+                            setState(() {
+                              trackerPicked = trackers[index3];
+                            })
+                          }),
+                      isPicked: (trackerPicked == trackers[index3])),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Expanded recentList() {
+    return Expanded(
+      child: Column(
+        children: [
+          const TrackerScreenTitles(
+            title: "RECENT",
+          ),
+          Expanded(
+            child: FutureBuilder(
+              future: getAllTrackers(),
+              builder: (BuildContext context,
+                  AsyncSnapshot<List<Collection>> snapshot) {
+                if (snapshot.hasData) {
+                  snapshot.data!.toList().forEach((element) {
+                    // if (!recentTrackers.contains(element.name)) {
+                    //   recentTrackers.add(element.name);
+                    // }
+                  });
+                  return ListView.builder(
+                    itemCount: snapshot.data?.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(2.5),
+                        child: TrackerButton(
+                            buttonName: snapshot.data![index].name,
+                            imagePath: '',
+                            onLongPress: () {
+                              showDialog(
+                                context: context,
+                                builder: (_) => AlertDialog(
+                                  title: const Text('Delete Tracker'),
+                                  content: Text(
+                                      'Remove ${snapshot.data![index].name}?'),
+                                  actions: [
+                                    TextButton(
+                                      child: const Text("Confirm"),
+                                      onPressed: () {
+                                        deleteTracker(
+                                          snapshot.data![index].ref,
+                                        );
+                                        Navigator.pop(context);
+                                        setState(() {});
+                                      },
+                                    ),
+                                    TextButton(
+                                      child: const Text("Cancel"),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                            onPressed: (() => {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return ListScreen(
+                                            collection: getTracker(
+                                                snapshot.data![index].ref));
+                                      },
+                                    ),
+                                  ),
+                                }),
+                            isPicked: false),
+                      );
+                    },
+                  );
+                } else if (snapshot.hasError) {
+                  return Text("Error: ${snapshot.error}");
+                }
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    CircularProgressIndicator(),
+                  ],
+                );
+              },
             ),
           ),
         ],
@@ -264,16 +343,19 @@ class TrackerScreenTitles extends StatelessWidget {
 }
 
 class TrackerButton extends StatelessWidget {
-  const TrackerButton(
-      {super.key,
-      required this.buttonName,
-      required this.imagePath,
-      required this.onPressed,
-      required this.isPicked});
+  const TrackerButton({
+    super.key,
+    required this.buttonName,
+    required this.imagePath,
+    required this.onPressed,
+    required this.isPicked,
+    this.onLongPress,
+  });
 
   final String buttonName;
   final String imagePath;
   final Function()? onPressed;
+  final Function()? onLongPress;
   final bool isPicked;
 
   @override
@@ -289,7 +371,7 @@ class TrackerButton extends StatelessWidget {
             color: color,
             blurRadius: 0.5,
             spreadRadius: 0.5,
-            offset: Offset(2, 3),
+            offset: const Offset(2, 3),
           ),
         ],
       ),
@@ -297,6 +379,7 @@ class TrackerButton extends StatelessWidget {
         height: 30,
         child: TextButton(
           onPressed: onPressed,
+          onLongPress: onLongPress,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -318,109 +401,4 @@ class TrackerButton extends StatelessWidget {
       ),
     );
   }
-}
-
-Collection retrieveCollection(
-    String gameName, String dexName, String trackerType) {
-  String collectionName = "tracker_${gameName}_${dexName}_$trackerType"
-      .replaceAll(" ", "")
-      .replaceAll("'", "")
-      .toLowerCase();
-
-  List<Collection> collections = <Collection>[].findCollection(collectionName);
-
-  if (collections.isEmpty) {
-    Collection collection = createColletion(gameName, dexName, trackerType);
-    collections.add(collection);
-    collections.saveToFile(collectionName);
-  }
-
-  return collections.first;
-}
-
-createColletion(String gameName, String dexName, String trackerType) {
-  List<Item> pokemons = [];
-  bool isShinyTracker = trackerType.contains("Shiny");
-  bool isLivingDexTracker = trackerType.contains("Living");
-
-  for (var pokemon in kPokedex) {
-    Item? item = checkPokemon(
-        pokemon, gameName, dexName, isShinyTracker, isLivingDexTracker);
-    if (item != null) {
-      if (isLivingDexTracker) {
-        if (item.hasGenderDiff()) {
-          String variant =
-              (trackerType.contains("Shiny")) ? "-shiny-" : "-normal-";
-
-          Item female = Item.copy(item);
-          female.gender = PokemonGender.female;
-          female.displayName = "${female.name} ♀";
-
-          female.displayImage = item.image.firstWhere(
-              (img) => img.contains("-f.") && img.contains(variant));
-
-          Item male = Item.copy(item);
-          male.gender = PokemonGender.male;
-          male.displayName = "${male.name} ♂";
-          male.displayImage = item.image.firstWhere(
-              (img) => img.contains("-m.") && img.contains(variant));
-
-          item.forms.insert(0, male);
-          item.forms.insert(1, female);
-        } else if (item.forms.isNotEmpty) {
-          item.forms.insert(0, Item.copy(item));
-        }
-      }
-      pokemons.add(item);
-    }
-  }
-
-  Collection collection =
-      Collection.create(gameName, dexName, trackerType, pokemons);
-
-  collection.pokemons.sortBy((element) => element.number);
-
-  return collection;
-}
-
-checkPokemon(
-    Pokemon pokemon, gameName, dexName, isShinyTracker, isLivingDexTracker) {
-  Item? item;
-  if (pokemon.forms.isEmpty) {
-    item = createItem(pokemon, gameName, dexName, isShinyTracker);
-  } else {
-    for (var form in pokemon.forms) {
-      Item? result = checkPokemon(
-          form, gameName, dexName, isShinyTracker, isLivingDexTracker);
-      if (result == null) continue;
-      if (item == null) {
-        item = result;
-      } else if (isLivingDexTracker) {
-        item.displayName = item.formName;
-        result.displayName = result.formName;
-        item.forms.add(Item.copy(result));
-      }
-    }
-  }
-  return item;
-}
-
-createItem(pokemon, gameName, dexName, isShinyTracker) {
-  Game? game = pokemon.findGameDex(gameName, dexName);
-  if (game != null) {
-    if ((isShinyTracker && game.shinyLocked == "UNLOCKED") || !isShinyTracker) {
-      Item item = Item.fromDex(pokemon, game, useGameDexNumber: true);
-      if (isShinyTracker) {
-        item.displayImage =
-            item.image.firstWhere((img) => img.contains("-shiny-"));
-        for (var form in item.forms) {
-          form.displayImage =
-              form.image.firstWhere((img) => img.contains("-shiny-"));
-        }
-      }
-
-      return item;
-    }
-  }
-  return null;
 }
