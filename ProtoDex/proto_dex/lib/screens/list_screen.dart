@@ -74,18 +74,13 @@ class _ListScreenState extends State<ListScreen> {
 
   void applyFilters() {
     setState(() {
+      (_query == "")
+          ? removeFilters([FilterType.byValue])
+          : addFilter(FilterType.byValue);
       if (isPokedex) {
-        (_query == "")
-            ? removeFilters([FilterType.byValue])
-            : addFilter(FilterType.byValue);
-
         originalPokedex = widget.pokemons
             .applyAllFilters(filters, _query, _drawerByTypesSelected);
       } else {
-        (_query == "")
-            ? removeFilters([FilterType.byValue])
-            : addFilter(FilterType.byValue);
-
         filteredList = widget.collection!
             .applyAllFilters(filters, _query, _drawerByTypesSelected);
       }
