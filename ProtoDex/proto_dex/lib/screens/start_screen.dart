@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/components/main_button.dart';
 import 'package:proto_dex/constants.dart';
+import 'package:proto_dex/screens/collection_screen.dart';
 import 'package:proto_dex/screens/select_tracker_screen.dart';
 import 'package:proto_dex/styles.dart';
 import 'list_screen.dart';
@@ -75,8 +76,14 @@ class _StartScreenState extends State<StartScreen> {
                     buttonName: 'Collection',
                     imagePath: 'images/background/colored_ball.png',
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Under Construction')));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return CollectionScreen(collection: null);
+                          },
+                        ),
+                      );
                     },
                   ),
                 ],
