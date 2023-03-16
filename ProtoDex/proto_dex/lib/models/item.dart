@@ -2,7 +2,6 @@ import 'package:proto_dex/models/enums.dart';
 import 'package:proto_dex/models/pokemon.dart';
 
 import '../constants.dart';
-import 'collection.dart';
 import 'game.dart';
 
 class Item {
@@ -24,6 +23,8 @@ class Item {
   PokeballType ball;
   String level;
   bool captured;
+  String catchDate;
+  String origin;
 
   Item.fromJson(Map<String, dynamic> json)
       : name = json['name'],
@@ -42,6 +43,8 @@ class Item {
         ability = json['ability'],
         ball = PokeballType.values.byName(json['ball']),
         captured = json['captured'],
+        catchDate = json['catchDate'],
+        origin = json['origin'],
         level = json['level'],
         forms = json['forms'] != null
             ? List<Item>.from(
@@ -49,7 +52,7 @@ class Item {
             : [],
         game = Game.fromJson(json['game']);
 
-  Item.fromDex(Pokemon dexPokemon, Game gameSelected,
+  Item.fromDex(Pokemon dexPokemon, Game gameSelected, String entryOrigin,
       {bool useGameDexNumber = false})
       : name = dexPokemon.name,
         formName = dexPokemon.formName,
@@ -63,12 +66,14 @@ class Item {
         type2 = dexPokemon.type2,
         forms = dexPokemon.forms.isNotEmpty
             ? List<Item>.from(dexPokemon.forms.map((model) => Item.fromDex(
-                model, gameSelected,
+                model, gameSelected, entryOrigin,
                 useGameDexNumber: useGameDexNumber)))
             : [],
         gender = PokemonGender.undefinied,
         ball = PokeballType.undefined,
         captured = false,
+        catchDate = "",
+        origin = entryOrigin,
         level = kValueNotFound,
         ability = kValueNotFound,
         game = gameSelected;
@@ -88,6 +93,8 @@ class Item {
         gender = item.gender,
         ball = item.ball,
         captured = item.captured,
+        catchDate = item.catchDate,
+        origin = item.origin,
         level = item.level,
         ability = item.ability,
         game = item.game;
@@ -108,6 +115,8 @@ class Item {
       'gender': gender.name,
       'ball': ball.name,
       'captured': captured,
+      'catchDate': catchDate,
+      'origin': origin,
       'ability': ability,
       'level': level,
       'game': game,

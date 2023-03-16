@@ -55,10 +55,7 @@ enum Attributes {
   isShiny,
 }
 
-enum ScreenType {
-  pokedex,
-  tracker,
-}
+enum ScreenType { pokedex, tracker, collection }
 
 enum FilterType {
   captured,

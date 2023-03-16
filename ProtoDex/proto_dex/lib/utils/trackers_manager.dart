@@ -48,9 +48,12 @@ Collection createTracker(
   bool isShinyTracker = trackerType.contains("Shiny");
   bool isLivingDexTracker = trackerType.contains("Living");
 
+  Collection collection =
+      Collection.create(trackerName, gameName, dexName, trackerType, pokemons);
+
   for (var pokemon in kPokedex) {
-    Item? item = checkPokemon(
-        pokemon, gameName, dexName, isShinyTracker, isLivingDexTracker);
+    Item? item = checkPokemon(pokemon, gameName, dexName, collection.ref,
+        isShinyTracker, isLivingDexTracker);
     if (item != null) {
       if (isLivingDexTracker) {
         if (item.hasGenderDiff()) {
@@ -80,9 +83,6 @@ Collection createTracker(
     }
   }
 
-  Collection collection =
-      Collection.create(trackerName, gameName, dexName, trackerType, pokemons);
-
   collection.pokemons.sortBy((pokemon) => pokemon.number);
 
   saveTracker(collection);
@@ -90,15 +90,15 @@ Collection createTracker(
   return collection;
 }
 
-Item? checkPokemon(
-    Pokemon pokemon, gameName, dexName, isShinyTracker, isLivingDexTracker) {
+Item? checkPokemon(Pokemon pokemon, gameName, dexName, entryOrigin,
+    isShinyTracker, isLivingDexTracker) {
   Item? item;
   if (pokemon.forms.isEmpty) {
-    item = createItem(pokemon, gameName, dexName, isShinyTracker);
+    item = createItem(pokemon, gameName, dexName, entryOrigin, isShinyTracker);
   } else {
     for (var form in pokemon.forms) {
-      Item? result = checkPokemon(
-          form, gameName, dexName, isShinyTracker, isLivingDexTracker);
+      Item? result = checkPokemon(form, gameName, dexName, entryOrigin,
+          isShinyTracker, isLivingDexTracker);
       if (result == null) continue;
       if (item == null) {
         item = result;
@@ -112,11 +112,12 @@ Item? checkPokemon(
   return item;
 }
 
-Item? createItem(pokemon, gameName, dexName, isShinyTracker) {
+Item? createItem(pokemon, gameName, dexName, entryOrigin, isShinyTracker) {
   Game? game = pokemon.findGameDex(gameName, dexName);
   if (game != null) {
     if ((isShinyTracker && game.shinyLocked == "UNLOCKED") || !isShinyTracker) {
-      Item item = Item.fromDex(pokemon, game, useGameDexNumber: true);
+      Item item =
+          Item.fromDex(pokemon, game, entryOrigin, useGameDexNumber: true);
       if (isShinyTracker) {
         item.displayImage =
             item.image.firstWhere((img) => img.contains("-shiny-"));

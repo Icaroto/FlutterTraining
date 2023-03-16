@@ -9,7 +9,8 @@ import '../models/collection.dart';
 import '../models/enums.dart';
 import '../models/item.dart';
 import '../models/pokemon.dart';
-import '../utils/collections_manager.dart';
+import '../utils/collection_manager.dart';
+import '../utils/trackers_manager.dart';
 import 'lists/cards.dart';
 
 class ListScreen extends StatefulWidget {
@@ -384,7 +385,25 @@ class _ListScreenState extends State<ListScreen> {
                 });
               },
             ),
-          )
+          ),
+          if (!isPokedex) const Divider(thickness: 2),
+          if (!isPokedex)
+            Center(
+              child: TextButton(
+                child: const Text("Import to collection"),
+                onPressed: () {
+                  setState(() {
+                    addItemsToCollection(filteredList
+                        .where((element) =>
+                            widget.collection!.isPokemonCaptured(element) ==
+                                CaptureType.full ||
+                            widget.collection!.isPokemonCaptured(element) ==
+                                CaptureType.partial)
+                        .toList());
+                  });
+                },
+              ),
+            )
         ],
       ),
     );

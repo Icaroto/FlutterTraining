@@ -34,7 +34,7 @@ class FileManager {
         in directory.list(recursive: false, followLinks: false)) {
       File file = File(entity.path);
       if (p.extension(file.path) == ".json") {
-        // print("Found in:${entity.path}");
+        print("Found in:${entity.path}");
         if (p.basename(file.path).startsWith(prefix!)) files.add(file);
       }
     }

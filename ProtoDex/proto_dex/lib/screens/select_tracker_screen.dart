@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proto_dex/styles.dart';
 import '../models/collection.dart';
 import '../models/game.dart';
-import '../utils/collections_manager.dart';
+import '../utils/trackers_manager.dart';
 import 'list_screen.dart';
 
 class SelectTrackerScreen extends StatefulWidget {

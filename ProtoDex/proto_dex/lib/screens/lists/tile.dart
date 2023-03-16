@@ -25,14 +25,25 @@ class _PokemonTile extends State<PokemonTile> {
           tileColor: widget.tileColor,
           textColor: Colors.black,
           onTap: () => {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return DetailsPage(pokemon: widget.pokemon);
-                },
-              ),
-            )
+            if (widget.onStateChange != null)
+              {
+                setState(
+                  () {
+                    widget.onStateChange!();
+                  },
+                ),
+              }
+            else
+              {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return DetailsPage(pokemon: widget.pokemon);
+                    },
+                  ),
+                )
+              }
           },
           leading: ListImage(image: widget.pokemon.image[0]),
           title: Row(
@@ -89,6 +100,7 @@ class _PokemonTile extends State<PokemonTile> {
             setState(
               () {
                 widget.pokemon.captured = true;
+                widget.pokemon.catchDate = DateTime.now().toString();
                 widget.onStateChange!();
               },
             )
@@ -98,6 +110,7 @@ class _PokemonTile extends State<PokemonTile> {
         setState(
           () {
             widget.pokemon.captured = false;
+            widget.pokemon.catchDate = "";
             widget.onStateChange!();
           },
         );
@@ -121,6 +134,8 @@ class _PokemonTile extends State<PokemonTile> {
           setState(
             () {
               widget.pokemon.captured = value!;
+              widget.pokemon.catchDate =
+                  (value) ? DateTime.now().toString() : "";
               widget.onStateChange!();
             },
           );

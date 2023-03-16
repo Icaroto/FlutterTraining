@@ -80,7 +80,7 @@ class _StartScreenState extends State<StartScreen> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return CollectionScreen(collection: null);
+                            return const CollectionScreen();
                           },
                         ),
                       );
