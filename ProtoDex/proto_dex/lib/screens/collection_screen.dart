@@ -63,9 +63,9 @@ class _CollectionScreenState extends State<CollectionScreen> {
   }
 
   Expanded collectionList() {
-    bool flat = true;
-    List<Group> groups = groupByPokemon(collection);
-    // List<Group> groups = groupByGame(collection);
+    bool flat = false;
+    // List<Group> groups = groupByPokemon(collection);
+    List<Group> groups = groupByGame(collection);
 
     return Expanded(
       child: ListView.builder(

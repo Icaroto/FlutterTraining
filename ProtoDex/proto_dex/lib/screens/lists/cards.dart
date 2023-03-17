@@ -135,7 +135,7 @@ Widget collectionCard(context, Group group, Function() onStateChange,
       // collapsedBackgroundColor: (subLevel) ? null : Colors.black26,
       // backgroundColor: (subLevel) ? Colors.black12 : Colors.black26,
       leading: ListImage(
-        image: group.items.first.displayImage,
+        image: group.image!,
       ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

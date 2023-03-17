@@ -62,7 +62,7 @@ groupByGame(List<Item> collection) {
     Group group = Group(name: map.key, items: map.value);
     group.items.sortBy((element) => element.number);
     group.color = Game.gameColor(group.name);
-    // group.image = Game.gameIcon(group.name);
+    group.image = Game.gameIcon(group.name);
     groups.add(group);
   }
   return groups;

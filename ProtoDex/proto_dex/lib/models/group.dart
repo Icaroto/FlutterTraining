@@ -8,5 +8,5 @@ class Group {
   final String name;
   final List<Item> items;
   Color? color;
-  // String? image;
+  String? image;
 }
