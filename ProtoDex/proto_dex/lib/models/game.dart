@@ -61,7 +61,8 @@ class Game extends Dex {
   }
 
   static gameIcon(gameName) {
-    String path = "images/games/";
+    String path = "games/";
+    // String path = "";
     switch (gameName) {
       case "Let's Go Pikachu":
         return path += "pokemon_lets_go_pikachu.png";

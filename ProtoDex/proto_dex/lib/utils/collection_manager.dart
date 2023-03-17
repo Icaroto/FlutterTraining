@@ -48,7 +48,10 @@ groupByPokemon(List<Item> collection) {
   List<Group> groups = [];
   var newMap = groupBy(collection, (Item obj) => obj.natDexNumber);
   for (var map in newMap.entries) {
-    Group group = Group(name: map.value.first.name, items: map.value);
+    Group group = Group(
+        name: map.value.first.name,
+        items: map.value,
+        image: "mons/" + map.value.first.displayImage);
     group.items.sortBy((element) => element.ref);
     groups.add(group);
   }
@@ -59,10 +62,10 @@ groupByGame(List<Item> collection) {
   List<Group> groups = [];
   var newMap = groupBy(collection, (Item obj) => obj.game.name);
   for (var map in newMap.entries) {
-    Group group = Group(name: map.key, items: map.value);
+    Group group =
+        Group(name: map.key, items: map.value, image: Game.gameIcon(map.key));
     group.items.sortBy((element) => element.number);
     group.color = Game.gameColor(group.name);
-    group.image = Game.gameIcon(group.name);
     groups.add(group);
   }
   return groups;

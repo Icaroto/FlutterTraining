@@ -56,19 +56,19 @@ class ListImage extends StatelessWidget {
       children: (revealUncaught == false && shadowOnly == true)
           ? [
               Image.network(
-                '${imageLocalPrefix}mons/$image',
+                '$imageLocalPrefix$image',
                 color: Colors.black87,
                 height: 60,
               )
             ]
           : [
               Image.network(
-                '${imageLocalPrefix}mons/$image',
+                '$imageLocalPrefix$image',
                 color: Colors.black87,
                 height: 60,
               ),
               Image.network(
-                '${imageLocalPrefix}mons/$image',
+                '$imageLocalPrefix$image',
                 height: 55,
               ),
             ],

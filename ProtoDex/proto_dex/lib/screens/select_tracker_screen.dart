@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proto_dex/components/image.dart';
 import 'package:proto_dex/styles.dart';
 import '../models/collection.dart';
 import '../models/game.dart';
@@ -385,7 +386,8 @@ class TrackerButton extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              if (imagePath != "") Image.asset(imagePath, scale: 2),
+              if (imagePath != "")
+                ListImage(image: imagePath), //Image.asset(imagePath, scale: 2),
               Flexible(
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10.0),

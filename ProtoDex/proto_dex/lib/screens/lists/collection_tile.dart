@@ -37,7 +37,7 @@ class _CollectionTile extends State<CollectionTile> {
         ),
       },
       leading: ListImage(
-          image: widget.pokemon.displayImage,
+          image: "mons/" + widget.pokemon.displayImage,
           shadowOnly: !widget.pokemon.captured),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

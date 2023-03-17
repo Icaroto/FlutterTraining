@@ -505,13 +505,13 @@ class _ListScreenState extends State<ListScreen> {
                     context,
                     index,
                     originalPokedex,
-                    () {},
+                    null,
                   )
                 : multipleCards(
                     context,
                     index,
                     originalPokedex,
-                    () {},
+                    null,
                   );
           } else {
             return (filteredList[index].forms.isEmpty)

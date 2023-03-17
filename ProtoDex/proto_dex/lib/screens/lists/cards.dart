@@ -8,7 +8,7 @@ import '../../models/group.dart';
 import '../../models/item.dart';
 import 'collection_tile.dart';
 
-Widget singleCard(context, index, pokemons, Function() onStateChange,
+Widget singleCard(context, index, pokemons, Function()? onStateChange,
     {color = Colors.black26}) {
   return PokemonTile(
     tileColor: color,
@@ -17,7 +17,7 @@ Widget singleCard(context, index, pokemons, Function() onStateChange,
   );
 }
 
-Widget multipleCards(context, index, pokemons, Function() onStateChange,
+Widget multipleCards(context, index, pokemons, Function()? onStateChange,
     {subLevel = false}) {
   final GlobalKey expansionTileKey = GlobalKey();
 
@@ -34,10 +34,10 @@ Widget multipleCards(context, index, pokemons, Function() onStateChange,
   var image = "";
   bool shadow = false;
   if (pokemons is List<Item>) {
-    image = pokemons[index].displayImage;
+    image = "mons/${pokemons[index].displayImage}";
     shadow = Item.isCaptured(pokemons[index]) != CaptureType.full;
   } else {
-    image = pokemons[index].image[0];
+    image = "mons/${pokemons[index].image[0]}";
   }
   return Card(
     child: ExpansionTile(
@@ -135,7 +135,7 @@ Widget collectionCard(context, Group group, Function() onStateChange,
       // collapsedBackgroundColor: (subLevel) ? null : Colors.black26,
       // backgroundColor: (subLevel) ? Colors.black12 : Colors.black26,
       leading: ListImage(
-        image: group.image!,
+        image: group.image,
       ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
