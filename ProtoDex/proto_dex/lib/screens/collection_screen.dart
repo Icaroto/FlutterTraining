@@ -6,6 +6,7 @@ import '../models/item.dart';
 import '../models/pokemon.dart';
 import '../utils/collection_manager.dart';
 import 'lists/cards.dart';
+import 'lists/collection_tile.dart';
 
 class CollectionScreen extends StatefulWidget {
   const CollectionScreen({
@@ -62,19 +63,27 @@ class _CollectionScreenState extends State<CollectionScreen> {
   }
 
   Expanded collectionList() {
-    // List<Group> groups = createGroupByPokemon(collection);
-    List<Group> groups = createGroupByGame(collection);
+    bool flat = true;
+    List<Group> groups = groupByPokemon(collection);
+    // List<Group> groups = groupByGame(collection);
 
     return Expanded(
       child: ListView.builder(
         itemBuilder: ((context, index) {
-          return collectionCard(
-            context,
-            groups[index],
-            () {},
-          );
+          if (flat) {
+            return CollectionTile(
+              pokemon: collection[index],
+              onStateChange: null,
+            );
+          } else {
+            return collectionCard(
+              context,
+              groups[index],
+              () {},
+            );
+          }
         }),
-        itemCount: groups.length,
+        itemCount: (flat) ? collection.length : groups.length,
         shrinkWrap: true,
         padding: const EdgeInsets.all(5),
         scrollDirection: Axis.vertical,

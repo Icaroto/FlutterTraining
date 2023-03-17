@@ -44,17 +44,7 @@ saveCollection(List<Item> collection) {
   file.writeAsString(encode);
 }
 
-createGroupByDexNumber(List<Item> collection) {
-  List<Group> groups = [];
-  var newMap = groupBy(collection, (Item obj) => obj.natDexNumber);
-  for (var map in newMap.entries) {
-    Group group = Group(name: map.key, items: map.value);
-    groups.add(group);
-  }
-  return groups;
-}
-
-createGroupByPokemon(List<Item> collection) {
+groupByPokemon(List<Item> collection) {
   List<Group> groups = [];
   var newMap = groupBy(collection, (Item obj) => obj.natDexNumber);
   for (var map in newMap.entries) {
@@ -65,7 +55,7 @@ createGroupByPokemon(List<Item> collection) {
   return groups;
 }
 
-createGroupByGame(List<Item> collection) {
+groupByGame(List<Item> collection) {
   List<Group> groups = [];
   var newMap = groupBy(collection, (Item obj) => obj.game.name);
   for (var map in newMap.entries) {
