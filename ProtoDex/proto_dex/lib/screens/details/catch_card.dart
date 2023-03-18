@@ -69,7 +69,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                                     },
                                     child: Card(
                                       color: Colors.black,
-                                      child: Image.asset(
+                                      child: Image.network(
                                         PokeballType.values[index2]
                                             .getImagePath(),
                                         height: 40,
@@ -89,7 +89,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                             borderRadius: BorderRadius.circular(10)),
                         child: SizedBox(
                           height: 40,
-                          child: Image.asset(
+                          child: Image.network(
                             widget.pokemon.ball.getImagePath(),
                           ),
                         ),
@@ -352,34 +352,33 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
 
 extension Extensions on PokeballType {
   String getImagePath() {
-    String path = "images/balls/";
     switch (this) {
       case PokeballType.pokeball:
-        return "${path}pokeball.png";
+        return "${kImageLocalPrefix}balls/pokeball.png";
       case PokeballType.greatBall:
-        return "${path}greatball.png";
+        return "${kImageLocalPrefix}balls/greatball.png";
       case PokeballType.ultraBall:
-        return "${path}ultraball.png";
+        return "${kImageLocalPrefix}balls/ultraball.png";
       case PokeballType.masterBall:
-        return "${path}masterball.png";
+        return "${kImageLocalPrefix}balls/masterball.png";
       case PokeballType.premierball:
-        return "${path}premierball.png";
+        return "${kImageLocalPrefix}balls/premierball.png";
       case PokeballType.duskball:
-        return "${path}duskball.png";
+        return "${kImageLocalPrefix}balls/duskball.png";
       case PokeballType.cherishball:
-        return "${path}cherishball.png";
+        return "${kImageLocalPrefix}balls/cherishball.png";
       case PokeballType.quickball:
-        return "${path}quickball.png";
+        return "${kImageLocalPrefix}balls/quickball.png";
       case PokeballType.beastball:
-        return "${path}beastball.png";
+        return "${kImageLocalPrefix}balls/beastball.png";
       case PokeballType.luxuryball:
-        return "${path}luxuryball.png";
+        return "${kImageLocalPrefix}balls/luxuryball.png";
       case PokeballType.repeatball:
-        return "${path}repeatball.png";
+        return "${kImageLocalPrefix}balls/repeatball.png";
       case PokeballType.timerball:
-        return "${path}timerball.png";
+        return "${kImageLocalPrefix}balls/timerball.png";
       case PokeballType.undefined:
-        return "${path}undefined.png";
+        return "${kImageLocalPrefix}balls/undefined.png";
       default:
         throw Exception("-No image found for ball: $name");
     }

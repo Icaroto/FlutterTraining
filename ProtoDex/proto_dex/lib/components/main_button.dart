@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/styles.dart';
 
+import '../constants.dart';
+
 class MainScreenButton extends StatelessWidget {
   const MainScreenButton(
       {super.key,
@@ -20,7 +22,7 @@ class MainScreenButton extends StatelessWidget {
         onPressed: onPressed,
         child: Column(
           children: [
-            Image.asset(imagePath, height: 100),
+            Image.network(kImageLocalPrefix + imagePath, height: 100),
             Text(
               buttonName,
               style: buttonTextStyle,

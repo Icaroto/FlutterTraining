@@ -41,7 +41,7 @@ class _StartScreenState extends State<StartScreen> {
                 children: [
                   MainScreenButton(
                     buttonName: 'Pokedex',
-                    imagePath: 'images/background/colored_ball.png',
+                    imagePath: 'background/colored_ball.png',
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -55,7 +55,7 @@ class _StartScreenState extends State<StartScreen> {
                   ),
                   MainScreenButton(
                     buttonName: 'Trackers',
-                    imagePath: 'images/background/colored_ball.png',
+                    imagePath: 'background/colored_ball.png',
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -74,7 +74,7 @@ class _StartScreenState extends State<StartScreen> {
                 children: [
                   MainScreenButton(
                     buttonName: 'Collection',
-                    imagePath: 'images/background/colored_ball.png',
+                    imagePath: 'background/colored_ball.png',
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -93,7 +93,7 @@ class _StartScreenState extends State<StartScreen> {
                 children: [
                   MainScreenButton(
                     buttonName: 'LF',
-                    imagePath: 'images/background/colored_ball.png',
+                    imagePath: 'background/colored_ball.png',
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: Text('Under Construction')));
@@ -101,7 +101,7 @@ class _StartScreenState extends State<StartScreen> {
                   ),
                   MainScreenButton(
                     buttonName: 'FT',
-                    imagePath: 'images/background/colored_ball.png',
+                    imagePath: 'background/colored_ball.png',
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: Text('Under Construction')));

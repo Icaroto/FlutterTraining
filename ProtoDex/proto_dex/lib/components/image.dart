@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:proto_dex/constants.dart';
 import 'package:proto_dex/global_settings.dart';
 import '../models/enums.dart';
 import '../models/pokemon.dart';
 
-String imageLocalPrefix =
-    "https://raw.githubusercontent.com/Icaroto/FlutterTraining/main/ProtoDex/Art/";
+// String imageLocalPrefix =
+//     "https://raw.githubusercontent.com/Icaroto/FlutterTraining/main/ProtoDex/Art/";
 
 class MainImage extends StatelessWidget {
   const MainImage({Key? key, required this.imagePath}) : super(key: key);
@@ -22,14 +23,14 @@ class MainImage extends StatelessWidget {
             //Shadow
             Center(
               child: Image.network(
-                '${imageLocalPrefix}mons/$imagePath',
+                '${kImageLocalPrefix}mons/$imagePath',
                 height: 305,
                 color: Colors.black87,
               ),
             ),
             //Image
             Center(
-              child: Image.network('${imageLocalPrefix}mons/$imagePath',
+              child: Image.network('${kImageLocalPrefix}mons/$imagePath',
                   height: 300),
             ),
           ],
@@ -56,19 +57,19 @@ class ListImage extends StatelessWidget {
       children: (revealUncaught == false && shadowOnly == true)
           ? [
               Image.network(
-                '$imageLocalPrefix$image',
+                '$kImageLocalPrefix$image',
                 color: Colors.black87,
                 height: 60,
               )
             ]
           : [
               Image.network(
-                '$imageLocalPrefix$image',
+                '$kImageLocalPrefix$image',
                 color: Colors.black87,
                 height: 60,
               ),
               Image.network(
-                '$imageLocalPrefix$image',
+                '$kImageLocalPrefix$image',
                 height: 55,
               ),
             ],

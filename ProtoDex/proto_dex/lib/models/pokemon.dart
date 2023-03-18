@@ -215,44 +215,44 @@ class Pokemon {
   }
 
   static Image typeImage(PokemonType? type) {
-    String path = "images/types";
+    // String path = "images/types";
     switch (type) {
       case PokemonType.bug:
-        return Image.asset('$path/bug.png');
+        return Image.network('$kImageLocalPrefix/types/bug.png');
       case PokemonType.dark:
-        return Image.asset('$path/dark.png');
+        return Image.network('$kImageLocalPrefix/types/dark.png');
       case PokemonType.dragon:
-        return Image.asset('$path/dragon.png');
+        return Image.network('${kImageLocalPrefix}types/dragon.png');
       case PokemonType.electric:
-        return Image.asset('$path/electric.png');
+        return Image.network('${kImageLocalPrefix}types/electric.png');
       case PokemonType.fire:
-        return Image.asset('$path/fire.png');
+        return Image.network('${kImageLocalPrefix}types/fire.png');
       case PokemonType.grass:
-        return Image.asset('$path/grass.png');
+        return Image.network('${kImageLocalPrefix}types/grass.png');
       case PokemonType.fairy:
-        return Image.asset('$path/fairy.png');
+        return Image.network('${kImageLocalPrefix}types/fairy.png');
       case PokemonType.fighting:
-        return Image.asset('$path/fighting.png');
+        return Image.network('${kImageLocalPrefix}types/fighting.png');
       case PokemonType.flying:
-        return Image.asset('$path/flying.png');
+        return Image.network('${kImageLocalPrefix}types/flying.png');
       case PokemonType.ghost:
-        return Image.asset('$path/ghost.png');
+        return Image.network('${kImageLocalPrefix}types/ghost.png');
       case PokemonType.ground:
-        return Image.asset('$path/ground.png');
+        return Image.network('${kImageLocalPrefix}types/ground.png');
       case PokemonType.ice:
-        return Image.asset('$path/ice.png');
+        return Image.network('${kImageLocalPrefix}types/ice.png');
       case PokemonType.normal:
-        return Image.asset('$path/normal.png');
+        return Image.network('${kImageLocalPrefix}types/normal.png');
       case PokemonType.poison:
-        return Image.asset('$path/poison.png');
+        return Image.network('${kImageLocalPrefix}types/poison.png');
       case PokemonType.psychic:
-        return Image.asset('$path/psychic.png');
+        return Image.network('${kImageLocalPrefix}types/psychic.png');
       case PokemonType.rock:
-        return Image.asset('$path/rock.png');
+        return Image.network('${kImageLocalPrefix}types/rock.png');
       case PokemonType.steel:
-        return Image.asset('$path/steel.png');
+        return Image.network('${kImageLocalPrefix}types/steel.png');
       case PokemonType.water:
-        return Image.asset('$path/water.png');
+        return Image.network('${kImageLocalPrefix}types/water.png');
       default:
         throw ("Pokemon Type do not have a primary color defined");
     }

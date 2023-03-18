@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proto_dex/constants.dart';
 import '../../models/enums.dart';
 import '../../models/pokemon.dart';
 
@@ -39,7 +40,8 @@ class Background extends StatelessWidget {
                 image: DecorationImage(
                   scale: 2.5,
                   alignment: Alignment.topLeft,
-                  image: const AssetImage('images/background/ball_piece_4.png'),
+                  image: const NetworkImage(
+                      '${kImageLocalPrefix}background/ball_piece_4.png'),
                   colorFilter: ColorFilter.mode(
                     Colors.white.withOpacity(0.2),
                     BlendMode.modulate,
@@ -50,7 +52,8 @@ class Background extends StatelessWidget {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     alignment: Alignment.center,
-                    image: const AssetImage('images/background/ball_light.png'),
+                    image: const NetworkImage(
+                        '${kImageLocalPrefix}background/ball_light.png'),
                     scale: 0.5,
                     colorFilter: ColorFilter.mode(
                       Colors.white.withOpacity(0.2),

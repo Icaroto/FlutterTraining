@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:proto_dex/constants.dart';
 
 Container kBasicBackground = Container(
   decoration: BoxDecoration(
     image: DecorationImage(
-      image: const AssetImage('images/background/ball_3.png'),
+      image: const NetworkImage('${kImageLocalPrefix}background/ball_3.png'),
       colorFilter: ColorFilter.mode(
         Colors.white.withOpacity(0.1),
         BlendMode.modulate,
