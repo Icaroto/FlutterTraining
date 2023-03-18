@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/components/main_button.dart';
 import 'package:proto_dex/constants.dart';
-import 'package:proto_dex/collection/collection_screen.dart';
+import 'package:proto_dex/collection/collection_list_screen.dart';
 import 'package:proto_dex/pokedex/pokedex_list_screen.dart';
 import 'package:proto_dex/screens/select_tracker_screen.dart';
 import 'package:proto_dex/styles.dart';
