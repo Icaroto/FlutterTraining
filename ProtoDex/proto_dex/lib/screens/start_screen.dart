@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proto_dex/components/main_button.dart';
 import 'package:proto_dex/constants.dart';
 import 'package:proto_dex/screens/collection_screen.dart';
+import 'package:proto_dex/screens/pokedex/pokedex_list_screen.dart';
 import 'package:proto_dex/screens/select_tracker_screen.dart';
 import 'package:proto_dex/styles.dart';
 import 'list_screen.dart';
@@ -47,7 +48,7 @@ class _StartScreenState extends State<StartScreen> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return ListScreen(pokemons: kPokedex);
+                            return PokedexListScreen(pokemons: kPokedex);
                           },
                         ),
                       );
