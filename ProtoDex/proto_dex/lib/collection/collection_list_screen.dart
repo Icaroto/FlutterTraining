@@ -5,8 +5,8 @@ import '../models/group.dart';
 import '../models/item.dart';
 import '../models/pokemon.dart';
 import '../utils/collection_manager.dart';
-import 'lists/cards.dart';
-import 'lists/collection_tile.dart';
+import 'collection_cards.dart';
+import 'collection_tile.dart';
 
 class CollectionScreen extends StatefulWidget {
   const CollectionScreen({
@@ -51,8 +51,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
                     ),
                   ),
                 if (_selectedIndex == 0 && collection.isNotEmpty)
-                  collectionList(),
-                if (_selectedIndex == 1) pokedex()
+                  collectionList(true),
+                // if (_selectedIndex == 1) pokedex()
               ],
             ),
           ),
@@ -62,26 +62,35 @@ class _CollectionScreenState extends State<CollectionScreen> {
     );
   }
 
-  Expanded collectionList() {
-    bool flat = false;
+  Expanded collectionList(bool flat) {
     // List<Group> groups = groupByPokemon(collection);
     List<Group> groups = groupByGame(collection);
 
     return Expanded(
       child: ListView.builder(
         itemBuilder: ((context, index) {
-          if (flat) {
-            return CollectionTile(
-              pokemon: collection[index],
-              onStateChange: null,
-            );
-          } else {
-            return collectionCard(
-              context,
-              groups[index],
-              () {},
-            );
-          }
+          return (flat)
+              ? CollectionTile(
+                  pokemon: collection[index],
+                  onStateChange: null,
+                )
+              : multipleCards(
+                  context,
+                  groups[index],
+                  null,
+                );
+          // if (flat) {
+          //   return CollectionTile(
+          //     pokemon: collection[index],
+          //     onStateChange: null,
+          //   );
+          // } else {
+          //   return collectionCard(
+          //     context,
+          //     groups[index],
+          //     () {},
+          //   );
+          // }
         }),
         itemCount: (flat) ? collection.length : groups.length,
         shrinkWrap: true,
@@ -109,63 +118,63 @@ class _CollectionScreenState extends State<CollectionScreen> {
   //   );
   // }
 
-  Expanded pokedex() {
-    return Expanded(
-      child: ListView.builder(
-        itemBuilder: ((context, index) {
-          return (originalPokedex[index].forms.isEmpty)
-              ? singleCard(
-                  context,
-                  index,
-                  originalPokedex,
-                  () {
-                    setState(() {
-                      // collection.add(
-                      //   Item.fromDex(
-                      //     originalPokedex[index],
-                      //     Game(
-                      //         name: "otro",
-                      //         dex: "otro",
-                      //         number: "1",
-                      //         notes: "",
-                      //         shinyLocked: "false"),
-                      //   ),
-                      // );
-                      saveCollection(collection);
-                      // applyFilters();
-                    });
-                  },
-                )
-              : multipleCards(
-                  context,
-                  index,
-                  originalPokedex,
-                  () {
-                    setState(() {
-                      // collection.add(
-                      //   Item.fromDex(
-                      //     originalPokedex[index],
-                      //     Game(
-                      //         name: "otro",
-                      //         dex: "otro",
-                      //         number: "1",
-                      //         notes: "",
-                      //         shinyLocked: "false"),
-                      //   ),
-                      // );
-                      saveCollection(collection);
-                      // applyFilters();
-                    });
-                  },
-                );
-        }),
-        itemCount: originalPokedex.length,
-        shrinkWrap: true,
-        padding: const EdgeInsets.all(5),
-        scrollDirection: Axis.vertical,
-      ),
-    );
-  }
+  // Expanded pokedex() {
+  //   return Expanded(
+  //     child: ListView.builder(
+  //       itemBuilder: ((context, index) {
+  //         return (originalPokedex[index].forms.isEmpty)
+  //             ? singleCard(
+  //                 context,
+  //                 index,
+  //                 originalPokedex,
+  //                 () {
+  //                   setState(() {
+  //                     // collection.add(
+  //                     //   Item.fromDex(
+  //                     //     originalPokedex[index],
+  //                     //     Game(
+  //                     //         name: "otro",
+  //                     //         dex: "otro",
+  //                     //         number: "1",
+  //                     //         notes: "",
+  //                     //         shinyLocked: "false"),
+  //                     //   ),
+  //                     // );
+  //                     saveCollection(collection);
+  //                     // applyFilters();
+  //                   });
+  //                 },
+  //               )
+  //             : multipleCards(
+  //                 context,
+  //                 index,
+  //                 originalPokedex,
+  //                 () {
+  //                   setState(() {
+  //                     // collection.add(
+  //                     //   Item.fromDex(
+  //                     //     originalPokedex[index],
+  //                     //     Game(
+  //                     //         name: "otro",
+  //                     //         dex: "otro",
+  //                     //         number: "1",
+  //                     //         notes: "",
+  //                     //         shinyLocked: "false"),
+  //                     //   ),
+  //                     // );
+  //                     saveCollection(collection);
+  //                     // applyFilters();
+  //                   });
+  //                 },
+  //               );
+  //       }),
+  //       itemCount: originalPokedex.length,
+  //       shrinkWrap: true,
+  //       padding: const EdgeInsets.all(5),
+  //       scrollDirection: Axis.vertical,
+  //     ),
+  //   );
+  // }
 
   AppBar appTopBar(BuildContext context) {
     return AppBar(

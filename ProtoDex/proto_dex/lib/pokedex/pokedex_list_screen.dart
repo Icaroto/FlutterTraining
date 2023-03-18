@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:proto_dex/components/image.dart';
-import 'package:proto_dex/screens/pokedex/pokedex_cards.dart';
+import 'package:proto_dex/pokedex/pokedex_cards.dart';
 import 'package:proto_dex/styles.dart';
-import '../../models/enums.dart';
-import '../../models/pokemon.dart';
+import '../models/enums.dart';
+import '../models/pokemon.dart';
 
 class PokedexListScreen extends StatefulWidget {
   const PokedexListScreen({

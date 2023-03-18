@@ -3,6 +3,7 @@ import 'package:proto_dex/components/image.dart';
 import 'package:proto_dex/styles.dart';
 import '../models/collection.dart';
 import '../models/game.dart';
+import '../tracker/tracker_list_screen.dart';
 import '../utils/trackers_manager.dart';
 import 'list_screen.dart';
 
@@ -113,7 +114,7 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) {
-                                        return ListScreen(
+                                        return TrackerListScreen(
                                             collection: createTracker(
                                                 textController.text,
                                                 gamePicked,
@@ -294,7 +295,7 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) {
-                                        return ListScreen(
+                                        return TrackerListScreen(
                                             collection: getTracker(
                                                 snapshot.data![index].ref));
                                       },

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:proto_dex/screens/pokedex/pokedex_tiles.dart';
+import 'package:proto_dex/tracker/tracker_tiles.dart';
 import '../../components/image.dart';
+import '../../models/enums.dart';
+import '../../models/item.dart';
 
 Widget singleCard(context, index, pokemons, Function()? onStateChange,
     {color = Colors.black26}) {
-  return PokemonTiles(
+  return TrackerTile(
     tileColor: color,
-    pokemons: pokemons,
-    index: index,
+    pokemon: pokemons[index],
     onStateChange: onStateChange,
   );
 }
@@ -26,7 +27,14 @@ Widget multipleCards(context, index, pokemons, Function()? onStateChange,
     }
   }
 
-  var image = "mons/${pokemons[index].image[0]}";
+  var image = "";
+  bool shadow = false;
+  if (pokemons is List<Item>) {
+    image = "mons/${pokemons[index].displayImage}";
+    shadow = Item.isCaptured(pokemons[index]) != CaptureType.full;
+  } else {
+    image = "mons/${pokemons[index].image[0]}";
+  }
   return Card(
     child: ExpansionTile(
       key: expansionTileKey,
@@ -39,6 +47,7 @@ Widget multipleCards(context, index, pokemons, Function()? onStateChange,
       backgroundColor: (subLevel) ? Colors.black12 : Colors.black26,
       leading: ListImage(
         image: image,
+        shadowOnly: shadow,
       ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,8 +59,8 @@ Widget multipleCards(context, index, pokemons, Function()? onStateChange,
           Text("#${pokemons[index].number}")
         ],
       ),
-      trailing: Text('+${pokemons[index].forms.length - 1}'),
-      subtitle: Text(pokemons[index].formattedTypes()),
+      trailing: Text('         +${pokemons[index].forms.length - 1}'),
+      subtitle: null,
       children: [
         ListView.builder(
           physics: const NeverScrollableScrollPhysics(),

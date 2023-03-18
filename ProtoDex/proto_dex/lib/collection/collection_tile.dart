@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:proto_dex/screens/details_screen.dart';
-import '../../components/image.dart';
-import '../../models/game.dart';
-import '../../models/pokemon.dart';
+import 'package:proto_dex/collection/collection_details_screen.dart';
+import '../components/image.dart';
+import '../models/item.dart';
 
 class CollectionTile extends StatefulWidget {
   const CollectionTile(
-      {super.key, this.pokemon, this.tileColor, this.onStateChange});
+      {super.key, required this.pokemon, this.tileColor, this.onStateChange});
 
   final Color? tileColor;
-  final dynamic pokemon;
+  final Item pokemon;
   final Function()? onStateChange;
 
   @override
@@ -31,14 +30,12 @@ class _CollectionTile extends State<CollectionTile> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return DetailsPage(pokemon: widget.pokemon);
+              return CollectionDetailsPage(pokemon: widget.pokemon);
             },
           ),
         ),
       },
-      leading: ListImage(
-          image: "mons/" + widget.pokemon.displayImage,
-          shadowOnly: !widget.pokemon.captured),
+      leading: ListImage(image: "mons/" + widget.pokemon.displayImage),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
