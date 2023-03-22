@@ -120,7 +120,9 @@ class Pokemon {
     //     .where((element) => element.forms.isNotEmpty)
     //     .toList();
     // return pokemons.skip(980).toList();
-
+    return pokemons
+        .where((element) => element.number == "003" || element.name == "Tauros")
+        .toList();
     return pokemons;
   }
 

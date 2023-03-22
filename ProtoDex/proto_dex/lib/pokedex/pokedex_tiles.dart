@@ -7,13 +7,13 @@ class PokemonTiles extends StatefulWidget {
   const PokemonTiles(
       {super.key,
       required this.pokemons,
-      required this.index,
+      required this.indexes,
       this.tileColor,
       this.onStateChange});
 
   final Color? tileColor;
   final List<Pokemon> pokemons;
-  final int index;
+  final List<int> indexes;
   final Function()? onStateChange;
 
   @override
@@ -23,7 +23,12 @@ class PokemonTiles extends StatefulWidget {
 class _PokemonTiles extends State<PokemonTiles> {
   @override
   Widget build(BuildContext context) {
-    Pokemon pokemon = widget.pokemons[widget.index];
+    Pokemon pokemon = widget.pokemons[widget.indexes.first];
+
+    for (var i = 1; i < widget.indexes.length; i++) {
+      pokemon = pokemon.forms[widget.indexes[i]];
+    }
+
     return Card(
       child: ListTile(
         tileColor: widget.tileColor,
@@ -35,7 +40,7 @@ class _PokemonTiles extends State<PokemonTiles> {
               builder: (context) {
                 return PokedexDetailsPage(
                   pokemons: widget.pokemons,
-                  index: widget.index,
+                  indexes: widget.indexes,
                 );
               },
             ),

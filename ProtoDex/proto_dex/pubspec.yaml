@@ -66,12 +66,12 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - data/
-    - images/
-    - images/background/
-    - images/balls/
-    - images/icons/
-    - images/games/
-    - images/types/
+    # - images/
+    # - images/background/
+    # - images/balls/
+    # - images/icons/
+    # - images/games/
+    # - images/types/
 
   fonts:
   - family: SigmarOne

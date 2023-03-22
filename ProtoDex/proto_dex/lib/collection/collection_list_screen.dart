@@ -113,10 +113,9 @@ class _CollectionScreenState extends State<CollectionScreen> {
         itemBuilder: ((context, index) {
           return (originalPokedex[index].forms.isEmpty)
               ? dexCard.singleCard(
-                  context,
-                  index,
                   originalPokedex,
-                  () {
+                  [index],
+                  onStateChange: () {
                     setState(() {
                       // collection.add(
                       //   Item.fromDex(
@@ -135,10 +134,9 @@ class _CollectionScreenState extends State<CollectionScreen> {
                   },
                 )
               : dexCard.multipleCards(
-                  context,
-                  index,
                   originalPokedex,
-                  () {
+                  [index],
+                  onStateChange: () {
                     setState(() {
                       // collection.add(
                       //   Item.fromDex(

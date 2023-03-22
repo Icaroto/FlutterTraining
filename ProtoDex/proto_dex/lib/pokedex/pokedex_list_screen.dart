@@ -342,16 +342,12 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
         itemBuilder: ((context, index) {
           return (originalPokedex[index].forms.isEmpty)
               ? singleCard(
-                  context,
-                  index,
                   originalPokedex,
-                  null,
+                  [index],
                 )
               : multipleCards(
-                  context,
-                  index,
                   originalPokedex,
-                  null,
+                  [index],
                 );
         }),
         itemCount: originalPokedex.length,

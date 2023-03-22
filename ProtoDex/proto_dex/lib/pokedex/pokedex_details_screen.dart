@@ -12,62 +12,128 @@ import '../screens/details/weakness_card.dart';
 
 class PokedexDetailsPage extends StatefulWidget {
   const PokedexDetailsPage(
-      {super.key, required this.pokemons, required this.index});
+      {super.key, required this.pokemons, required this.indexes});
 
   final List<Pokemon> pokemons;
-  final int index;
+  final List<int> indexes;
 
   @override
   State<PokedexDetailsPage> createState() => _PokedexDetailsPage();
 }
 
 class _PokedexDetailsPage extends State<PokedexDetailsPage> {
-  var imageIndex = 0;
+  int imageIndex = 0;
+  int displayIndex = 0;
+  int formIndex = 0;
+  @override
+  void initState() {
+    displayIndex = widget.indexes.first;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final Pokemon displayPokemon = widget.pokemons[widget.index];
+    Pokemon pokemon = widget.pokemons[displayIndex];
+    for (var i = 1; i < widget.indexes.length; i++) {
+      pokemon = pokemon.forms[widget.indexes[i]];
+    }
 
     return Scaffold(
       body: Stack(
         children: [
-          Background(type1: displayPokemon.type1, type2: displayPokemon.type2),
+          Background(type1: pokemon.type1, type2: pokemon.type2),
           AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0.0,
           ),
           BasicInfo(
-            name: displayPokemon.name,
-            number: displayPokemon.number,
-            type1: displayPokemon.type1,
-            type2: displayPokemon.type2,
+            name: pokemon.name,
+            number: pokemon.number,
+            type1: pokemon.type1,
+            type2: pokemon.type2,
           ),
-          TabControl(tabs: giveMeATab(displayPokemon)),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(
+                    onPressed: (displayIndex > 0)
+                        ? () => {
+                              setState(() {
+                                if (widget.pokemons[displayIndex - 1].forms
+                                        .isNotEmpty &&
+                                    formIndex == 0) {
+                                  formIndex = widget.pokemons[displayIndex - 1]
+                                          .forms.length -
+                                      1;
+                                  displayIndex--;
+                                } else if (formIndex > 0) {
+                                  formIndex--;
+                                } else {
+                                  displayIndex--;
+                                }
+                                imageIndex = 0;
+                                pokemon.resetImage();
+                              }),
+                            }
+                        : null,
+                    child: const Icon(
+                      Icons.keyboard_arrow_left,
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: (displayIndex < widget.pokemons.length)
+                        ? () => {
+                              setState(() {
+                                if (formIndex <
+                                    widget.pokemons[displayIndex].forms.length -
+                                        1) {
+                                  formIndex++;
+                                } else {
+                                  displayIndex++;
+                                  formIndex = 0;
+                                }
+                                imageIndex = 0;
+                                pokemon.resetImage();
+                              }),
+                            }
+                        : null,
+                    child: const Icon(
+                      Icons.keyboard_arrow_right,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          TabControl(tabs: buildTab(pokemon)),
           WillPopScope(
               onWillPop: () async {
-                displayPokemon.resetImage();
+                imageIndex = 0;
                 Navigator.pop(context, false);
                 return false;
               },
-              child: MainImage(imagePath: displayPokemon.image[imageIndex])),
+              child: MainImage(imagePath: pokemon.image[imageIndex])),
         ],
       ),
     );
   }
 
-  giveMeATab(displayPokemon) {
+  buildTab(Pokemon pokemon) {
     List<PokeTab> tabs = [];
     tabs.add(
       PokeTab(
         tabName: "General",
         leftCard: GeneralInformationCard(
-          pokemon: displayPokemon,
+          pokemon: pokemon,
           onImageChange: (int newIndex) {
             setState(() => imageIndex = newIndex);
           },
         ),
         rightCard: BreedingInformationCard(
-          pokemon: displayPokemon,
+          pokemon: pokemon,
           onImageChange: (int newIndex) {
             setState(() => imageIndex = newIndex);
           },
@@ -77,8 +143,8 @@ class _PokedexDetailsPage extends State<PokedexDetailsPage> {
 
     tabs.add(PokeTab(
       tabName: "More",
-      leftCard: GamesInformationCard(pokemon: displayPokemon),
-      rightCard: WeaknessInformationCard(pokemon: displayPokemon),
+      leftCard: GamesInformationCard(pokemon: pokemon),
+      rightCard: WeaknessInformationCard(pokemon: pokemon),
     ));
 
     return tabs;
