@@ -23,20 +23,22 @@ class PokedexDetailsPage extends StatefulWidget {
 
 class _PokedexDetailsPage extends State<PokedexDetailsPage> {
   int imageIndex = 0;
-  int displayIndex = 0;
-  int formIndex = 0;
+  // int displayIndex = 0;
+  // int formIndex = 0;
+  List<int> currentIndexes = List<int>.empty(growable: true);
   @override
   void initState() {
-    displayIndex = widget.indexes.first;
+    currentIndexes.addAll(widget.indexes);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    Pokemon pokemon = widget.pokemons[displayIndex];
-    for (var i = 1; i < widget.indexes.length; i++) {
-      pokemon = pokemon.forms[widget.indexes[i]];
-    }
+    Pokemon pokemon = widget.pokemons.current(currentIndexes);
+    // Pokemon pokemon = widget.pokemons[displayIndex];
+    // for (var i = 1; i < widget.indexes.length; i++) {
+    //   pokemon = pokemon.forms[widget.indexes[i]];
+    // }
 
     return Scaffold(
       body: Stack(
@@ -59,47 +61,56 @@ class _PokedexDetailsPage extends State<PokedexDetailsPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton(
-                    onPressed: (displayIndex > 0)
-                        ? () => {
-                              setState(() {
-                                if (widget.pokemons[displayIndex - 1].forms
-                                        .isNotEmpty &&
-                                    formIndex == 0) {
-                                  formIndex = widget.pokemons[displayIndex - 1]
-                                          .forms.length -
-                                      1;
-                                  displayIndex--;
-                                } else if (formIndex > 0) {
-                                  formIndex--;
-                                } else {
-                                  displayIndex--;
-                                }
-                                imageIndex = 0;
-                                pokemon.resetImage();
-                              }),
-                            }
-                        : null,
+                    onPressed: null,
+                    // onPressed: (displayIndex > 0)
+                    //     ? () => {
+                    //           setState(() {
+                    //             if (widget.pokemons[displayIndex - 1].forms
+                    //                     .isNotEmpty &&
+                    //                 formIndex == 0) {
+                    //               formIndex = widget.pokemons[displayIndex - 1]
+                    //                       .forms.length -
+                    //                   1;
+                    //               displayIndex--;
+                    //             } else if (formIndex > 0) {
+                    //               formIndex--;
+                    //             } else {
+                    //               displayIndex--;
+                    //             }
+                    //             imageIndex = 0;
+                    //             pokemon.resetImage();
+                    //           }),
+                    //         }
+                    //     : null,
                     child: const Icon(
                       Icons.keyboard_arrow_left,
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: (displayIndex < widget.pokemons.length)
-                        ? () => {
-                              setState(() {
-                                if (formIndex <
-                                    widget.pokemons[displayIndex].forms.length -
-                                        1) {
-                                  formIndex++;
-                                } else {
-                                  displayIndex++;
-                                  formIndex = 0;
-                                }
-                                imageIndex = 0;
-                                pokemon.resetImage();
-                              }),
-                            }
-                        : null,
+                    onPressed: () => {
+                      setState(() {
+                        imageIndex = 0;
+                        pokemon.resetImage();
+                        currentIndexes =
+                            widget.pokemons.nextIndex(currentIndexes);
+                      }),
+                    },
+                    // onPressed: (displayIndex < widget.pokemons.length)
+                    //     ? () => {
+                    //           setState(() {
+                    //             if (formIndex <
+                    //                 widget.pokemons[displayIndex].forms.length -
+                    //                     1) {
+                    //               formIndex++;
+                    //             } else {
+                    //               displayIndex++;
+                    //               formIndex = 0;
+                    //             }
+                    //             imageIndex = 0;
+                    //             pokemon.resetImage();
+                    //           }),
+                    //         }
+                    //     : null,
                     child: const Icon(
                       Icons.keyboard_arrow_right,
                     ),

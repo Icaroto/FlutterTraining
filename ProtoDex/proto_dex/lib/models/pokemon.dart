@@ -389,6 +389,48 @@ extension Filter on List<Pokemon>? {
 
     return temp;
   }
+
+  List<int> nextIndex(List<int> indexes) {
+    Pokemon currentPokemon = current(indexes);
+    //There's a drill down form
+    if (currentPokemon.forms.isNotEmpty) {
+      return [...indexes, 0];
+    }
+
+    //It is the last form available
+    if (indexes.length > 1) {
+      List<int> parentIndex = [];
+      parentIndex.addAll(indexes);
+      parentIndex.removeLast();
+      Pokemon parent = current(parentIndex);
+      if ((parentIndex.last + 1) == parent.forms.length) {
+        indexes.removeLast();
+        indexes.last++;
+        return indexes;
+      }
+    }
+
+    //It is the last in the list
+    if (currentPokemon == this!.last) {
+      return indexes;
+    }
+
+    //Next form
+    indexes.last++;
+    return indexes;
+  }
+
+  List<int> previousIndex(List<int> indexes) {
+    return indexes;
+  }
+
+  Pokemon current(List<int> indexes) {
+    Pokemon pokemon = this![indexes.first];
+    for (var i = 1; i < indexes.length; i++) {
+      pokemon = pokemon.forms[indexes[i]];
+    }
+    return pokemon;
+  }
 }
 
 containsType(List<String>? values, PokemonType? type) {
