@@ -120,9 +120,12 @@ class Pokemon {
     //     .where((element) => element.forms.isNotEmpty)
     //     .toList();
     // return pokemons.skip(980).toList();
-    return pokemons
-        .where((element) => element.number == "003" || element.name == "Tauros")
-        .toList();
+    // return pokemons
+    //     .where((element) =>
+    //         element.number == "001" ||
+    //         element.number == "003" ||
+    //         element.name == "Tauros")
+    //     .toList();
     return pokemons;
   }
 
@@ -391,36 +394,42 @@ extension Filter on List<Pokemon>? {
   }
 
   List<int> nextIndex(List<int> indexes) {
-    Pokemon currentPokemon = current(indexes);
-    //There's a drill down form
-    if (currentPokemon.forms.isNotEmpty) {
-      return [...indexes, 0];
-    }
+    if (indexes.length == 1) {
+      indexes.last++;
+    } else {
+      Pokemon parent = current(indexes.take(indexes.length - 1).toList());
 
-    //It is the last form available
-    if (indexes.length > 1) {
-      List<int> parentIndex = [];
-      parentIndex.addAll(indexes);
-      parentIndex.removeLast();
-      Pokemon parent = current(parentIndex);
-      if ((parentIndex.last + 1) == parent.forms.length) {
+      if ((indexes.last + 1) == parent.forms.length) {
         indexes.removeLast();
-        indexes.last++;
-        return indexes;
       }
+      indexes.last++;
     }
 
-    //It is the last in the list
-    if (currentPokemon == this!.last) {
-      return indexes;
+    Pokemon nextPokemon = current(indexes);
+    while (nextPokemon.forms.isNotEmpty) {
+      indexes.add(0);
+      nextPokemon = current(indexes);
     }
-
-    //Next form
-    indexes.last++;
     return indexes;
   }
 
   List<int> previousIndex(List<int> indexes) {
+    if (indexes.length == 1) {
+      indexes.last--;
+    } else {
+      Pokemon parent = current(indexes.take(indexes.length - 1).toList());
+
+      if ((indexes.last) == 0) {
+        indexes.removeLast();
+      }
+      indexes.last--;
+    }
+
+    Pokemon nextPokemon = current(indexes);
+    while (nextPokemon.forms.isNotEmpty) {
+      indexes.add(nextPokemon.forms.length - 1);
+      nextPokemon = current(indexes);
+    }
     return indexes;
   }
 
@@ -430,6 +439,26 @@ extension Filter on List<Pokemon>? {
       pokemon = pokemon.forms[indexes[i]];
     }
     return pokemon;
+  }
+
+  bool isFirst(List<int> indexes) {
+    Pokemon currentPokemon = current(indexes);
+    Pokemon firstPokemon = this!.first;
+    while (firstPokemon.forms.isNotEmpty) {
+      firstPokemon = firstPokemon.forms.first;
+    }
+    if (firstPokemon == currentPokemon) return true;
+    return false;
+  }
+
+  bool isLast(List<int> indexes) {
+    Pokemon currentPokemon = current(indexes);
+    Pokemon lastPokemon = this!.last;
+    while (lastPokemon.forms.isNotEmpty) {
+      lastPokemon = lastPokemon.forms.last;
+    }
+    if (lastPokemon == currentPokemon) return true;
+    return false;
   }
 }
 

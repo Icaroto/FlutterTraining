@@ -46,7 +46,7 @@ class _PokemonTiles extends State<PokemonTiles> {
             ),
           )
         },
-        leading: ListImage(image: "mons/" + pokemon.image[0]),
+        leading: ListImage(image: 'mons/${pokemon.image[0]}'),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
