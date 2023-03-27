@@ -20,7 +20,7 @@ class BasicInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 50, 20, 0),
+      padding: const EdgeInsets.fromLTRB(20, 60, 20, 0),
       child: Column(
         children: [
           Row(
