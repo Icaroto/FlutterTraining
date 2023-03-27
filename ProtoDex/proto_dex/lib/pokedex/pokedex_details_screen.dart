@@ -47,7 +47,7 @@ class _PokedexDetailsPage extends State<PokedexDetailsPage> {
           Background(type1: pokemon.type1, type2: pokemon.type2),
           AppBar(
             backgroundColor: Colors.transparent,
-            elevation: 0.0,
+            elevation: 0,
           ),
           BasicInfo(
             name: pokemon.name,
@@ -70,15 +70,15 @@ class _PokedexDetailsPage extends State<PokedexDetailsPage> {
   }
 
   Center navigationButtons(Pokemon pokemon) {
-    Pokemon? prevPokemon = (isFirstInList)
-        ? null
-        : widget.pokemons
-            .current(widget.pokemons.previousIndex([...currentIndexes]));
+    // Pokemon? prevPokemon = (isFirstInList)
+    //     ? null
+    //     : widget.pokemons
+    //         .current(widget.pokemons.previousIndex([...currentIndexes]));
 
-    Pokemon? nextPokemon = (isLastInList)
-        ? null
-        : widget.pokemons
-            .current(widget.pokemons.nextIndex([...currentIndexes]));
+    // Pokemon? nextPokemon = (isLastInList)
+    //     ? null
+    //     : widget.pokemons
+    //         .current(widget.pokemons.nextIndex([...currentIndexes]));
 
     return Center(
       child: Padding(
@@ -97,11 +97,12 @@ class _PokedexDetailsPage extends State<PokedexDetailsPage> {
                               widget.pokemons.previousIndex(currentIndexes);
                         }),
                       },
-              child: (prevPokemon == null)
+              child: (isFirstInList)
                   ? Container()
-                  : ListImage(
-                      image: 'mons/${prevPokemon.image.first}',
-                      shadowOnly: true,
+                  : const Icon(
+                      Icons.keyboard_arrow_left,
+                      size: 30,
+                      color: Colors.black,
                     ),
             ),
             GestureDetector(
@@ -115,13 +116,93 @@ class _PokedexDetailsPage extends State<PokedexDetailsPage> {
                               widget.pokemons.nextIndex(currentIndexes);
                         }),
                       },
-              child: (nextPokemon == null)
+              child: (isLastInList)
                   ? Container()
-                  : ListImage(
-                      image: 'mons/${nextPokemon.image.first}',
-                      shadowOnly: true,
+                  : const Icon(
+                      Icons.keyboard_arrow_right,
+                      size: 30,
+                      color: Colors.black,
                     ),
             ),
+            // TextButton(
+            //   onPressed: (() => {}),
+            //   child: Column(
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: [
+            // Icon(
+            //   Icons.keyboard_arrow_left,
+            //   size: 30,
+            //   color: Colors.black,
+            // ),
+            //       Text(
+            //         "#0012",
+            //         style: TextStyle(color: Colors.black),
+            //       )
+            //     ],
+            //   ),
+            // ),
+            // TextButton(
+            //   onPressed: (() => {}),
+            //   child: Column(
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: [
+            //       Icon(
+            //         Icons.keyboard_arrow_right,
+            //         size: 30,
+            //         color: Colors.black,
+            //       ),
+            //       Text(
+            //         "#0014",
+            //         style: TextStyle(color: Colors.black),
+            //       )
+            //     ],
+            //   ),
+            // )
+            // Icon(
+            //   Icons.keyboard_arrow_left,
+            //   size: 30,
+            // ),
+            // Icon(
+            //   Icons.keyboard_arrow_right,
+            //   size: 30,
+            // )
+
+            // GestureDetector(
+            //   onTap: (isFirstInList)
+            //       ? null
+            //       : () => {
+            //             setState(() {
+            //               imageIndex = 0;
+            //               pokemon.resetImage();
+            //               currentIndexes =
+            //                   widget.pokemons.previousIndex(currentIndexes);
+            //             }),
+            //           },
+            //   child: (prevPokemon == null)
+            //       ? Container()
+            //       : ListImage(
+            //           image: 'mons/${prevPokemon.image.first}',
+            //           shadowOnly: true,
+            //         ),
+            // ),
+            // GestureDetector(
+            //   onTap: (isLastInList)
+            //       ? null
+            //       : () => {
+            //             setState(() {
+            //               imageIndex = 0;
+            //               pokemon.resetImage();
+            //               currentIndexes =
+            //                   widget.pokemons.nextIndex(currentIndexes);
+            //             }),
+            //           },
+            //   child: (nextPokemon == null)
+            //       ? Container()
+            //       : ListImage(
+            //           image: 'mons/${nextPokemon.image.first}',
+            //           shadowOnly: true,
+            //         ),
+            // ),
           ],
         ),
       ),

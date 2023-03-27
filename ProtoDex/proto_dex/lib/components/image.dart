@@ -18,22 +18,25 @@ class MainImage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Expanded(flex: 2, child: Container()),
-        Stack(
-          children: [
-            //Shadow
-            Center(
-              child: Image.network(
-                '${kImageLocalPrefix}mons/$imagePath',
-                height: 305,
-                color: Colors.black87,
+        Expanded(
+          flex: 6,
+          child: Stack(
+            children: [
+              //Shadow
+              Center(
+                child: Image.network(
+                  '${kImageLocalPrefix}mons/$imagePath',
+                  color: Colors.black87,
+                ),
               ),
-            ),
-            //Image
-            Center(
-              child: Image.network('${kImageLocalPrefix}mons/$imagePath',
-                  height: 300),
-            ),
-          ],
+              //Image
+              Center(
+                child: Image.network(
+                  '${kImageLocalPrefix}mons/$imagePath',
+                ),
+              ),
+            ],
+          ),
         ),
         Expanded(flex: 5, child: Container())
       ],

@@ -20,40 +20,25 @@ class BasicInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 80, 20, 0),
+      padding: const EdgeInsets.fromLTRB(20, 50, 20, 0),
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
-              Expanded(
-                child: FittedBox(
-                  child: Text(
-                    name,
-                    style: const TextStyle(
-                      fontFamily: 'SigmarOne',
-                      fontSize: 25.0,
-                      color: Colors.black,
-                    ),
-                    softWrap: false,
+              Flexible(
+                child: Text(
+                  overflow: TextOverflow.fade,
+                  name,
+                  style: const TextStyle(
+                    fontFamily: 'SigmarOne',
+                    fontSize: 25.0,
+                    color: Colors.black,
                   ),
+                  softWrap: true,
                 ),
               ),
-              // Text(
-              //   number,
-              //   style: const TextStyle(
-              //     fontFamily: 'SigmarOne',
-              //     fontSize: 15,
-              //     color: Colors.black,
-              //   ),
-              // ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: <Widget>[
               Text(
                 "#$number",
                 style: const TextStyle(
