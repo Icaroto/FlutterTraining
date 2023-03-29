@@ -18,7 +18,7 @@ class WeaknessInformationCard extends StatelessWidget {
       blockTitle: "Weakness",
       cardChild: Expanded(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             if (pokemon.weakness.quarter.isNotEmpty)
@@ -61,7 +61,7 @@ class IconList extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 2),
               child: TypeIcon(
                 type: (PokemonType.values.byName(i)),
-                size: 22,
+                size: 21, //(list.length > 4) ? 15 : 22,
               ),
             ),
           )
