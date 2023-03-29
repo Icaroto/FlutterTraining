@@ -6,7 +6,7 @@ import '../screens/details/basic_info.dart';
 import '../components/image.dart';
 import '../screens/details/games_card.dart';
 import '../screens/details/general_card.dart';
-import '../screens/details/lower_screen.dart';
+import '../components/tab.dart';
 import '../models/pokemon.dart';
 import '../screens/details/weakness_card.dart';
 
@@ -62,7 +62,8 @@ class _PokedexDetailsPage extends State<PokedexDetailsPage> {
                 Navigator.pop(context, false);
                 return false;
               },
-              child: MainImage(imagePath: pokemon.image[imageIndex])),
+              child: IgnorePointer(
+                  child: MainImage(imagePath: pokemon.image[imageIndex]))),
           navigationButtons(pokemon),
         ],
       ),
@@ -70,16 +71,6 @@ class _PokedexDetailsPage extends State<PokedexDetailsPage> {
   }
 
   Center navigationButtons(Pokemon pokemon) {
-    // Pokemon? prevPokemon = (isFirstInList)
-    //     ? null
-    //     : widget.pokemons
-    //         .current(widget.pokemons.previousIndex([...currentIndexes]));
-
-    // Pokemon? nextPokemon = (isLastInList)
-    //     ? null
-    //     : widget.pokemons
-    //         .current(widget.pokemons.nextIndex([...currentIndexes]));
-
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -124,85 +115,6 @@ class _PokedexDetailsPage extends State<PokedexDetailsPage> {
                       color: Colors.black,
                     ),
             ),
-            // TextButton(
-            //   onPressed: (() => {}),
-            //   child: Column(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     children: [
-            // Icon(
-            //   Icons.keyboard_arrow_left,
-            //   size: 30,
-            //   color: Colors.black,
-            // ),
-            //       Text(
-            //         "#0012",
-            //         style: TextStyle(color: Colors.black),
-            //       )
-            //     ],
-            //   ),
-            // ),
-            // TextButton(
-            //   onPressed: (() => {}),
-            //   child: Column(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     children: [
-            //       Icon(
-            //         Icons.keyboard_arrow_right,
-            //         size: 30,
-            //         color: Colors.black,
-            //       ),
-            //       Text(
-            //         "#0014",
-            //         style: TextStyle(color: Colors.black),
-            //       )
-            //     ],
-            //   ),
-            // )
-            // Icon(
-            //   Icons.keyboard_arrow_left,
-            //   size: 30,
-            // ),
-            // Icon(
-            //   Icons.keyboard_arrow_right,
-            //   size: 30,
-            // )
-
-            // GestureDetector(
-            //   onTap: (isFirstInList)
-            //       ? null
-            //       : () => {
-            //             setState(() {
-            //               imageIndex = 0;
-            //               pokemon.resetImage();
-            //               currentIndexes =
-            //                   widget.pokemons.previousIndex(currentIndexes);
-            //             }),
-            //           },
-            //   child: (prevPokemon == null)
-            //       ? Container()
-            //       : ListImage(
-            //           image: 'mons/${prevPokemon.image.first}',
-            //           shadowOnly: true,
-            //         ),
-            // ),
-            // GestureDetector(
-            //   onTap: (isLastInList)
-            //       ? null
-            //       : () => {
-            //             setState(() {
-            //               imageIndex = 0;
-            //               pokemon.resetImage();
-            //               currentIndexes =
-            //                   widget.pokemons.nextIndex(currentIndexes);
-            //             }),
-            //           },
-            //   child: (nextPokemon == null)
-            //       ? Container()
-            //       : ListImage(
-            //           image: 'mons/${nextPokemon.image.first}',
-            //           shadowOnly: true,
-            //         ),
-            // ),
           ],
         ),
       ),
@@ -213,7 +125,7 @@ class _PokedexDetailsPage extends State<PokedexDetailsPage> {
     List<PokeTab> tabs = [];
     tabs.add(
       PokeTab(
-        tabName: "General",
+        tabName: "About",
         leftCard: GeneralInformationCard(
           pokemon: pokemon,
           onImageChange: (int newIndex) {

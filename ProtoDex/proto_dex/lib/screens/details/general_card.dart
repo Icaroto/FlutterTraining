@@ -26,17 +26,24 @@ class GeneralInformationCard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(
-                    "- ${pokemon.species}",
-                    style: const TextStyle(color: Colors.white),
+                  Center(
+                    child: Text(
+                      pokemon.species,
+                      style: const TextStyle(color: Colors.white),
+                    ),
                   ),
-                  Text(
-                    "- ${pokemon.height}",
-                    style: const TextStyle(color: Colors.white),
-                  ),
-                  Text(
-                    "- ${pokemon.weight}",
-                    style: const TextStyle(color: Colors.white),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        pokemon.height,
+                        style: const TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        pokemon.weight,
+                        style: const TextStyle(color: Colors.white),
+                      ),
+                    ],
                   ),
                 ],
               ),

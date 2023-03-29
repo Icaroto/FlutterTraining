@@ -10,7 +10,7 @@ import 'details/basic_info.dart';
 import '../components/image.dart';
 import 'details/games_card.dart';
 import 'details/general_card.dart';
-import 'details/lower_screen.dart';
+import '../components/tab.dart';
 import '../models/pokemon.dart';
 import 'details/weakness_card.dart';
 

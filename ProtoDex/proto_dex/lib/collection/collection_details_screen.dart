@@ -8,7 +8,7 @@ import '../screens/details/catch_card.dart';
 import '../screens/details/details_background.dart';
 import '../components/image.dart';
 import '../models/pokemon.dart';
-import '../screens/details/lower_screen.dart';
+import '../components/tab.dart';
 
 class CollectionDetailsPage extends StatefulWidget {
   const CollectionDetailsPage({super.key, required this.pokemon});
