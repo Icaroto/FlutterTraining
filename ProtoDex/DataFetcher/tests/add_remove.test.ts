@@ -296,70 +296,92 @@ import { parse } from 'csv-parse';
 //   };
 // });
 
-test('Add property', async ({ baseURL, page }) => {
-    var newData : Object[] = [];
-    
-    for (let i = 0; i < data.length; i++) {
-      var forms : Object[] = [];
-      data[i].forms.forEach(form => {
-        var formToAdd = 
-        {
-          "name": form.name,
-          "formName": "",
-          "species": form.species,
-          "height": form.height,
-          "weight": form.weight,
-          "breeding":  form.breeding,
-          "number":form.number,
-          "ref": form.ref,
-          "type1": form.type1,
-          "type2": form.type2,
-          "image": form.image,
-          "abilities": form.abilities,
-          "hiddenAbility": form.hiddenAbility,
-          "weaknessquarter": form.weaknessquarter,
-          "weaknesshalf": form.weaknesshalf,
-          "weaknessnone": form.weaknessnone,
-          "weaknessdouble": form.weaknessdouble,
-          "weaknessquadruple": form.weaknessquadruple,
-          "genderRatio": form.genderRatio,
-          "games": form.games,
-        };
-        forms.push(formToAdd);
-      });
+test('Update Property property', async ({ baseURL, page }) => {
+  for (let i = 0; i < data.length; i++) {
+    while (data[i].number.length < 4) data[i].number = "0" + data[i].number;
 
 
-      var toAdd = 
+    data[i].forms.forEach(form => {
+      if (data[i].forms.length > 0)
       {
-        "name": data[i].name,
-        "formName": "",
-        "species": data[i].species,
-        "height": data[i].height,
-        "weight": data[i].weight,
-        "breeding":  data[i].breeding,
-        "number":data[i].number,
-        "ref": data[i].ref,
-        "type1": data[i].type1,
-        "type2": data[i].type2,
-        "image": data[i].image,
-        "abilities": data[i].abilities,
-        "hiddenAbility": data[i].hiddenAbility,
-        "weaknessquarter": data[i].weaknessquarter,
-        "weaknesshalf": data[i].weaknesshalf,
-        "weaknessnone": data[i].weaknessnone,
-        "weaknessdouble": data[i].weaknessdouble,
-        "weaknessquadruple": data[i].weaknessquadruple,
-        "genderRatio": data[i].genderRatio,
-        "games": data[i].games,
-        "forms": forms
-      };
-      
-      newData.push(toAdd);
+        while (form.number.length < 4) form.number = "0" + form.number;
+        if (form.forms != null && form.forms.length > 0)
+        {
+          form.forms.forEach(form => {
+            while (form.number.length < 4) form.number = "0" + form.number;
+          });
+        }
     }
+    });
+  }
+  writeToFile("database/last_result.json", data);
+
+});
+
+// test('Add property', async ({ baseURL, page }) => {
+//     var newData : Object[] = [];
+    
+//     for (let i = 0; i < data.length; i++) {
+//       var forms : Object[] = [];
+//       data[i].forms.forEach(form => {
+//         var formToAdd = 
+//         {
+//           "name": form.name,
+//           "formName": "",
+//           "species": form.species,
+//           "height": form.height,
+//           "weight": form.weight,
+//           "breeding":  form.breeding,
+//           "number":form.number,
+//           "ref": form.ref,
+//           "type1": form.type1,
+//           "type2": form.type2,
+//           "image": form.image,
+//           "abilities": form.abilities,
+//           "hiddenAbility": form.hiddenAbility,
+//           "weaknessquarter": form.weaknessquarter,
+//           "weaknesshalf": form.weaknesshalf,
+//           "weaknessnone": form.weaknessnone,
+//           "weaknessdouble": form.weaknessdouble,
+//           "weaknessquadruple": form.weaknessquadruple,
+//           "genderRatio": form.genderRatio,
+//           "games": form.games,
+//         };
+//         forms.push(formToAdd);
+//       });
+
+
+//       var toAdd = 
+//       {
+//         "name": data[i].name,
+//         "formName": "",
+//         "species": data[i].species,
+//         "height": data[i].height,
+//         "weight": data[i].weight,
+//         "breeding":  data[i].breeding,
+//         "number":data[i].number,
+//         "ref": data[i].ref,
+//         "type1": data[i].type1,
+//         "type2": data[i].type2,
+//         "image": data[i].image,
+//         "abilities": data[i].abilities,
+//         "hiddenAbility": data[i].hiddenAbility,
+//         "weaknessquarter": data[i].weaknessquarter,
+//         "weaknesshalf": data[i].weaknesshalf,
+//         "weaknessnone": data[i].weaknessnone,
+//         "weaknessdouble": data[i].weaknessdouble,
+//         "weaknessquadruple": data[i].weaknessquadruple,
+//         "genderRatio": data[i].genderRatio,
+//         "games": data[i].games,
+//         "forms": forms
+//       };
+      
+//       newData.push(toAdd);
+//     }
     
 
-    writeToFile("database/last_result.json", newData);
-  });
+//     writeToFile("database/last_result.json", newData);
+//   });
 
 function writeToFile(file, content){
   fs.writeFile(file, JSON.stringify(content), (err) => {

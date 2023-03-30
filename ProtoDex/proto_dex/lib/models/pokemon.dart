@@ -216,7 +216,8 @@ class Pokemon {
   }
 
   imageHasGenderAlter() {
-    return !(image.any((element) => element.contains('-mf')));
+    return !(image.any((element) => element.contains('-mf')) ||
+        image.any((element) => element.contains('-g')));
   }
 
   static Image typeImage(PokemonType? type) {

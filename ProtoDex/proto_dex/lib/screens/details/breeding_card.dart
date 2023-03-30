@@ -73,12 +73,14 @@ class BreedingInformationCard extends StatelessWidget {
                         ],
                       )
                     else
-                      const Text(
-                        '(Genderless)',
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 11,
-                          fontStyle: FontStyle.italic,
+                      const Center(
+                        child: Text(
+                          '(Genderless)',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 11,
+                            fontStyle: FontStyle.italic,
+                          ),
                         ),
                       ),
                     Row(
