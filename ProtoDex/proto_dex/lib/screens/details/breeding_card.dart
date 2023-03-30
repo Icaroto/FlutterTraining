@@ -26,10 +26,11 @@ class BreedingInformationCard extends StatelessWidget {
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Wrap(
                       direction: Axis.horizontal,
-                      alignment: WrapAlignment.spaceEvenly,
+                      alignment: WrapAlignment.spaceAround,
                       children: pokemon.breeding.groups
                           .map((i) => Text(
                                 "[$i]",

@@ -21,20 +21,25 @@ class GamesInformationCard extends StatelessWidget {
         child: ListView.builder(
           itemBuilder: (context, index2) {
             return ListTile(
-              tileColor: Colors.black,
+              // tileColor: Colors.black,
               leading: ListImage(
                 image: Game.gameIcon(pokemon.games[index2]),
               ),
-              title: Text(
-                pokemon.games[index2].name,
-                style: const TextStyle(color: Colors.white, fontSize: 15),
+              title: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  pokemon.games[index2].name,
+                  style: const TextStyle(color: Colors.white, fontSize: 15),
+                ),
               ),
               subtitle: Text(
                 pokemon.games[index2].dex,
-                style: const TextStyle(color: Colors.white, fontSize: 15),
+                style: const TextStyle(
+                  color: Colors.blue,
+                ),
               ),
               trailing: Text(
-                pokemon.games[index2].number,
+                '#${pokemon.games[index2].number}',
                 style: const TextStyle(color: Colors.white),
               ),
             );
