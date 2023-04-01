@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FiltersSideScren extends StatelessWidget {
-  const FiltersSideScren({
+class FiltersSideScreen extends StatelessWidget {
+  const FiltersSideScreen({
     required this.filters,
     required this.onClose,
     Key? key,

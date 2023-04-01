@@ -45,7 +45,7 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
         title: const Text("Pokedex"),
         actions: pokedexActions(),
       ),
-      endDrawer: FiltersSideScren(
+      endDrawer: FiltersSideScreen(
         filters: pokedexFilters(),
         onClose: () {
           setState(() => scaffoldKey.currentState!.closeEndDrawer());
