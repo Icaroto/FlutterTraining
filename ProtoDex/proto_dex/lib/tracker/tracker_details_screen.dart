@@ -3,12 +3,12 @@ import '../components/basic.dart';
 import '../constants.dart';
 import '../models/item.dart';
 import '../models/tab.dart';
-import '../screens/details/basic_info.dart';
 import '../screens/details/catch_card.dart';
-import '../screens/details/details_background.dart';
+import '../components/type_background.dart';
+import '../components/details_header.dart';
 import '../components/image.dart';
 import '../models/pokemon.dart';
-import '../components/tab.dart';
+import '../components/details_panel.dart';
 
 class TrackerDetailsPage extends StatefulWidget {
   const TrackerDetailsPage({super.key, required this.pokemon});
@@ -46,18 +46,19 @@ class _TrackerDetailsPageState extends State<TrackerDetailsPage> {
     return Scaffold(
       body: Stack(
         children: [
-          Background(type1: displayPokemon.type1, type2: displayPokemon.type2),
+          TypeBackground(
+              type1: displayPokemon.type1, type2: displayPokemon.type2),
           AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0.0,
           ),
-          BasicInfo(
+          DetailsHeader(
             name: displayPokemon.name,
             number: displayPokemon.number,
             type1: displayPokemon.type1,
             type2: displayPokemon.type2,
           ),
-          TabControl(tabs: giveMeATab(displayPokemon, widget.pokemon)),
+          Panel(tabs: giveMeATab(displayPokemon, widget.pokemon)),
           (widget.pokemon is Item)
               ? MainImage(imagePath: widget.pokemon.displayImage)
               : WillPopScope(

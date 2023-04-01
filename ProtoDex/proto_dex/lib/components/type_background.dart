@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/constants.dart';
-import '../../models/enums.dart';
-import '../../models/pokemon.dart';
+import '../models/enums.dart';
+import '../models/pokemon.dart';
 
-class Background extends StatelessWidget {
-  const Background({super.key, required this.type1, this.type2});
+class TypeBackground extends StatelessWidget {
+  const TypeBackground({super.key, required this.type1, this.type2});
 
   final PokemonType type1;
   final PokemonType? type2;

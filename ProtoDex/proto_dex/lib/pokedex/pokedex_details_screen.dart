@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import '../components/details_next_prev.dart';
+import '../components/empty_app_bar.dart';
 import '../models/tab.dart';
 import '../screens/details/breeding_card.dart';
-import '../screens/details/details_background.dart';
-import '../screens/details/basic_info.dart';
+import '../components/type_background.dart';
+import '../components/details_header.dart';
 import '../components/image.dart';
 import '../screens/details/games_card.dart';
 import '../screens/details/general_card.dart';
-import '../components/tab.dart';
+import '../components/details_panel.dart';
 import '../models/pokemon.dart';
 import '../screens/details/weakness_card.dart';
 
@@ -44,79 +46,45 @@ class _PokedexDetailsPage extends State<PokedexDetailsPage> {
     return Scaffold(
       body: Stack(
         children: [
-          Background(type1: pokemon.type1, type2: pokemon.type2),
-          AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-          ),
-          BasicInfo(
+          TypeBackground(type1: pokemon.type1, type2: pokemon.type2),
+          const EmptyAppBar(),
+          DetailsHeader(
             name: pokemon.name,
             number: pokemon.number,
             type1: pokemon.type1,
             type2: pokemon.type2,
           ),
-          TabControl(tabs: buildTab(pokemon)),
+          Panel(tabs: buildTab(pokemon)),
           WillPopScope(
               onWillPop: () async {
                 imageIndex = 0;
                 Navigator.pop(context, false);
                 return false;
               },
-              child: IgnorePointer(
-                  child: MainImage(imagePath: pokemon.image[imageIndex]))),
-          navigationButtons(pokemon),
+              child: MainImage(imagePath: pokemon.image[imageIndex])),
+          NextPrevButtons(
+            onLeftClick: (isFirstInList)
+                ? null
+                : () => {
+                      setState(() {
+                        imageIndex = 0;
+                        pokemon.resetImage();
+                        currentIndexes =
+                            widget.pokemons.previousIndex(currentIndexes);
+                      }),
+                    },
+            onRightClick: (isLastInList)
+                ? null
+                : () => {
+                      setState(() {
+                        imageIndex = 0;
+                        pokemon.resetImage();
+                        currentIndexes =
+                            widget.pokemons.nextIndex(currentIndexes);
+                      }),
+                    },
+          ),
         ],
-      ),
-    );
-  }
-
-  Center navigationButtons(Pokemon pokemon) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            GestureDetector(
-              onTap: (isFirstInList)
-                  ? null
-                  : () => {
-                        setState(() {
-                          imageIndex = 0;
-                          pokemon.resetImage();
-                          currentIndexes =
-                              widget.pokemons.previousIndex(currentIndexes);
-                        }),
-                      },
-              child: (isFirstInList)
-                  ? Container()
-                  : const Icon(
-                      Icons.keyboard_arrow_left,
-                      size: 30,
-                      color: Colors.black,
-                    ),
-            ),
-            GestureDetector(
-              onTap: (isLastInList)
-                  ? null
-                  : () => {
-                        setState(() {
-                          imageIndex = 0;
-                          pokemon.resetImage();
-                          currentIndexes =
-                              widget.pokemons.nextIndex(currentIndexes);
-                        }),
-                      },
-              child: (isLastInList)
-                  ? Container()
-                  : const Icon(
-                      Icons.keyboard_arrow_right,
-                      size: 30,
-                      color: Colors.black,
-                    ),
-            ),
-          ],
-        ),
       ),
     );
   }

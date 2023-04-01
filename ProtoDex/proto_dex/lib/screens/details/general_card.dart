@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../components/basic.dart';
-import '../../models/enums.dart';
 import '../../models/pokemon.dart';
 
 class GeneralInformationCard extends StatelessWidget {
@@ -22,7 +21,7 @@ class GeneralInformationCard extends StatelessWidget {
           padding: const EdgeInsets.only(left: 6),
           child: Column(
             children: [
-              const SubTextDivider(text: "About"),
+              const SubTextDivider(text: "Base"),
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,

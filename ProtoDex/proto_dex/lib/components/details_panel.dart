@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../models/tab.dart';
 
-class TabControl extends StatelessWidget {
-  const TabControl({super.key, required this.tabs});
+class Panel extends StatelessWidget {
+  const Panel({super.key, required this.tabs});
 
   final List<PokeTab> tabs;
 

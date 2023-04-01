@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:proto_dex/components/image.dart';
 import 'package:proto_dex/models/enums.dart';
 
-class BasicInfo extends StatelessWidget {
-  const BasicInfo(
+class DetailsHeader extends StatelessWidget {
+  const DetailsHeader(
       {Key? key,
       required this.name,
       required this.number,

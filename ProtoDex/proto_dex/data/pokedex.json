@@ -92,15 +92,7 @@
         "weaknessdouble": ["flying", "psychic"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-        "games": [
-          {
-            "name": "",
-            "dex": "",
-            "number": "00",
-            "shinyLocked": "",
-            "notes": ""
-          }
-        ]
+        "games": []
       },
       {
         "name": "Gigantamax Venusaur",

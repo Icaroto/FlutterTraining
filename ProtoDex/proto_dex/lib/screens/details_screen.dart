@@ -5,12 +5,12 @@ import '../models/item.dart';
 import '../models/tab.dart';
 import 'details/breeding_card.dart';
 import 'details/catch_card.dart';
-import 'details/details_background.dart';
-import 'details/basic_info.dart';
+import '../components/type_background.dart';
+import '../components/details_header.dart';
 import '../components/image.dart';
 import 'details/games_card.dart';
 import 'details/general_card.dart';
-import '../components/tab.dart';
+import '../components/details_panel.dart';
 import '../models/pokemon.dart';
 import 'details/weakness_card.dart';
 
@@ -50,18 +50,19 @@ class _DetailsPageState extends State<DetailsPage> {
     return Scaffold(
       body: Stack(
         children: [
-          Background(type1: displayPokemon.type1, type2: displayPokemon.type2),
+          TypeBackground(
+              type1: displayPokemon.type1, type2: displayPokemon.type2),
           AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0.0,
           ),
-          BasicInfo(
+          DetailsHeader(
             name: displayPokemon.name,
             number: displayPokemon.number,
             type1: displayPokemon.type1,
             type2: displayPokemon.type2,
           ),
-          TabControl(tabs: giveMeATab(displayPokemon, widget.pokemon)),
+          Panel(tabs: giveMeATab(displayPokemon, widget.pokemon)),
           (widget.pokemon is Item)
               ? MainImage(imagePath: widget.pokemon.displayImage)
               : WillPopScope(

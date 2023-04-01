@@ -14,32 +14,34 @@ class MainImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Expanded(flex: 2, child: Container()),
-        Expanded(
-          flex: 6,
-          child: Stack(
-            children: [
-              //Shadow
-              Center(
-                child: Image.network(
-                  '${kImageLocalPrefix}mons/$imagePath',
-                  color: Colors.black87,
+    return IgnorePointer(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(flex: 2, child: Container()),
+          Expanded(
+            flex: 6,
+            child: Stack(
+              children: [
+                //Shadow
+                Center(
+                  child: Image.network(
+                    '${kImageLocalPrefix}mons/$imagePath',
+                    color: Colors.black87,
+                  ),
                 ),
-              ),
-              //Image
-              Center(
-                child: Image.network(
-                  '${kImageLocalPrefix}mons/$imagePath',
+                //Image
+                Center(
+                  child: Image.network(
+                    '${kImageLocalPrefix}mons/$imagePath',
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        Expanded(flex: 5, child: Container())
-      ],
+          Expanded(flex: 5, child: Container())
+        ],
+      ),
     );
   }
 }
