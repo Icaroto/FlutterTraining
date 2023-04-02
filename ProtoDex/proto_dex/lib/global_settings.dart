@@ -1,1 +1,1 @@
-bool revealUncaught = false;
+bool gRevealUncaught = false;

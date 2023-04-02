@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proto_dex/pokedex/pokedex_cards.dart';
 import 'package:proto_dex/styles.dart';
 import '../components/app_bar.dart';
-import '../components/filters_drawer.dart';
+import '../components/filters_side_screen.dart';
 import '../components/search_bar.dart';
 import '../components/filter_by_type.dart';
 import '../components/sort_list_by.dart';
@@ -43,7 +43,7 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
       key: scaffoldKey,
       appBar: AppBarBase(
         title: const Text("Pokedex"),
-        actions: pokedexActions(),
+        actions: appBarActions(),
       ),
       endDrawer: FiltersSideScreen(
         filters: pokedexFilters(),
@@ -105,6 +105,30 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
     }
   }
 
+  List<Widget> appBarActions() {
+    return [
+      IconButton(
+        icon: const Icon(Icons.search_outlined),
+        // tooltip: 'Show Snackbar',
+        onPressed: () {
+          setState(() {
+            _isSearchOpened = !_isSearchOpened;
+          });
+          // ScaffoldMessenger.of(context).showSnackBar(
+          //     const SnackBar(content: Text('This is a snackbar')));
+        },
+      ),
+      IconButton(
+        icon: const Icon(Icons.filter_alt_outlined),
+        onPressed: () {
+          setState(() {
+            scaffoldKey.currentState!.openEndDrawer();
+          });
+        },
+      ),
+    ];
+  }
+
   List<Widget> pokedexFilters() {
     return [
       const Divider(thickness: 2),
@@ -141,30 +165,6 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
             ]);
             addFilter(filter);
             applyFilters();
-          });
-        },
-      ),
-    ];
-  }
-
-  List<Widget> pokedexActions() {
-    return [
-      IconButton(
-        icon: const Icon(Icons.search_outlined),
-        // tooltip: 'Show Snackbar',
-        onPressed: () {
-          setState(() {
-            _isSearchOpened = !_isSearchOpened;
-          });
-          // ScaffoldMessenger.of(context).showSnackBar(
-          //     const SnackBar(content: Text('This is a snackbar')));
-        },
-      ),
-      IconButton(
-        icon: const Icon(Icons.filter_alt_outlined),
-        onPressed: () {
-          setState(() {
-            scaffoldKey.currentState!.openEndDrawer();
           });
         },
       ),

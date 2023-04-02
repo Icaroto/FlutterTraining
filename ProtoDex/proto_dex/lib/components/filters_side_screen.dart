@@ -23,7 +23,6 @@ class FiltersSideScreen extends StatelessWidget {
               child: Text('Filters'),
             ),
           ),
-          filters.first,
           Column(
             children: [...filters],
           ),

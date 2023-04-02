@@ -7,18 +7,22 @@ class AppBarBase extends StatelessWidget implements PreferredSizeWidget {
   const AppBarBase({
     required this.title,
     required this.actions,
+    this.color,
     Key? key,
   }) : super(key: key);
 
   final Widget title;
   final List<Widget>? actions;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        automaticallyImplyLeading: true,
-        actions: actions,
-        centerTitle: true,
-        title: title);
+      automaticallyImplyLeading: true,
+      actions: actions,
+      centerTitle: true,
+      title: title,
+      backgroundColor: color,
+    );
   }
 }

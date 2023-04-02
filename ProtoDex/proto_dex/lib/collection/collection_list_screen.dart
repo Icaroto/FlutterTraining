@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/constants.dart';
 import 'package:proto_dex/styles.dart';
+import '../components/app_bar.dart';
 import '../models/group.dart';
 import '../models/item.dart';
 import '../models/pokemon.dart';
@@ -34,7 +35,10 @@ class _CollectionScreenState extends State<CollectionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: appTopBar(context),
+      appBar: const AppBarBase(
+        title: Text("My Collection"),
+        actions: null,
+      ),
       // endDrawer: rightDrawer(context),
       body: Stack(
         children: <Widget>[
@@ -52,20 +56,42 @@ class _CollectionScreenState extends State<CollectionScreen> {
                     ),
                   ),
                 if (_selectedIndex == 0 && collection.isNotEmpty)
-                  collectionList(true),
+                  collectionList(false),
                 if (_selectedIndex == 1) pokedex()
               ],
             ),
           ),
         ],
       ),
-      bottomNavigationBar: bottomNavigationBar(),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.check_circle_outline_outlined),
+            label: "Collection",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_circle),
+            label: "Add",
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        backgroundColor: Colors.blue,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.black,
+        onTap: (int index) {
+          setState(
+            () {
+              _selectedIndex = index;
+            },
+          );
+        },
+      ),
     );
   }
 
   Expanded collectionList(bool flat) {
-    // List<Group> groups = groupByPokemon(collection);
-    List<Group> groups = groupByGame(collection);
+    List<Group> groups = groupByPokemon(collection);
+    //List<Group> groups = groupByGame(collection);
 
     return Expanded(
       child: ListView.builder(
@@ -160,40 +186,6 @@ class _CollectionScreenState extends State<CollectionScreen> {
         padding: const EdgeInsets.all(5),
         scrollDirection: Axis.vertical,
       ),
-    );
-  }
-
-  AppBar appTopBar(BuildContext context) {
-    return AppBar(
-      automaticallyImplyLeading: true,
-      centerTitle: true,
-      title: const Text("Collection"),
-    );
-  }
-
-  BottomNavigationBar bottomNavigationBar() {
-    return BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.check_circle_outline_outlined),
-          label: "Collection",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.add_circle),
-          label: "Add",
-        ),
-      ],
-      currentIndex: _selectedIndex,
-      backgroundColor: Colors.blue,
-      selectedItemColor: Colors.white,
-      unselectedItemColor: Colors.black,
-      onTap: (int index) {
-        setState(
-          () {
-            _selectedIndex = index;
-          },
-        );
-      },
     );
   }
 

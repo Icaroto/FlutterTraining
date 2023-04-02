@@ -59,7 +59,7 @@ class ListImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: (revealUncaught == false && shadowOnly == true)
+      children: (gRevealUncaught == false && shadowOnly == true)
           ? [
               Image.network(
                 '$kImageLocalPrefix$image',

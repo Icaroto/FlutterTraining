@@ -191,11 +191,11 @@ class _ListScreenState extends State<ListScreen> {
                       child: Text("Reveal Uncaught"),
                     ),
                     Switch(
-                      value: revealUncaught,
+                      value: gRevealUncaught,
                       activeColor: Colors.red,
                       onChanged: (bool value) {
                         setState(() {
-                          revealUncaught = !revealUncaught;
+                          gRevealUncaught = !gRevealUncaught;
                         });
                       },
                     )
