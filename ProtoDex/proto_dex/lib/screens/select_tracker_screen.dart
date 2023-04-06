@@ -84,7 +84,8 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
       extentOffset: suggestedName.length,
     );
     return Expanded(
-      child: Card(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: TextButton(
           style: TextButton.styleFrom(
             backgroundColor: Colors.blue,

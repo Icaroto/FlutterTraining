@@ -102,14 +102,12 @@ class _TrackerTile extends State<TrackerTile> {
     );
 
     if (pokemon.game.notes != "") {
-      return Card(
-        child: ClipRect(
-          child: Banner(
-            message: "Trade Only",
-            location: BannerLocation.topEnd,
-            color: getBannerColor(pokemon.game.notes),
-            child: card,
-          ),
+      return ClipRect(
+        child: Banner(
+          message: "Trade Only",
+          location: BannerLocation.topEnd,
+          color: getBannerColor(pokemon.game.notes),
+          child: card,
         ),
       );
     }
