@@ -155,3 +155,13 @@ class Item {
     }
   }
 }
+
+extension Filter on List<Item>? {
+  Item current(List<int> indexes) {
+    Item pokemon = this![indexes.first];
+    for (var i = 1; i < indexes.length; i++) {
+      pokemon = pokemon.forms[indexes[i]];
+    }
+    return pokemon;
+  }
+}

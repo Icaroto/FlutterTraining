@@ -4,18 +4,24 @@ import '../../components/image.dart';
 import '../../models/enums.dart';
 import '../../models/item.dart';
 
-Widget singleCard(context, index, pokemons, Function()? onStateChange,
-    {color = Colors.black26}) {
-  return TrackerTile(
-    tileColor: color,
-    pokemon: pokemons[index],
-    onStateChange: onStateChange,
-  );
-}
-
-Widget multipleCards(context, index, pokemons, Function()? onStateChange,
-    {subLevel = false}) {
+Widget createCards(
+  List<Item> pokemons,
+  List<int> indexes, {
+  Function()? onStateChange,
+  subLevel = false,
+}) {
   final GlobalKey expansionTileKey = GlobalKey();
+
+  Item pokemon = pokemons.current(indexes);
+
+  if (pokemon.forms.isEmpty) {
+    return TrackerTile(
+      tileColor: (subLevel) ? null : Colors.black26,
+      pokemons: pokemons,
+      indexes: indexes,
+      onStateChange: onStateChange,
+    );
+  }
 
   void scrollToSelectedContent({required GlobalKey expansionTileKey}) {
     final keyContext = expansionTileKey.currentContext;
@@ -27,14 +33,9 @@ Widget multipleCards(context, index, pokemons, Function()? onStateChange,
     }
   }
 
-  var image = "";
-  bool shadow = false;
-  if (pokemons is List<Item>) {
-    image = "mons/${pokemons[index].displayImage}";
-    shadow = Item.isCaptured(pokemons[index]) != CaptureType.full;
-  } else {
-    image = "mons/${pokemons[index].image[0]}";
-  }
+  var image = "mons/${pokemon.displayImage}";
+  bool shadow = Item.isCaptured(pokemon) != CaptureType.full;
+
   return Card(
     child: ExpansionTile(
       key: expansionTileKey,
@@ -53,27 +54,22 @@ Widget multipleCards(context, index, pokemons, Function()? onStateChange,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            pokemons[index].name,
+            pokemon.name,
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
-          Text("#${pokemons[index].number}")
+          Text("#${pokemon.number}")
         ],
       ),
-      trailing: Text('         +${pokemons[index].forms.length - 1}'),
+      trailing: Text('         +${pokemon.forms.length - 1}'),
       subtitle: null,
       children: [
         ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index2) {
-            return (pokemons[index].forms[index2].forms.isEmpty)
-                ? singleCard(
-                    context, index2, pokemons[index].forms, onStateChange,
-                    color: null)
-                : multipleCards(
-                    context, index2, pokemons[index].forms, onStateChange,
-                    subLevel: true);
+            return createCards(pokemons, [...indexes, index2],
+                onStateChange: onStateChange, subLevel: true);
           },
-          itemCount: pokemons[index].forms.length,
+          itemCount: pokemon.forms.length,
           shrinkWrap: true,
           padding: const EdgeInsets.all(5),
           scrollDirection: Axis.vertical,

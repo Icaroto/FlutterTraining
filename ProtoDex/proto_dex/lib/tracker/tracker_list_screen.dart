@@ -90,7 +90,26 @@ class _TrackerListScreenState extends State<TrackerListScreen> {
                     applyFilters();
                   },
                 ),
-                listBuild(),
+                Expanded(
+                  child: ListView.builder(
+                    itemBuilder: ((context, index) {
+                      return createCards(
+                        filteredList,
+                        [index],
+                        onStateChange: () {
+                          setState(() {
+                            saveTracker(widget.collection);
+                            applyFilters();
+                          });
+                        },
+                      );
+                    }),
+                    itemCount: filteredList.length,
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.all(5),
+                    scrollDirection: Axis.vertical,
+                  ),
+                ),
               ],
             ),
           ),
@@ -260,41 +279,5 @@ class _TrackerListScreenState extends State<TrackerListScreen> {
             .toList(),
       )
     ];
-  }
-
-  Expanded listBuild() {
-    return Expanded(
-      child: ListView.builder(
-        itemBuilder: ((context, index) {
-          return (filteredList[index].forms.isEmpty)
-              ? singleCard(
-                  context,
-                  index,
-                  filteredList,
-                  () {
-                    setState(() {
-                      saveTracker(widget.collection);
-                      applyFilters();
-                    });
-                  },
-                )
-              : multipleCards(
-                  context,
-                  index,
-                  filteredList,
-                  () {
-                    setState(() {
-                      saveTracker(widget.collection);
-                      applyFilters();
-                    });
-                  },
-                );
-        }),
-        itemCount: filteredList.length,
-        shrinkWrap: true,
-        padding: const EdgeInsets.all(5),
-        scrollDirection: Axis.vertical,
-      ),
-    );
   }
 }

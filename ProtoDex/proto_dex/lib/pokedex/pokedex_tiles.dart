@@ -23,11 +23,7 @@ class PokemonTiles extends StatefulWidget {
 class _PokemonTiles extends State<PokemonTiles> {
   @override
   Widget build(BuildContext context) {
-    Pokemon pokemon = widget.pokemons[widget.indexes.first];
-
-    for (var i = 1; i < widget.indexes.length; i++) {
-      pokemon = pokemon.forms[widget.indexes[i]];
-    }
+    Pokemon pokemon = widget.pokemons.current(widget.indexes);
 
     return Card(
       child: ListTile(
