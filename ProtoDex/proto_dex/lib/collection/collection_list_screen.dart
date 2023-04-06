@@ -137,49 +137,27 @@ class _CollectionScreenState extends State<CollectionScreen> {
     return Expanded(
       child: ListView.builder(
         itemBuilder: ((context, index) {
-          return (originalPokedex[index].forms.isEmpty)
-              ? dexCard.singleCard(
-                  originalPokedex,
-                  [index],
-                  onStateChange: () {
-                    setState(() {
-                      // collection.add(
-                      //   Item.fromDex(
-                      //     originalPokedex[index],
-                      //     Game(
-                      //         name: "otro",
-                      //         dex: "otro",
-                      //         number: "1",
-                      //         notes: "",
-                      //         shinyLocked: "false"),
-                      //   ),
-                      // );
-                      saveCollection(collection);
-                      // applyFilters();
-                    });
-                  },
-                )
-              : dexCard.multipleCards(
-                  originalPokedex,
-                  [index],
-                  onStateChange: () {
-                    setState(() {
-                      // collection.add(
-                      //   Item.fromDex(
-                      //     originalPokedex[index],
-                      //     Game(
-                      //         name: "otro",
-                      //         dex: "otro",
-                      //         number: "1",
-                      //         notes: "",
-                      //         shinyLocked: "false"),
-                      //   ),
-                      // );
-                      saveCollection(collection);
-                      // applyFilters();
-                    });
-                  },
-                );
+          return dexCard.createCards(
+            originalPokedex,
+            [index],
+            onStateChange: () {
+              setState(() {
+                // collection.add(
+                //   Item.fromDex(
+                //     originalPokedex[index],
+                //     Game(
+                //         name: "otro",
+                //         dex: "otro",
+                //         number: "1",
+                //         notes: "",
+                //         shinyLocked: "false"),
+                //   ),
+                // );
+                saveCollection(collection);
+                // applyFilters();
+              });
+            },
+          );
         }),
         itemCount: originalPokedex.length,
         shrinkWrap: true,

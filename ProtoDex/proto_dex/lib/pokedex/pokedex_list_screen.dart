@@ -76,7 +76,20 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
                     applyFilters();
                   },
                 ),
-                listBuild(),
+                Expanded(
+                  child: ListView.builder(
+                    itemBuilder: ((context, index) {
+                      return createCards(
+                        originalPokedex,
+                        [index],
+                      );
+                    }),
+                    itemCount: originalPokedex.length,
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.all(5),
+                    scrollDirection: Axis.vertical,
+                  ),
+                ),
               ],
             ),
           ),
@@ -169,27 +182,5 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
         },
       ),
     ];
-  }
-
-  Expanded listBuild() {
-    return Expanded(
-      child: ListView.builder(
-        itemBuilder: ((context, index) {
-          return (originalPokedex[index].forms.isEmpty)
-              ? singleCard(
-                  originalPokedex,
-                  [index],
-                )
-              : multipleCards(
-                  originalPokedex,
-                  [index],
-                );
-        }),
-        itemCount: originalPokedex.length,
-        shrinkWrap: true,
-        padding: const EdgeInsets.all(5),
-        scrollDirection: Axis.vertical,
-      ),
-    );
   }
 }

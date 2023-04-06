@@ -50,9 +50,11 @@ class _PokemonTiles extends State<PokemonTiles> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              (pokemon.formName == "") ? pokemon.name : pokemon.formName,
-              style: const TextStyle(fontWeight: FontWeight.bold),
+            Flexible(
+              child: Text(
+                (pokemon.formName == "") ? pokemon.name : pokemon.formName,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
             Text("#${pokemon.number}")
           ],
