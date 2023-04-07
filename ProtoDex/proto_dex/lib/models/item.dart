@@ -164,4 +164,41 @@ extension Filter on List<Item>? {
     }
     return pokemon;
   }
+
+  //TODO: This is a duplication from the one in collection.dart.
+  //Perhaps there's a way to merge them.
+  //This one is used in the collection_list_screen.dart
+  List<Item> applyAllFilters(
+    List<FilterType> filters,
+    String? words,
+  ) {
+    List<Item> temp = [...this!];
+
+    for (var filter in filters) {
+      switch (filter) {
+        case FilterType.byValue:
+          temp = temp
+              .where((element) =>
+                  element.name.toLowerCase().contains(words!.toLowerCase()))
+              .toList();
+          break;
+        case FilterType.numAsc:
+          temp.sort((a, b) => a.number.compareTo(b.number));
+          break;
+        case FilterType.numDesc:
+          temp.sort((a, b) => b.number.compareTo(a.number));
+          break;
+        case FilterType.nameAsc:
+          temp.sort((a, b) => a.name.compareTo(b.name));
+          break;
+        case FilterType.nameDesc:
+          temp.sort((a, b) => b.name.compareTo(a.name));
+          break;
+        default:
+          return this!;
+      }
+    }
+
+    return temp;
+  }
 }

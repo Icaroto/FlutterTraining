@@ -4,17 +4,7 @@ import '../../models/group.dart';
 import '../../collection/collection_tile.dart';
 import '../models/item.dart';
 
-Widget singleCard(
-    context, index, List<Item> pokemons, Function()? onStateChange,
-    {color = Colors.black26}) {
-  return CollectionTile(
-    pokemon: pokemons[index],
-    onStateChange: onStateChange,
-  );
-}
-
-Widget multipleCards(context, Group group, Function()? onStateChange,
-    {subLevel = false}) {
+Widget createCards(Group group, Function()? onStateChange, {subLevel = false}) {
   final GlobalKey expansionTileKey = GlobalKey();
 
   void scrollToSelectedContent({required GlobalKey expansionTileKey}) {
@@ -44,8 +34,6 @@ Widget multipleCards(context, Group group, Function()? onStateChange,
           (group.color == null) ? Colors.black26 : group.color,
       backgroundColor: (group.color == null) ? Colors.black26 : group.color,
 
-      // collapsedBackgroundColor: (subLevel) ? null : Colors.black26,
-      // backgroundColor: (subLevel) ? Colors.black12 : Colors.black26,
       leading: ListImage(
         image: group.image,
       ),

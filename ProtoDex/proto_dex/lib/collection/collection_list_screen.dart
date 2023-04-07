@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:proto_dex/constants.dart';
 import 'package:proto_dex/styles.dart';
 import '../components/app_bar.dart';
+import '../components/filters_side_screen.dart';
+import '../components/group_list_by.dart';
+import '../components/search_bar.dart';
+import '../models/enums.dart';
 import '../models/group.dart';
 import '../models/item.dart';
 import '../models/pokemon.dart';
@@ -20,10 +24,16 @@ class CollectionScreen extends StatefulWidget {
 }
 
 class _CollectionScreenState extends State<CollectionScreen> {
-  List<Pokemon> originalPokedex = [];
-  int _selectedIndex = 0;
-  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  String _query = "";
+  int _selectedTab = 0;
+  bool _isSearchOpened = false;
+  CollectionDisplayType displayType = CollectionDisplayType.flatList;
   List<Item> collection = List<Item>.empty(growable: true);
+  List<Pokemon> originalPokedex = [];
+  List<FilterType> filters = [];
+  TextEditingController editingController = TextEditingController();
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   void initState() {
     originalPokedex.addAll(kPokedex);
@@ -35,18 +45,42 @@ class _CollectionScreenState extends State<CollectionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: const AppBarBase(
-        title: Text("My Collection"),
-        actions: null,
+      appBar: AppBarBase(
+        title: const Text("My Collection"),
+        actions: appBarActions(),
       ),
-      // endDrawer: rightDrawer(context),
+      endDrawer: FiltersSideScreen(
+        filters: trackerFilters(),
+        onClose: () {
+          setState(() => scaffoldKey.currentState!.closeEndDrawer());
+        },
+      ),
       body: Stack(
         children: <Widget>[
           kBasicBackground,
           SafeArea(
             child: Column(
               children: [
-                if (_selectedIndex == 0 && collection.isEmpty)
+                SearchBar(
+                  isSearchOpened: _isSearchOpened,
+                  editingController: editingController,
+                  onCloseTap: () => {
+                    setState(
+                      () {
+                        (editingController.text == "")
+                            ? _isSearchOpened = false
+                            : editingController.clear();
+                        _query = "";
+                        applyFilters();
+                      },
+                    )
+                  },
+                  onValueChange: (value) {
+                    _query = value;
+                    applyFilters();
+                  },
+                ),
+                if (_selectedTab == 0 && collection.isEmpty)
                   const Expanded(
                     child: Center(
                       child: Text(
@@ -55,9 +89,9 @@ class _CollectionScreenState extends State<CollectionScreen> {
                       ),
                     ),
                   ),
-                if (_selectedIndex == 0 && collection.isNotEmpty)
-                  collectionList(false),
-                if (_selectedIndex == 1) pokedex()
+                if (_selectedTab == 0 && collection.isNotEmpty)
+                  collectionList(),
+                if (_selectedTab == 1) pokedex()
               ],
             ),
           ),
@@ -74,14 +108,14 @@ class _CollectionScreenState extends State<CollectionScreen> {
             label: "Add",
           ),
         ],
-        currentIndex: _selectedIndex,
+        currentIndex: _selectedTab,
         backgroundColor: Colors.blue,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.black,
         onTap: (int index) {
           setState(
             () {
-              _selectedIndex = index;
+              _selectedTab = index;
             },
           );
         },
@@ -89,50 +123,151 @@ class _CollectionScreenState extends State<CollectionScreen> {
     );
   }
 
-  Expanded collectionList(bool flat) {
-    List<Group> groups = groupByPokemon(collection);
-    //List<Group> groups = groupByGame(collection);
+  Expanded collectionList() {
+    List<Group> groups;
+    if (displayType == CollectionDisplayType.groupByPokemon) {
+      groups = groupByPokemon(collection);
+    } else {
+      groups = groupByGame(collection);
+    }
 
     return Expanded(
       child: ListView.builder(
         itemBuilder: ((context, index) {
-          return (flat)
+          return (displayType == CollectionDisplayType.flatList)
               ? CollectionTile(
                   pokemon: collection[index],
                   onStateChange: null,
                 )
-              : multipleCards(
-                  context,
+              : createCards(
                   groups[index],
                   null,
                 );
         }),
-        itemCount: (flat) ? collection.length : groups.length,
+        itemCount: (CollectionDisplayType.flatList == displayType)
+            ? collection.length
+            : groups.length,
         shrinkWrap: true,
         padding: const EdgeInsets.all(5),
         scrollDirection: Axis.vertical,
       ),
     );
   }
-  // Expanded collectionList() {
-  //   return Expanded(
-  //     child: ListView.builder(
-  //       itemBuilder: ((context, index) {
-  //         return collectionCard(
-  //           context,
-  //           index,
-  //           collection,
-  //           () {},
-  //         );
-  //       }),
-  //       itemCount: collection.length,
-  //       shrinkWrap: true,
-  //       padding: const EdgeInsets.all(5),
-  //       scrollDirection: Axis.vertical,
-  //     ),
-  //   );
-  // }
 
+  void applyFilters() {
+    setState(() {
+      (_query == "")
+          ? removeFilters([FilterType.byValue])
+          : addFilter(FilterType.byValue);
+
+      collection = getCollection();
+      collection = collection.applyAllFilters(filters, _query);
+    });
+  }
+
+  void addFilter(FilterType filter) {
+    if (!filters.contains(filter)) filters.add(filter);
+  }
+
+  void removeFilters(List<FilterType> filtersToRemove) {
+    for (var element in filtersToRemove) {
+      filters.remove(element);
+    }
+  }
+
+  List<Widget> appBarActions() {
+    return [
+      IconButton(
+        icon: const Icon(Icons.search_outlined),
+        onPressed: () {
+          setState(() {
+            _isSearchOpened = !_isSearchOpened;
+          });
+        },
+      ),
+      IconButton(
+        icon: const Icon(Icons.filter_alt_outlined),
+        onPressed: () {
+          setState(() {
+            scaffoldKey.currentState!.openEndDrawer();
+          });
+        },
+      ),
+    ];
+  }
+
+  List<Widget> trackerFilters() {
+    return [
+      const Divider(thickness: 2),
+      // SwitchOption(
+      //   title: "Reveal Uncaught",
+      //   switchValue: gRevealUncaught,
+      //   onSwitch: (bool value) {
+      //     setState(() {
+      //       gRevealUncaught = !gRevealUncaught;
+      //     });
+      //   },
+      // ),
+      // const Divider(thickness: 2),
+      // SwitchOption(
+      //   title: "Show Exclusive Only",
+      //   switchValue: _exclusiveOnly,
+      //   onSwitch: (bool value) {
+      //     setState(() {
+      //       _exclusiveOnly = value;
+      //       (_exclusiveOnly)
+      //           ? addFilter(FilterType.exclusiveOnly)
+      //           : removeFilters([FilterType.exclusiveOnly]);
+      //       applyFilters();
+      //     });
+      //   },
+      // ),
+      // const Divider(thickness: 2),
+      // FilterByType(
+      //   selectedTypes: _drawerByTypesSelected,
+      //   onTypeSelected: (List<String> list) {
+      //     setState(
+      //       () => {
+      //         _drawerByTypesSelected = list,
+      //         (_drawerByTypesSelected.isEmpty)
+      //             ? removeFilters([FilterType.byType])
+      //             : addFilter(FilterType.byType),
+      //         applyFilters(),
+      //       },
+      //     );
+      //   },
+      //   onClearPressed: () {
+      //     setState(() {
+      //       _drawerByTypesSelected.clear();
+      //       removeFilters([FilterType.byType]);
+      //       applyFilters();
+      //     });
+      //   },
+      // ),
+      // const Divider(thickness: 2),
+      GroupListBy(
+        currentDisplay: displayType,
+        onDisplaySelected: (newDisplay) {
+          setState(() {
+            displayType = newDisplay;
+            applyFilters();
+          });
+        },
+      ),
+      // const Divider(thickness: 2),
+      // ImportToCollectionButton(
+      //   listToImport: filteredList
+      //       .where((element) =>
+      //           widget.collection.isPokemonCaptured(element) ==
+      //               CaptureType.full ||
+      //           widget.collection.isPokemonCaptured(element) ==
+      //               CaptureType.partial)
+      //       .toList(),
+      // )
+    ];
+  }
+
+//This is the Second Tab Bits
   Expanded pokedex() {
     return Expanded(
       child: ListView.builder(
@@ -166,12 +301,4 @@ class _CollectionScreenState extends State<CollectionScreen> {
       ),
     );
   }
-
-  // groupByPokemon() {
-  //   var newMap = groupBy(collection, (Item obj) => obj.natDexNumber);
-  //   newMap.forEach((key, value) {
-  //     print(key);
-  //     print(value.first.);
-  //   });
-  // }
 }

@@ -70,4 +70,6 @@ enum FilterType {
   numDesc
 }
 
+enum CollectionDisplayType { flatList, groupByGame, groupByPokemon }
+
 enum CaptureType { full, partial, empty }
