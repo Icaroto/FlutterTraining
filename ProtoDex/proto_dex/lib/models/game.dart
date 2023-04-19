@@ -64,6 +64,10 @@ class Game extends Dex {
     String path = "games/";
     // String path = "";
     switch (gameName) {
+      case "Pokemon Scarlet":
+        return path += "pokemon_scarlet.png";
+      case "Pokemon Violet":
+        return path += "pokemon_violet.png";
       case "Let's Go Pikachu":
         return path += "pokemon_lets_go_pikachu.png";
       case "Let's Go Eevee":
@@ -135,6 +139,24 @@ class Dex {
       // "Pokemon Moon",
       // "Pokemon Ultra Sun",
       // "Pokemon Ultra Moon"
+    ];
+  }
+
+  static allGames() {
+    return [
+      "Pokemon Scarlet",
+      "Pokemon Violet",
+      "Pokemon Sword",
+      "Pokemon Shield",
+      "Let's Go Pikachu",
+      "Let's Go Eevee",
+      "Pokemon X",
+      "Pokemon Y",
+      "Pokemon Sun",
+      "Pokemon Moon",
+      "Pokemon Ultra Sun",
+      "Pokemon Ultra Moon",
+      "Pokemon Home",
     ];
   }
 

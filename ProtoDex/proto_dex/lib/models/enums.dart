@@ -73,3 +73,5 @@ enum FilterType {
 enum CollectionDisplayType { flatList, groupByGame, groupByPokemon }
 
 enum CaptureType { full, partial, empty }
+
+enum CaptureMethod { wild, raid, egg, trade, unknown }

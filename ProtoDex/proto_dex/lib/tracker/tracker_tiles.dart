@@ -37,7 +37,10 @@ class _TrackerTile extends State<TrackerTile> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return TrackerDetailsPage(pokemon: pokemon);
+                    return TrackerDetailsPage(
+                      pokemons: widget.pokemons,
+                      indexes: widget.indexes,
+                    );
                   },
                 ),
               ),

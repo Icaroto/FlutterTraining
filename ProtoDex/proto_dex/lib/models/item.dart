@@ -25,6 +25,9 @@ class Item {
   bool captured;
   String catchDate;
   String origin;
+  String currentLocation;
+  String trainerName;
+  CaptureMethod capturedMethod;
 
   Item.fromJson(Map<String, dynamic> json)
       : name = json['name'],
@@ -45,12 +48,15 @@ class Item {
         captured = json['captured'],
         catchDate = json['catchDate'],
         origin = json['origin'],
+        currentLocation = json['currentLocation'],
         level = json['level'],
         forms = json['forms'] != null
             ? List<Item>.from(
                 json['forms'].map((model) => Item.fromJson(model)))
             : [],
-        game = Game.fromJson(json['game']);
+        game = Game.fromJson(json['game']),
+        capturedMethod = CaptureMethod.values.byName(json['capturedMethod']),
+        trainerName = json['trainerName'];
 
   Item.fromDex(Pokemon dexPokemon, Game gameSelected, String entryOrigin,
       {bool useGameDexNumber = false})
@@ -74,9 +80,12 @@ class Item {
         captured = false,
         catchDate = "",
         origin = entryOrigin,
+        currentLocation = entryOrigin,
         level = kValueNotFound,
         ability = kValueNotFound,
-        game = gameSelected;
+        game = gameSelected,
+        trainerName = '',
+        capturedMethod = CaptureMethod.unknown;
 
   Item.copy(Item item)
       : name = item.name,
@@ -95,9 +104,12 @@ class Item {
         captured = item.captured,
         catchDate = item.catchDate,
         origin = item.origin,
+        currentLocation = item.currentLocation,
         level = item.level,
         ability = item.ability,
-        game = item.game;
+        game = item.game,
+        trainerName = item.trainerName,
+        capturedMethod = item.capturedMethod;
 
   Map<String, dynamic> toJson() {
     return {
@@ -117,9 +129,12 @@ class Item {
       'captured': captured,
       'catchDate': catchDate,
       'origin': origin,
+      'currentLocation': currentLocation,
       'ability': ability,
       'level': level,
       'game': game,
+      'trainerName': trainerName,
+      'capturedMethod': capturedMethod.name
     };
   }
 
@@ -156,6 +171,7 @@ class Item {
   }
 }
 
+//TODO: This is a duplication from the one in collection.dart.
 extension Filter on List<Item>? {
   Item current(List<int> indexes) {
     Item pokemon = this![indexes.first];
@@ -163,6 +179,26 @@ extension Filter on List<Item>? {
       pokemon = pokemon.forms[indexes[i]];
     }
     return pokemon;
+  }
+
+  bool isFirst(List<int> indexes) {
+    Item currentPokemon = current(indexes);
+    Item firstPokemon = this!.first;
+    while (firstPokemon.forms.isNotEmpty) {
+      firstPokemon = firstPokemon.forms.first;
+    }
+    if (firstPokemon == currentPokemon) return true;
+    return false;
+  }
+
+  bool isLast(List<int> indexes) {
+    Item currentPokemon = current(indexes);
+    Item lastPokemon = this!.last;
+    while (lastPokemon.forms.isNotEmpty) {
+      lastPokemon = lastPokemon.forms.last;
+    }
+    if (lastPokemon == currentPokemon) return true;
+    return false;
   }
 
   //TODO: This is a duplication from the one in collection.dart.
