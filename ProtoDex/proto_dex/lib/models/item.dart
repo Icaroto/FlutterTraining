@@ -28,6 +28,7 @@ class Item {
   String currentLocation;
   String trainerName;
   CaptureMethod capturedMethod;
+  List<PokemonAttributes> attributes;
 
   Item.fromJson(Map<String, dynamic> json)
       : name = json['name'],
@@ -56,7 +57,11 @@ class Item {
             : [],
         game = Game.fromJson(json['game']),
         capturedMethod = CaptureMethod.values.byName(json['capturedMethod']),
-        trainerName = json['trainerName'];
+        trainerName = json['trainerName'],
+        attributes = json['attributes'] != null
+            ? List<PokemonAttributes>.from(
+                json['attributes'].map((model) => model))
+            : [];
 
   Item.fromDex(Pokemon dexPokemon, Game gameSelected, String entryOrigin,
       {bool useGameDexNumber = false})
@@ -85,7 +90,8 @@ class Item {
         ability = kValueNotFound,
         game = gameSelected,
         trainerName = '',
-        capturedMethod = CaptureMethod.unknown;
+        capturedMethod = CaptureMethod.unknown,
+        attributes = [];
 
   Item.copy(Item item)
       : name = item.name,
@@ -109,7 +115,8 @@ class Item {
         ability = item.ability,
         game = item.game,
         trainerName = item.trainerName,
-        capturedMethod = item.capturedMethod;
+        capturedMethod = item.capturedMethod,
+        attributes = item.attributes;
 
   Map<String, dynamic> toJson() {
     return {
@@ -134,7 +141,8 @@ class Item {
       'level': level,
       'game': game,
       'trainerName': trainerName,
-      'capturedMethod': capturedMethod.name
+      'capturedMethod': capturedMethod.name,
+      'attributes': attributes
     };
   }
 

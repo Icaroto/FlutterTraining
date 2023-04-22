@@ -5,7 +5,6 @@ import '../models/collection.dart';
 import '../models/game.dart';
 import '../tracker/tracker_list_screen.dart';
 import '../utils/trackers_manager.dart';
-import 'list_screen.dart';
 
 class SelectTrackerScreen extends StatefulWidget {
   const SelectTrackerScreen({super.key});

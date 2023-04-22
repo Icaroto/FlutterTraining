@@ -47,12 +47,11 @@ enum PokeballType {
   timerball,
 }
 
-enum Attributes {
-  canMega,
-  canDinamax,
-  isOriginalTrainer,
-  isAlpha,
+enum PokemonAttributes {
   isShiny,
+  isMega,
+  isDinamax,
+  isAlpha,
 }
 
 enum ScreenType { pokedex, tracker, collection }
