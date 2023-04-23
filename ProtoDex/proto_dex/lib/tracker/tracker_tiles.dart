@@ -40,6 +40,7 @@ class _TrackerTile extends State<TrackerTile> {
                     return TrackerDetailsPage(
                       pokemons: widget.pokemons,
                       indexes: widget.indexes,
+                      onStateChange: widget.onStateChange,
                     );
                   },
                 ),
@@ -90,17 +91,6 @@ class _TrackerTile extends State<TrackerTile> {
             );
           },
         ),
-        // subtitle: Row(
-        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //   children: [
-        //     // Text(
-        //     //   widget.pokemon.game.notes,
-        //     //   style: const TextStyle(
-        //     //       fontWeight: FontWeight.w200, fontStyle: FontStyle.italic),
-        //     // ),
-        //     Text(widget.pokemon.number)
-        //   ],
-        // ),
       ),
     );
 

@@ -15,6 +15,7 @@ class Item {
   final List<Item> forms;
   final List<dynamic> image;
   final Game game;
+  final String origin;
 
   String displayName;
   String displayImage;
@@ -24,7 +25,7 @@ class Item {
   String level;
   bool captured;
   String catchDate;
-  String origin;
+  String originalLocation;
   String currentLocation;
   String trainerName;
   CaptureMethod capturedMethod;
@@ -50,6 +51,7 @@ class Item {
         catchDate = json['catchDate'],
         origin = json['origin'],
         currentLocation = json['currentLocation'],
+        originalLocation = json['originalLocation'],
         level = json['level'],
         forms = json['forms'] != null
             ? List<Item>.from(
@@ -59,8 +61,8 @@ class Item {
         capturedMethod = CaptureMethod.values.byName(json['capturedMethod']),
         trainerName = json['trainerName'],
         attributes = json['attributes'] != null
-            ? List<PokemonAttributes>.from(
-                json['attributes'].map((model) => model))
+            ? List<PokemonAttributes>.from(json['attributes']
+                .map((model) => PokemonAttributes.values.byName(model)))
             : [];
 
   Item.fromDex(Pokemon dexPokemon, Game gameSelected, String entryOrigin,
@@ -85,6 +87,7 @@ class Item {
         captured = false,
         catchDate = "",
         origin = entryOrigin,
+        originalLocation = gameSelected.name,
         currentLocation = entryOrigin,
         level = kValueNotFound,
         ability = kValueNotFound,
@@ -111,6 +114,7 @@ class Item {
         catchDate = item.catchDate,
         origin = item.origin,
         currentLocation = item.currentLocation,
+        originalLocation = item.originalLocation,
         level = item.level,
         ability = item.ability,
         game = item.game,
@@ -137,12 +141,13 @@ class Item {
       'catchDate': catchDate,
       'origin': origin,
       'currentLocation': currentLocation,
+      'originalLocation': originalLocation,
       'ability': ability,
       'level': level,
       'game': game,
       'trainerName': trainerName,
       'capturedMethod': capturedMethod.name,
-      'attributes': attributes
+      'attributes': attributes.map((e) => e.name).toList()
     };
   }
 

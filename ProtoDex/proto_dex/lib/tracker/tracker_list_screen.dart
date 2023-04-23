@@ -11,7 +11,7 @@ import '../components/import_collection_button.dart';
 import '../components/search_bar.dart';
 import '../components/switch_option.dart';
 import '../components/sort_list_by.dart';
-import '../models/collection.dart';
+import '../models/tracker.dart';
 import '../models/enums.dart';
 import '../models/item.dart';
 import '../utils/trackers_manager.dart';
@@ -22,7 +22,7 @@ class TrackerListScreen extends StatefulWidget {
     required this.collection,
   });
 
-  final Collection collection;
+  final Tracker collection;
   @override
   State<TrackerListScreen> createState() => _TrackerListScreenState();
 }

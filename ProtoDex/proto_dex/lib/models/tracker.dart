@@ -3,7 +3,7 @@ import '../constants.dart';
 import 'package:uuid/uuid.dart';
 import 'package:proto_dex/models/enums.dart';
 
-class Collection {
+class Tracker {
   String name;
   String ref;
   String game;
@@ -11,7 +11,7 @@ class Collection {
   String type;
   List<Item> pokemons;
 
-  Collection.fromJson(Map<String, dynamic> json)
+  Tracker.fromJson(Map<String, dynamic> json)
       : name = json['name'],
         ref = json['ref'],
         game = json['game'],
@@ -22,7 +22,7 @@ class Collection {
                 json['pokemons'].map((model) => Item.fromJson(model)))
             : [];
 
-  Collection.create(String trackerName, String gameName, String dexName,
+  Tracker.create(String trackerName, String gameName, String dexName,
       String trackerType, List<Item> pokemonList)
       : name = trackerName,
         ref = kTrackerPrefix + const Uuid().v4().toString(),
@@ -189,58 +189,4 @@ class Collection {
       return (pokemon.captured) ? CaptureType.full : CaptureType.empty;
     }
   }
-}
-
-extension CollectionsExtensions on List<Collection> {
-  // Future<List<Collection>> findCollections() async {
-  //   List<Collection> collections = [];
-
-  //   var files = await FileManager().findFiles("tracker_", "");
-  //   // await Future.delayed(const Duration(seconds: 2));
-  //   for (var element in files!) {
-  //     String content = element.readAsStringSync();
-  //     if (content.isNotEmpty) {
-  //       Iterable l = jsonDecode(content);
-  //       collections.addAll(List<Collection>.from(
-  //           l.map((model) => Collection.fromJson(model))));
-  //     }
-  //   }
-  //   return collections;
-  // }
-
-  // // findCollection(String fileName) {
-  // //   List<Collection> collections = [];
-
-  // //   File collectionsFile = FileManager().findFile(fileName);
-  // //   String content = collectionsFile.readAsStringSync();
-
-  // //   if (content.isNotEmpty) {
-  // //     Iterable l = jsonDecode(content);
-  // //     collections =
-  // //         List<Collection>.from(l.map((model) => Collection.fromJson(model)));
-  // //   }
-
-  // //   return collections;
-  // // }
-
-  // findCollection(String fileName) {
-  //   File collectionsFile = FileManager().findFile(fileName);
-  //   String content = collectionsFile.readAsStringSync();
-
-  //   if (content.isNotEmpty) {
-  //     Collection col = Collection.fromJson(jsonDecode(content));
-  //     return col;
-  //   }
-
-  //   return null;
-  // }
-
-  // saveToFile(String fileName) {
-  //   File file = FileManager().findFile(fileName);
-
-  //   var toJson = map((i) => i.toJson()).toList();
-  //   var encode = jsonEncode(toJson);
-
-  //   file.writeAsString(encode);
-  // }
 }

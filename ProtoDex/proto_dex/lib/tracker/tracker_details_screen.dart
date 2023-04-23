@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import '../components/basic.dart';
-import '../constants.dart';
 import '../models/item.dart';
 import '../models/tab.dart';
 import '../screens/details/catch_card.dart';
 import '../components/type_background.dart';
 import '../components/details_header.dart';
 import '../components/image.dart';
-import '../models/pokemon.dart';
 import '../components/details_panel.dart';
 
 class TrackerDetailsPage extends StatefulWidget {
@@ -15,10 +12,12 @@ class TrackerDetailsPage extends StatefulWidget {
     super.key,
     required this.pokemons,
     required this.indexes,
+    required this.onStateChange,
   });
 
   final List<Item> pokemons;
   final List<int> indexes;
+  final Function()? onStateChange;
 
   @override
   State<TrackerDetailsPage> createState() => _TrackerDetailsPageState();
@@ -38,25 +37,6 @@ class _TrackerDetailsPageState extends State<TrackerDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    // //if the Pokemon object coming is a Item, we need to get its Dex information to display
-    // final Pokemon displayPokemon;
-
-    // if (widget.pokemon is Item) {
-    //   String form = widget.pokemon.ref.split(".")[1];
-    //   if (form == "0") {
-    //     displayPokemon = kPokedex.firstWhere(
-    //         (element) => element.number == widget.pokemon.natDexNumber);
-    //   } else {
-    //     displayPokemon = kPokedex
-    //         .firstWhere(
-    //             (element) => element.number == widget.pokemon.natDexNumber)
-    //         .forms
-    //         .firstWhere((pokemon) => pokemon.ref == widget.pokemon.ref);
-    //   }
-    // } else {
-    //   displayPokemon = widget.pokemon;
-    // }
-
     isFirstInList = widget.pokemons.isFirst(currentIndexes);
     isLastInList = widget.pokemons.isLast(currentIndexes);
 
@@ -72,7 +52,7 @@ class _TrackerDetailsPageState extends State<TrackerDetailsPage> {
                 if (isEditable)
                   {
                     isEditable = false,
-                    //save to collection
+                    widget.onStateChange!(),
                   }
                 else
                   {

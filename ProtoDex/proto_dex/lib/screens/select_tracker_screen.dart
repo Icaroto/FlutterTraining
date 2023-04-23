@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/components/image.dart';
 import 'package:proto_dex/styles.dart';
-import '../models/collection.dart';
+import '../models/tracker.dart';
 import '../models/game.dart';
 import '../tracker/tracker_list_screen.dart';
 import '../utils/trackers_manager.dart';
@@ -247,7 +247,7 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
             child: FutureBuilder(
               future: getAllTrackers(),
               builder: (BuildContext context,
-                  AsyncSnapshot<List<Collection>> snapshot) {
+                  AsyncSnapshot<List<Tracker>> snapshot) {
                 if (snapshot.hasData) {
                   snapshot.data!.toList().forEach((element) {
                     // if (!recentTrackers.contains(element.name)) {

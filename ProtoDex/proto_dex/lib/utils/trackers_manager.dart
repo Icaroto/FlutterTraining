@@ -3,21 +3,21 @@ import 'dart:io';
 import 'package:collection/collection.dart';
 import 'package:proto_dex/file_manager.dart';
 import '../constants.dart';
-import '../models/collection.dart';
+import '../models/tracker.dart';
 import '../models/enums.dart';
 import '../models/game.dart';
 import '../models/item.dart';
 import '../models/pokemon.dart';
 
-Future<List<Collection>> getAllTrackers() async {
-  List<Collection> localTrackers = [];
+Future<List<Tracker>> getAllTrackers() async {
+  List<Tracker> localTrackers = [];
 
   var files = await FileManager().findFiles(kTrackerPrefix, "");
   // await Future.delayed(const Duration(seconds: 2));
   for (var element in files!) {
     String content = element.readAsStringSync();
     if (content.isNotEmpty) {
-      localTrackers.add(Collection.fromJson(jsonDecode(content)));
+      localTrackers.add(Tracker.fromJson(jsonDecode(content)));
     }
   }
 
@@ -27,12 +27,11 @@ Future<List<Collection>> getAllTrackers() async {
 getTracker(String ref) {
   File file = FileManager().findFile(ref);
   String content = file.readAsStringSync();
-  return Collection.fromJson(jsonDecode(content));
+  return Tracker.fromJson(jsonDecode(content));
 }
 
-saveTracker(Collection tracker) {
+saveTracker(Tracker tracker) {
   File file = FileManager().findFile(tracker.ref);
-
   var encode = jsonEncode(tracker);
 
   file.writeAsString(encode);
@@ -42,17 +41,17 @@ deleteTracker(String name) {
   FileManager().removeFile(name);
 }
 
-Collection createTracker(
+Tracker createTracker(
     String trackerName, String gameName, String dexName, String trackerType) {
   List<Item> pokemons = [];
   bool isShinyTracker = trackerType.contains("Shiny");
   bool isLivingDexTracker = trackerType.contains("Living");
 
-  Collection collection =
-      Collection.create(trackerName, gameName, dexName, trackerType, pokemons);
+  Tracker tracker =
+      Tracker.create(trackerName, gameName, dexName, trackerType, pokemons);
 
   for (var pokemon in kPokedex) {
-    Item? item = checkPokemon(pokemon, gameName, dexName, collection.ref,
+    Item? item = checkPokemon(pokemon, gameName, dexName, tracker.ref,
         isShinyTracker, isLivingDexTracker);
     if (item != null) {
       if (isLivingDexTracker) {
@@ -79,15 +78,16 @@ Collection createTracker(
           item.forms.insert(0, Item.copy(item));
         }
       }
+
       pokemons.add(item);
     }
   }
 
-  collection.pokemons.sortBy((pokemon) => pokemon.number);
+  tracker.pokemons.sortBy((pokemon) => pokemon.number);
 
-  saveTracker(collection);
+  saveTracker(tracker);
 
-  return collection;
+  return tracker;
 }
 
 Item? checkPokemon(Pokemon pokemon, gameName, dexName, entryOrigin,
@@ -121,12 +121,22 @@ Item? createItem(pokemon, gameName, dexName, entryOrigin, isShinyTracker) {
       if (isShinyTracker) {
         item.displayImage =
             item.image.firstWhere((img) => img.contains("-shiny-"));
+        item.attributes.add(PokemonAttributes.isShiny);
         for (var form in item.forms) {
           form.displayImage =
               form.image.firstWhere((img) => img.contains("-shiny-"));
+          form.attributes.add(PokemonAttributes.isShiny);
         }
       }
-
+      if (pokemon.genderRatio.genderless == "100") {
+        item.gender = PokemonGender.genderless;
+      } else if (pokemon.genderRatio.male == "100") {
+        item.gender = PokemonGender.male;
+      } else if (pokemon.genderRatio.female == "100") {
+        item.gender = PokemonGender.female;
+      }
+      item.originalLocation = gameName;
+      item.currentLocation = gameName;
       return item;
     }
   }

@@ -74,3 +74,16 @@ enum CollectionDisplayType { flatList, groupByGame, groupByPokemon }
 enum CaptureType { full, partial, empty }
 
 enum CaptureMethod { wild, raid, egg, trade, unknown }
+
+enum DetailsLock {
+  ball,
+  ability,
+  level,
+  gender,
+  capturedDate,
+  capturedTrainer,
+  capturedMethod,
+  gameOrigin,
+  gameCurrently,
+  attributes,
+}

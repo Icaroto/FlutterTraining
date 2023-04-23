@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proto_dex/models/collection.dart';
+import 'package:proto_dex/models/tracker.dart';
 import 'package:proto_dex/models/pokemon.dart';
 import 'package:proto_dex/screens/lists/tile.dart';
 import '../../components/image.dart';

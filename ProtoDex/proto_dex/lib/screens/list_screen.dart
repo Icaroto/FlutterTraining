@@ -5,7 +5,7 @@ import 'package:proto_dex/components/image.dart';
 import 'package:proto_dex/global_settings.dart';
 import 'package:proto_dex/models/game.dart';
 import 'package:proto_dex/styles.dart';
-import '../models/collection.dart';
+import '../models/tracker.dart';
 import '../models/enums.dart';
 import '../models/item.dart';
 import '../models/pokemon.dart';
@@ -21,7 +21,7 @@ class ListScreen extends StatefulWidget {
   });
 
   final List<Pokemon>? pokemons;
-  final Collection? collection;
+  final Tracker? collection;
   @override
   State<ListScreen> createState() => _ListScreenState();
 }
