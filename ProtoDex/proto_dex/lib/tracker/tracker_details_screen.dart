@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proto_dex/models/enums.dart';
 import '../models/item.dart';
 import '../models/tab.dart';
 import '../screens/details/catch_card.dart';
@@ -104,6 +105,7 @@ class _TrackerDetailsPageState extends State<TrackerDetailsPage> {
           leftCard: CatchInformationCard(
             pokemon: originalPokemon,
             isEditable: isEditable,
+            locks: createLocks(originalPokemon),
           ),
           rightCard: Container(),
           // rightCard: DetailsCard(
@@ -123,5 +125,19 @@ class _TrackerDetailsPageState extends State<TrackerDetailsPage> {
       );
     }
     return tabs;
+  }
+
+  createLocks(Item pokemon) {
+    List<DetailsLock> locks = [];
+    locks.add(DetailsLock.gameOrigin);
+    if (pokemon.gender == PokemonGender.genderless) {
+      locks.add(DetailsLock.gender);
+    }
+
+    if (pokemon.attributes.contains(PokemonAttributes.isShiny)) {
+      locks.add(DetailsLock.attributesShiny);
+    }
+
+    return locks;
   }
 }

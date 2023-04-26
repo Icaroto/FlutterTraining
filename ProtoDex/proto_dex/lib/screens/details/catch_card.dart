@@ -13,10 +13,12 @@ class CatchInformationCard extends StatefulWidget {
     super.key,
     required this.pokemon,
     this.isEditable = false,
+    this.locks,
   });
 
   final Item pokemon;
   final bool isEditable;
+  final List<DetailsLock>? locks;
   @override
   State<CatchInformationCard> createState() => _CatchInformationCardState();
 }
@@ -44,7 +46,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                 children: [
                   //BALL
                   EditableButton(
-                    isEditable: widget.isEditable,
+                    isEditable: editCheck(DetailsLock.ball),
                     currentValue: SizedBox(
                       height: 40,
                       child: Image.network(
@@ -85,7 +87,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
 
                   //ABILITY
                   EditableButton(
-                    isEditable: widget.isEditable,
+                    isEditable: editCheck(DetailsLock.ability),
                     currentValue: FittedBox(
                         child: Column(
                       children: [
@@ -135,7 +137,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
 
                   // LEVEL
                   EditableButton(
-                    isEditable: widget.isEditable,
+                    isEditable: editCheck(DetailsLock.level),
                     currentValue: FittedBox(
                       child: Column(
                         children: [
@@ -187,7 +189,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
 
                   // GENDER
                   EditableButton(
-                    isEditable: widget.isEditable,
+                    isEditable: editCheck(DetailsLock.gender),
                     currentValue: widget.pokemon.gender.getIcon(),
                     onPressed: () async {
                       bottomSheetOptions(context, (context) {
@@ -232,7 +234,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                 children: [
                   //Catch Date
                   EditableButton(
-                    isEditable: widget.isEditable,
+                    isEditable: editCheck(DetailsLock.captureDate),
                     currentValue: FittedBox(
                       child: Column(
                         children: [
@@ -256,7 +258,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
 
                   //OT
                   EditableButton(
-                    isEditable: widget.isEditable,
+                    isEditable: editCheck(DetailsLock.originalTrainer),
                     currentValue: FittedBox(
                       child: Column(
                         children: [
@@ -390,7 +392,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
 
                   //Method
                   EditableButton(
-                    isEditable: widget.isEditable,
+                    isEditable: editCheck(DetailsLock.capturedMethod),
                     currentValue: FittedBox(
                       child: Column(
                         children: [
@@ -448,7 +450,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                 children: [
                   //Origin Game
                   EditableButton(
-                    isEditable: widget.isEditable,
+                    isEditable: editCheck(DetailsLock.gameOrigin),
                     currentValue: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -499,7 +501,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
 
                   //Current Location
                   EditableButton(
-                    isEditable: widget.isEditable,
+                    isEditable: editCheck(DetailsLock.gameCurrently),
                     currentValue: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -555,7 +557,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                 children: [
                   // ATTRIBUTES
                   EditableButton(
-                    isEditable: widget.isEditable,
+                    isEditable: editCheck(DetailsLock.attributesShiny),
                     currentValue: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -634,6 +636,14 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
         ),
       ),
     );
+  }
+
+  bool editCheck(DetailsLock lockType) {
+    if (widget.locks == null) return widget.isEditable;
+    if (widget.locks!.contains(lockType)) {
+      return false;
+    }
+    return widget.isEditable;
   }
 }
 
