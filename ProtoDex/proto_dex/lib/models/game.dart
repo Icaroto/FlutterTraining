@@ -161,14 +161,16 @@ class Dex {
   }
 
   static availableDex(String game) {
-    List<String> dex = ["Base"];
+    List<String> dex = ["Regional"];
 
     switch (game) {
       case "Pokemon Scarlet":
       case "Pokemon Violet":
+        dex.addAll(["Vivillons", "Mightiest Mark", "Others"]);
+        break;
       case "Let's Go Pikachu":
       case "Let's Go Eevee":
-        dex.addAll(["Others"]);
+        // dex.addAll(["Others"]);
         break;
       case "Pokemon Sword":
       case "Pokemon Shield":
@@ -180,13 +182,28 @@ class Dex {
     return dex;
   }
 
-  static availableTrackerTypes() {
-    return [
-      "Basic",
-      "Shiny Basic",
-      "Living Dex",
-      "Shiny Living Dex",
-      "Give Me A Challenge"
-    ];
+  static availableTrackerType(String dexName) {
+    switch (dexName) {
+      case "Vivillons":
+        return [
+          "Living Dex",
+          "Shiny Living Dex",
+        ];
+      case "Mightiest Mark":
+        return [
+          "Basic",
+        ];
+      case "Others":
+        return [
+          "TMs",
+        ];
+      default:
+        return [
+          "Basic",
+          "Shiny Basic",
+          "Living Dex",
+          "Shiny Living Dex",
+        ];
+    }
   }
 }

@@ -108,19 +108,6 @@ class _TrackerDetailsPageState extends State<TrackerDetailsPage> {
             locks: createLocks(originalPokemon),
           ),
           rightCard: Container(),
-          // rightCard: DetailsCard(
-          //   blockTitle: "Attributes",
-          //   cardChild: Expanded(
-          //     child: ElevatedButton(
-          //       onPressed: () => {},
-          //       child: const Icon(
-          //         Icons.add,
-          //         color: Colors.redAccent,
-          //         size: 100,
-          //       ),
-          //     ),
-          //   ),
-          // ),
         ),
       );
     }
@@ -130,13 +117,15 @@ class _TrackerDetailsPageState extends State<TrackerDetailsPage> {
   createLocks(Item pokemon) {
     List<DetailsLock> locks = [];
     locks.add(DetailsLock.gameOrigin);
-    if (pokemon.gender == PokemonGender.genderless) {
+    if (pokemon.gender != PokemonGender.undefinied) {
       locks.add(DetailsLock.gender);
     }
 
-    if (pokemon.attributes.contains(PokemonAttributes.isShiny)) {
-      locks.add(DetailsLock.attributesShiny);
-    }
+    locks.add(DetailsLock.attributes);
+
+    // if (pokemon.attributes.contains(PokemonAttributes.isShiny)) {
+    //   locks.add(DetailsLock.attributesShiny);
+    // }
 
     return locks;
   }

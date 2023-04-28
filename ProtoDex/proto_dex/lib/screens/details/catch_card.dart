@@ -193,6 +193,11 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                     currentValue: widget.pokemon.gender.getIcon(),
                     onPressed: () async {
                       bottomSheetOptions(context, (context) {
+                        List<PokemonGender> genders = [
+                          PokemonGender.male,
+                          PokemonGender.female,
+                          PokemonGender.undefinied
+                        ];
                         return ListView.builder(
                           itemBuilder: (context, index) {
                             return SizedBox(
@@ -201,24 +206,16 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                                 onTap: () => {
                                   Navigator.pop(context),
                                   setState(() {
-                                    widget.pokemon.gender =
-                                        PokemonGender.values[index];
+                                    widget.pokemon.gender = genders[index];
                                   }),
                                 },
                                 child: Center(
-                                  child: PokemonGender.values[index].getIcon(),
-                                  //  Text(
-                                  //   widget.pokemon.gender.name,
-                                  //   style: const TextStyle(
-                                  //     fontSize: 15,
-                                  //     color: Colors.white,
-                                  //   ),
-                                  // ),
+                                  child: genders[index].getIcon(),
                                 ),
                               ),
                             );
                           },
-                          itemCount: PokemonGender.values.length,
+                          itemCount: genders.length,
                           shrinkWrap: true,
                           padding: const EdgeInsets.all(5),
                           scrollDirection: Axis.vertical,
@@ -238,7 +235,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                     currentValue: FittedBox(
                       child: Column(
                         children: [
-                          const ItemName(text: "Captured:", size: 25),
+                          const ItemName(text: "Captured", size: 25),
                           Text(
                             DateFormat('dd/MM/yyyy').format(DateTime.parse(widget
                                 .pokemon
@@ -557,7 +554,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                 children: [
                   // ATTRIBUTES
                   EditableButton(
-                    isEditable: editCheck(DetailsLock.attributesShiny),
+                    isEditable: editCheck(DetailsLock.attributes),
                     currentValue: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -601,22 +598,36 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                                 title: Text(
                                   PokemonAttributes.values[index]
                                       .getAttributeName(),
-                                  style: const TextStyle(
-                                      color: Colors.white, fontSize: 20),
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontStyle: (isAttibuteLocked(
+                                            PokemonAttributes.values[index]))
+                                        ? FontStyle.italic
+                                        : FontStyle.normal,
+                                  ),
                                 ),
                                 value: widget.pokemon.attributes
                                     .contains(PokemonAttributes.values[index]),
+                                activeColor: (isAttibuteLocked(
+                                        PokemonAttributes.values[index]))
+                                    ? Colors.grey
+                                    : null,
                                 onChanged: (value) {
-                                  _setState(() {
-                                    if (value!) {
-                                      widget.pokemon.attributes
-                                          .add(PokemonAttributes.values[index]);
-                                    } else {
-                                      widget.pokemon.attributes.remove(
-                                          PokemonAttributes.values[index]);
-                                    }
-                                  });
-                                  setState(() {});
+                                  if (!isAttibuteLocked(
+                                      PokemonAttributes.values[index])) {
+                                    _setState(() {
+                                      if (value!) {
+                                        widget.pokemon.attributes.add(
+                                            PokemonAttributes.values[index]);
+                                      } else {
+                                        widget.pokemon.attributes.remove(
+                                            PokemonAttributes.values[index]);
+                                      }
+                                    });
+
+                                    setState(() {});
+                                  }
                                 },
                               ),
                             );
@@ -644,6 +655,21 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
       return false;
     }
     return widget.isEditable;
+  }
+
+  bool isAttibuteLocked(PokemonAttributes attibute) {
+    switch (attibute) {
+      case PokemonAttributes.isAlpha:
+        return widget.locks!.contains(DetailsLock.attributesAlpha);
+      case PokemonAttributes.isDinamax:
+        return widget.locks!.contains(DetailsLock.attributesDina);
+      case PokemonAttributes.isMega:
+        return widget.locks!.contains(DetailsLock.attributesMega);
+      case PokemonAttributes.isShiny:
+        return widget.locks!.contains(DetailsLock.attributesShiny);
+      default:
+        return false;
+    }
   }
 }
 

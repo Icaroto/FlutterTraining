@@ -85,6 +85,7 @@ enum DetailsLock {
   capturedMethod,
   gameOrigin,
   gameCurrently,
+  attributes,
   attributesShiny,
   attributesMega,
   attributesDina,

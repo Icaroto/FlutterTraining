@@ -28,12 +28,12 @@
     "games": [
       {
         "name": "Let's Go Pikachu",
-        "dex": "Base",
+        "dex": "Regional",
         "number": "001"
       },
       {
         "name": "Let's Go Eevee",
-        "dex": "Base",
+        "dex": "Regional",
         "number": "001"
       },
       {
@@ -98,12 +98,12 @@
     "games": [
       {
         "name": "Let's Go Pikachu",
-        "dex": "Base",
+        "dex": "Regional",
         "number": "002"
       },
       {
         "name": "Let's Go Eevee",
-        "dex": "Base",
+        "dex": "Regional",
         "number": "002"
       },
       {

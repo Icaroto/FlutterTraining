@@ -24,8 +24,9 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
   String trackerPicked = "";
   String trackerName = "";
   List<String> gamesAvailable = Dex.availableGames();
-  List<String> trackers = Dex.availableTrackerTypes();
   List<String> dexAvailable = [];
+  // List<String> trackers = Dex.availableTrackerTypes();
+  List<String> trackers = [];
 
   @override
   Widget build(BuildContext context) {
@@ -163,6 +164,7 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
                               gamePicked = gamesAvailable[index];
                               dexAvailable = Dex.availableDex(gamePicked);
                               dexPicked = "";
+                              trackers = Dex.availableTrackerType('');
                             })
                           }),
                       isPicked: (gamePicked == gamesAvailable[index])),
@@ -194,6 +196,7 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
                     onPressed: (() => {
                           setState(() {
                             dexPicked = dexAvailable[index2];
+                            trackers = Dex.availableTrackerType(dexPicked);
                           })
                         }),
                     isPicked: (dexPicked == dexAvailable[index2])),
