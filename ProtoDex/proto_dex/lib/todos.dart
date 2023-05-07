@@ -9,6 +9,14 @@ class Todos {
 - Minor - All forms needs to be added (001)
 - Oricorio - Name and Image
 
+TODO: 
+- Re organize the Games. Dexes and Trackers to be enums/objects
+- With that in place, you can add properties on how the list can be displayed/
+- eg. Vivillon shouldnt be grouped in one , but rather a flat list
+
+TODO:
+- On Living or any list tile of type Expand, keep it opened after ticking one
+
 -- LINKS:
 BANNER: https://www.geeksforgeeks.org/flutter-banner-widget/
 TABBAR: https://stackoverflow.com/questions/51824959/tabbar-on-bottom-of-app-with-column

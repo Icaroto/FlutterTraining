@@ -60,7 +60,7 @@ groupByPokemon(List<Item> collection) {
 
 groupByGame(List<Item> collection) {
   List<Group> groups = [];
-  var newMap = groupBy(collection, (Item obj) => obj.game.name);
+  var newMap = groupBy(collection, (Item obj) => obj.currentLocation);
   for (var map in newMap.entries) {
     Group group =
         Group(name: map.key, items: map.value, image: Game.gameIcon(map.key));

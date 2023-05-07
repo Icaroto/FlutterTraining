@@ -29,19 +29,21 @@ class _PokemonTiles extends State<PokemonTiles> {
       child: ListTile(
         tileColor: widget.tileColor,
         textColor: Colors.black,
-        onTap: () => {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return PokedexDetailsPage(
-                  pokemons: widget.pokemons,
-                  indexes: widget.indexes,
-                );
-              },
-            ),
-          )
-        },
+        onTap: (widget.onStateChange == null)
+            ? () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return PokedexDetailsPage(
+                          pokemons: widget.pokemons,
+                          indexes: widget.indexes,
+                        );
+                      },
+                    ),
+                  )
+                }
+            : widget.onStateChange,
         leading: ListImage(image: 'mons/${pokemon.image[0]}'),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

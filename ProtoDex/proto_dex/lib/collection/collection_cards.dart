@@ -4,7 +4,12 @@ import '../../models/group.dart';
 import '../../collection/collection_tile.dart';
 import '../models/item.dart';
 
-Widget createCards(Group group, Function()? onStateChange, {subLevel = false}) {
+Widget createCards(
+  Group group, {
+  Function()? onStateChange,
+  Function(Item)? onDelete,
+  subLevel = false,
+}) {
   final GlobalKey expansionTileKey = GlobalKey();
 
   void scrollToSelectedContent({required GlobalKey expansionTileKey}) {
@@ -54,8 +59,10 @@ Widget createCards(Group group, Function()? onStateChange, {subLevel = false}) {
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index2) {
             return CollectionTile(
-              pokemon: group.items[index2],
+              pokemons: group.items,
+              indexes: [index2],
               onStateChange: onStateChange,
+              onDelete: onDelete,
             );
           },
           itemCount: group.items.length,

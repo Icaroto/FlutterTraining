@@ -97,20 +97,19 @@ class _TrackerDetailsPageState extends State<TrackerDetailsPage> {
 
   giveMeATab(originalPokemon) {
     List<PokeTab> tabs = [];
-    if (originalPokemon is Item) {
-      tabs.insert(
-        0,
-        PokeTab(
-          tabName: "Details",
-          leftCard: CatchInformationCard(
-            pokemon: originalPokemon,
-            isEditable: isEditable,
-            locks: createLocks(originalPokemon),
-          ),
-          rightCard: Container(),
+
+    tabs.add(
+      PokeTab(
+        tabName: "Details",
+        leftCard: CatchInformationCard(
+          pokemon: originalPokemon,
+          isEditable: isEditable,
+          locks: createLocks(originalPokemon),
         ),
-      );
-    }
+        rightCard: Container(),
+      ),
+    );
+
     return tabs;
   }
 

@@ -5,11 +5,18 @@ import '../models/item.dart';
 
 class CollectionTile extends StatefulWidget {
   const CollectionTile(
-      {super.key, required this.pokemon, this.tileColor, this.onStateChange});
+      {super.key,
+      required this.pokemons,
+      required this.indexes,
+      this.tileColor,
+      this.onStateChange,
+      this.onDelete});
 
   final Color? tileColor;
-  final Item pokemon;
+  final List<Item> pokemons;
+  final List<int> indexes;
   final Function()? onStateChange;
+  final Function(Item)? onDelete;
 
   @override
   State<CollectionTile> createState() => _CollectionTile();
@@ -18,11 +25,10 @@ class CollectionTile extends StatefulWidget {
 class _CollectionTile extends State<CollectionTile> {
   @override
   Widget build(BuildContext context) {
-    return Card(child: createCard(context));
-  }
+    Item pokemon = widget.pokemons.current(widget.indexes);
 
-  ListTile createCard(BuildContext context) {
-    return ListTile(
+    return Card(
+        child: ListTile(
       tileColor: widget.tileColor,
       textColor: Colors.black,
       onTap: () => {
@@ -30,22 +36,29 @@ class _CollectionTile extends State<CollectionTile> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return CollectionDetailsPage(pokemon: widget.pokemon);
+              return CollectionDetailsPage(
+                pokemons: widget.pokemons,
+                indexes: widget.indexes,
+                onStateChange: widget.onStateChange,
+              );
             },
           ),
         ),
       },
-      leading: ListImage(image: "mons/" + widget.pokemon.displayImage),
+      onLongPress: () {
+        widget.onDelete!(pokemon);
+      },
+      leading: ListImage(image: "mons/${pokemon.displayImage}"),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            widget.pokemon.displayName,
+            pokemon.displayName,
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
-          Text("#${widget.pokemon.number}")
+          Text("#${pokemon.number}")
         ],
       ),
-    );
+    ));
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/constants.dart';
+import 'package:proto_dex/models/game.dart';
 import 'package:proto_dex/styles.dart';
 import '../components/app_bar.dart';
 import '../components/filters_side_screen.dart';
@@ -11,6 +12,7 @@ import '../models/item.dart';
 import '../models/pokemon.dart';
 import '../utils/collection_manager.dart';
 import 'collection_cards.dart';
+import 'collection_details_screen.dart';
 import 'collection_tile.dart';
 import '../pokedex/pokedex_cards.dart' as dexCard;
 
@@ -136,12 +138,31 @@ class _CollectionScreenState extends State<CollectionScreen> {
         itemBuilder: ((context, index) {
           return (displayType == CollectionDisplayType.flatList)
               ? CollectionTile(
-                  pokemon: collection[index],
-                  onStateChange: null,
+                  pokemons: collection,
+                  indexes: [index],
+                  onStateChange: () {
+                    setState(() {
+                      saveCollection(collection);
+                    });
+                  },
+                  onDelete: (item) {
+                    setState(() {
+                      removeFromColletion(item);
+                    });
+                  },
                 )
               : createCards(
                   groups[index],
-                  null,
+                  onStateChange: () {
+                    setState(() {
+                      saveCollection(collection);
+                    });
+                  },
+                  onDelete: (item) {
+                    setState(() {
+                      removeFromColletion(item);
+                    });
+                  },
                 );
         }),
         itemCount: (CollectionDisplayType.flatList == displayType)
@@ -152,6 +173,11 @@ class _CollectionScreenState extends State<CollectionScreen> {
         scrollDirection: Axis.vertical,
       ),
     );
+  }
+
+  void removeFromColletion(item) {
+    collection.remove(item);
+    saveCollection(collection);
   }
 
   void applyFilters() {
@@ -276,20 +302,26 @@ class _CollectionScreenState extends State<CollectionScreen> {
             originalPokedex,
             [index],
             onStateChange: () {
+              List<Item> items = [
+                createItem(originalPokedex, [index])
+              ];
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return CollectionDetailsPage(
+                      pokemons: items,
+                      indexes: const [0],
+                      onStateChange: () {
+                        collection.add(items.first);
+                        saveCollection(collection);
+                      },
+                    );
+                  },
+                ),
+              );
               setState(() {
-                // collection.add(
-                //   Item.fromDex(
-                //     originalPokedex[index],
-                //     Game(
-                //         name: "otro",
-                //         dex: "otro",
-                //         number: "1",
-                //         notes: "",
-                //         shinyLocked: "false"),
-                //   ),
-                // );
-                saveCollection(collection);
-                // applyFilters();
+                () => {};
               });
             },
           );
@@ -300,5 +332,14 @@ class _CollectionScreenState extends State<CollectionScreen> {
         scrollDirection: Axis.vertical,
       ),
     );
+  }
+
+  Item createItem(List<Pokemon> pokemons, List<int> indexes) {
+    Pokemon pokemon = pokemons.current(indexes);
+    Game tempGame =
+        Game(name: "", dex: "", number: "", notes: "", shinyLocked: "");
+    Item item = Item.fromDex(pokemon, tempGame, kCollectionBaseName);
+    item.catchDate = DateTime.now().toString();
+    return item;
   }
 }

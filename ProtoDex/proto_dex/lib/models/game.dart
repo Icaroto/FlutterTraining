@@ -41,20 +41,28 @@ class Game extends Dex {
       case "Let's Go Eevee":
         return Colors.brown;
       case "Pokemon Sword":
+        return Colors.lightBlueAccent;
       case "Pokemon Shield":
+        return Colors.redAccent;
       case "Pokemon Home":
-      case "Pokemon Moon":
-      case "Pokemon Sun":
+        return Colors.greenAccent;
       case "Pokemon Ultra Moon":
+      case "Pokemon Moon":
+        return const Color.fromARGB(255, 77, 161, 203);
       case "Pokemon Ultra Sun":
+      case "Pokemon Sun":
+        return const Color.fromARGB(255, 232, 232, 97);
       case "Pokemon Legends: Arceus":
+        return const Color.fromARGB(255, 232, 232, 214);
+      case "Pokemon Y":
+        return const Color.fromARGB(255, 194, 63, 56);
+      case "Pokemon X":
+        return const Color.fromARGB(255, 59, 40, 178);
       case "Pokemon Omega Ruby":
       case "Pokemon Alpha Sapphire":
       case "Pokemon Brillian Diamond":
       case "Pokemon Shining Pearl":
       case "Pokemon Go":
-      case "Pokemon Y":
-      case "Pokemon X":
       default:
         return Colors.blue;
     }
@@ -83,9 +91,9 @@ class Game extends Dex {
       case "Pokemon Sun":
         return path += "pokemon_sun.png";
       case "Pokemon Ultra Moon":
-        return path += "pokemon_ultra_sun.png";
-      case "Pokemon Ultra Sun":
         return path += "pokemon_ultra_moon.png";
+      case "Pokemon Ultra Sun":
+        return path += "pokemon_ultra_sun.png";
       case "Pokemon Legends: Arceus":
         return path += "pokemon_legends_arceus.png";
       case "Pokemon Omega Ruby":
