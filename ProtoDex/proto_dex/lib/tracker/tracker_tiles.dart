@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:proto_dex/models/enums.dart';
 import 'package:proto_dex/tracker/tracker_details_screen.dart';
 import '../../components/image.dart';
 import '../../models/game.dart';
@@ -109,7 +108,6 @@ class _TrackerTile extends State<TrackerTile> {
     return card;
   }
 
-  //TODO: Move this to a proper location
   getBannerColor(gameNotes) {
     switch (gameNotes) {
       case "Violet Exclusive":

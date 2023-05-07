@@ -184,7 +184,6 @@ class Item {
   }
 }
 
-//TODO: This is a duplication from the one in collection.dart.
 extension Filter on List<Item>? {
   Item current(List<int> indexes) {
     Item pokemon = this![indexes.first];
@@ -214,9 +213,6 @@ extension Filter on List<Item>? {
     return false;
   }
 
-  //TODO: This is a duplication from the one in collection.dart.
-  //Perhaps there's a way to merge them.
-  //This one is used in the collection_list_screen.dart
   List<Item> applyAllFilters(
     List<FilterType> filters,
     String? words,

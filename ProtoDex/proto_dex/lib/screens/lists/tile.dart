@@ -45,7 +45,7 @@ class _PokemonTile extends State<PokemonTile> {
                 )
               }
           },
-          leading: ListImage(image: "mons/" + widget.pokemon.image[0]),
+          leading: ListImage(image: 'mons/${widget.pokemon.image[0]}'),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -116,7 +116,7 @@ class _PokemonTile extends State<PokemonTile> {
         );
       },
       leading: ListImage(
-          image: "mons/" + widget.pokemon.displayImage,
+          image: 'mons/${widget.pokemon.displayImage}',
           shadowOnly: !widget.pokemon.captured),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

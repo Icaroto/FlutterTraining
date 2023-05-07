@@ -32,7 +32,6 @@ addItemsToCollection(List<Item> items) {
         element.ref == pokemon.ref && element.origin == pokemon.origin);
     collection.add(pokemon);
   }
-  //TODO: Check if is better to leave as "when added";
   collection.sort((a, b) => int.parse(a.number).compareTo(int.parse(b.number)));
   saveCollection(collection);
 }
@@ -51,7 +50,7 @@ groupByPokemon(List<Item> collection) {
     Group group = Group(
         name: map.value.first.name,
         items: map.value,
-        image: "mons/" + map.value.first.displayImage);
+        image: 'mons/${map.value.first.displayImage}');
     group.items.sortBy((element) => element.ref);
     groups.add(group);
   }

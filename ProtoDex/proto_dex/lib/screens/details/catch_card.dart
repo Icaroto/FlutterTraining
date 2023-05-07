@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:proto_dex/constants.dart';
@@ -31,7 +30,6 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
   }
 
   TextEditingController textController = TextEditingController();
-  //TODO: Make this global
   List<String> trainers = ['Ico (RIP)', 'Icaroto', 'Phobos'];
 
   @override
@@ -568,8 +566,8 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                             (index) => Text(
                               widget.pokemon.attributes[index]
                                   .getAttributeName(),
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 15),
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 15),
                             ),
                           ),
                         ),
@@ -594,7 +592,8 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                               );
                             }
                             return StatefulBuilder(
-                              builder: (context, _setState) => CheckboxListTile(
+                              builder: (context, setLocalState) =>
+                                  CheckboxListTile(
                                 title: Text(
                                   PokemonAttributes.values[index]
                                       .getAttributeName(),
@@ -616,7 +615,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                                 onChanged: (value) {
                                   if (!isAttibuteLocked(
                                       PokemonAttributes.values[index])) {
-                                    _setState(() {
+                                    setLocalState(() {
                                       if (value!) {
                                         widget.pokemon.attributes.add(
                                             PokemonAttributes.values[index]);
@@ -730,7 +729,8 @@ Future<DateTime?> bottomDatePicker(BuildContext context) async {
   DateTime? date = await showDatePicker(
     context: context,
     initialEntryMode: DatePickerEntryMode.calendarOnly,
-    initialDate: DateTime.now().subtract(Duration(days: 1)),
+    initialDate: DateTime.now(),
+    // initialDate: DateTime.now().subtract(const Duration(days: 1)),
     firstDate: DateTime(2021),
     lastDate: DateTime(2050),
   );

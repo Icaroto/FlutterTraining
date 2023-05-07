@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../components/basic.dart';
-import '../constants.dart';
 import '../models/enums.dart';
 import '../models/item.dart';
 import '../models/tab.dart';
@@ -8,7 +6,6 @@ import '../components/details_header.dart';
 import '../screens/details/catch_card.dart';
 import '../components/type_background.dart';
 import '../components/image.dart';
-import '../models/pokemon.dart';
 import '../components/details_panel.dart';
 
 class CollectionDetailsPage extends StatefulWidget {

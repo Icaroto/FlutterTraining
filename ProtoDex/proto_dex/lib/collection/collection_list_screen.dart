@@ -14,7 +14,7 @@ import '../utils/collection_manager.dart';
 import 'collection_cards.dart';
 import 'collection_details_screen.dart';
 import 'collection_tile.dart';
-import '../pokedex/pokedex_cards.dart' as dexCard;
+import '../pokedex/pokedex_cards.dart' as dex_card;
 
 class CollectionScreen extends StatefulWidget {
   const CollectionScreen({
@@ -225,52 +225,6 @@ class _CollectionScreenState extends State<CollectionScreen> {
   List<Widget> trackerFilters() {
     return [
       const Divider(thickness: 2),
-      // SwitchOption(
-      //   title: "Reveal Uncaught",
-      //   switchValue: gRevealUncaught,
-      //   onSwitch: (bool value) {
-      //     setState(() {
-      //       gRevealUncaught = !gRevealUncaught;
-      //     });
-      //   },
-      // ),
-      // const Divider(thickness: 2),
-      // SwitchOption(
-      //   title: "Show Exclusive Only",
-      //   switchValue: _exclusiveOnly,
-      //   onSwitch: (bool value) {
-      //     setState(() {
-      //       _exclusiveOnly = value;
-      //       (_exclusiveOnly)
-      //           ? addFilter(FilterType.exclusiveOnly)
-      //           : removeFilters([FilterType.exclusiveOnly]);
-      //       applyFilters();
-      //     });
-      //   },
-      // ),
-      // const Divider(thickness: 2),
-      // FilterByType(
-      //   selectedTypes: _drawerByTypesSelected,
-      //   onTypeSelected: (List<String> list) {
-      //     setState(
-      //       () => {
-      //         _drawerByTypesSelected = list,
-      //         (_drawerByTypesSelected.isEmpty)
-      //             ? removeFilters([FilterType.byType])
-      //             : addFilter(FilterType.byType),
-      //         applyFilters(),
-      //       },
-      //     );
-      //   },
-      //   onClearPressed: () {
-      //     setState(() {
-      //       _drawerByTypesSelected.clear();
-      //       removeFilters([FilterType.byType]);
-      //       applyFilters();
-      //     });
-      //   },
-      // ),
-      // const Divider(thickness: 2),
       GroupListBy(
         currentDisplay: displayType,
         onDisplaySelected: (newDisplay) {
@@ -280,16 +234,6 @@ class _CollectionScreenState extends State<CollectionScreen> {
           });
         },
       ),
-      // const Divider(thickness: 2),
-      // ImportToCollectionButton(
-      //   listToImport: filteredList
-      //       .where((element) =>
-      //           widget.collection.isPokemonCaptured(element) ==
-      //               CaptureType.full ||
-      //           widget.collection.isPokemonCaptured(element) ==
-      //               CaptureType.partial)
-      //       .toList(),
-      // )
     ];
   }
 
@@ -298,7 +242,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
     return Expanded(
       child: ListView.builder(
         itemBuilder: ((context, index) {
-          return dexCard.createCards(
+          return dex_card.createCards(
             originalPokedex,
             [index],
             onStateChange: () {

@@ -25,7 +25,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
     kPokedex = await Pokemon.createPokedex(file);
 
     await FileManager.loadDirectory();
-    //TODO:Remove the seconds from here
     //await Future.delayed(const Duration(seconds: 2));
     pushNextScreen();
   }

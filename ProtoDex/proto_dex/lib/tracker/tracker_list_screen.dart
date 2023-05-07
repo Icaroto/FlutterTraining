@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:proto_dex/global_settings.dart';
 import 'package:proto_dex/models/game.dart';

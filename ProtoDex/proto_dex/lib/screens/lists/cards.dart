@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:proto_dex/models/tracker.dart';
 import 'package:proto_dex/models/pokemon.dart';
 import 'package:proto_dex/screens/lists/tile.dart';
 import '../../components/image.dart';
 import '../../models/enums.dart';
-import '../../models/group.dart';
 import '../../models/item.dart';
-import '../../collection/collection_tile.dart';
 
 Widget singleCard(context, index, pokemons, Function()? onStateChange,
     {color = Colors.black26}) {
@@ -42,9 +39,6 @@ Widget multipleCards(context, index, pokemons, Function()? onStateChange,
   return Card(
     child: ExpansionTile(
       key: expansionTileKey,
-      //TODO: Rename this and plug with the original method
-      // initiallyExpanded:
-      //     Collection.keepTabOpen(pokemons[index]) == CaptureType.partial,
       onExpansionChanged: (value) {
         if (value) {
           scrollToSelectedContent(expansionTileKey: expansionTileKey);

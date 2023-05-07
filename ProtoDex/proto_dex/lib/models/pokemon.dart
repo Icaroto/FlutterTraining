@@ -418,8 +418,6 @@ extension Filter on List<Pokemon>? {
     if (indexes.length == 1) {
       indexes.last--;
     } else {
-      Pokemon parent = current(indexes.take(indexes.length - 1).toList());
-
       if ((indexes.last) == 0) {
         indexes.removeLast();
       }

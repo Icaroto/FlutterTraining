@@ -14,9 +14,15 @@ TODO:
 - With that in place, you can add properties on how the list can be displayed/
 - eg. Vivillon shouldnt be grouped in one , but rather a flat list
 
+- tracker_tiles have a method to pick banner color, put in a better place
+
+- On cards.dart use initiallyExpanded to make sure items keep expanded when required
+
+- On catch_card, make the list of trainers a global parameter
+
 TODO:
 - On Living or any list tile of type Expand, keep it opened after ticking one
-
+- loading_screen have a way to make it slower commented out
 -- LINKS:
 BANNER: https://www.geeksforgeeks.org/flutter-banner-widget/
 TABBAR: https://stackoverflow.com/questions/51824959/tabbar-on-bottom-of-app-with-column
