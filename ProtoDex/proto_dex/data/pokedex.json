@@ -184,7 +184,22 @@
     "weaknessdouble": ["water", "electric"],
     "weaknessquadruple": ["rock"],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Pokemon Scarlet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Pokemon Violet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Mega Charizard X",
@@ -881,6 +896,20 @@
         "dex": "Regional",
         "number": "074",
         "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Pokemon Scarlet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Pokemon Violet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
         "notes": ""
       }
     ],
@@ -5982,7 +6011,22 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Pokemon Scarlet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Pokemon Violet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Hisuian Typhlosion",
@@ -18979,7 +19023,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Pokemon Scarlet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Pokemon Violet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Hisuian Samurott",
@@ -23604,7 +23663,22 @@
     "weaknessdouble": ["fire", "ice", "poison", "psychic", "fairy"],
     "weaknessquadruple": ["flying"],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Pokemon Scarlet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Pokemon Violet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -23750,7 +23824,22 @@
     "weaknessdouble": ["electric", "grass", "fighting", "bug", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Pokemon Scarlet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Pokemon Violet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Ash-Greninja",
@@ -27453,7 +27542,22 @@
     "weaknessdouble": ["fire", "ice", "flying", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Pokemon Scarlet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Pokemon Violet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Hisuian Decidueye",
@@ -31003,7 +31107,22 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Pokemon Scarlet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Pokemon Violet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Gigantamax Cinderace",
@@ -31095,7 +31214,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Pokemon Scarlet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Pokemon Violet",
+        "dex": "Mightiest Mark",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Gigantamax Inteleon",

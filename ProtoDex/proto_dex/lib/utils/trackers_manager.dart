@@ -84,9 +84,19 @@ Tracker createTracker(
   }
 
   tracker.pokemons.sortBy((pokemon) => pokemon.number);
+  tracker = applyTrackerChanges(tracker);
 
   saveTracker(tracker);
 
+  return tracker;
+}
+
+//Some tracker requires specific changes or additions to the Pokemon
+Tracker applyTrackerChanges(Tracker tracker) {
+  if (tracker.dex == "Vivillons") {
+    tracker.pokemons.addAll(tracker.pokemons.first.forms);
+    tracker.pokemons.removeAt(0);
+  }
   return tracker;
 }
 

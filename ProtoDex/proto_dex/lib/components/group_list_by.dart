@@ -28,9 +28,15 @@ class GroupListBy extends StatelessWidget {
               },
             ),
             TextButton(
-              child: const Text("Game"),
+              child: const Text("Current Game"),
               onPressed: () {
-                onDisplaySelected(CollectionDisplayType.groupByGame);
+                onDisplaySelected(CollectionDisplayType.groupByCurrentGame);
+              },
+            ),
+            TextButton(
+              child: const Text("Original Game"),
+              onPressed: () {
+                onDisplaySelected(CollectionDisplayType.groupByOriginalGame);
               },
             ),
             TextButton(

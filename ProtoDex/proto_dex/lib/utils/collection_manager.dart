@@ -57,9 +57,22 @@ groupByPokemon(List<Item> collection) {
   return groups;
 }
 
-groupByGame(List<Item> collection) {
+groupByCurrentGame(List<Item> collection) {
   List<Group> groups = [];
   var newMap = groupBy(collection, (Item obj) => obj.currentLocation);
+  for (var map in newMap.entries) {
+    Group group =
+        Group(name: map.key, items: map.value, image: Game.gameIcon(map.key));
+    group.items.sortBy((element) => element.number);
+    group.color = Game.gameColor(group.name);
+    groups.add(group);
+  }
+  return groups;
+}
+
+groupByOriginGame(List<Item> collection) {
+  List<Group> groups = [];
+  var newMap = groupBy(collection, (Item obj) => obj.originalLocation);
   for (var map in newMap.entries) {
     Group group =
         Group(name: map.key, items: map.value, image: Game.gameIcon(map.key));

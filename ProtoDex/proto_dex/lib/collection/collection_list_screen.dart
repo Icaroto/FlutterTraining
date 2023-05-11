@@ -127,10 +127,17 @@ class _CollectionScreenState extends State<CollectionScreen> {
 
   Expanded collectionList() {
     List<Group> groups;
-    if (displayType == CollectionDisplayType.groupByPokemon) {
-      groups = groupByPokemon(collection);
-    } else {
-      groups = groupByGame(collection);
+    switch (displayType) {
+      case CollectionDisplayType.groupByCurrentGame:
+        groups = groupByCurrentGame(collection);
+        break;
+      case CollectionDisplayType.groupByOriginalGame:
+        groups = groupByOriginGame(collection);
+        break;
+      case CollectionDisplayType.groupByPokemon:
+      default:
+        groups = groupByPokemon(collection);
+        break;
     }
 
     return Expanded(
