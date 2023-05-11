@@ -7,6 +7,8 @@ const String kImageLocalPrefix =
     "https://raw.githubusercontent.com/Icaroto/FlutterTraining/main/ProtoDex/Art/";
 const String kTrackerPrefix = 't_';
 const String kCollectionBaseName = 'c_myCollection.json';
+const String kLookingForBaseName = 'c_lookingFor.json';
+const String kForTradeBaseName = 'c_forTrade.json';
 // const String kCollectionFileLocation = 'data/collection.json';
 // const String kCollectionKey = 'collection';
 

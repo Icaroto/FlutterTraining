@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:proto_dex/components/main_button.dart';
 import 'package:proto_dex/constants.dart';
 import 'package:proto_dex/collection/collection_list_screen.dart';
+import 'package:proto_dex/fortrade/fortrade_list_screen.dart';
 import 'package:proto_dex/pokedex/pokedex_list_screen.dart';
 import 'package:proto_dex/screens/select_tracker_screen.dart';
 import 'package:proto_dex/styles.dart';
+
+import '../lookingfor/lookingfor_list_screen.dart';
 
 class StartScreen extends StatefulWidget {
   const StartScreen({super.key});
@@ -95,17 +98,33 @@ class _StartScreenState extends State<StartScreen> {
                     buttonName: 'LF',
                     imagePath: 'background/colored_ball.png',
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Under Construction')));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const LookingForScreen();
+                          },
+                        ),
+                      );
                     },
                   ),
                   MainScreenButton(
                     buttonName: 'FT',
                     imagePath: 'background/colored_ball.png',
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Under Construction')));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const ForTradeScreen();
+                          },
+                        ),
+                      );
                     },
+                    // onPressed: () {
+                    //   ScaffoldMessenger.of(context).showSnackBar(
+                    //       const SnackBar(content: Text('Under Construction')));
+                    // },
                   ),
                 ],
               ),
