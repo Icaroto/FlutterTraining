@@ -37,7 +37,7 @@ class Game extends Dex {
       case "Pokemon Violet":
         return Colors.purple;
       case "Let's Go Pikachu":
-        return Colors.yellow;
+        return const Color.fromARGB(255, 208, 192, 46);
       case "Let's Go Eevee":
         return Colors.brown;
       case "Pokemon Sword":
@@ -174,11 +174,11 @@ class Dex {
     switch (game) {
       case "Pokemon Scarlet":
       case "Pokemon Violet":
-        dex.addAll(["Vivillons", "Mightiest Mark", "Others"]);
+        dex.addAll(["Vivillons", "Mightiest Mark"]);
         break;
       case "Let's Go Pikachu":
       case "Let's Go Eevee":
-        // dex.addAll(["Others"]);
+        dex.addAll(["Alolan", "Others"]);
         break;
       case "Pokemon Sword":
       case "Pokemon Shield":
@@ -192,6 +192,11 @@ class Dex {
 
   static availableTrackerType(String dexName) {
     switch (dexName) {
+      case "Alolan":
+        return [
+          "Basic",
+          "Shiny Basic",
+        ];
       case "Vivillons":
         return [
           "Living Dex",
@@ -203,8 +208,10 @@ class Dex {
         ];
       case "Others":
         return [
-          "TMs",
+          "Others",
         ];
+      // case "TMs":
+      //   return ["TMs"];
       default:
         return [
           "Basic",

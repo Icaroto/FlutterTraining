@@ -19,7 +19,22 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "001",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "001",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -42,7 +57,22 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "002",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "002",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -70,7 +100,22 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "003",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "003",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Mega Venusaur",
@@ -138,7 +183,22 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "004",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "004",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -161,7 +221,22 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "005",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "005",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -197,6 +272,20 @@
         "dex": "Mightiest Mark",
         "number": "",
         "shinyLocked": "LOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "006",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "006",
+        "shinyLocked": "UNLOCKED",
         "notes": ""
       }
     ],
@@ -289,7 +378,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "007",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "007",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -312,7 +416,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "008",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "008",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -335,7 +454,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "009",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "009",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Mega Blastoise",
@@ -403,7 +537,22 @@
     "weaknessdouble": ["fire", "flying", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "010",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "010",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -426,7 +575,22 @@
     "weaknessdouble": ["fire", "flying", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "011",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "011",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -454,7 +618,22 @@
     "weaknessdouble": ["fire", "electric", "ice", "flying"],
     "weaknessquadruple": ["rock"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "012",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "012",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Gigantamax Butterfree",
@@ -500,7 +679,22 @@
     "weaknessdouble": ["fire", "flying", "psychic", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "013",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "013",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -523,7 +717,22 @@
     "weaknessdouble": ["fire", "flying", "psychic", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "014",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "014",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -546,7 +755,22 @@
     "weaknessdouble": ["fire", "flying", "psychic", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "015",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "015",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Mega Beedrill",
@@ -592,7 +816,22 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "016",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "016",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -615,7 +854,22 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "017",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "017",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -638,7 +892,22 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "018",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "018",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Mega Pidgeot",
@@ -689,7 +958,22 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "019",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "019",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Rattata",
@@ -711,7 +995,22 @@
         "weaknessdouble": ["bug", "fairy"],
         "weaknessquadruple": ["fighting"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "019",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "019",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       }
     ]
   },
@@ -740,7 +1039,22 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "020",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "020",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Raticate",
@@ -762,7 +1076,22 @@
         "weaknessdouble": ["bug", "fairy"],
         "weaknessquadruple": ["fighting"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "020",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "020",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       }
     ]
   },
@@ -786,7 +1115,22 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "021",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "021",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -809,7 +1153,22 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "022",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "022",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -832,7 +1191,22 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "023",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "023",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -855,7 +1229,22 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "024",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "024",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -910,6 +1299,20 @@
         "dex": "Mightiest Mark",
         "number": "",
         "shinyLocked": "LOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "025",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "025",
+        "shinyLocked": "UNLOCKED",
         "notes": ""
       }
     ],
@@ -977,6 +1380,20 @@
         "number": "075",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "026",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "026",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": [
@@ -1000,7 +1417,22 @@
         "weaknessdouble": ["ground"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "026",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "026",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       }
     ]
   },
@@ -1024,7 +1456,22 @@
     "weaknessdouble": ["water", "grass", "ice"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "027",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "027",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Sandshrew",
@@ -1054,7 +1501,22 @@
         "weaknessdouble": ["ground"],
         "weaknessquadruple": ["fire", "fighting"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "027",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "027",
+            "shinyLocked": "UNLOCKED",
+            "notes": "Pikachu Exclusive"
+          }
+        ]
       }
     ]
   },
@@ -1078,7 +1540,22 @@
     "weaknessdouble": ["water", "grass", "ice"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "028",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "028",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Sandslash",
@@ -1108,7 +1585,22 @@
         "weaknessdouble": ["ground"],
         "weaknessquadruple": ["fire", "fighting"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "028",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "028",
+            "shinyLocked": "UNLOCKED",
+            "notes": "Pikachu Exclusive"
+          }
+        ]
       }
     ]
   },
@@ -1132,7 +1624,22 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "029",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "029",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -1155,7 +1662,22 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "030",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "030",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -1178,7 +1700,22 @@
     "weaknessdouble": ["water", "ice", "ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "031",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "031",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -1201,7 +1738,22 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "100", "female": "0", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "032",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "032",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -1224,7 +1776,22 @@
     "weaknessdouble": ["ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "100", "female": "0", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "033",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "033",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -1247,7 +1814,22 @@
     "weaknessdouble": ["water", "ice", "ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "100", "female": "0", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "034",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "034",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -1270,7 +1852,22 @@
     "weaknessdouble": ["poison", "steel"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "035",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "035",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -1293,7 +1890,22 @@
     "weaknessdouble": ["poison", "steel"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "036",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "036",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -1316,7 +1928,22 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "037",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "037",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Vulpix",
@@ -1338,7 +1965,22 @@
         "weaknessdouble": ["water", "ground", "rock"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "037",
+            "shinyLocked": "UNLOCKED",
+            "notes": "Eevee Exclusive"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "037",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       }
     ]
   },
@@ -1362,7 +2004,22 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "038",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "038",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Ninetales",
@@ -1384,7 +2041,22 @@
         "weaknessdouble": ["water", "ground", "rock"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "25", "female": "75", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "038",
+            "shinyLocked": "UNLOCKED",
+            "notes": "Eevee Exclusive"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "038",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       }
     ]
   },
@@ -1420,6 +2092,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "060",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "039",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "039",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -1460,6 +2146,20 @@
         "number": "061",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "040",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "040",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -1489,7 +2189,22 @@
     "weaknessdouble": ["electric", "ice", "psychic", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "041",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "041",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -1517,7 +2232,22 @@
     "weaknessdouble": ["electric", "ice", "psychic", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "042",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "042",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -1540,7 +2270,22 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "043",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "043",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -1568,7 +2313,22 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "044",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "044",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -1596,7 +2356,22 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "045",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "045",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -1619,7 +2394,22 @@
     "weaknessdouble": ["ice", "poison", "bug", "rock"],
     "weaknessquadruple": ["fire", "flying"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "046",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "046",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -1642,7 +2432,22 @@
     "weaknessdouble": ["ice", "poison", "bug", "rock"],
     "weaknessquadruple": ["fire", "flying"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "047",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "047",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -1677,6 +2482,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "256",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "048",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "048",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -1717,6 +2536,20 @@
         "number": "257",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "049",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "049",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -1755,6 +2588,20 @@
         "number": "148",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "050",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "050",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": [
@@ -1786,7 +2633,22 @@
         "weaknessdouble": ["fire", "water", "fighting", "ground"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "050",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "050",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       }
     ]
   },
@@ -1824,6 +2686,20 @@
         "number": "149",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "051",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "051",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": [
@@ -1855,7 +2731,22 @@
         "weaknessdouble": ["fire", "water", "fighting", "ground"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "051",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "051",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       }
     ]
   },
@@ -1893,6 +2784,20 @@
         "number": "141",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "052",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "052",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
       }
     ],
     "forms": [
@@ -1916,7 +2821,22 @@
         "weaknessdouble": ["fighting", "bug", "fairy"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "052",
+            "shinyLocked": "UNLOCKED",
+            "notes": "Eevee Exclusive"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "052",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       },
       {
         "name": "Galarian Meowth",
@@ -2009,6 +2929,20 @@
         "number": "142",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "053",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "053",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
       }
     ],
     "forms": [
@@ -2032,7 +2966,22 @@
         "weaknessdouble": ["fighting", "bug", "fairy"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "053",
+            "shinyLocked": "UNLOCKED",
+            "notes": "Eevee Exclusive"
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "053",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       }
     ]
   },
@@ -2068,6 +3017,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "055",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "054",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "054",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -2108,6 +3071,20 @@
         "number": "056",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "055",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "055",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -2146,6 +3123,20 @@
         "number": "158",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "056",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "056",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
       }
     ],
     "forms": []
@@ -2184,6 +3175,20 @@
         "number": "159",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "057",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "057",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
       }
     ],
     "forms": []
@@ -2222,6 +3227,20 @@
         "number": "213",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "058",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "058",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
       }
     ],
     "forms": [
@@ -2283,6 +3302,20 @@
         "number": "214",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "059",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "059",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
       }
     ],
     "forms": [
@@ -2330,7 +3363,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "060",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "060",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -2353,7 +3401,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "061",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "061",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -2376,7 +3439,22 @@
     "weaknessdouble": ["electric", "grass", "flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "062",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "062",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -2399,7 +3477,22 @@
     "weaknessdouble": ["bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "063",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "063",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -2427,7 +3520,22 @@
     "weaknessdouble": ["bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "064",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "064",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -2455,7 +3563,22 @@
     "weaknessdouble": ["bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "065",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "065",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Mega Alakazam",
@@ -2501,7 +3624,22 @@
     "weaknessdouble": ["flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "066",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "066",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -2524,7 +3662,22 @@
     "weaknessdouble": ["flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "067",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "067",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -2547,7 +3700,22 @@
     "weaknessdouble": ["flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "068",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "068",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Gigantamax Machamp",
@@ -2593,7 +3761,22 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "069",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "069",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -2616,7 +3799,22 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "070",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "070",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -2639,7 +3837,22 @@
     "weaknessdouble": ["fire", "ice", "flying", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "071",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "071",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -2671,7 +3884,22 @@
     "weaknessdouble": ["electric", "ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "072",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "072",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -2703,7 +3931,22 @@
     "weaknessdouble": ["electric", "ground", "psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "073",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "073",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -2726,7 +3969,22 @@
     "weaknessdouble": ["ice", "fighting", "ground", "steel"],
     "weaknessquadruple": ["water", "grass"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "074",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "074",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Geodude",
@@ -2748,7 +4006,22 @@
         "weaknessdouble": ["water", "grass", "fighting"],
         "weaknessquadruple": ["ground"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "074",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "074",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       }
     ]
   },
@@ -2772,7 +4045,22 @@
     "weaknessdouble": ["ice", "fighting", "ground", "steel"],
     "weaknessquadruple": ["water", "grass"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "075",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "075",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Graveler",
@@ -2794,7 +4082,22 @@
         "weaknessdouble": ["water", "grass", "fighting"],
         "weaknessquadruple": ["ground"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "075",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "075",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       }
     ]
   },
@@ -2818,7 +4121,22 @@
     "weaknessdouble": ["ice", "fighting", "ground", "steel"],
     "weaknessquadruple": ["water", "grass"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "076",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "076",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Golem",
@@ -2840,7 +4158,22 @@
         "weaknessdouble": ["water", "grass", "fighting"],
         "weaknessquadruple": ["ground"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "076",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "076",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       }
     ]
   },
@@ -2864,7 +4197,22 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "077",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "077",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Galarian Ponyta",
@@ -2910,7 +4258,22 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "078",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "078",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Galarian Rapidash",
@@ -2968,6 +4331,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "324",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "079",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "079",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -3029,6 +4406,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "325",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "080",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "080",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -3131,6 +4522,20 @@
         "number": "209",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "081",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "081",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -3179,6 +4584,20 @@
         "number": "210",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "082",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "082",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -3203,7 +4622,22 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "083",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "083",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Galarian Farfetch'd",
@@ -3254,7 +4688,22 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "084",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "084",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -3282,7 +4731,22 @@
     "weaknessdouble": ["electric", "ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "085",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "085",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -3305,7 +4769,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "086",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "086",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -3328,7 +4807,22 @@
     "weaknessdouble": ["electric", "grass", "fighting", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "087",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "087",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -3365,6 +4859,20 @@
         "number": "194",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "088",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "088",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
       }
     ],
     "forms": [
@@ -3388,7 +4896,22 @@
         "weaknessdouble": ["ground"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "088",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "088",
+            "shinyLocked": "UNLOCKED",
+            "notes": "Pikachu Exclusive"
+          }
+        ]
       }
     ]
   },
@@ -3426,6 +4949,20 @@
         "number": "195",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "089",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "089",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
       }
     ],
     "forms": [
@@ -3449,7 +4986,22 @@
         "weaknessdouble": ["ground"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "089",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "089",
+            "shinyLocked": "UNLOCKED",
+            "notes": "Pikachu Exclusive"
+          }
+        ]
       }
     ]
   },
@@ -3485,6 +5037,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "329",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "090",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "090",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -3525,6 +5091,20 @@
         "number": "330",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "091",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "091",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -3561,6 +5141,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "068",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "092",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "092",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -3601,6 +5195,20 @@
         "number": "069",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "093",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "093",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -3637,6 +5245,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "070",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "094",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "094",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -3708,7 +5330,22 @@
     "weaknessdouble": ["ice", "fighting", "ground", "steel"],
     "weaknessquadruple": ["water", "grass"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "095",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "095",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -3743,6 +5380,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "066",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "096",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "096",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -3788,6 +5439,20 @@
         "number": "067",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "097",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "097",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -3812,7 +5477,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "098",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "098",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -3835,7 +5515,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "099",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "099",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Gigantamax Kingler",
@@ -3893,6 +5588,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "207",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "100",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "100",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -3956,6 +5665,20 @@
         "number": "208",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "101",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "101",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": [
@@ -4010,7 +5733,22 @@
     "weaknessdouble": ["fire", "ice", "poison", "flying", "ghost", "dark"],
     "weaknessquadruple": ["bug"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "102",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "102",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4040,7 +5778,22 @@
     "weaknessdouble": ["fire", "ice", "poison", "flying", "ghost", "dark"],
     "weaknessquadruple": ["bug"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "103",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "103",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Exeggutor",
@@ -4062,7 +5815,22 @@
         "weaknessdouble": ["poison", "flying", "bug", "dragon", "fairy"],
         "weaknessquadruple": ["ice"],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "103",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "103",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       }
     ]
   },
@@ -4086,7 +5854,22 @@
     "weaknessdouble": ["water", "grass", "ice"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "104",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "104",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4109,7 +5892,22 @@
     "weaknessdouble": ["water", "grass", "ice"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "105",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "105",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Alolan Marowak",
@@ -4131,7 +5929,22 @@
         "weaknessdouble": ["water", "ground", "rock", "ghost", "dark"],
         "weaknessquadruple": [],
         "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": []
+        "games": [
+          {
+            "name": "Let's Go Pikachu",
+            "dex": "Alolan",
+            "number": "105",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Let's Go Eevee",
+            "dex": "Alolan",
+            "number": "105",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ]
       }
     ]
   },
@@ -4155,7 +5968,22 @@
     "weaknessdouble": ["flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "100", "female": "0", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "106",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "106",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4178,7 +6006,22 @@
     "weaknessdouble": ["flying", "psychic", "fairy"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "100", "female": "0", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "107",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "107",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4201,7 +6044,22 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "108",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "108",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4224,7 +6082,22 @@
     "weaknessdouble": ["psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "109",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "109",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      }
+    ],
     "forms": []
   },
   {
@@ -4247,7 +6120,22 @@
     "weaknessdouble": ["psychic"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "110",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "110",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Galarian Weezing",
@@ -4298,7 +6186,22 @@
     "weaknessdouble": ["ice", "fighting", "ground", "steel"],
     "weaknessquadruple": ["water", "grass"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "111",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "111",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4326,7 +6229,22 @@
     "weaknessdouble": ["ice", "fighting", "ground", "steel"],
     "weaknessquadruple": ["water", "grass"],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "112",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "112",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4363,6 +6281,20 @@
         "number": "044",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "113",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "113",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -4387,7 +6319,22 @@
     "weaknessdouble": ["fire", "ice", "poison", "flying", "bug"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "114",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "114",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4410,7 +6357,22 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "115",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "115",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Mega Kangaskhan",
@@ -4456,7 +6418,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "116",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "116",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4479,7 +6456,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "117",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "117",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4507,7 +6499,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "118",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "118",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4535,7 +6542,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "119",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "119",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4558,7 +6580,22 @@
     "weaknessdouble": ["electric", "grass"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "120",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "120",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4581,7 +6618,22 @@
     "weaknessdouble": ["electric", "grass", "bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "121",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "121",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4604,7 +6656,22 @@
     "weaknessdouble": ["poison", "ghost", "steel"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "122",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "122",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Galarian Mr. Mime",
@@ -4669,6 +6736,20 @@
         "number": "260",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "123",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "123",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Pikachu Exclusive"
       }
     ],
     "forms": []
@@ -4693,7 +6774,22 @@
     "weaknessdouble": ["fire", "bug", "rock", "ghost", "dark", "steel"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "124",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "124",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4716,7 +6812,22 @@
     "weaknessdouble": ["ground"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "125",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "125",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4739,7 +6850,22 @@
     "weaknessdouble": ["water", "ground", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "75", "female": "25", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "126",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "126",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -4762,7 +6888,22 @@
     "weaknessdouble": ["fire", "flying", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "127",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "127",
+        "shinyLocked": "UNLOCKED",
+        "notes": "Eevee Exclusive"
+      }
+    ],
     "forms": [
       {
         "name": "Mega Pinsir",
@@ -4808,7 +6949,22 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "100", "female": "0", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "128",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "128",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Paldean Tauros",
@@ -4987,6 +7143,20 @@
         "number": "134",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "129",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "129",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -5028,6 +7198,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "135",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "130",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "130",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -5077,7 +7261,22 @@
     "weaknessdouble": ["electric", "grass", "fighting", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "131",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "131",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Gigantamax Lapras",
@@ -5137,6 +7336,20 @@
         "number": "212",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "132",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "132",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -5178,6 +7391,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "179",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "133",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "133",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -5241,6 +7468,20 @@
         "number": "180",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "134",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "134",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -5277,6 +7518,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "181",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "135",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "135",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -5317,6 +7572,20 @@
         "number": "182",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "136",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "136",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -5341,7 +7610,22 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "137",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "137",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -5364,7 +7648,22 @@
     "weaknessdouble": ["electric", "fighting", "ground"],
     "weaknessquadruple": ["grass"],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "138",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "138",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -5387,7 +7686,22 @@
     "weaknessdouble": ["electric", "fighting", "ground"],
     "weaknessquadruple": ["grass"],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "139",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "139",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -5410,7 +7724,22 @@
     "weaknessdouble": ["electric", "fighting", "ground"],
     "weaknessquadruple": ["grass"],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "140",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "140",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -5433,7 +7762,22 @@
     "weaknessdouble": ["electric", "fighting", "ground"],
     "weaknessquadruple": ["grass"],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "141",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "141",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -5456,7 +7800,22 @@
     "weaknessdouble": ["water", "electric", "ice", "rock", "steel"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "142",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "142",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Mega Aerodactyl",
@@ -5502,7 +7861,22 @@
     "weaknessdouble": ["fighting"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "143",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "143",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Gigantamax Snorlax",
@@ -5548,7 +7922,22 @@
     "weaknessdouble": ["fire", "electric", "steel"],
     "weaknessquadruple": ["rock"],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "144",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "144",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Galarian Articuno",
@@ -5594,7 +7983,22 @@
     "weaknessdouble": ["ice", "rock"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "145",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "145",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Galarian Zapdos",
@@ -5640,7 +8044,22 @@
     "weaknessdouble": ["water", "electric"],
     "weaknessquadruple": ["rock"],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "146",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "146",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Galarian Moltres",
@@ -5700,6 +8119,20 @@
         "number": "347",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "147",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "147",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -5736,6 +8169,20 @@
         "name": "Pokemon Violet",
         "dex": "Regional",
         "number": "348",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "148",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "148",
         "shinyLocked": "UNLOCKED",
         "notes": ""
       }
@@ -5776,6 +8223,20 @@
         "number": "349",
         "shinyLocked": "UNLOCKED",
         "notes": ""
+      },
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "149",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "149",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
       }
     ],
     "forms": []
@@ -5800,7 +8261,22 @@
     "weaknessdouble": ["bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "150",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "150",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Mega Mewtwo X",
@@ -5868,7 +8344,22 @@
     "weaknessdouble": ["bug", "ghost", "dark"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Others",
+        "number": "151",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Others",
+        "number": "151",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -30878,7 +33369,22 @@
     "weaknessdouble": ["fire", "fighting", "ground"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Others",
+        "number": "152",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Others",
+        "number": "152",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": []
   },
   {
@@ -30912,7 +33418,22 @@
     "weaknessdouble": ["fire", "fighting", "ground"],
     "weaknessquadruple": [],
     "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
-    "games": [],
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Others",
+        "number": "153",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Others",
+        "number": "153",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
     "forms": [
       {
         "name": "Gigantamax Melmetal",
