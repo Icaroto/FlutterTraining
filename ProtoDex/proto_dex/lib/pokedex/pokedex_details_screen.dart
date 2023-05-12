@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import '../components/details_next_prev.dart';
 import '../components/empty_app_bar.dart';
 import '../models/tab.dart';
-import '../screens/details/breeding_card.dart';
+import '../components/breeding_card.dart';
 import '../components/type_background.dart';
 import '../components/details_header.dart';
 import '../components/image.dart';
-import '../screens/details/games_card.dart';
-import '../screens/details/general_card.dart';
+import '../components/games_card.dart';
+import '../components/general_card.dart';
 import '../components/details_panel.dart';
 import '../models/pokemon.dart';
-import '../screens/details/weakness_card.dart';
+import '../components/weakness_card.dart';
 
 class PokedexDetailsPage extends StatefulWidget {
   const PokedexDetailsPage(
