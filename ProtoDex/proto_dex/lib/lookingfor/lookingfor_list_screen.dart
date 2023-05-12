@@ -86,7 +86,7 @@ class _LookingForScreenState extends State<LookingForScreen> {
                   const Expanded(
                     child: Center(
                       child: Text(
-                        "Nothing here. Try to add something you are looking for.",
+                        "You are not looking for anything. Click Add to start.",
                         style: TextStyle(color: Colors.yellow, fontSize: 15),
                       ),
                     ),

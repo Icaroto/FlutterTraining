@@ -86,7 +86,7 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
                   const Expanded(
                     child: Center(
                       child: Text(
-                        "Nothing here. Try to add something you have for trade.",
+                        "Nothing to trade. Click Add to start.",
                         style: TextStyle(color: Colors.yellow, fontSize: 15),
                       ),
                     ),
