@@ -18,6 +18,6 @@ const String kForTradeBaseName = 'c_forTrade.json';
 // const String kForTradeFileLocation = 'data/ft.json';
 // const String kForTradeKey = 'forTrade';
 
-const String kValueNotFound = "?????";
+const String kValueNotFound = "?";
 
 List<Pokemon> kPokedex = [];

@@ -844,6 +844,17 @@ extension PokemonGenderExtensions on PokemonGender {
         );
     }
   }
+
+  String getSingleLetter() {
+    switch (this) {
+      case PokemonGender.female:
+        return "F";
+      case PokemonGender.male:
+        return "M";
+      default:
+        return "";
+    }
+  }
 }
 
 extension ItemExtensions on Item {

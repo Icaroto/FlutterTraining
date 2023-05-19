@@ -247,3 +247,43 @@ extension Filter on List<Item>? {
     return temp;
   }
 }
+
+extension ItemExtensions on Item {
+  String getImage(PokemonVariant variant, PokemonGender? gender) {
+    String v = (variant == PokemonVariant.shiny) ? "-shiny-" : "-normal-";
+    String g = "";
+    switch (gender) {
+      case PokemonGender.female:
+        hasGenderDiff() ? g = "-f." : g = "-mf.";
+        break;
+      case PokemonGender.genderless:
+        g = "-g.";
+        break;
+      case PokemonGender.male:
+        hasGenderDiff() ? g = "-m." : g = "-mf.";
+        break;
+      default:
+        g = "-mf";
+    }
+
+    String image =
+        this.image.firstWhere((img) => img.contains(v) && img.contains(g));
+    return image;
+  }
+
+  String getMegaImage(bool isShiny) {
+    String v = (isShiny) ? "-shiny-" : "-normal-";
+    String image = this
+        .image
+        .firstWhere((img) => img.contains('-mega-') && img.contains(v));
+    return image;
+  }
+
+  String getDynaImage(bool isShiny) {
+    String v = (isShiny) ? "-shiny-" : "-normal-";
+    String image = this
+        .image
+        .firstWhere((img) => img.contains('-giga-') && img.contains(v));
+    return image;
+  }
+}

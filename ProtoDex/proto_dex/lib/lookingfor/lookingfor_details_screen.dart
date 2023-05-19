@@ -53,6 +53,8 @@ class _LookingForDetailsPageState extends State<LookingForDetailsPage> {
                 if (isEditable)
                   {
                     isEditable = false,
+                    displayPokemon.displayImage =
+                        updateDisplayImage(displayPokemon),
                     widget.onStateChange!(),
                   }
                 else
@@ -87,6 +89,20 @@ class _LookingForDetailsPageState extends State<LookingForDetailsPage> {
         ],
       ),
     );
+  }
+
+  updateDisplayImage(Item pokemon) {
+    if (pokemon.attributes.contains(PokemonAttributes.isDinamax)) {
+      return pokemon
+          .getDynaImage(pokemon.attributes.contains(PokemonAttributes.isShiny));
+    } else if (pokemon.attributes.contains(PokemonAttributes.isMega)) {
+      return pokemon
+          .getMegaImage(pokemon.attributes.contains(PokemonAttributes.isShiny));
+    } else if (pokemon.attributes.contains(PokemonAttributes.isShiny)) {
+      return pokemon.getImage(PokemonVariant.shiny, pokemon.gender);
+    } else {
+      return pokemon.getImage(PokemonVariant.normal, pokemon.gender);
+    }
   }
 
   giveMeATab(originalPokemon) {
