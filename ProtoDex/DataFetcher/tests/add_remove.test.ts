@@ -20,150 +20,193 @@ import { parse } from 'csv-parse';
 //   writeToFile("database/last_result.json", data);
 // });
 
-test('Add Lets Go Games', async ({ baseURL, page }) => {
-  for (let index = 0; index < 150; index++) {
+// function readdirSyncPreserveOrder(folderPath: string): string[] {
+//   const files = fs.readdirSync(folderPath);
+//   const fileStats = files.map((fileName) => ({
+//     name: fileName,
+//     path: path.join(folderPath, fileName),
+//     stat: fs.statSync(path.join(folderPath, fileName))
+//   }));
+
+//   fileStats.sort((a, b) => a.stat.birthtime.getTime() - b.stat.birthtime.getTime());
+
+//   return fileStats.map((file) => file.name);
+// }
+// function replaceFileNames(firstFolderPath: string, secondFolderPath: string): void {
+//   // Read the files in the first folder
+//   const firstFolderFiles = fs.readdirSync(firstFolderPath).sort();
+
+//   // Read the files in the second folder
+//   const secondFolderFiles = fs.readdirSync(secondFolderPath);
+
+//   // Ensure that both folders have the same number of files
+//   if (firstFolderFiles.length !== secondFolderFiles.length) {
+//     throw new Error('The number of files in the folders does not match.');
+//   }
+
+//   // Iterate over the files and replace the names in the second folder
+//   for (let i = 0; i < firstFolderFiles.length; i++) {
+//     const firstFilePath = path.join(firstFolderPath, firstFolderFiles[i]);
+//     const secondFilePath = path.join(secondFolderPath, secondFolderFiles[i]);
+
+//     // console.log(firstFilePath);
+//     // console.log(secondFilePath);
+//     // Rename the file in the second folder with the name from the first folder
+//     fs.renameSync(secondFilePath, path.join(secondFolderPath, firstFolderFiles[i]));
+//   }
+// }
+
+
+// test('Rename Gen 9 @icaro', async ({}) => {
+//   var oldPath = 'C:\\Users\\icaro\\Desktop\\Gen 9\\old1';
+//   var newPath = 'C:\\Users\\icaro\\Desktop\\Gen 9\\new1';
+//   replaceFileNames(oldPath, newPath);
+// });
+
+// test('Add Lets Go Games', async ({ baseURL, page }) => {
+//   for (let index = 0; index < 150; index++) {
     
-    var number = (index + 1).toString();
+//     var number = (index + 1).toString();
     
-    while (number.length < 3) number = "0" + number;
+//     while (number.length < 3) number = "0" + number;
 
-    //Pikachu Exclusives
-    var notes = "";
-    if(['Oddish',
-    'Gloom',
-    'Vileplume',
-    'Sandshrew',
-    'Sandslash',
-    'Growlithe',
-    'Arcanine',
-    'Grimer',
-    'Muk',
-    'Scyther',
-    'Mankey',
-    'Primeape'].includes(data[index].name)){
-        notes = "Pikachu Exclusive"
-    }
+//     //Pikachu Exclusives
+//     var notes = "";
+//     if(['Oddish',
+//     'Gloom',
+//     'Vileplume',
+//     'Sandshrew',
+//     'Sandslash',
+//     'Growlithe',
+//     'Arcanine',
+//     'Grimer',
+//     'Muk',
+//     'Scyther',
+//     'Mankey',
+//     'Primeape'].includes(data[index].name)){
+//         notes = "Pikachu Exclusive"
+//     }
 
-    //Eevee Exclusives
-    if(['Bellsprout',
-    'Weepinbell',
-    'Victreebel',
-    'Vulpix',
-    'Ninetales',
-    'Meowth',
-    'Persian',
-    'Koffing',
-    'Weezing',
-    'Pinsir',
-    'Ekans',
-    'Arbok'].includes(data[index].name)){
-      notes = "Eevee Exclusive"
-    }
+//     //Eevee Exclusives
+//     if(['Bellsprout',
+//     'Weepinbell',
+//     'Victreebel',
+//     'Vulpix',
+//     'Ninetales',
+//     'Meowth',
+//     'Persian',
+//     'Koffing',
+//     'Weezing',
+//     'Pinsir',
+//     'Ekans',
+//     'Arbok'].includes(data[index].name)){
+//       notes = "Eevee Exclusive"
+//     }
 
-    const  toAdd = [{'name':'Let\'s Go Pikachu','dex':'Regional','number': number, shinyLocked: 'UNLOCKED', 'notes': notes},
-                 {'name':'Let\'s Go Eevee','dex':'Regional','number': number, shinyLocked: 'UNLOCKED', 'notes': notes}
-                ];
-    data[index].games = [...data[index].games, ...toAdd];
+//     const  toAdd = [{'name':'Let\'s Go Pikachu','dex':'Regional','number': number, shinyLocked: 'UNLOCKED', 'notes': notes},
+//                  {'name':'Let\'s Go Eevee','dex':'Regional','number': number, shinyLocked: 'UNLOCKED', 'notes': notes}
+//                 ];
+//     data[index].games = [...data[index].games, ...toAdd];
 
-    //Alolan All
-    if(['Rattata', 'Geodude', 'Diglett', 'Raichu', 'Marowak','Exeggutor'].includes(data[index].name)){
-      data[index].forms.forEach(forms => {
-        if(forms.name.startsWith("Alolan")){
+//     //Alolan All
+//     if(['Rattata', 'Geodude', 'Diglett', 'Raichu', 'Marowak','Exeggutor'].includes(data[index].name)){
+//       data[index].forms.forEach(forms => {
+//         if(forms.name.startsWith("Alolan")){
 
-          notes = "";
-          const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes},
-                 {'name':'Let\'s Go Eevee','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes}
-                ];
-          forms.games = toAdd;
-        }
-      });
-    }
+//           notes = "";
+//           const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes},
+//                  {'name':'Let\'s Go Eevee','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes}
+//                 ];
+//           forms.games = toAdd;
+//         }
+//       });
+//     }
 
-    if(['Raticate', 'Graveler', 'Golem', 'Dugtrio'].includes(data[index].name)){
-      data[index].forms.forEach(forms => {
-        if(forms.name.startsWith("Alolan")){
+//     if(['Raticate', 'Graveler', 'Golem', 'Dugtrio'].includes(data[index].name)){
+//       data[index].forms.forEach(forms => {
+//         if(forms.name.startsWith("Alolan")){
 
-          notes = "";
-          const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes},
-                 {'name':'Let\'s Go Eevee','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes}
-                ];
-          forms.games = toAdd;
-        }
-      });
-    }
+//           notes = "";
+//           const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes},
+//                  {'name':'Let\'s Go Eevee','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes}
+//                 ];
+//           forms.games = toAdd;
+//         }
+//       });
+//     }
 
-    //Alolan Pikachu
-    if(['Sandshrew', 'Grimer'].includes(data[index].name)){
-      data[index].forms.forEach(forms => {
-        if(forms.name.startsWith("Alolan")){
+//     //Alolan Pikachu
+//     if(['Sandshrew', 'Grimer'].includes(data[index].name)){
+//       data[index].forms.forEach(forms => {
+//         if(forms.name.startsWith("Alolan")){
 
-          notes = "Pikachu Exclusive";
-          const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': ''},
-                 {'name':'Let\'s Go Eevee','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes}
-                ];
-          forms.games = toAdd;
-        }
-      });
-    }
-    if(['Sandslash', 'Muk'].includes(data[index].name)){
-      data[index].forms.forEach(forms => {
-        if(forms.name.startsWith("Alolan")){
+//           notes = "Pikachu Exclusive";
+//           const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': ''},
+//                  {'name':'Let\'s Go Eevee','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes}
+//                 ];
+//           forms.games = toAdd;
+//         }
+//       });
+//     }
+//     if(['Sandslash', 'Muk'].includes(data[index].name)){
+//       data[index].forms.forEach(forms => {
+//         if(forms.name.startsWith("Alolan")){
 
-          notes = "Pikachu Exclusive";
-          const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': ''},
-                 {'name':'Let\'s Go Eevee','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes}
-                ];
-          forms.games = toAdd;
-        }
-      });
-    }
+//           notes = "Pikachu Exclusive";
+//           const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': ''},
+//                  {'name':'Let\'s Go Eevee','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes}
+//                 ];
+//           forms.games = toAdd;
+//         }
+//       });
+//     }
 
-    //Alolan Eevee
-    if(['Vulpix','Meowth'].includes(data[index].name)){
-      data[index].forms.forEach(forms => {
-        if(forms.name.startsWith("Alolan")){
+//     //Alolan Eevee
+//     if(['Vulpix','Meowth'].includes(data[index].name)){
+//       data[index].forms.forEach(forms => {
+//         if(forms.name.startsWith("Alolan")){
 
-          notes = "Eevee Exclusive";
-          const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes},
-                 {'name':'Let\'s Go Eevee','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': ''}
-                ];
-          forms.games = toAdd;
-        }
-      });
-    }
-    if(['Ninetales','Persian'].includes(data[index].name)){
-      data[index].forms.forEach(forms => {
-        if(forms.name.startsWith("Alolan")){
+//           notes = "Eevee Exclusive";
+//           const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes},
+//                  {'name':'Let\'s Go Eevee','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': ''}
+//                 ];
+//           forms.games = toAdd;
+//         }
+//       });
+//     }
+//     if(['Ninetales','Persian'].includes(data[index].name)){
+//       data[index].forms.forEach(forms => {
+//         if(forms.name.startsWith("Alolan")){
 
-          notes = "Eevee Exclusive";
-          const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes},
-                 {'name':'Let\'s Go Eevee','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': ''}
-                ];
-          forms.games = toAdd;
-        }
-      });
-    }
+//           notes = "Eevee Exclusive";
+//           const toAdd = [{'name':'Let\'s Go Pikachu','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': notes},
+//                  {'name':'Let\'s Go Eevee','dex':'Alolan','number': number, shinyLocked: 'UNLOCKED', 'notes': ''}
+//                 ];
+//           forms.games = toAdd;
+//         }
+//       });
+//     }
 
-  }
+//   }
 
-  //Additional (outside the 150 loop
-  //Mew
-  var toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': '151', shinyLocked: 'LOCKED','notes': ''},
-  {'name':'Let\'s Go Eevee','dex':'Others','number': '151', shinyLocked: 'LOCKED', 'notes': ''}];
-  data[150].games = [...data[150].games, ...toAdd];
+//   //Additional (outside the 150 loop
+//   //Mew
+//   var toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': '151', shinyLocked: 'LOCKED','notes': ''},
+//   {'name':'Let\'s Go Eevee','dex':'Others','number': '151', shinyLocked: 'LOCKED', 'notes': ''}];
+//   data[150].games = [...data[150].games, ...toAdd];
 
-  //Meltan
-  var toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': '152', shinyLocked: 'UNLOCKED', 'notes': ''},
-  {'name':'Let\'s Go Eevee','dex':'Others','number': '152', shinyLocked: 'UNLOCKED', 'notes': ''}];
-  data[807].games = [...data[807].games, ...toAdd];
+//   //Meltan
+//   var toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': '152', shinyLocked: 'UNLOCKED', 'notes': ''},
+//   {'name':'Let\'s Go Eevee','dex':'Others','number': '152', shinyLocked: 'UNLOCKED', 'notes': ''}];
+//   data[807].games = [...data[807].games, ...toAdd];
 
-  //Melmetal
-  toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': '153', shinyLocked: 'UNLOCKED', 'notes': ''},
-  {'name':'Let\'s Go Eevee','dex':'Others','number': '153', shinyLocked: 'UNLOCKED', 'notes': ''}];
-  data[808].games = [...data[808].games, ...toAdd];
+//   //Melmetal
+//   toAdd = [{'name':'Let\'s Go Pikachu','dex':'Others','number': '153', shinyLocked: 'UNLOCKED', 'notes': ''},
+//   {'name':'Let\'s Go Eevee','dex':'Others','number': '153', shinyLocked: 'UNLOCKED', 'notes': ''}];
+//   data[808].games = [...data[808].games, ...toAdd];
 
-  writeToFile("database/last_result.json", data);
-});
+//   writeToFile("database/last_result.json", data);
+// });
 
 // test.skip('Scarlet Violet', async ({ baseURL, page }) => {
 
@@ -286,27 +329,27 @@ test('Add Lets Go Games', async ({ baseURL, page }) => {
 //   };
 // });
 
-test('Update Property property', async ({ baseURL, page }) => {
-  for (let i = 0; i < data.length; i++) {
-    while (data[i].number.length < 4) data[i].number = "0" + data[i].number;
+// test('Update Property property', async ({ baseURL, page }) => {
+//   for (let i = 0; i < data.length; i++) {
+//     while (data[i].number.length < 4) data[i].number = "0" + data[i].number;
 
 
-    data[i].forms.forEach(form => {
-      if (data[i].forms.length > 0)
-      {
-        while (form.number.length < 4) form.number = "0" + form.number;
-        if (form.forms != null && form.forms.length > 0)
-        {
-          form.forms.forEach(form => {
-            while (form.number.length < 4) form.number = "0" + form.number;
-          });
-        }
-    }
-    });
-  }
-  writeToFile("database/last_result.json", data);
+//     data[i].forms.forEach(form => {
+//       if (data[i].forms.length > 0)
+//       {
+//         while (form.number.length < 4) form.number = "0" + form.number;
+//         if (form.forms != null && form.forms.length > 0)
+//         {
+//           form.forms.forEach(form => {
+//             while (form.number.length < 4) form.number = "0" + form.number;
+//           });
+//         }
+//     }
+//     });
+//   }
+//   writeToFile("database/last_result.json", data);
 
-});
+// });
 
 // test('Add property', async ({ baseURL, page }) => {
 //     var newData : Object[] = [];
