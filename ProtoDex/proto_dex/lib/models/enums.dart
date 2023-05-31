@@ -49,8 +49,6 @@ enum PokeballType {
 
 enum PokemonAttributes {
   isShiny,
-  isMega,
-  isDinamax,
   isAlpha,
 }
 

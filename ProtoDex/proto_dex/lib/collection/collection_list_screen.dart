@@ -252,10 +252,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
           return dex_card.createCards(
             originalPokedex,
             [index],
-            onStateChange: () {
-              List<Item> items = [
-                createItem(originalPokedex, [index])
-              ];
+            onStateChange: (indexes) {
+              List<Item> items = [createItem(originalPokedex, indexes)];
               Navigator.push(
                 context,
                 MaterialPageRoute(

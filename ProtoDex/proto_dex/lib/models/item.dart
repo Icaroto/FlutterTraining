@@ -82,7 +82,13 @@ class Item {
                 model, gameSelected, entryOrigin,
                 useGameDexNumber: useGameDexNumber)))
             : [],
-        gender = PokemonGender.undefinied,
+        gender = (dexPokemon.genderRatio.genderless == "100")
+            ? PokemonGender.genderless
+            : (dexPokemon.genderRatio.female == "100")
+                ? PokemonGender.female
+                : (dexPokemon.genderRatio.male == "100")
+                    ? PokemonGender.male
+                    : PokemonGender.undefinied,
         ball = PokeballType.undefined,
         captured = false,
         catchDate = "",
@@ -271,19 +277,11 @@ extension ItemExtensions on Item {
     return image;
   }
 
-  String getMegaImage(bool isShiny) {
-    String v = (isShiny) ? "-shiny-" : "-normal-";
-    String image = this
-        .image
-        .firstWhere((img) => img.contains('-mega-') && img.contains(v));
-    return image;
-  }
-
-  String getDynaImage(bool isShiny) {
-    String v = (isShiny) ? "-shiny-" : "-normal-";
-    String image = this
-        .image
-        .firstWhere((img) => img.contains('-giga-') && img.contains(v));
-    return image;
+  String updateDisplayImage() {
+    if (attributes.contains(PokemonAttributes.isShiny)) {
+      return getImage(PokemonVariant.shiny, gender);
+    } else {
+      return getImage(PokemonVariant.normal, gender);
+    }
   }
 }

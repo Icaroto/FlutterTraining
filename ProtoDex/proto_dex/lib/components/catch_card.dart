@@ -660,10 +660,6 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
     switch (attibute) {
       case PokemonAttributes.isAlpha:
         return widget.locks!.contains(DetailsLock.attributesAlpha);
-      case PokemonAttributes.isDinamax:
-        return widget.locks!.contains(DetailsLock.attributesDina);
-      case PokemonAttributes.isMega:
-        return widget.locks!.contains(DetailsLock.attributesMega);
       case PokemonAttributes.isShiny:
         return widget.locks!.contains(DetailsLock.attributesShiny);
       default:
@@ -774,10 +770,6 @@ extension Extensions2 on PokemonAttributes {
     switch (this) {
       case PokemonAttributes.isAlpha:
         return 'Alpha';
-      case PokemonAttributes.isDinamax:
-        return 'Dinamax';
-      case PokemonAttributes.isMega:
-        return 'Mega';
       case PokemonAttributes.isShiny:
         return 'Shiny';
     }

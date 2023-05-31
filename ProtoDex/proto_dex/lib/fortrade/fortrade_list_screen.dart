@@ -103,7 +103,7 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.check_circle_outline_outlined),
-            label: "Looking For",
+            label: "For Trade",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_circle),
@@ -252,10 +252,8 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
           return dex_card.createCards(
             originalPokedex,
             [index],
-            onStateChange: () {
-              List<Item> items = [
-                createItem(originalPokedex, [index])
-              ];
+            onStateChange: (indexes) {
+              List<Item> items = [createItem(originalPokedex, indexes)];
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -289,7 +287,7 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
     Pokemon pokemon = pokemons.current(indexes);
     Game tempGame =
         Game(name: "", dex: "", number: "", notes: "", shinyLocked: "");
-    Item item = Item.fromDex(pokemon, tempGame, kLookingForBaseName);
+    Item item = Item.fromDex(pokemon, tempGame, kForTradeBaseName);
     item.catchDate = DateTime.now().toString();
     return item;
   }

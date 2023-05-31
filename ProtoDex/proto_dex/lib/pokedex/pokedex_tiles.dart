@@ -14,7 +14,7 @@ class PokemonTiles extends StatefulWidget {
   final Color? tileColor;
   final List<Pokemon> pokemons;
   final List<int> indexes;
-  final Function()? onStateChange;
+  final Function(List<int>)? onStateChange;
 
   @override
   State<PokemonTiles> createState() => _PokemonTiles();
@@ -43,7 +43,9 @@ class _PokemonTiles extends State<PokemonTiles> {
                     ),
                   )
                 }
-            : widget.onStateChange,
+            : () {
+                widget.onStateChange!(widget.indexes);
+              },
         leading: ListImage(image: 'mons/${pokemon.image[0]}'),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

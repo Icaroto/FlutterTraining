@@ -53,6 +53,8 @@ class _ForTradeDetailsPageState extends State<ForTradeDetailsPage> {
                 if (isEditable)
                   {
                     isEditable = false,
+                    displayPokemon.displayImage =
+                        displayPokemon.updateDisplayImage(),
                     widget.onStateChange!(),
                   }
                 else

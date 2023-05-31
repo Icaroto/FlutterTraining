@@ -6,7 +6,7 @@ import '../models/pokemon.dart';
 Widget createCards(
   List<Pokemon> pokemons,
   List<int> indexes, {
-  Function()? onStateChange,
+  Function(List<int>)? onStateChange,
   subLevel = false,
 }) {
   final GlobalKey expansionTileKey = GlobalKey();

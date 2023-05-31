@@ -53,6 +53,8 @@ class _CollectionDetailsPageState extends State<CollectionDetailsPage> {
                 if (isEditable)
                   {
                     isEditable = false,
+                    displayPokemon.displayImage =
+                        displayPokemon.updateDisplayImage(),
                     widget.onStateChange!(),
                   }
                 else
