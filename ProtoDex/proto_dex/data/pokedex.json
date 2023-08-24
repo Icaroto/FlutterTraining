@@ -20231,7 +20231,7 @@
   },
   {
     "name": "Rotom",
-    "formName": "",
+    "formName": "Base Form",
     "species": "Plasma Pokémon",
     "height": "0.3m",
     "weight": "0.3kg",
@@ -20268,7 +20268,7 @@
     "forms": [
       {
         "name": "Heat Rotom",
-        "formName": "",
+        "formName": "Heat Form",
         "species": "Plasma Pokémon",
         "height": "0.3m",
         "weight": "0.3kg",
@@ -20313,7 +20313,7 @@
       },
       {
         "name": "Wash Rotom",
-        "formName": "",
+        "formName": "Wash Form",
         "species": "Plasma Pokémon",
         "height": "0.3m",
         "weight": "0.3kg",
@@ -20350,7 +20350,7 @@
       },
       {
         "name": "Frost Rotom",
-        "formName": "",
+        "formName": "Frost Form",
         "species": "Plasma Pokémon",
         "height": "0.3m",
         "weight": "0.3kg",
@@ -20387,7 +20387,7 @@
       },
       {
         "name": "Fan Rotom",
-        "formName": "",
+        "formName": "Fan Form",
         "species": "Plasma Pokémon",
         "height": "0.3m",
         "weight": "0.3kg",
@@ -20424,7 +20424,7 @@
       },
       {
         "name": "Mow Rotom",
-        "formName": "",
+        "formName": "Mow Form",
         "species": "Plasma Pokémon",
         "height": "0.3m",
         "weight": "0.3kg",
