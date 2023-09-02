@@ -116,6 +116,7 @@ class _TrackerDetailsPageState extends State<TrackerDetailsPage> {
   createLocks(Item pokemon) {
     List<DetailsLock> locks = [];
     locks.add(DetailsLock.gameOrigin);
+    locks.add(DetailsLock.gameCurrently);
     if (pokemon.gender != PokemonGender.undefinied) {
       locks.add(DetailsLock.gender);
     }

@@ -30724,7 +30724,7 @@
     "type1": "rock",
     "type2": null,
     "image": ["744-normal-mf.png", "744-shiny-mf.png"],
-    "abilities": ["Keen Eye", "Vital Spirit"],
+    "abilities": ["Keen Eye", "Vital Spirit", "Own Tempo"],
     "hiddenAbility": "Steadfast",
     "weaknessquarter": [],
     "weaknesshalf": ["normal", "fire", "poison", "flying"],
@@ -30748,49 +30748,11 @@
         "notes": ""
       }
     ],
-    "forms": [
-      {
-        "name": "Own Tempo Rockruff",
-        "formName": "",
-        "species": "Puppy Pokémon",
-        "height": "0.5m",
-        "weight": "9.2kg",
-        "breeding": { "groups": ["Field"], "cycles": "15" },
-        "number": "0744",
-        "ref": "744.1",
-        "type1": "rock",
-        "type2": null,
-        "image": ["744-normal-mf.png", "744-shiny-mf.png"],
-        "abilities": ["Own Tempo"],
-        "hiddenAbility": "",
-        "weaknessquarter": [],
-        "weaknesshalf": ["normal", "fire", "poison", "flying"],
-        "weaknessnone": [],
-        "weaknessdouble": ["water", "grass", "fighting", "ground", "steel"],
-        "weaknessquadruple": [],
-        "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
-        "games": [
-          {
-            "name": "Pokemon Scarlet",
-            "dex": "Regional",
-            "number": "089",
-            "shinyLocked": "UNLOCKED",
-            "notes": ""
-          },
-          {
-            "name": "Pokemon Violet",
-            "dex": "Regional",
-            "number": "089",
-            "shinyLocked": "UNLOCKED",
-            "notes": ""
-          }
-        ]
-      }
-    ]
+    "forms": []
   },
   {
     "name": "Lycanroc",
-    "formName": "",
+    "formName": "Midday Form",
     "species": "Wolf Pokémon",
     "height": "0.8m",
     "weight": "25.0kg",
@@ -30826,8 +30788,8 @@
     ],
     "forms": [
       {
-        "name": "Midnight Form",
-        "formName": "",
+        "name": "Lycanroc",
+        "formName": "Midnight Form",
         "species": "Wolf Pokémon",
         "height": "1.1m",
         "weight": "25.0kg",
@@ -30863,8 +30825,8 @@
         ]
       },
       {
-        "name": "Dusk Form",
-        "formName": "",
+        "name": "Lycanroc",
+        "formName": "Dusk Form",
         "species": "Wolf Pokémon",
         "height": "0.8m",
         "weight": "25.0kg",

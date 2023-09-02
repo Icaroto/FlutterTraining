@@ -752,11 +752,11 @@ extension Extensions3 on CaptureMethod {
   String getMethodName() {
     switch (this) {
       case CaptureMethod.egg:
-        return 'Hatched';
+        return 'Egg';
       case CaptureMethod.raid:
         return 'Raid';
       case CaptureMethod.trade:
-        return 'Traded';
+        return 'Trade';
       case CaptureMethod.wild:
         return 'Wild';
       default:
