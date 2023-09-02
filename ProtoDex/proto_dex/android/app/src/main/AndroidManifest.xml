@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.proto_dex">
+   <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="proto_dex"
         android:name="${applicationName}"
