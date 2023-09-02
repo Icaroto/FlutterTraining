@@ -49,7 +49,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Image.asset('${kImagesRoot}background/colored_ball.png'),
+            child: Image.network(
+                '${kImageLocalPrefix}background/colored_ball.png'),
           ),
           const Text(
             'Loading...',
