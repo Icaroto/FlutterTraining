@@ -63,7 +63,7 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
           SafeArea(
             child: Column(
               children: [
-                SearchBar(
+                Search(
                   isSearchOpened: _isSearchOpened,
                   editingController: editingController,
                   onCloseTap: () => {
@@ -147,9 +147,9 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
               ? ForTradeTile(
                   pokemons: collection,
                   indexes: [index],
-                  onStateChange: () {
+                  onStateChange: (item) {
                     setState(() {
-                      saveCollection(collection);
+                      saveToCollection(item);
                     });
                   },
                   onDelete: (item) {
@@ -160,9 +160,9 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
                 )
               : createCards(
                   groups[index],
-                  onStateChange: () {
+                  onStateChange: (item) {
                     setState(() {
-                      saveCollection(collection);
+                      saveToCollection(item);
                     });
                   },
                   onDelete: (item) {
@@ -182,9 +182,23 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
     );
   }
 
-  void removeFromColletion(item) {
-    collection.remove(item);
+  void removeFromColletion(Item item) {
+    collection = getCollection();
+    collection.removeWhere((element) => element.ref == item.ref);
     saveCollection(collection);
+    collection = collection.applyAllFilters(filters, _query);
+  }
+
+  void saveToCollection(Item item) {
+    collection = getCollection();
+    final index = collection.indexWhere((element) => element.ref == item.ref);
+    if (index == -1) {
+      collection.add(item);
+    } else {
+      collection[index] = item;
+    }
+    saveCollection(collection);
+    collection = collection.applyAllFilters(filters, _query);
   }
 
   void applyFilters() {
@@ -195,6 +209,8 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
 
       collection = getCollection();
       collection = collection.applyAllFilters(filters, _query);
+
+      originalPokedex = originalPokedex.applyAllFilters(filters, _query, null);
     });
   }
 
@@ -218,14 +234,15 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
           });
         },
       ),
-      IconButton(
-        icon: const Icon(Icons.filter_alt_outlined),
-        onPressed: () {
-          setState(() {
-            scaffoldKey.currentState!.openEndDrawer();
-          });
-        },
-      ),
+      if (_selectedTab == 0)
+        IconButton(
+          icon: const Icon(Icons.filter_alt_outlined),
+          onPressed: () {
+            setState(() {
+              scaffoldKey.currentState!.openEndDrawer();
+            });
+          },
+        ),
     ];
   }
 
@@ -261,9 +278,8 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
                     return ForTradeDetailsPage(
                       pokemons: items,
                       indexes: const [0],
-                      onStateChange: () {
-                        collection.add(items.first);
-                        saveCollection(collection);
+                      onStateChange: (item) {
+                        saveToCollection(item);
                       },
                     );
                   },

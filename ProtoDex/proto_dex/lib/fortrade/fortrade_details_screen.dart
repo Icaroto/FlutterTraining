@@ -18,7 +18,7 @@ class ForTradeDetailsPage extends StatefulWidget {
 
   final List<Item> pokemons;
   final List<int> indexes;
-  final Function()? onStateChange;
+  final Function(Item)? onStateChange;
 
   @override
   State<ForTradeDetailsPage> createState() => _ForTradeDetailsPageState();
@@ -55,7 +55,7 @@ class _ForTradeDetailsPageState extends State<ForTradeDetailsPage> {
                     isEditable = false,
                     displayPokemon.displayImage =
                         displayPokemon.updateDisplayImage(),
-                    widget.onStateChange!(),
+                    widget.onStateChange!(displayPokemon),
                   }
                 else
                   {
@@ -113,7 +113,9 @@ class _ForTradeDetailsPageState extends State<ForTradeDetailsPage> {
   createLocks(Item pokemon) {
     List<DetailsLock> locks = [];
     if (pokemon.origin.startsWith('t_')) {}
-
+    if (pokemon.gender == PokemonGender.genderless) {
+      locks.add(DetailsLock.gender);
+    }
     return locks;
   }
 }

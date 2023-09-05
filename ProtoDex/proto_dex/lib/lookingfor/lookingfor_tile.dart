@@ -19,7 +19,7 @@ class LookingForTile extends StatefulWidget {
   final Color? tileColor;
   final List<Item> pokemons;
   final List<int> indexes;
-  final Function()? onStateChange;
+  final Function(Item)? onStateChange;
   final Function(Item)? onDelete;
 
   @override

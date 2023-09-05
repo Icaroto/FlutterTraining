@@ -6,7 +6,7 @@ import '../models/item.dart';
 
 Widget createCards(
   Group group, {
-  Function()? onStateChange,
+  Function(Item)? onStateChange,
   Function(Item)? onDelete,
   subLevel = false,
 }) {

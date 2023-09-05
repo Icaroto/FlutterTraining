@@ -18,7 +18,7 @@ class LookingForDetailsPage extends StatefulWidget {
 
   final List<Item> pokemons;
   final List<int> indexes;
-  final Function()? onStateChange;
+  final Function(Item)? onStateChange;
 
   @override
   State<LookingForDetailsPage> createState() => _LookingForDetailsPageState();
@@ -55,7 +55,7 @@ class _LookingForDetailsPageState extends State<LookingForDetailsPage> {
                     isEditable = false,
                     displayPokemon.displayImage =
                         displayPokemon.updateDisplayImage(),
-                    widget.onStateChange!(),
+                    widget.onStateChange!(displayPokemon),
                   }
                 else
                   {
@@ -121,7 +121,9 @@ class _LookingForDetailsPageState extends State<LookingForDetailsPage> {
   createLocks(Item pokemon) {
     List<DetailsLock> locks = [];
     if (pokemon.origin.startsWith('t_')) {}
-
+    if (pokemon.gender == PokemonGender.genderless) {
+      locks.add(DetailsLock.gender);
+    }
     return locks;
   }
 }

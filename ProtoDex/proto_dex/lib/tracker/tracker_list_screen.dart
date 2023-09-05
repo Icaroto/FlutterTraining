@@ -70,7 +70,7 @@ class _TrackerListScreenState extends State<TrackerListScreen> {
           SafeArea(
             child: Column(
               children: [
-                SearchBar(
+                Search(
                   isSearchOpened: _isSearchOpened,
                   editingController: editingController,
                   onCloseTap: () => {

@@ -1,5 +1,6 @@
 import 'package:proto_dex/models/enums.dart';
 import 'package:proto_dex/models/pokemon.dart';
+import 'package:uuid/uuid.dart';
 
 import '../constants.dart';
 import 'game.dart';
@@ -71,7 +72,7 @@ class Item {
         formName = dexPokemon.formName,
         number = (useGameDexNumber) ? gameSelected.number : dexPokemon.number,
         natDexNumber = dexPokemon.number,
-        ref = dexPokemon.ref,
+        ref = "${dexPokemon.ref}_${const Uuid().v4().toString()}",
         displayName = dexPokemon.name,
         displayImage = dexPokemon.image[0],
         image = dexPokemon.image.toList(),
@@ -266,10 +267,9 @@ extension ItemExtensions on Item {
         g = "-g.";
         break;
       case PokemonGender.male:
+      default:
         hasGenderDiff() ? g = "-m." : g = "-mf.";
         break;
-      default:
-        g = "-mf";
     }
 
     String image =
