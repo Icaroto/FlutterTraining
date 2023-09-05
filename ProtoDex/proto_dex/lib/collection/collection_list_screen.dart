@@ -1,7 +1,12 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:proto_dex/constants.dart';
 import 'package:proto_dex/models/game.dart';
 import 'package:proto_dex/styles.dart';
+import 'package:screenshot/screenshot.dart';
 import '../components/app_bar.dart';
 import '../components/filters_side_screen.dart';
 import '../components/group_list_by.dart';
@@ -26,6 +31,7 @@ class CollectionScreen extends StatefulWidget {
 }
 
 class _CollectionScreenState extends State<CollectionScreen> {
+  final controller = ScreenshotController();
   String _query = "";
   int _selectedTab = 0;
   bool _isSearchOpened = false;
@@ -63,7 +69,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
           SafeArea(
             child: Column(
               children: [
-                SearchBar(
+                Search(
                   isSearchOpened: _isSearchOpened,
                   editingController: editingController,
                   onCloseTap: () => {
@@ -125,7 +131,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
     );
   }
 
-  Expanded collectionList() {
+  collectionList() {
     List<Group> groups;
     switch (displayType) {
       case CollectionDisplayType.groupByCurrentGame:
@@ -147,9 +153,9 @@ class _CollectionScreenState extends State<CollectionScreen> {
               ? CollectionTile(
                   pokemons: collection,
                   indexes: [index],
-                  onStateChange: () {
+                  onStateChange: (item) {
                     setState(() {
-                      saveCollection(collection);
+                      saveToCollection(item);
                     });
                   },
                   onDelete: (item) {
@@ -160,9 +166,9 @@ class _CollectionScreenState extends State<CollectionScreen> {
                 )
               : createCards(
                   groups[index],
-                  onStateChange: () {
+                  onStateChange: (item) {
                     setState(() {
-                      saveCollection(collection);
+                      saveToCollection(item);
                     });
                   },
                   onDelete: (item) {
@@ -182,9 +188,23 @@ class _CollectionScreenState extends State<CollectionScreen> {
     );
   }
 
-  void removeFromColletion(item) {
-    collection.remove(item);
+  void removeFromColletion(Item item) {
+    collection = getCollection();
+    collection.removeWhere((element) => element.ref == item.ref);
     saveCollection(collection);
+    collection = collection.applyAllFilters(filters, _query);
+  }
+
+  void saveToCollection(Item item) {
+    collection = getCollection();
+    final index = collection.indexWhere((element) => element.ref == item.ref);
+    if (index == -1) {
+      collection.add(item);
+    } else {
+      collection[index] = item;
+    }
+    saveCollection(collection);
+    collection = collection.applyAllFilters(filters, _query);
   }
 
   void applyFilters() {
@@ -195,6 +215,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
 
       collection = getCollection();
       collection = collection.applyAllFilters(filters, _query);
+
+      originalPokedex = originalPokedex.applyAllFilters(filters, _query, null);
     });
   }
 
@@ -219,13 +241,22 @@ class _CollectionScreenState extends State<CollectionScreen> {
         },
       ),
       IconButton(
-        icon: const Icon(Icons.filter_alt_outlined),
-        onPressed: () {
-          setState(() {
-            scaffoldKey.currentState!.openEndDrawer();
-          });
+        icon: const Icon(Icons.camera),
+        onPressed: () async {
+          final image = await controller.captureFromLongWidget(pokedex());
+          if (image == null) return;
+          await saveImage(image);
         },
       ),
+      if (_selectedTab == 0)
+        IconButton(
+          icon: const Icon(Icons.filter_alt_outlined),
+          onPressed: () {
+            setState(() {
+              scaffoldKey.currentState!.openEndDrawer();
+            });
+          },
+        ),
     ];
   }
 
@@ -261,9 +292,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
                     return CollectionDetailsPage(
                       pokemons: items,
                       indexes: const [0],
-                      onStateChange: () {
-                        collection.add(items.first);
-                        saveCollection(collection);
+                      onStateChange: (item) {
+                        saveToCollection(item);
                       },
                     );
                   },
@@ -286,9 +316,23 @@ class _CollectionScreenState extends State<CollectionScreen> {
   Item createItem(List<Pokemon> pokemons, List<int> indexes) {
     Pokemon pokemon = pokemons.current(indexes);
     Game tempGame =
-        Game(name: "", dex: "", number: "", notes: "", shinyLocked: "");
+        Game(name: "Unknown", dex: "", number: "", notes: "", shinyLocked: "");
     Item item = Item.fromDex(pokemon, tempGame, kCollectionBaseName);
+    item.currentLocation = "Unknown";
     item.catchDate = DateTime.now().toString();
     return item;
+  }
+
+  Future<String> saveImage(Uint8List bytes) async {
+    await [Permission.storage].request();
+
+    final time = DateTime.now()
+        .toIso8601String()
+        .replaceAll('.', '-')
+        .replaceAll(':', '-');
+
+    final name = 'collection_$time';
+    final result = await ImageGallerySaver.saveImage(bytes, name: name);
+    return result['filePath'];
   }
 }
