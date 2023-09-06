@@ -4,6 +4,8 @@ class Todos {
 TODO: Complete Games for Sword/Shield, 
 TODO: Later other games
 TODO: Scroll bar on pokedex
+TODO: Share button?
+TODO: Screenshot on tracker andcollection
 TODO: On Living or any list tile of type Expand, keep it opened after ticking one
 TODO: loading_screen have a way to make it slower commented out
 TODO: Add keywords for search
