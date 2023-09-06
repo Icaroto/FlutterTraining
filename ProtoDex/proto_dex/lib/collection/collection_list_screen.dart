@@ -147,43 +147,47 @@ class _CollectionScreenState extends State<CollectionScreen> {
     }
 
     return Expanded(
-      child: ListView.builder(
-        itemBuilder: ((context, index) {
-          return (displayType == CollectionDisplayType.flatList)
-              ? CollectionTile(
-                  pokemons: collection,
-                  indexes: [index],
-                  onStateChange: (item) {
-                    setState(() {
-                      saveToCollection(item);
-                    });
-                  },
-                  onDelete: (item) {
-                    setState(() {
-                      removeFromColletion(item);
-                    });
-                  },
-                )
-              : createCards(
-                  groups[index],
-                  onStateChange: (item) {
-                    setState(() {
-                      saveToCollection(item);
-                    });
-                  },
-                  onDelete: (item) {
-                    setState(() {
-                      removeFromColletion(item);
-                    });
-                  },
-                );
-        }),
-        itemCount: (CollectionDisplayType.flatList == displayType)
-            ? collection.length
-            : groups.length,
-        shrinkWrap: true,
-        padding: const EdgeInsets.all(5),
-        scrollDirection: Axis.vertical,
+      child: SingleChildScrollView(
+        child: Screenshot(
+          controller: controller,
+          child: ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: (CollectionDisplayType.flatList == displayType)
+                ? collection.length
+                : groups.length,
+            itemBuilder: ((context, index) {
+              return (displayType == CollectionDisplayType.flatList)
+                  ? CollectionTile(
+                      pokemons: collection,
+                      indexes: [index],
+                      onStateChange: (item) {
+                        setState(() {
+                          saveToCollection(item);
+                        });
+                      },
+                      onDelete: (item) {
+                        setState(() {
+                          removeFromColletion(item);
+                        });
+                      },
+                    )
+                  : createCards(
+                      groups[index],
+                      onStateChange: (item) {
+                        setState(() {
+                          saveToCollection(item);
+                        });
+                      },
+                      onDelete: (item) {
+                        setState(() {
+                          removeFromColletion(item);
+                        });
+                      },
+                    );
+            }),
+          ),
+        ),
       ),
     );
   }
@@ -240,14 +244,15 @@ class _CollectionScreenState extends State<CollectionScreen> {
           });
         },
       ),
-      IconButton(
-        icon: const Icon(Icons.camera),
-        onPressed: () async {
-          final image = await controller.captureFromLongWidget(pokedex());
-          if (image == null) return;
-          await saveImage(image);
-        },
-      ),
+      if (_selectedTab == 0)
+        IconButton(
+          icon: const Icon(Icons.camera_enhance),
+          onPressed: () async {
+            final image = await controller.capture();
+            if (image == null) return;
+            await saveImage(image);
+          },
+        ),
       if (_selectedTab == 0)
         IconButton(
           icon: const Icon(Icons.filter_alt_outlined),

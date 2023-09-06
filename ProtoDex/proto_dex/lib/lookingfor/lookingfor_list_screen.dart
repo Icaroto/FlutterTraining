@@ -1,7 +1,12 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:proto_dex/constants.dart';
 import 'package:proto_dex/models/game.dart';
 import 'package:proto_dex/styles.dart';
+import 'package:screenshot/screenshot.dart';
 import '../components/app_bar.dart';
 import '../components/filters_side_screen.dart';
 import '../components/group_list_by.dart';
@@ -26,6 +31,7 @@ class LookingForScreen extends StatefulWidget {
 }
 
 class _LookingForScreenState extends State<LookingForScreen> {
+  final controller = ScreenshotController();
   String _query = "";
   int _selectedTab = 0;
   bool _isSearchOpened = false;
@@ -141,43 +147,47 @@ class _LookingForScreenState extends State<LookingForScreen> {
     }
 
     return Expanded(
-      child: ListView.builder(
-        itemBuilder: ((context, index) {
-          return (displayType == CollectionDisplayType.flatList)
-              ? LookingForTile(
-                  pokemons: collection,
-                  indexes: [index],
-                  onStateChange: (item) {
-                    setState(() {
-                      saveToCollection(item);
-                    });
-                  },
-                  onDelete: (item) {
-                    setState(() {
-                      removeFromColletion(item);
-                    });
-                  },
-                )
-              : createCards(
-                  groups[index],
-                  onStateChange: (item) {
-                    setState(() {
-                      saveToCollection(item);
-                    });
-                  },
-                  onDelete: (item) {
-                    setState(() {
-                      removeFromColletion(item);
-                    });
-                  },
-                );
-        }),
-        itemCount: (CollectionDisplayType.flatList == displayType)
-            ? collection.length
-            : groups.length,
-        shrinkWrap: true,
-        padding: const EdgeInsets.all(5),
-        scrollDirection: Axis.vertical,
+      child: SingleChildScrollView(
+        child: Screenshot(
+          controller: controller,
+          child: ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: (CollectionDisplayType.flatList == displayType)
+                ? collection.length
+                : groups.length,
+            itemBuilder: ((context, index) {
+              return (displayType == CollectionDisplayType.flatList)
+                  ? LookingForTile(
+                      pokemons: collection,
+                      indexes: [index],
+                      onStateChange: (item) {
+                        setState(() {
+                          saveToCollection(item);
+                        });
+                      },
+                      onDelete: (item) {
+                        setState(() {
+                          removeFromColletion(item);
+                        });
+                      },
+                    )
+                  : createCards(
+                      groups[index],
+                      onStateChange: (item) {
+                        setState(() {
+                          saveToCollection(item);
+                        });
+                      },
+                      onDelete: (item) {
+                        setState(() {
+                          removeFromColletion(item);
+                        });
+                      },
+                    );
+            }),
+          ),
+        ),
       ),
     );
   }
@@ -234,6 +244,15 @@ class _LookingForScreenState extends State<LookingForScreen> {
           });
         },
       ),
+      if (_selectedTab == 0)
+        IconButton(
+          icon: const Icon(Icons.camera_enhance),
+          onPressed: () async {
+            final image = await controller.capture();
+            if (image == null) return;
+            await saveImage(image);
+          },
+        ),
       if (_selectedTab == 0)
         IconButton(
           icon: const Icon(Icons.filter_alt_outlined),
@@ -306,5 +325,18 @@ class _LookingForScreenState extends State<LookingForScreen> {
     Item item = Item.fromDex(pokemon, tempGame, kLookingForBaseName);
     item.catchDate = DateTime.now().toString();
     return item;
+  }
+
+  Future<String> saveImage(Uint8List bytes) async {
+    await [Permission.storage].request();
+
+    final time = DateTime.now()
+        .toIso8601String()
+        .replaceAll('.', '-')
+        .replaceAll(':', '-');
+
+    final name = 'collection_$time';
+    final result = await ImageGallerySaver.saveImage(bytes, name: name);
+    return result['filePath'];
   }
 }
