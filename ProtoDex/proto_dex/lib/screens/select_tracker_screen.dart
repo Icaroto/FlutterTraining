@@ -312,9 +312,9 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
                 } else if (snapshot.hasError) {
                   return Text("Error: ${snapshot.error}");
                 }
-                return Row(
+                return const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     CircularProgressIndicator(),
                   ],
                 );
