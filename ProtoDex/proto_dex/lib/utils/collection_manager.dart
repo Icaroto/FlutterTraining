@@ -32,7 +32,7 @@ addItemsToCollection(List<Item> items) {
         element.ref == pokemon.ref && element.origin == pokemon.origin);
     collection.add(pokemon);
   }
-  collection.sort((a, b) => int.parse(a.number).compareTo(int.parse(b.number)));
+  // collection.sort((a, b) => int.parse(a.number).compareTo(int.parse(b.number)));
   saveCollection(collection);
 }
 
