@@ -52,6 +52,7 @@ class _LookingForScreenState extends State<LookingForScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       key: scaffoldKey,
       appBar: AppBarBase(
         title: const Text("Looking For"),

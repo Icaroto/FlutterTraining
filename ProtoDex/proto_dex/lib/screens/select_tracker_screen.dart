@@ -31,6 +31,7 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Trackers"),

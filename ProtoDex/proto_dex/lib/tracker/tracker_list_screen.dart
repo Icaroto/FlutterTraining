@@ -47,6 +47,7 @@ class _TrackerListScreenState extends State<TrackerListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       key: scaffoldKey,
       appBar: AppBarBase(
         title: Column(

@@ -52,6 +52,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       key: scaffoldKey,
       appBar: AppBarBase(
         title: const Text("My Collection"),

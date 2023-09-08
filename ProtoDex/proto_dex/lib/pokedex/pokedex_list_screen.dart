@@ -42,6 +42,7 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       key: scaffoldKey,
       appBar: AppBarBase(
         title: const Text("Pokedex"),
