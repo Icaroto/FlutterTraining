@@ -39,6 +39,7 @@ Widget createCards(
   return Card(
     child: ExpansionTile(
       key: expansionTileKey,
+      initiallyExpanded: false,
       onExpansionChanged: (value) {
         if (value) {
           scrollToSelectedContent(expansionTileKey: expansionTileKey);
