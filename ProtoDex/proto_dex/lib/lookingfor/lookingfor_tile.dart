@@ -64,8 +64,14 @@ class _LookingForTile extends State<LookingForTile> {
                     TextSpan(
                       text: pokemon.displayName,
                       style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 20),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
                     ),
+                    if (pokemon.attributes.contains(PokemonAttributes.isShiny))
+                      const TextSpan(
+                          text: ' (*)',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
                     if (pokemon.gender != PokemonGender.genderless &&
                         pokemon.gender != PokemonGender.undefinied)
                       TextSpan(
