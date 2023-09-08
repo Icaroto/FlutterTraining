@@ -1,8 +1,8 @@
 {
   "appVersion" : "1.0.0",
-  "dexVersion" : "1.0.1",
-  "trackerVersion" : "1.0.1",
-  "collectionVersion": "1.0.1",
-  "lookingForVersion": "1.0.1",
-  "forTradeVersion": "1.0.1"
+  "dexVersion" : "1.0.0",
+  "trackerVersion" : "1.0.0",
+  "collectionVersion": "1.0.0",
+  "lookingForVersion": "1.0.0",
+  "forTradeVersion": "1.0.0"
 }
