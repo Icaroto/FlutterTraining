@@ -45,6 +45,7 @@ dependencies:
   screenshot: ^2.1.0
   image_gallery_saver: ^2.0.3
   permission_handler: ^10.4.3
+  draggable_scrollbar: ^0.1.0
 
 dev_dependencies:
   flutter_test:

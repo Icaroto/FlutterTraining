@@ -23915,7 +23915,7 @@
   },
   {
     "name": "Deerling",
-    "formName": "",
+    "formName": "Spring Form",
     "species": "Season Pokémon",
     "height": "0.6m",
     "weight": "19.5kg",
@@ -23949,11 +23949,147 @@
         "notes": ""
       }
     ],
-    "forms": []
+    "forms": [
+      {
+        "name": "Deerling",
+        "formName": "Summer Form",
+        "species": "Season Pokémon",
+        "height": "0.6m",
+        "weight": "19.5kg",
+        "breeding": { "groups": ["Field"], "cycles": "20" },
+        "number": "0585",
+        "ref": "585.0",
+        "type1": "normal",
+        "type2": "grass",
+        "image": ["585-002-normal-mf.png", "585-002-shiny-mf.png"],
+        "abilities": ["Chlorophyll", "Sap Sipper"],
+        "hiddenAbility": "Serene Grace",
+        "weaknessquarter": [],
+        "weaknesshalf": ["water", "electric", "grass", "ground"],
+        "weaknessnone": ["ghost"],
+        "weaknessdouble": [
+          "fire",
+          "ice",
+          "fighting",
+          "poison",
+          "flying",
+          "bug"
+        ],
+        "weaknessquadruple": [],
+        "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
+        "games": [
+          {
+            "name": "Pokemon Scarlet",
+            "dex": "Regional",
+            "number": "190",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Pokemon Violet",
+            "dex": "Regional",
+            "number": "190",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ],
+        "forms": []
+      },
+      {
+        "name": "Deerling",
+        "formName": "Autumn Form",
+        "species": "Season Pokémon",
+        "height": "0.6m",
+        "weight": "19.5kg",
+        "breeding": { "groups": ["Field"], "cycles": "20" },
+        "number": "0585",
+        "ref": "585.0",
+        "type1": "normal",
+        "type2": "grass",
+        "image": ["585-003-normal-mf.png", "585-003-shiny-mf.png"],
+        "abilities": ["Chlorophyll", "Sap Sipper"],
+        "hiddenAbility": "Serene Grace",
+        "weaknessquarter": [],
+        "weaknesshalf": ["water", "electric", "grass", "ground"],
+        "weaknessnone": ["ghost"],
+        "weaknessdouble": [
+          "fire",
+          "ice",
+          "fighting",
+          "poison",
+          "flying",
+          "bug"
+        ],
+        "weaknessquadruple": [],
+        "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
+        "games": [
+          {
+            "name": "Pokemon Scarlet",
+            "dex": "Regional",
+            "number": "190",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Pokemon Violet",
+            "dex": "Regional",
+            "number": "190",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ],
+        "forms": []
+      },
+      {
+        "name": "Deerling",
+        "formName": "Winter Form",
+        "species": "Season Pokémon",
+        "height": "0.6m",
+        "weight": "19.5kg",
+        "breeding": { "groups": ["Field"], "cycles": "20" },
+        "number": "0585",
+        "ref": "585.0",
+        "type1": "normal",
+        "type2": "grass",
+        "image": ["585-004-normal-mf.png", "585-004-shiny-mf.png"],
+        "abilities": ["Chlorophyll", "Sap Sipper"],
+        "hiddenAbility": "Serene Grace",
+        "weaknessquarter": [],
+        "weaknesshalf": ["water", "electric", "grass", "ground"],
+        "weaknessnone": ["ghost"],
+        "weaknessdouble": [
+          "fire",
+          "ice",
+          "fighting",
+          "poison",
+          "flying",
+          "bug"
+        ],
+        "weaknessquadruple": [],
+        "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
+        "games": [
+          {
+            "name": "Pokemon Scarlet",
+            "dex": "Regional",
+            "number": "190",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Pokemon Violet",
+            "dex": "Regional",
+            "number": "190",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ],
+        "forms": []
+      }
+    ]
   },
   {
     "name": "Sawsbuck",
-    "formName": "",
+    "formName": "Spring Form",
     "species": "Season Pokémon",
     "height": "1.9m",
     "weight": "92.5kg",
@@ -23987,7 +24123,143 @@
         "notes": ""
       }
     ],
-    "forms": []
+    "forms": [
+      {
+        "name": "Sawsbuck",
+        "formName": "Summer Form",
+        "species": "Season Pokémon",
+        "height": "1.9m",
+        "weight": "92.5kg",
+        "breeding": { "groups": ["Field"], "cycles": "20" },
+        "number": "0586",
+        "ref": "586.0",
+        "type1": "normal",
+        "type2": "grass",
+        "image": ["586-002-normal-mf.png", "586-002-shiny-mf.png"],
+        "abilities": ["Chlorophyll", "Sap Sipper"],
+        "hiddenAbility": "Serene Grace",
+        "weaknessquarter": [],
+        "weaknesshalf": ["water", "electric", "grass", "ground"],
+        "weaknessnone": ["ghost"],
+        "weaknessdouble": [
+          "fire",
+          "ice",
+          "fighting",
+          "poison",
+          "flying",
+          "bug"
+        ],
+        "weaknessquadruple": [],
+        "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
+        "games": [
+          {
+            "name": "Pokemon Scarlet",
+            "dex": "Regional",
+            "number": "191",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Pokemon Violet",
+            "dex": "Regional",
+            "number": "191",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ],
+        "forms": []
+      },
+      {
+        "name": "Sawsbuck",
+        "formName": "Autumn Form",
+        "species": "Season Pokémon",
+        "height": "1.9m",
+        "weight": "92.5kg",
+        "breeding": { "groups": ["Field"], "cycles": "20" },
+        "number": "0586",
+        "ref": "586.0",
+        "type1": "normal",
+        "type2": "grass",
+        "image": ["586-003-normal-mf.png", "586-003-shiny-mf.png"],
+        "abilities": ["Chlorophyll", "Sap Sipper"],
+        "hiddenAbility": "Serene Grace",
+        "weaknessquarter": [],
+        "weaknesshalf": ["water", "electric", "grass", "ground"],
+        "weaknessnone": ["ghost"],
+        "weaknessdouble": [
+          "fire",
+          "ice",
+          "fighting",
+          "poison",
+          "flying",
+          "bug"
+        ],
+        "weaknessquadruple": [],
+        "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
+        "games": [
+          {
+            "name": "Pokemon Scarlet",
+            "dex": "Regional",
+            "number": "191",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Pokemon Violet",
+            "dex": "Regional",
+            "number": "191",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ],
+        "forms": []
+      },
+      {
+        "name": "Sawsbuck",
+        "formName": "Winter Form",
+        "species": "Season Pokémon",
+        "height": "1.9m",
+        "weight": "92.5kg",
+        "breeding": { "groups": ["Field"], "cycles": "20" },
+        "number": "0586",
+        "ref": "586.0",
+        "type1": "normal",
+        "type2": "grass",
+        "image": ["586-004-normal-mf.png", "586-004-shiny-mf.png"],
+        "abilities": ["Chlorophyll", "Sap Sipper"],
+        "hiddenAbility": "Serene Grace",
+        "weaknessquarter": [],
+        "weaknesshalf": ["water", "electric", "grass", "ground"],
+        "weaknessnone": ["ghost"],
+        "weaknessdouble": [
+          "fire",
+          "ice",
+          "fighting",
+          "poison",
+          "flying",
+          "bug"
+        ],
+        "weaknessquadruple": [],
+        "genderRatio": { "male": "50", "female": "50", "genderless": "0" },
+        "games": [
+          {
+            "name": "Pokemon Scarlet",
+            "dex": "Regional",
+            "number": "191",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          },
+          {
+            "name": "Pokemon Violet",
+            "dex": "Regional",
+            "number": "191",
+            "shinyLocked": "UNLOCKED",
+            "notes": ""
+          }
+        ],
+        "forms": []
+      }
+    ]
   },
   {
     "name": "Emolga",

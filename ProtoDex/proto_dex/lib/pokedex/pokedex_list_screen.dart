@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/pokedex/pokedex_cards.dart';
+import 'package:proto_dex/components/custom_scrollbar.dart';
 import 'package:proto_dex/styles.dart';
 import '../components/app_bar.dart';
 import '../components/filters_side_screen.dart';
@@ -21,6 +22,7 @@ class PokedexListScreen extends StatefulWidget {
 }
 
 class _PokedexListScreenState extends State<PokedexListScreen> {
+  ScrollController scrollController = ScrollController();
   List<Pokemon> originalPokedex = [];
   List<FilterType> filters = [];
   String _query = "";
@@ -76,8 +78,10 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
                     applyFilters();
                   },
                 ),
-                Expanded(
+                CustomScrollbar(
+                  scrollController: scrollController,
                   child: ListView.builder(
+                    controller: scrollController,
                     itemBuilder: ((context, index) {
                       return createCards(
                         originalPokedex,
@@ -85,7 +89,7 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
                       );
                     }),
                     itemCount: originalPokedex.length,
-                    shrinkWrap: true,
+                    shrinkWrap: false,
                     padding: const EdgeInsets.all(5),
                     scrollDirection: Axis.vertical,
                   ),
