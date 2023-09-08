@@ -43323,5 +43323,81 @@
       }
     ],
     "forms": []
+  },
+  {
+    "name": "Walking Wake",
+    "formName": "",
+    "species": "Paradox Pokémon",
+    "height": "3.5m",
+    "weight": "280.0kg",
+    "breeding": { "groups": ["Undiscovered"], "cycles": "50" },
+    "number": "1009",
+    "ref": "1009.0",
+    "type1": "water",
+    "type2": "dragon",
+    "image": ["1009-normal-g.png", "1009-shiny-g.png"],
+    "abilities": ["Protosynthesis"],
+    "hiddenAbility": "",
+    "weaknessquarter": ["fire", "water"],
+    "weaknesshalf": ["steel"],
+    "weaknessnone": [],
+    "weaknessdouble": ["dragon", "fairy"],
+    "weaknessquadruple": [],
+    "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
+    "games": [
+      {
+        "name": "Pokemon Scarlet",
+        "dex": "Raid Only",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Pokemon Violet",
+        "dex": "Raid Only",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": "Scarlet Exclusive"
+      }
+    ],
+    "forms": []
+  },
+  {
+    "name": "Iron Leaves",
+    "formName": "",
+    "species": "Paradox Pokémon",
+    "height": "1.5m",
+    "weight": "125.0kg",
+    "breeding": { "groups": ["Undiscovered"], "cycles": "50" },
+    "number": "1010",
+    "ref": "1010.0",
+    "type1": "grass",
+    "type2": "psychic",
+    "image": ["1010-normal-g.png", "1010-shiny-g.png"],
+    "abilities": ["Quark Drive"],
+    "hiddenAbility": "",
+    "weaknessquarter": [],
+    "weaknesshalf": ["water", "electric", "grass", "fighting", "ground", "psychic"],
+    "weaknessnone": [],
+    "weaknessdouble": [ "fire", "ice", "poison", "flying", "ghost", "dark"],
+    "weaknessquadruple": ["bug"],
+    "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
+    "games": [
+      {
+        "name": "Pokemon Scarlet",
+        "dex": "Raid Only",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": "Violet Exclusive"
+      },
+      {
+        "name": "Pokemon Violet",
+        "dex": "Raid Only",
+        "number": "",
+        "shinyLocked": "LOCKED",
+        "notes": ""
+      }
+    ],
+    "forms": []
   }
 ]
