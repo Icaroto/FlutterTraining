@@ -9,11 +9,6 @@ class FileManager {
   static loadDirectory() async =>
       directory = await getApplicationDocumentsDirectory();
 
-  // static createDirectory() =>
-  //     Directory("collections").create().then((Directory directory) {
-  //       print(directory.path);
-  //     });
-
   File findFile(String fileName) {
     File file = File("${directory.path}/$fileName.json");
     bool exist = file.existsSync();

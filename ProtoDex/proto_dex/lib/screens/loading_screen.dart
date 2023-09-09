@@ -1,7 +1,7 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:proto_dex/models/version.dart';
 import 'start_screen.dart';
 import 'package:proto_dex/file_manager.dart';
@@ -18,38 +18,93 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
-  late Future<Version> serverVersion;
-
   @override
   void initState() {
-    serverVersion = fetchVersions();
     loadFiles();
     super.initState();
   }
 
-  Future<Version> fetchVersions() async {
-    final response = await http.get(Uri.parse(
-        'https://raw.githubusercontent.com/Icaroto/FlutterTraining/main/ProtoDex/ServerVersions/versions.json'));
+  Future<String> fetchData(String url) async {
+    final response = await http.get(Uri.parse(url));
 
-    print(response.body);
     if (response.statusCode == 200) {
-      // If the server did return a 200 OK response,
-      // then parse the JSON.
-      return Version.fromJson(jsonDecode(response.body));
+      return response.body;
     } else {
-      // If the server did not return a 200 OK response,
-      // then throw an exception.
-      throw Exception('Failed to load album');
+      throw Exception('Failed to load server version');
     }
   }
 
   void loadFiles() async {
-    var file = await rootBundle.loadString(kPokedexFileLocation);
-    kPokedex = await Pokemon.createPokedex(file);
-
     await FileManager.loadDirectory();
+
+    Data serverData =
+        Data.fromJson(jsonDecode(await fetchData(kServerVersionLocation)));
+
+    FileManager fManager = FileManager();
+    bool checkVersioning = true;
+
+    //********* Resolve Versions file *********\\
+    File localDataFile = fManager.findFile('versions');
+    if (localDataFile.readAsStringSync().isEmpty) {
+      print('No versions.json do not exists. Creating...');
+
+      localDataFile.writeAsStringSync(jsonEncode(serverData));
+      checkVersioning = false;
+    }
+    //***************************************\\
+
+    //********* Resolve Pokedex file *********\\
+    File pokedexLocalFile = fManager.findFile('pokedex');
+    if (pokedexLocalFile.readAsStringSync().isEmpty) {
+      print('No Pokedex.json found. Creating...');
+      String serverPokedex = await fetchData(kServerPokedexLocation);
+      pokedexLocalFile.writeAsStringSync(serverPokedex);
+    }
+    //***************************************\\
+
+    Data localData =
+        Data.fromJson(jsonDecode(localDataFile.readAsStringSync()));
+
+    if (serverData.app > localData.app) {
+      displayUpdateAlert();
+      checkVersioning = false;
+    }
+
+    if (checkVersioning) {
+      if (serverData.dex > localData.dex) {
+        print('Pokedex got updated. Getting latest');
+
+        String latestPokedex = await fetchData(kServerPokedexLocation);
+        pokedexLocalFile.writeAsStringSync(latestPokedex);
+
+        localData.dex = serverData.dex;
+        localDataFile.writeAsStringSync(jsonEncode(localData));
+      }
+    }
+
+    kPokedex = await Pokemon.createPokedex(pokedexLocalFile.readAsStringSync());
     //await Future.delayed(const Duration(seconds: 2));
     pushNextScreen();
+  }
+
+  //if major verison on server is higher, means a breaking change on files exists
+  //eg. new properties on json or new reading/writing in files
+  //if that's the case, all updates will be skipped until the app is updated to latest
+  displayUpdateAlert() {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text('Wait!'),
+        content: const Text(
+            "There's a new version available. You should probably get it!"),
+        actions: [
+          TextButton(
+            child: const Text("OK"),
+            onPressed: () {},
+          ),
+        ],
+      ),
+    );
   }
 
   void pushNextScreen() {
