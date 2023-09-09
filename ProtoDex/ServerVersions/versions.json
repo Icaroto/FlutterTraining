@@ -1,8 +1,8 @@
 {
-  "app" : "1",
-  "dex" : "1",
-  "tracker" : "1",
-  "collection": "1",
-  "lookingFor": "1",
-  "forTrade": "1"
+  "app" : 1,
+  "dex" : 1,
+  "tracker" : 1,
+  "collection": 1,
+  "lookingFor": 1,
+  "forTrade": 1
 }
