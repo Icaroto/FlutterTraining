@@ -1,0 +1,171 @@
+[
+  {
+    "name": "Bulbasaur",
+    "formName": "",
+    "species": "Seed Pokémon",
+    "height": "0.7m",
+    "weight": "6.9kg",
+    "breeding": { "groups": ["Grass", "Monster"], "cycles": "20" },
+    "number": "0001",
+    "ref": "001.0",
+    "ref2": "001.0",
+    "type1": "grass",
+    "type2": "poison",
+    "image": ["001-normal-mf.png", "001-shiny-mf.png"],
+    "abilities": ["Overgrow"],
+    "hiddenAbility": "Chlorophyll",
+    "weaknessquarter": ["grass"],
+    "weaknesshalf": ["water", "electric", "fighting", "fairy"],
+    "weaknessnone": [],
+    "weaknessdouble": ["fire", "ice", "flying", "psychic"],
+    "weaknessquadruple": [],
+    "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "001",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "001",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
+    "forms": []
+  },
+  {
+    "name": "Ivysaur",
+    "formName": "",
+    "species": "Seed Pokémon",
+    "height": "1.0m",
+    "weight": "13.0kg",
+    "breeding": { "groups": ["Grass", "Monster"], "cycles": "20" },
+    "number": "0002",
+    "ref": "002.0",
+    "ref2": "002.0",
+    "type1": "grass",
+    "type2": "poison",
+    "image": ["002-normal-mf.png", "002-shiny-mf.png"],
+    "abilities": ["Overgrow"],
+    "hiddenAbility": "Chlorophyll",
+    "weaknessquarter": ["grass"],
+    "weaknesshalf": ["water", "electric", "fighting", "fairy"],
+    "weaknessnone": [],
+    "weaknessdouble": ["fire", "ice", "flying", "psychic"],
+    "weaknessquadruple": [],
+    "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "002",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "002",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
+    "forms": []
+  },
+  {
+    "name": "Venusaur",
+    "formName": "",
+    "species": "Seed Pokémon",
+    "height": "2.0m",
+    "weight": "100.0kg",
+    "breeding": { "groups": ["Grass", "Monster"], "cycles": "20" },
+    "number": "0003",
+    "ref": "003.0",
+    "ref2": "003.0",
+    "type1": "grass",
+    "type2": "poison",
+    "image": [
+      "003-normal-m.png",
+      "003-normal-f.png",
+      "003-shiny-f.png",
+      "003-shiny-m.png"
+    ],
+    "abilities": ["Overgrow"],
+    "hiddenAbility": "Chlorophyll",
+    "weaknessquarter": ["grass"],
+    "weaknesshalf": ["water", "electric", "fighting", "fairy"],
+    "weaknessnone": [],
+    "weaknessdouble": ["fire", "ice", "flying", "psychic"],
+    "weaknessquadruple": [],
+    "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
+    "games": [
+      {
+        "name": "Let's Go Pikachu",
+        "dex": "Regional",
+        "number": "003",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      },
+      {
+        "name": "Let's Go Eevee",
+        "dex": "Regional",
+        "number": "003",
+        "shinyLocked": "UNLOCKED",
+        "notes": ""
+      }
+    ],
+    "forms": [
+      {
+        "name": "Mega Venusaur",
+        "formName": "",
+        "species": "Seed Pokémon",
+        "height": "2.4m",
+        "weight": "155.5kg",
+        "breeding": { "groups": ["Grass", "Monster"], "cycles": "20" },
+        "number": "0003",
+        "ref": "003.1",
+        "ref2": "003.1",
+        "type1": "grass",
+        "type2": "poison",
+        "image": ["003-mega-normal-mf.png", "003-mega-shiny-mf.png"],
+        "abilities": ["Thick Fat"],
+        "hiddenAbility": "",
+        "weaknessquarter": ["grass"],
+        "weaknesshalf": ["water", "electric", "fighting", "fairy"],
+        "weaknessnone": [],
+        "weaknessdouble": ["flying", "psychic"],
+        "weaknessquadruple": [],
+        "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
+        "games": []
+      },
+      {
+        "name": "Gigantamax Venusaur",
+        "formName": "",
+        "species": "Seed Pokémon",
+        "height": "24.0+ m",
+        "weight": "???? kg",
+        "breeding": { "groups": ["Grass", "Monster"], "cycles": "20" },
+        "number": "0003",
+        "ref": "003.2",
+        "ref2": "003.2",
+        "type1": "grass",
+        "type2": "poison",
+        "image": ["003-giga-normal-mf.png", "003-giga-shiny-mf.png"],
+        "abilities": ["Overgrow"],
+        "hiddenAbility": "Chlorophyll",
+        "weaknessquarter": ["grass"],
+        "weaknesshalf": ["water", "electric", "fighting", "fairy"],
+        "weaknessnone": [],
+        "weaknessdouble": ["fire", "ice", "flying", "psychic"],
+        "weaknessquadruple": [],
+        "genderRatio": { "male": "87.5", "female": "12.5", "genderless": "0" },
+        "games": []
+      }
+    ]
+  }
+]
