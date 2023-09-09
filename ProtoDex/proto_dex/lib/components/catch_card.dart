@@ -760,7 +760,7 @@ extension Extensions3 on CaptureMethod {
       case CaptureMethod.wild:
         return 'Wild';
       default:
-        return 'Unkown';
+        return 'Unknown';
     }
   }
 }

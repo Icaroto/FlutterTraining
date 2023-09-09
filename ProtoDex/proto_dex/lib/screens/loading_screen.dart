@@ -46,8 +46,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
     //********* Resolve Versions file *********\\
     File localDataFile = fManager.findFile('versions');
     if (localDataFile.readAsStringSync().isEmpty) {
-      print('No versions.json do not exists. Creating...');
-
       localDataFile.writeAsStringSync(jsonEncode(serverData));
       checkVersioning = false;
     }
@@ -56,7 +54,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
     //********* Resolve Pokedex file *********\\
     File pokedexLocalFile = fManager.findFile('pokedex');
     if (pokedexLocalFile.readAsStringSync().isEmpty) {
-      print('No Pokedex.json found. Creating...');
       String serverPokedex = await fetchData(kServerPokedexLocation);
       pokedexLocalFile.writeAsStringSync(serverPokedex);
     }
@@ -72,8 +69,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
     if (checkVersioning) {
       if (serverData.dex > localData.dex) {
-        print('Pokedex got updated. Getting latest');
-
         String latestPokedex = await fetchData(kServerPokedexLocation);
         pokedexLocalFile.writeAsStringSync(latestPokedex);
 

@@ -322,8 +322,9 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
   Item createItem(List<Pokemon> pokemons, List<int> indexes) {
     Pokemon pokemon = pokemons.current(indexes);
     Game tempGame =
-        Game(name: "", dex: "", number: "", notes: "", shinyLocked: "");
+        Game(name: "Unknown", dex: "", number: "", notes: "", shinyLocked: "");
     Item item = Item.fromDex(pokemon, tempGame, kForTradeBaseName);
+    item.currentLocation = "Unknown";
     item.catchDate = DateTime.now().toString();
     return item;
   }
