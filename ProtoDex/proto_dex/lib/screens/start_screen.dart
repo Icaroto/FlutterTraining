@@ -4,6 +4,7 @@ import 'package:proto_dex/constants.dart';
 import 'package:proto_dex/collection/collection_list_screen.dart';
 import 'package:proto_dex/fortrade/fortrade_list_screen.dart';
 import 'package:proto_dex/pokedex/pokedex_list_screen.dart';
+import 'package:proto_dex/screens/preferences_screen.dart';
 import 'package:proto_dex/screens/select_tracker_screen.dart';
 import 'package:proto_dex/styles.dart';
 
@@ -25,9 +26,17 @@ class _StartScreenState extends State<StartScreen> {
         backgroundColor: const Color(0xFF1D1E33),
         // foregroundColor: Colors.white,
         onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Under Construction'),
+          //   ScaffoldMessenger.of(context).showSnackBar(
+          //     const SnackBar(
+          //       content: Text('Under Construction'),
+          //     ),
+          //   );
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return const PreferencesScreen();
+              },
             ),
           );
         },

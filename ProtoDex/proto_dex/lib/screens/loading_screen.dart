@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:proto_dex/models/preferences.dart';
 import 'package:proto_dex/models/version.dart';
 import 'start_screen.dart';
 import 'package:proto_dex/file_manager.dart';
@@ -57,6 +58,17 @@ class _LoadingScreenState extends State<LoadingScreen> {
       String serverPokedex = await fetchData(kServerPokedexLocation);
       pokedexLocalFile.writeAsStringSync(serverPokedex);
     }
+    //***************************************\\
+
+    //********* Resolve Preferences file *********\\
+    File preferencesLocalFile = fManager.findFile('preferences');
+    if (preferencesLocalFile.readAsStringSync().isEmpty) {
+      String serverPreferences = await fetchData(kServerPreferences);
+      preferencesLocalFile.writeAsStringSync(serverPreferences);
+    }
+
+    kPreferences = Preferences.fromJson(
+        jsonDecode(preferencesLocalFile.readAsStringSync()));
     //***************************************\\
 
     Data localData =
