@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:proto_dex/global_settings.dart';
 import 'package:proto_dex/models/game.dart';
 import 'package:proto_dex/styles.dart';
 import 'package:proto_dex/tracker/tracker_cards.dart';
@@ -40,7 +39,6 @@ class _TrackerListScreenState extends State<TrackerListScreen> {
   @override
   void initState() {
     filteredList.addAll(widget.collection.pokemons.toList());
-
     super.initState();
   }
 
@@ -207,16 +205,6 @@ class _TrackerListScreenState extends State<TrackerListScreen> {
 
   List<Widget> trackerFilters() {
     return [
-      const Divider(thickness: 2),
-      SwitchOption(
-        title: "Reveal Uncaught",
-        switchValue: gRevealUncaught,
-        onSwitch: (bool value) {
-          setState(() {
-            gRevealUncaught = !gRevealUncaught;
-          });
-        },
-      ),
       const Divider(thickness: 2),
       SwitchOption(
         title: "Show Exclusive Only",

@@ -30,7 +30,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
               child: Column(
                 children: [
                   SwitchOption(
-                    title: "Hide Uncaught on Trackers",
+                    title: "Display Uncaught on Trackers",
                     switchValue: kPreferences.revealUncaught,
                     onSwitch: (bool value) async {
                       kPreferences.revealUncaught = value;

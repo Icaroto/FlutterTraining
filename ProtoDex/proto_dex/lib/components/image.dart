@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/constants.dart';
-import 'package:proto_dex/global_settings.dart';
 import '../models/enums.dart';
 import '../models/pokemon.dart';
 
@@ -59,7 +58,7 @@ class ListImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: (gRevealUncaught == false && shadowOnly == true)
+      children: (shadowOnly == true)
           ? [
               Image.network(
                 '$kImageLocalPrefix$image',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proto_dex/constants.dart';
 import 'package:proto_dex/tracker/tracker_details_screen.dart';
 import '../../components/image.dart';
 import '../../models/game.dart';
@@ -68,7 +69,8 @@ class _TrackerTile extends State<TrackerTile> {
         },
         leading: ListImage(
             image: "mons/${pokemon.displayImage}",
-            shadowOnly: !pokemon.captured),
+            shadowOnly:
+                kPreferences.revealUncaught == false && !pokemon.captured),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

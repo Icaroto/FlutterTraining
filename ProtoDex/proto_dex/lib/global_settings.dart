@@ -1,1 +1,0 @@
-bool gRevealUncaught = false;
