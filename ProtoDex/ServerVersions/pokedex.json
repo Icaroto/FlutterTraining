@@ -41519,7 +41519,7 @@
     "ref": "901.0",
     "type1": "ground",
     "type2": "normal",
-    "image": ["901-normal-mf.png", "901-shiny-mf.png"],
+    "image": ["901-001-normal-mf.png", "901-001-shiny-mf.png"],
     "abilities": ["Guts", "Bulletproof"],
     "hiddenAbility": "Unnerve",
     "weaknessquarter": [],
