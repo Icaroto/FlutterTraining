@@ -208,126 +208,126 @@ import { parse } from 'csv-parse';
 //   writeToFile("database/last_result.json", data);
 // });
 
-// test.skip('Scarlet Violet', async ({ baseURL, page }) => {
+test('Scarlet Violet', async ({ baseURL, page }) => {
 
-//   const csvFilePath = "/Users/itorres/Documents/Repos/FlutterTraining/ProtoDex/DataFetcher/database/dexes/svDex.csv";
+  const csvFilePath = "D://Side-Projects//FlutterTraining//ProtoDex//DataFetcher//database//dexes//teal-mask.csv";
 
-//   const headers = ['number','ref','name','shinyLocked','exclusive'];
+  const headers = ['number','ref','name','shinyLocked','exclusive'];
 
-//   const fileContent = fs.readFileSync(csvFilePath, { encoding: 'utf-8' });
+  const fileContent = fs.readFileSync(csvFilePath, { encoding: 'utf-8' });
 
-//   parse(fileContent, {
-//     delimiter: ',',
-//     columns: headers,
-//   }, (error, dex: record[]) => {
-//     if (error) {
-//       console.error(error);
-//     }
+  parse(fileContent, {
+    delimiter: ',',
+    columns: headers,
+  }, (error, dex: record[]) => {
+    if (error) {
+      console.error(error);
+    }
 
-//     for (let index = 0; index < dex.length; index++) {
-//       for (let i = 0; i < data.length; i++) {
-//         if(data[i].name == dex[index].name){ //pokemon found in biglist
-//           if(dex[index].ref == ""){ //means ALL forms are included
+    for (let index = 0; index < dex.length; index++) {
+      for (let i = 0; i < data.length; i++) {
+        if(data[i].name == dex[index].name){ //pokemon found in biglist
+          if(dex[index].ref == ""){ //means ALL forms are included
             
-//             var sNotes = "";
-//             var vNotes = "";
+            var sNotes = "";
+            var vNotes = "";
 
-//             if (dex[index].exclusive == "SCARLET"){
-//               vNotes = "Scarlet Exclusive";
-//             }
-//             else if(dex[index].exclusive == "VIOLET"){
-//               sNotes = "Violet Exclusive";
-//             }
+            if (dex[index].exclusive == "SCARLET"){
+              vNotes = "Scarlet Exclusive";
+            }
+            else if(dex[index].exclusive == "VIOLET"){
+              sNotes = "Violet Exclusive";
+            }
             
-//             // var notes = svExclusive(dex[index].exclusive);
+            // var notes = svExclusive(dex[index].exclusive);
             
-//             var lock = convertStatus(dex[index].shinyLocked);
-//             var num = toDexNumber(dex[index].number);
-//             var toAdd = 
-//               [
-//                 {"name":"Scarlet","dex":"Base","number": num, "shinyLocked": lock, "notes": sNotes},
-//                 {"name":"Violet","dex":"Base","number": num, "shinyLocked": lock, "notes": vNotes}
-//               ]
-//              data[i].games = [...data[i].games, ...toAdd];
+            var lock = convertStatus(dex[index].shinyLocked);
+            var num = toDexNumber(dex[index].number);
+            var toAdd = 
+              [
+                {"name":"Scarlet","dex":"Teal Mask","number": num, "shinyLocked": lock, "notes": sNotes},
+                {"name":"Violet","dex":"Teal Mask","number": num, "shinyLocked": lock, "notes": vNotes}
+              ]
+             data[i].games = [...data[i].games, ...toAdd];
 
-//              console.log(data[i].name);
-//              console.log(data[i].games);
+             console.log(data[i].name);
+             console.log(data[i].games);
 
-//              for (let j = 0; j < data[i].forms.length; j++) {
-//               var form = data[i].forms[j];
-//               if(form.name.indexOf("Mega") === -1 && 
-//                   form.name.indexOf("Gigantamax") === -1 &&
-//                   form.name.indexOf("Alola") === -1 &&
-//                   form.name.indexOf("Hisui") === -1 &&
-//                   form.name.indexOf("Galar") === -1  ){
+             for (let j = 0; j < data[i].forms.length; j++) {
+              var form = data[i].forms[j];
+              if(form.name.indexOf("Mega") === -1 && 
+                  form.name.indexOf("Gigantamax") === -1 &&
+                  form.name.indexOf("Alola") === -1 &&
+                  form.name.indexOf("Hisui") === -1 &&
+                  form.name.indexOf("Galar") === -1  ){
 
-//                     form.games = [...form.games, ...toAdd];
-//               }
-//              }
-//           }
-//           else {
-//             for (let j = 0; j < data[i].forms.length; j++) {
-//               var form = data[i].forms[j];
-//               var refs = dex[index].ref.split("|");
+                    form.games = [...form.games, ...toAdd];
+              }
+             }
+          }
+          else {
+            for (let j = 0; j < data[i].forms.length; j++) {
+              var form = data[i].forms[j];
+              var refs = dex[index].ref.split("|");
 
-//               if(refs.includes(form.ref)){
-//                 var sNotes = "";
-//                 var vNotes = "";
-//                 if (dex[index].exclusive == "SCARLET"){
-//                   vNotes = "Scarlet Exclusive";
-//                 }
-//                 else if(dex[index].exclusive == "VIOLET"){
-//                   sNotes = "Violet Exclusive";
-//                 }
+              if(refs.includes(form.ref)){
+                var sNotes = "";
+                var vNotes = "";
+                if (dex[index].exclusive == "SCARLET"){
+                  vNotes = "Scarlet Exclusive";
+                }
+                else if(dex[index].exclusive == "VIOLET"){
+                  sNotes = "Violet Exclusive";
+                }
 
-//                 var lock = convertStatus(dex[index].shinyLocked);
-//                 var num = toDexNumber(dex[index].number);
-//                 var toAdd = 
-//                   [
-//                     {"name":"Scarlet","dex":"Base","number": num, "shinyLocked": lock, "notes": sNotes},
-//                     {"name":"Violet","dex":"Base","number": num, "shinyLocked": lock, "notes": vNotes}
-//                   ]
+                var lock = convertStatus(dex[index].shinyLocked);
+                var num = toDexNumber(dex[index].number);
+                var toAdd = 
+                  [
+                    {"name":"Scarlet","dex":"Teal Mask","number": num, "shinyLocked": lock, "notes": sNotes},
+                    {"name":"Violet","dex":"Teal Mask","number": num, "shinyLocked": lock, "notes": vNotes}
+                  ]
                   
-//                   form.games = [...form.games, ...toAdd];
-//               }
-//              }
-//           }
-//         }
-//       }
-//      }
+                  form.games = [...form.games, ...toAdd];
+              }
+             }
+          }
+        }
+      }
+     }
 
-//      writeToFile("database/last_result.json", data);
+     writeToFile("database/last_result.json", data);
 
-//     // console.log("Result", data);
-//   });
+    // console.log("Result", data);
+  });
 
-//   function toDexNumber(num)
-//   {
-//     while(num.length < 3) num = "0" + num;
-//     return num;
-//   }
+  function toDexNumber(num)
+  {
+    while(num.length < 3) num = "0" + num;
+    return num;
+  }
 
-//   function convertStatus(status){
-//     switch (status) {
-//       case "FALSE":
-//         return "UNLOCKED";
-//       case "TRUE":
-//         return "LOCKED";
-//       case "EVENT_ONLY":
-//         return "EVENT_ONLY";
-//       default:
-//         return "";
-//     }
-//   }
+  function convertStatus(status){
+    switch (status) {
+      case "FALSE":
+        return "UNLOCKED";
+      case "TRUE":
+        return "LOCKED";
+      case "EVENT_ONLY":
+        return "EVENT_ONLY";
+      default:
+        return "";
+    }
+  }
 
-//   type record = {
-//     number: string;
-//     ref: string;
-//     name: string;
-//     shinyLocked: string;
-//     exclusive: string;
-//   };
-// });
+  type record = {
+    number: string;
+    ref: string;
+    name: string;
+    shinyLocked: string;
+    exclusive: string;
+  };
+});
 
 // test('Update Property property', async ({ baseURL, page }) => {
 //   for (let i = 0; i < data.length; i++) {
@@ -423,7 +423,7 @@ function writeToFile(file, content){
     else {
       console.log("File written successfully\n");
       console.log("The written has the following contents:");
-      // console.log(fs.readFileSync("books.txt", "utf8"));
+      console.log(fs.readFileSync("books.txt", "utf8"));
     }
   });
 }
