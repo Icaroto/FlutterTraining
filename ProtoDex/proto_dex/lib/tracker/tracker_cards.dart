@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proto_dex/constants.dart';
 import 'package:proto_dex/tracker/tracker_tiles.dart';
 import '../../components/image.dart';
 import '../../models/enums.dart';
@@ -34,7 +35,8 @@ Widget createCards(
   }
 
   var image = "mons/${pokemon.displayImage}";
-  bool shadow = Item.isCaptured(pokemon) != CaptureType.full;
+  bool shadow = kPreferences.revealUncaught == false &&
+      Item.isCaptured(pokemon) != CaptureType.full;
 
   return Card(
     child: ExpansionTile(

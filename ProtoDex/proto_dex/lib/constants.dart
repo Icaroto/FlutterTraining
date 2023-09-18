@@ -2,7 +2,7 @@ import 'package:proto_dex/models/preferences.dart';
 
 import 'models/pokemon.dart';
 
-const String kPokedexFileLocation = 'data/pokedex.json';
+const String kPokedexFileLocation = 'data/pokedexnewProp.json';
 const String kPokedexKey = 'pokedex';
 const String kImagesRoot = 'images/';
 const String kImageLocalPrefix =

@@ -174,7 +174,7 @@ class Dex {
     switch (game) {
       case "Pokemon Scarlet":
       case "Pokemon Violet":
-        dex.addAll(["Vivillons", "Mightiest Mark"]);
+        dex.addAll(["Teal Mask", "Vivillons", "Mightiest Mark"]);
         break;
       case "Let's Go Pikachu":
       case "Let's Go Eevee":

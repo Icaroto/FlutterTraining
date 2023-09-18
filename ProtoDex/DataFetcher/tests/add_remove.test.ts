@@ -245,8 +245,8 @@ test('Scarlet Violet', async ({ baseURL, page }) => {
             var num = toDexNumber(dex[index].number);
             var toAdd = 
               [
-                {"name":"Scarlet","dex":"Teal Mask","number": num, "shinyLocked": lock, "notes": sNotes},
-                {"name":"Violet","dex":"Teal Mask","number": num, "shinyLocked": lock, "notes": vNotes}
+                {"name":"Pokemon Scarlet","dex":"Teal Mask","number": num, "shinyLocked": lock, "notes": sNotes},
+                {"name":"Pokemon Violet","dex":"Teal Mask","number": num, "shinyLocked": lock, "notes": vNotes}
               ]
              data[i].games = [...data[i].games, ...toAdd];
 
@@ -284,8 +284,8 @@ test('Scarlet Violet', async ({ baseURL, page }) => {
                 var num = toDexNumber(dex[index].number);
                 var toAdd = 
                   [
-                    {"name":"Scarlet","dex":"Teal Mask","number": num, "shinyLocked": lock, "notes": sNotes},
-                    {"name":"Violet","dex":"Teal Mask","number": num, "shinyLocked": lock, "notes": vNotes}
+                    {"name":"Pokemon Scarlet","dex":"Teal Mask","number": num, "shinyLocked": lock, "notes": sNotes},
+                    {"name":"Pokemon Violet","dex":"Teal Mask","number": num, "shinyLocked": lock, "notes": vNotes}
                   ]
                   
                   form.games = [...form.games, ...toAdd];

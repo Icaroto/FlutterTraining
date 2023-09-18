@@ -89,6 +89,10 @@ class _LoadingScreenState extends State<LoadingScreen> {
       }
     }
 
+    //For debugging:
+    // var file = await rootBundle.loadString(kPokedexFileLocation);
+    // kPokedex = await Pokemon.createPokedex(file);
+
     kPokedex = await Pokemon.createPokedex(pokedexLocalFile.readAsStringSync());
     //await Future.delayed(const Duration(seconds: 2));
     pushNextScreen();
