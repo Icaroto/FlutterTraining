@@ -43368,7 +43368,7 @@
     "species": "Paradox Pokémon",
     "height": "3.5m",
     "weight": "280.0kg",
-    "breeding": { "groups": ["Undiscovered"], "cycles": "50" },
+    "breeding": { "groups": ["Undiscovered"], "cycles": "120" },
     "number": "1009",
     "ref": "1009.0",
     "type1": "water",
@@ -43406,7 +43406,7 @@
     "species": "Paradox Pokémon",
     "height": "1.5m",
     "weight": "125.0kg",
-    "breeding": { "groups": ["Undiscovered"], "cycles": "50" },
+    "breeding": { "groups": ["Undiscovered"], "cycles": "120" },
     "number": "1010",
     "ref": "1010.0",
     "type1": "grass",
@@ -43648,7 +43648,7 @@
     "weaknessnone": [],
     "weaknessdouble": ["fire", "ice", "poison", "flying", "bug"],
     "weaknessquadruple": [],
-    "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
+    "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
     "games": [],
     "forms": [
       {
@@ -43670,7 +43670,7 @@
         "weaknessnone": ["water"],
         "weaknessdouble": ["poison", "flying", "bug"],
         "weaknessquadruple": [],
-        "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
+        "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
         "games": []
       },
       {
@@ -43692,7 +43692,7 @@
         "weaknessnone": [],
         "weaknessdouble": ["poison","flying", "rock"],
         "weaknessquadruple": [],
-        "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
+        "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
         "games": []
       },
       {
@@ -43714,7 +43714,7 @@
         "weaknessnone": [],
         "weaknessdouble": ["ice","fighting", "bug", "steel"],
         "weaknessquadruple": [],
-        "genderRatio": { "male": "0", "female": "0", "genderless": "100" },
+        "genderRatio": { "male": "0", "female": "100", "genderless": "0" },
         "games": []
       }
     ]
