@@ -43639,7 +43639,7 @@
     "number": "1017",
     "ref": "1017.0",
     "type1": "grass",
-    "type2": "",
+    "type2": null,
     "image": ["1017-001-normal-mf.png", "1017-001-shiny-mf.png"],
     "abilities": ["Defiant"],
     "hiddenAbility": "",
