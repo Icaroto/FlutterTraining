@@ -125,15 +125,13 @@ class _TrackerListScreenState extends State<TrackerListScreen> {
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.check_box_outlined),
-            label: widget.collection.capturedTotal() +
-                "/" +
-                widget.collection.total(),
+            label:
+                "${widget.collection.capturedTotal()}/${widget.collection.total()}",
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.check_box_outline_blank),
-            label: widget.collection.missingTotal() +
-                "/" +
-                widget.collection.total(),
+            label:
+                "${widget.collection.missingTotal()}/${widget.collection.total()}",
           ),
         ],
         onTap: (int index) {

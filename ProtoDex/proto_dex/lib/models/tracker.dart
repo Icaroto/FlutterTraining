@@ -52,7 +52,7 @@ class Tracker {
       count += element.forms.length;
     });
 
-    return count.toString();
+    return count;
   }
 
   capturedTotal() {
@@ -67,7 +67,7 @@ class Tracker {
       count += pokemon.forms.where((form) => form.captured == true).length;
     });
 
-    return count.toString();
+    return count;
   }
 
   missingTotal() {
@@ -82,31 +82,31 @@ class Tracker {
       count += pokemon.forms.where((form) => form.captured == false).length;
     });
 
-    return count.toString();
+    return count;
   }
 
   percentage() {
-    var total = pokemons.where((element) => element.forms.isEmpty).length;
+    // var total = pokemons.where((element) => element.forms.isEmpty).length;
 
-    pokemons
-        .where((element) => element.forms.isNotEmpty)
-        .toList()
-        .forEach((element) {
-      total += element.forms.length;
-    });
+    // pokemons
+    //     .where((element) => element.forms.isNotEmpty)
+    //     .toList()
+    //     .forEach((element) {
+    //   total += element.forms.length;
+    // });
 
-    var captured = pokemons
-        .where((element) => element.forms.isEmpty && element.captured == true)
-        .length;
+    // var captured = pokemons
+    //     .where((element) => element.forms.isEmpty && element.captured == true)
+    //     .length;
 
-    pokemons
-        .where((element) => element.forms.isNotEmpty)
-        .toList()
-        .forEach((pokemon) {
-      captured += pokemon.forms.where((form) => form.captured == true).length;
-    });
+    // pokemons
+    //     .where((element) => element.forms.isNotEmpty)
+    //     .toList()
+    //     .forEach((pokemon) {
+    //   captured += pokemon.forms.where((form) => form.captured == true).length;
+    // });
 
-    var perc = captured / total * 100;
+    var perc = (capturedTotal() / total()) * 100;
 
     return perc.toStringAsFixed(2);
   }

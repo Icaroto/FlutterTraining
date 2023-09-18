@@ -9,8 +9,7 @@ TODO: On Living dex or any list tile of type Expand, keep it opened after tickin
 TODO: Save preferences
 TODO: Create versions and auto updates for jsons
 TODO: Add generation property + generation filter (use to test the auto updates)
-TODO BUG: refactor percentage and total/missing methods on tracker.dart  (repetitive code)
-
+TODO: Tracker is displaying forms that are not really catchable (eg. Mimiko hunger form, Ogerpon masks)
 TODO: Agree on design for FT/LT and match them (Tile)
 TODO: Scroll bar on other screens?
 TODO: Share button?
