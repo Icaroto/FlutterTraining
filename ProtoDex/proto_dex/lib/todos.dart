@@ -5,11 +5,11 @@ TODO BUG iOS: List to have a back button on iOS
 TODO BUG iOS: Details page remove static height/width as it breaks on iOS
 TODO BUG iOS: Check why image looks smaller on iOS????
 TODO BUG iOS: Add swipe on detail page based on list
-TODO BUG: Porcentage calculation doesnt count FORMS
 TODO: On Living dex or any list tile of type Expand, keep it opened after ticking one
 TODO: Save preferences
 TODO: Create versions and auto updates for jsons
 TODO: Add generation property + generation filter (use to test the auto updates)
+TODO BUG: refactor percentage and total/missing methods on tracker.dart  (repetitive code)
 
 TODO: Agree on design for FT/LT and match them (Tile)
 TODO: Scroll bar on other screens?

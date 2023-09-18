@@ -86,10 +86,27 @@ class Tracker {
   }
 
   percentage() {
-    var perc =
-        (pokemons.where((element) => element.captured == true).toList().length /
-                pokemons.length) *
-            100;
+    var total = pokemons.where((element) => element.forms.isEmpty).length;
+
+    pokemons
+        .where((element) => element.forms.isNotEmpty)
+        .toList()
+        .forEach((element) {
+      total += element.forms.length;
+    });
+
+    var captured = pokemons
+        .where((element) => element.forms.isEmpty && element.captured == true)
+        .length;
+
+    pokemons
+        .where((element) => element.forms.isNotEmpty)
+        .toList()
+        .forEach((pokemon) {
+      captured += pokemon.forms.where((form) => form.captured == true).length;
+    });
+
+    var perc = captured / total * 100;
 
     return perc.toStringAsFixed(2);
   }
