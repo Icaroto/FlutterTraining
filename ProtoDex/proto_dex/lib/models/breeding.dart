@@ -33,6 +33,8 @@ class Breeding {
         return "(8,739-8,995 steps)";
       case "40":
         return "(10,024-10,280 steps)";
+      case "50":
+        return "(12,594–12,850 steps)";
       case "80":
         return "(20,304-20,560 steps)";
       case "120":

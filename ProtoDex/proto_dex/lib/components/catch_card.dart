@@ -30,7 +30,6 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
   }
 
   TextEditingController textController = TextEditingController();
-  List<String> trainers = ['Ico (RIP)', 'Icaroto', 'Phobos'];
 
   @override
   Widget build(BuildContext context) {
@@ -270,7 +269,8 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                       bottomSheetOptions(context, (context) {
                         return ListView.builder(
                           itemBuilder: (context, index) {
-                            if (index == trainers.length) {
+                            //addds the "Add new Options"
+                            if (index == kPreferences.trainerNames.length) {
                               return SizedBox(
                                 height: 40,
                                 child: GestureDetector(
@@ -290,10 +290,16 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                                             child: const Text("Confirm"),
                                             onPressed: () {
                                               setState(() {
-                                                trainers
-                                                    .add(textController.text);
-                                                widget.pokemon.trainerName =
-                                                    textController.text;
+                                                if (textController.text != "") {
+                                                  kPreferences.trainerNames
+                                                      .add(textController.text);
+
+                                                  kPreferences.save();
+
+                                                  widget.pokemon.trainerName =
+                                                      textController.text;
+                                                }
+
                                                 textController.clear();
                                               });
                                               Navigator.pop(dialogContex);
@@ -329,12 +335,12 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                                   Navigator.pop(context),
                                   setState(() {
                                     widget.pokemon.trainerName =
-                                        trainers[index];
+                                        kPreferences.trainerNames[index];
                                   }),
                                 },
                                 child: Center(
                                   child: Text(
-                                    trainers[index],
+                                    kPreferences.trainerNames[index],
                                     style: const TextStyle(
                                       fontSize: 30,
                                       color: Colors.white,
@@ -344,45 +350,13 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                               ),
                             );
                           },
-                          itemCount: trainers.length + 1,
+                          itemCount: kPreferences.trainerNames.length + 1,
                           shrinkWrap: true,
                           padding: const EdgeInsets.all(5),
                           scrollDirection: Axis.vertical,
                         );
                       });
                     },
-                    // onPressed: () async {
-                    //   setState(() {
-                    //     showDialog(
-                    //       context: context,
-                    //       builder: (_) => AlertDialog(
-                    //         title: const Text('Trainer Name'),
-                    //         content: TextField(
-                    //           controller: textController,
-                    //           autofocus: true,
-                    //         ),
-                    //         actions: [
-                    //           TextButton(
-                    //             child: const Text("Confirm"),
-                    //             onPressed: () {
-                    //               Navigator.pop(context);
-                    //               setState(() {
-                    //                 widget.pokemon.trainerName =
-                    //                     textController.text;
-                    //               });
-                    //             },
-                    //           ),
-                    //           TextButton(
-                    //             child: const Text("Cancel"),
-                    //             onPressed: () {
-                    //               Navigator.pop(context);
-                    //             },
-                    //           ),
-                    //         ],
-                    //       ),
-                    //     );
-                    //   });
-                    // },
                   ),
 
                   //Method
