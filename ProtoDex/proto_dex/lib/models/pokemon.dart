@@ -349,7 +349,52 @@ class Pokemon {
   }
 }
 
+extension PokemonExtensions on Pokemon {
+  containsName(value) {
+    return name.toLowerCase().contains(value.toLowerCase());
+  }
+}
+
 extension Filter on List<Pokemon>? {
+  findByName(String value) {
+    List<Pokemon> filtered = [];
+
+    for (var pokemon in this!) {
+      if (pokemon.forms.isEmpty) {
+        if (pokemon.name.toLowerCase().contains(value.toLowerCase())) {
+          filtered.add(pokemon);
+        }
+      } else {
+        List<Pokemon> pokemons = pokemon.forms.findByName(value);
+        if (pokemons.isNotEmpty) {
+          filtered.addAll(pokemons);
+        }
+      }
+    }
+
+    return filtered;
+  }
+
+  findByType(List<String>? types) {
+    List<Pokemon> filtered = [];
+
+    for (var pokemon in this!) {
+      if (pokemon.forms.isEmpty) {
+        if (containsType(types, pokemon.type1) ||
+            containsType(types, pokemon.type2)) {
+          filtered.add(pokemon);
+        }
+      } else {
+        List<Pokemon> pokemons = pokemon.forms.findByType(types);
+        if (pokemons.isNotEmpty) {
+          filtered.addAll(pokemons);
+        }
+      }
+    }
+
+    return filtered;
+  }
+
   applyAllFilters(
       List<FilterType> filters, String? words, List<String>? types) {
     List<Pokemon> temp = [];
@@ -358,18 +403,20 @@ extension Filter on List<Pokemon>? {
     for (var filter in filters) {
       switch (filter) {
         case FilterType.byValue:
-          temp = temp
-              .where((element) =>
-                  element.name.toLowerCase().contains(words!.toLowerCase()))
-              .toList();
+          temp = temp.findByName(words!);
+          // temp = temp
+          //     .where((element) =>
+          //         element.name.toLowerCase().contains(words!.toLowerCase()))
+          //     .toList();
           break;
         case FilterType.byType:
           if (types != null && types.isNotEmpty) {
-            temp = temp
-                .where((element) =>
-                    containsType(types, element.type1) ||
-                    containsType(types, element.type2))
-                .toList();
+            temp = temp.findByType(types);
+            // temp = temp
+            //     .where((element) =>
+            //         containsType(types, element.type1) ||
+            //         containsType(types, element.type2))
+            //     .toList();
           }
           break;
         case FilterType.numAsc:

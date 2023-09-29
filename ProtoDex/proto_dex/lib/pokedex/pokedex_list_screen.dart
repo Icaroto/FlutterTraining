@@ -144,6 +144,12 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
           });
         },
       ),
+      // IconButton(
+      //   icon: const Icon(Icons.more_vert),
+      //   onPressed: () {
+      //     setState(() {});
+      //   },
+      // ),
     ];
   }
 
