@@ -50,8 +50,27 @@ class _TrackerListScreenState extends State<TrackerListScreen> {
       appBar: AppBarBase(
         title: Column(
           children: [
-            Text(widget.collection.game),
-            Text("(${widget.collection.percentage()}%)")
+            Text(
+              widget.collection.game,
+              style: const TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              widget.collection.dex,
+              style: const TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic),
+            ),
+            Text(
+              "(${widget.collection.percentage()}%)",
+              style: const TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ],
         ),
         color: Game.gameColor(widget.collection.game),
