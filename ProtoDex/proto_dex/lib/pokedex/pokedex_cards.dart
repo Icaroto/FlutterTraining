@@ -40,6 +40,8 @@ Widget createCards(
           scrollToPokemon(expansionTileKey: expansionTileKey);
         }
       },
+      textColor: Colors.black,
+      collapsedTextColor: Colors.black,
       collapsedBackgroundColor: (subLevel) ? null : Colors.black26,
       backgroundColor: (subLevel) ? Colors.black12 : Colors.black26,
       leading: ListImage(
@@ -50,13 +52,47 @@ Widget createCards(
         children: [
           Text(
             pokemon.name,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
-          Text("#${pokemon.number}")
         ],
       ),
-      subtitle: Text(pokemon.formattedTypes()),
-      trailing: Text('+${pokemon.forms.length - 1}'),
+      subtitle: Row(
+        children: [
+          SizedBox(
+            height: 20,
+            child: Pokemon.typeImage(pokemon.type1),
+          ),
+          if (pokemon.type2 != null) const Text("·"),
+          if (pokemon.type2 != null)
+            SizedBox(
+              height: 20,
+              child: Pokemon.typeImage(pokemon.type2),
+            ),
+        ],
+      ),
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            "#${pokemon.number}",
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(width: 20),
+          Column(
+            children: [
+              Text(
+                '+${pokemon.forms.length - 1}',
+                style: const TextStyle(
+                  fontSize: 12,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
       children: [
         ListView.builder(
           physics: const NeverScrollableScrollPhysics(),

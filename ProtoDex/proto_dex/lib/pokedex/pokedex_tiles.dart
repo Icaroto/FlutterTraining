@@ -56,11 +56,32 @@ class _PokemonTiles extends State<PokemonTiles> {
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
-            Text("#${pokemon.number}")
           ],
         ),
-        trailing: const Text(''),
-        subtitle: Text(pokemon.formattedTypes()),
+        subtitle: Row(
+          children: [
+            SizedBox(
+              height: 20,
+              child: Pokemon.typeImage(pokemon.type1),
+            ),
+            if (pokemon.type2 != null) const Text("·"),
+            if (pokemon.type2 != null)
+              SizedBox(
+                height: 20,
+                child: Pokemon.typeImage(pokemon.type2),
+              ),
+          ],
+        ),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              "#${pokemon.number}",
+              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(width: 36),
+          ],
+        ),
       ),
     );
   }
