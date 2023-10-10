@@ -829,7 +829,8 @@ extension ItemExtensions on Item {
         kPokedex.firstWhere((element) => element.number == natDexNumber);
     List<dynamic> list = [];
     list.addAll(dexMon.abilities);
-    list.add(dexMon.hiddenAbility!);
+    if (dexMon.hiddenAbility! != "") list.add(dexMon.hiddenAbility);
+    list.insert(0, kValueNotFound);
     return list;
   }
 }

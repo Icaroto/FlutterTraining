@@ -45,15 +45,16 @@ saveCollection(List<Item> collection) {
 
 groupByPokemon(List<Item> collection) {
   List<Group> groups = [];
-  var newMap = groupBy(collection, (Item obj) => obj.natDexNumber);
+  var newMap = groupBy(collection, (Item obj) => obj.name);
   for (var map in newMap.entries) {
     Group group = Group(
         name: map.value.first.name,
         items: map.value,
-        image: 'mons/${map.value.first.displayImage}');
-    group.items.sortBy((element) => element.ref);
+        image: 'mons/${map.value.first.image.first}');
+    group.items.sortBy((element) => element.natDexNumber);
     groups.add(group);
   }
+  groups.sortBy((element) => element.items.first.ref);
   return groups;
 }
 

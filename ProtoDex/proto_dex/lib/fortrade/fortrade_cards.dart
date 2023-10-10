@@ -38,22 +38,14 @@ Widget createCards(
       collapsedBackgroundColor:
           (group.color == null) ? Colors.black26 : group.color,
       backgroundColor: (group.color == null) ? Colors.black26 : group.color,
-
       leading: ListImage(
         image: group.image,
       ),
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            group.name,
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
-          // Text("#${pokemons[index].number}")
-        ],
+      title: Text(
+        group.name,
+        style: const TextStyle(fontWeight: FontWeight.bold),
       ),
       trailing: Text('+${group.items.length}'),
-      // subtitle: Text(pokemons[index].formattedTypes()),
       children: [
         ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
