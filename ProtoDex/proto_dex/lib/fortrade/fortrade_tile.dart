@@ -137,7 +137,9 @@ class _ForTradeTile extends State<ForTradeTile> {
             SizedBox(
               height: 50,
               width: 50,
-              child: (pokemon.originalLocation.isNotEmpty)
+              child: (pokemon.originalLocation.isNotEmpty &&
+                      pokemon.originalLocation != "Unknown" &&
+                      pokemon.originalLocation != "")
                   ? Image.network(
                       '$kImageLocalPrefix${Game.gameIcon(pokemon.originalLocation)}',
                     )
