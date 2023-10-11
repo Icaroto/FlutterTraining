@@ -68,7 +68,7 @@ class Game extends Dex {
     }
   }
 
-  static gameIcon(gameName) {
+  static gameIcon(String gameName) {
     String path = "games/";
     // String path = "";
     switch (gameName) {

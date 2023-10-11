@@ -23,7 +23,7 @@ class GamesInformationCard extends StatelessWidget {
             return ListTile(
               // tileColor: Colors.black,
               leading: ListImage(
-                image: Game.gameIcon(pokemon.games[index2]),
+                image: Game.gameIcon(pokemon.games[index2].name),
               ),
               title: FittedBox(
                 fit: BoxFit.scaleDown,
