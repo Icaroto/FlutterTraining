@@ -53,7 +53,7 @@ class _StartScreenState extends State<StartScreen> {
                 children: [
                   MainScreenButton(
                     buttonName: 'Pokedex',
-                    imagePath: 'background/colored_ball.png',
+                    imagePath: 'main/bulbasaur.png',
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -67,7 +67,7 @@ class _StartScreenState extends State<StartScreen> {
                   ),
                   MainScreenButton(
                     buttonName: 'Trackers',
-                    imagePath: 'background/colored_ball.png',
+                    imagePath: 'main/squirtle.png',
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -86,7 +86,7 @@ class _StartScreenState extends State<StartScreen> {
                 children: [
                   MainScreenButton(
                     buttonName: 'Collection',
-                    imagePath: 'background/colored_ball.png',
+                    imagePath: 'main/mew.png',
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -104,8 +104,8 @@ class _StartScreenState extends State<StartScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   MainScreenButton(
-                    buttonName: 'LF',
-                    imagePath: 'background/colored_ball.png',
+                    buttonName: 'Looking For',
+                    imagePath: 'main/charmander.png',
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -118,8 +118,8 @@ class _StartScreenState extends State<StartScreen> {
                     },
                   ),
                   MainScreenButton(
-                    buttonName: 'FT',
-                    imagePath: 'background/colored_ball.png',
+                    buttonName: 'For Trade',
+                    imagePath: 'main/pikachu.png',
                     onPressed: () {
                       Navigator.push(
                         context,

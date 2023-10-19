@@ -22,10 +22,16 @@ class MainScreenButton extends StatelessWidget {
         onPressed: onPressed,
         child: Column(
           children: [
+            // Image.asset("images/$imagePath", height: 100),
             Image.network(kImageLocalPrefix + imagePath, height: 100),
-            Text(
-              buttonName,
-              style: buttonTextStyle,
+            SizedBox(
+              width: 100,
+              child: FittedBox(
+                child: Text(
+                  buttonName,
+                  style: buttonTextStyle,
+                ),
+              ),
             ),
           ],
         ),

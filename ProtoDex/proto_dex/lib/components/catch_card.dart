@@ -86,16 +86,17 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                   EditableButton(
                     isEditable: editCheck(DetailsLock.ability),
                     currentValue: FittedBox(
-                        child: Column(
-                      children: [
-                        Text(
-                          widget.pokemon.ability,
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 25),
-                        ),
-                        const ItemName(text: "Ability"),
-                      ],
-                    )),
+                      child: Column(
+                        children: [
+                          Text(
+                            widget.pokemon.ability,
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 25),
+                          ),
+                          const ItemName(text: "Ability"),
+                        ],
+                      ),
+                    ),
                     onPressed: () async {
                       bottomSheetOptions(context, (context) {
                         return ListView.builder(
@@ -187,7 +188,15 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                   // GENDER
                   EditableButton(
                     isEditable: editCheck(DetailsLock.gender),
-                    currentValue: widget.pokemon.gender.getIcon(),
+                    // currentValue: widget.pokemon.gender.getIcon(),
+                    currentValue: FittedBox(
+                      child: Column(
+                        children: [
+                          widget.pokemon.gender.getIcon(),
+                          const ItemName(text: "Gender"),
+                        ],
+                      ),
+                    ),
                     onPressed: () async {
                       bottomSheetOptions(context, (context) {
                         List<PokemonGender> genders = [
