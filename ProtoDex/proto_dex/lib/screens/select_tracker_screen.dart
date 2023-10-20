@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proto_dex/components/app_bar.dart';
 import 'package:proto_dex/components/image.dart';
 import 'package:proto_dex/styles.dart';
 import '../models/tracker.dart';
@@ -32,9 +33,10 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        centerTitle: true,
+      appBar: AppBarBase(
         title: const Text("Trackers"),
+        color: Colors.blueGrey[800],
+        actions: null,
       ),
       body: Stack(
         children: <Widget>[
@@ -89,8 +91,10 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
         padding: const EdgeInsets.all(8.0),
         child: TextButton(
           style: TextButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.blueGrey[800],
             foregroundColor: Colors.white,
+            disabledBackgroundColor: Colors.blueGrey[900],
+            disabledForegroundColor: Colors.blueGrey[900],
           ),
           onPressed:
               (gamePicked != "" && dexPicked != "" && trackerPicked != "")

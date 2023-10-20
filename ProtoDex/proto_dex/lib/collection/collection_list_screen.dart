@@ -57,6 +57,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
       appBar: AppBarBase(
         title: const Text("My Collection"),
         actions: appBarActions(),
+        color: Colors.blueGrey[800],
       ),
       endDrawer: FiltersSideScreen(
         filters: trackerFilters(),
@@ -118,7 +119,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
           ),
         ],
         currentIndex: _selectedTab,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.blueGrey[800],
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.black,
         onTap: (int index) {

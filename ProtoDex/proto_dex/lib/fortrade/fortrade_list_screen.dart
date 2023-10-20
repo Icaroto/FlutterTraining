@@ -56,6 +56,7 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
       key: scaffoldKey,
       appBar: AppBarBase(
         title: const Text("For Trade"),
+        color: Colors.blueGrey[800],
         actions: appBarActions(),
       ),
       endDrawer: FiltersSideScreen(
@@ -118,7 +119,7 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
           ),
         ],
         currentIndex: _selectedTab,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.blueGrey[800],
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.black,
         onTap: (int index) {

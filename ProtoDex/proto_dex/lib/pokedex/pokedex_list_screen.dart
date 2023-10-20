@@ -46,7 +46,7 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
       key: scaffoldKey,
       appBar: AppBarBase(
         title: const Text("Pokedex"),
-        color: const Color(0xFF1D1E33),
+        color: Colors.blueGrey[800],
         actions: appBarActions(),
       ),
       endDrawer: FiltersSideScreen(
@@ -57,7 +57,7 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
       ),
       body: Stack(
         children: <Widget>[
-          kBasicBackground,
+          // kBasicBackground,
           SafeArea(
             child: Column(
               children: [

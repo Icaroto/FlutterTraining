@@ -15,7 +15,8 @@ class SwitchOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shadowColor: Colors.blue,
+      color: Colors.blueGrey[800], //(color != null) ? color : Colors.white,
+      shadowColor: Colors.white,
       borderOnForeground: true,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -23,11 +24,16 @@ class SwitchOption extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(title),
+            child: Text(
+              title,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            ),
           ),
           Switch(
             value: switchValue,
-            activeColor: Colors.red,
+            activeColor: Colors.green,
             onChanged: (bool value) => {onSwitch(value)},
           )
         ],

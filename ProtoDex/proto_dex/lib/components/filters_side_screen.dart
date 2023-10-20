@@ -13,14 +13,20 @@ class FiltersSideScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.blueGrey[900],
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const SizedBox(
+          SizedBox(
             height: 80,
             child: DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
-              child: Text('Filters'),
+              decoration: BoxDecoration(color: Colors.blueGrey[800]),
+              child: const Text(
+                'Filters',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
             ),
           ),
           Column(
@@ -30,9 +36,34 @@ class FiltersSideScreen extends StatelessWidget {
           Center(
             child: TextButton(
               onPressed: onClose,
-              child: const Text("Close"),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                ),
+                foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.amber;
+                  },
+                ),
+                backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.blueGrey[800];
+                  },
+                ),
+                overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.amber[800];
+                  },
+                ),
+              ),
+              child: const Text(
+                "Close",
+                // style: TextStyle(color: Colors.amber),
+              ),
             ),
-          ),
+          )
         ],
       ),
     );

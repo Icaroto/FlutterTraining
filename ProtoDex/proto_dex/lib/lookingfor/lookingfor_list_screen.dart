@@ -56,6 +56,7 @@ class _LookingForScreenState extends State<LookingForScreen> {
       key: scaffoldKey,
       appBar: AppBarBase(
         title: const Text("Looking For"),
+        color: Colors.blueGrey[800],
         actions: appBarActions(),
       ),
       endDrawer: FiltersSideScreen(
@@ -118,7 +119,7 @@ class _LookingForScreenState extends State<LookingForScreen> {
           ),
         ],
         currentIndex: _selectedTab,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.blueGrey[800],
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.black,
         onTap: (int index) {

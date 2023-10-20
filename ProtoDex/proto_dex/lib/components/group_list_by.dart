@@ -16,34 +16,127 @@ class GroupListBy extends StatelessWidget {
       children: [
         const Padding(
           padding: EdgeInsets.all(8.0),
-          child: Center(child: Text("Group By")),
+          child: Center(
+              child: Text(
+            "Group By",
+            style: TextStyle(color: Colors.white),
+          )),
         ),
         Wrap(
           alignment: WrapAlignment.center,
+          spacing: 5,
           children: [
             TextButton(
-              child: const Text("Pokemon"),
               onPressed: () {
                 onDisplaySelected(CollectionDisplayType.groupByPokemon);
               },
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                ),
+                foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.amber;
+                  },
+                ),
+                backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.blueGrey[800];
+                  },
+                ),
+                overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.amber[800];
+                  },
+                ),
+              ),
+              child: const Text("Pokemon"),
             ),
             TextButton(
-              child: const Text("Current Game"),
               onPressed: () {
                 onDisplaySelected(CollectionDisplayType.groupByCurrentGame);
               },
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                ),
+                foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.amber;
+                  },
+                ),
+                backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.blueGrey[800];
+                  },
+                ),
+                overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.amber[800];
+                  },
+                ),
+              ),
+              child: const Text("Current Game"),
             ),
             TextButton(
-              child: const Text("Original Game"),
               onPressed: () {
                 onDisplaySelected(CollectionDisplayType.groupByOriginalGame);
               },
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                ),
+                foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.amber;
+                  },
+                ),
+                backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.blueGrey[800];
+                  },
+                ),
+                overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.amber[800];
+                  },
+                ),
+              ),
+              child: const Text("Original Game"),
             ),
             TextButton(
-              child: const Text("Show All"),
               onPressed: () {
                 onDisplaySelected(CollectionDisplayType.flatList);
               },
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                ),
+                foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.amber;
+                  },
+                ),
+                backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.blueGrey[800];
+                  },
+                ),
+                overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return Colors.amber[800];
+                  },
+                ),
+              ),
+              child: const Text("Show All"),
             ),
           ],
         ),
