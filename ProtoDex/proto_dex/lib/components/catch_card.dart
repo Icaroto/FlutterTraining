@@ -241,7 +241,6 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                     currentValue: FittedBox(
                       child: Column(
                         children: [
-                          const ItemName(text: "Captured", size: 25),
                           Text(
                             DateFormat('dd/MM/yyyy').format(DateTime.parse(widget
                                 .pokemon
@@ -249,6 +248,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                             style: const TextStyle(
                                 fontSize: 25, color: Colors.white),
                           ),
+                          const ItemName(text: "Captured On", size: 20),
                         ],
                       ),
                     ),
@@ -265,11 +265,14 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                     currentValue: FittedBox(
                       child: Column(
                         children: [
-                          const ItemName(text: "OT"),
                           Text(
                             widget.pokemon.trainerName,
                             style: const TextStyle(
                                 fontSize: 25, color: Colors.white),
+                          ),
+                          const ItemName(
+                            text: "Original Trainer",
+                            size: 10,
                           ),
                         ],
                       ),
@@ -374,15 +377,20 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                     currentValue: FittedBox(
                       child: Column(
                         children: [
+                          Image.network(
+                            kImageLocalPrefix +
+                                (widget.pokemon.capturedMethod.getMethodIcon()),
+                            height: 40,
+                          ),
                           const ItemName(
                             text: "Method",
                             size: 15,
                           ),
-                          Text(
-                            widget.pokemon.capturedMethod.getMethodName(),
-                            style: const TextStyle(
-                                fontSize: 25, color: Colors.white),
-                          ),
+                          // Text(
+                          //   widget.pokemon.capturedMethod.getMethodName(),
+                          //   style: const TextStyle(
+                          //       fontSize: 25, color: Colors.white),
+                          // ),
                         ],
                       ),
                     ),
@@ -433,6 +441,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        const ItemName(text: 'From: '),
                         SizedBox(
                           height: 40,
                           child: Image.network(
@@ -441,7 +450,6 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                             height: 40,
                           ),
                         ),
-                        const ItemName(text: 'Origin')
                       ],
                     ),
                     onPressed: () async {
@@ -484,6 +492,7 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        const FittedBox(child: ItemName(text: 'Currently On:')),
                         SizedBox(
                           height: 40,
                           child: Image.network(
@@ -492,7 +501,6 @@ class _CatchInformationCardState extends State<CatchInformationCard> {
                             height: 40,
                           ),
                         ),
-                        const FittedBox(child: ItemName(text: 'Currently'))
                       ],
                     ),
                     onPressed: () async {
@@ -742,8 +750,27 @@ extension Extensions3 on CaptureMethod {
         return 'Trade';
       case CaptureMethod.wild:
         return 'Wild';
+      case CaptureMethod.event:
+        return 'Event';
       default:
         return 'Unknown';
+    }
+  }
+
+  String getMethodIcon() {
+    switch (this) {
+      case CaptureMethod.egg:
+        return 'catch/egg.png';
+      case CaptureMethod.raid:
+        return 'catch/raid.png';
+      case CaptureMethod.trade:
+        return 'catch/trade.png';
+      case CaptureMethod.wild:
+        return 'catch/wild.png';
+      case CaptureMethod.event:
+        return 'catch/event.png';
+      default:
+        return 'games/colored_ball.png';
     }
   }
 }

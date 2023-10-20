@@ -76,7 +76,7 @@ enum CollectionDisplayType {
 
 enum CaptureType { full, partial, empty }
 
-enum CaptureMethod { wild, raid, egg, trade, unknown }
+enum CaptureMethod { wild, raid, egg, trade, event, unknown }
 
 enum DetailsLock {
   ball,

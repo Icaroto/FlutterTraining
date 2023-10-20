@@ -43,7 +43,10 @@ Widget createCards(
       ),
       title: Text(
         group.name,
-        style: const TextStyle(fontWeight: FontWeight.bold),
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
       ),
       trailing: Text('+${group.items.length}'),
       children: [
