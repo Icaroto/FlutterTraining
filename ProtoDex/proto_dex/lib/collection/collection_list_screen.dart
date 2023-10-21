@@ -55,7 +55,19 @@ class _CollectionScreenState extends State<CollectionScreen> {
       resizeToAvoidBottomInset: false,
       key: scaffoldKey,
       appBar: AppBarBase(
-        title: const Text("My Collection"),
+        title: Column(
+          children: [
+            const Text("My Collection"),
+            if (displayType != CollectionDisplayType.flatList)
+              Text(
+                getSubTitle(displayType),
+                style: const TextStyle(
+                  fontSize: 10,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+          ],
+        ),
         actions: appBarActions(),
         color: Colors.blueGrey[800],
       ),
@@ -341,5 +353,18 @@ class _CollectionScreenState extends State<CollectionScreen> {
     final name = 'collection_$time';
     final result = await ImageGallerySaver.saveImage(bytes, name: name);
     return result['filePath'];
+  }
+
+  String getSubTitle(displayType) {
+    switch (displayType) {
+      case CollectionDisplayType.groupByCurrentGame:
+        return "(By Current Game)";
+      case CollectionDisplayType.groupByOriginalGame:
+        return "(By Origin Game)";
+      case CollectionDisplayType.groupByPokemon:
+        return "(By Pokemon)";
+      default:
+        return "";
+    }
   }
 }

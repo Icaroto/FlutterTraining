@@ -48,7 +48,13 @@ Widget createCards(
           color: Colors.black,
         ),
       ),
-      trailing: Text('+${group.items.length}'),
+      trailing: Text(
+        '+${group.items.length}',
+        style: const TextStyle(
+          fontStyle: FontStyle.italic,
+          color: Colors.black,
+        ),
+      ),
       children: [
         ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
