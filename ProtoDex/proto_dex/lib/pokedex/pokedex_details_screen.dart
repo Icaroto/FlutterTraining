@@ -61,7 +61,9 @@ class _PokedexDetailsPage extends State<PokedexDetailsPage> {
                 Navigator.pop(context, false);
                 return false;
               },
-              child: MainImage(imagePath: pokemon.image[imageIndex])),
+              child: Hero(
+                  tag: pokemon.ref,
+                  child: MainImage(imagePath: pokemon.image[imageIndex]))),
           NextPrevButtons(
             onLeftClick: (isFirstInList)
                 ? null

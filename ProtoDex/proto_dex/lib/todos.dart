@@ -1,6 +1,11 @@
 class Todos {
   Todos(this.listBase);
 /*
+
+TODO: Search return Form Name instead of main name (work arounds?)
+TODO: Image enhacement
+  Types, Backgrounds on app
+TODO: Next Prev style
 TODO BUG iOS: Screenshot doesnt work on ios simulator
 TODO BUG iOS: Permission issue with mac desktop
 TODO BUG iOS: Back button on details screen overlaps with pokemon name
@@ -18,6 +23,7 @@ TODO: Agree on design for FT/LT and match them (Tile)
 TODO: Scroll bar on other screens?
 TODO: Share button?
 TODO: Screenshot on tracker?
+
 
 TODO: List to Details image scaling (hero animation)
 TODO: Make the ball spin (animation on loading screen)

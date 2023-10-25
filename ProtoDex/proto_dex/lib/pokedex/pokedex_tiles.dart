@@ -46,7 +46,9 @@ class _PokemonTiles extends State<PokemonTiles> {
             : () {
                 widget.onStateChange!(widget.indexes);
               },
-        leading: ListImage(image: 'mons/${pokemon.image[0]}'),
+        leading: Hero(
+            tag: pokemon.ref,
+            child: ListImage(image: 'mons/${pokemon.image[0]}')),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
