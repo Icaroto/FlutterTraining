@@ -128,8 +128,8 @@ class _TrackerTile extends State<TrackerTile> {
                       .explosive, // don't specify a direction, blast randomly
                   shouldLoop:
                       false, // start again as soon as the animation is finished
-                  maximumSize: Size(15, 15),
-                  minimumSize: Size(15, 15),
+                  maximumSize: const Size(15, 15),
+                  minimumSize: const Size(15, 15),
                   minBlastForce: 2,
                   maxBlastForce: 5,
                   colors: const [

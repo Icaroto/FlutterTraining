@@ -4,8 +4,8 @@ class FiltersSideScreen extends StatelessWidget {
   const FiltersSideScreen({
     required this.filters,
     required this.onClose,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final List<Widget> filters;
   final Function() onClose;

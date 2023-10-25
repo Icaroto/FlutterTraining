@@ -4,7 +4,7 @@ import '../models/enums.dart';
 import '../models/pokemon.dart';
 
 class MainImage extends StatelessWidget {
-  const MainImage({Key? key, required this.imagePath}) : super(key: key);
+  const MainImage({super.key, required this.imagePath});
 
   final String imagePath;
 
@@ -44,10 +44,10 @@ class MainImage extends StatelessWidget {
 
 class ListImage extends StatelessWidget {
   const ListImage({
-    Key? key,
+    super.key,
     required this.image,
     this.shadowOnly,
-  }) : super(key: key);
+  });
 
   final String image;
   final bool? shadowOnly;

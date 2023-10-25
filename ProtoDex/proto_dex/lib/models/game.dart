@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 
 class Game extends Dex {
   Game(
-      {name,
-      dex,
+      {required super.name,
+      required super.dex,
       required this.number,
       required this.notes,
       required this.shinyLocked})
-      : super(name: name, dex: dex);
+      : super();
 
   final String number;
   final String notes;
   final String shinyLocked;
 
-  Game.fromJson(Map<String, dynamic> json)
+  Game.fromJson(super.json)
       : number = json['number'],
         notes = json['notes'],
         shinyLocked = json['shinyLocked'],
-        super.fromJson(json);
+        super.fromJson();
 
   @override
   Map<String, dynamic> toJson() {

@@ -335,8 +335,8 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
 class TrackerScreenTitles extends StatelessWidget {
   const TrackerScreenTitles({
     required this.title,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String title;
 

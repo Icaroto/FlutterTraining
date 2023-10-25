@@ -4,12 +4,11 @@ import 'package:proto_dex/models/enums.dart';
 
 class DetailsHeader extends StatelessWidget {
   const DetailsHeader(
-      {Key? key,
+      {super.key,
       required this.name,
       required this.number,
       required this.type1,
-      required this.type2})
-      : super(key: key);
+      required this.type2});
 
   // final Pokemon pokemon;
   final String name;

@@ -6,9 +6,9 @@ import '../../models/pokemon.dart';
 
 class WeaknessInformationCard extends StatelessWidget {
   const WeaknessInformationCard({
-    Key? key,
+    super.key,
     required this.pokemon,
-  }) : super(key: key);
+  });
 
   final Pokemon pokemon;
 
@@ -45,9 +45,9 @@ class WeaknessInformationCard extends StatelessWidget {
 
 class IconList extends StatelessWidget {
   const IconList({
-    Key? key,
+    super.key,
     required this.list,
-  }) : super(key: key);
+  });
 
   final List<dynamic> list;
 

@@ -6,9 +6,9 @@ import '../../models/pokemon.dart';
 
 class GamesInformationCard extends StatelessWidget {
   const GamesInformationCard({
-    Key? key,
+    super.key,
     required this.pokemon,
-  }) : super(key: key);
+  });
 
   final Pokemon pokemon;
 

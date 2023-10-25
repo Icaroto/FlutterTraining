@@ -8,8 +8,8 @@ class AppBarBase extends StatelessWidget implements PreferredSizeWidget {
     required this.title,
     required this.actions,
     this.color,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Widget title;
   final List<Widget>? actions;

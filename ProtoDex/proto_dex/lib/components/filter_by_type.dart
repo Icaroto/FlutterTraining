@@ -4,11 +4,11 @@ import 'image.dart';
 
 class FilterByType extends StatelessWidget {
   const FilterByType({
-    Key? key,
+    super.key,
     required this.selectedTypes,
     required this.onTypeSelected,
     required this.onClearPressed,
-  }) : super(key: key);
+  });
 
   final List<String> selectedTypes;
   final Function(List<String> list) onTypeSelected;

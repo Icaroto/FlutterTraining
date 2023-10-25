@@ -4,10 +4,10 @@ import '../../models/pokemon.dart';
 
 class GeneralInformationCard extends StatelessWidget {
   const GeneralInformationCard({
-    Key? key,
+    super.key,
     required this.pokemon,
     required this.onImageChange,
-  }) : super(key: key);
+  });
 
   final Pokemon pokemon;
   final Function(int p1) onImageChange;

@@ -5,8 +5,8 @@ class GroupListBy extends StatelessWidget {
   const GroupListBy({
     required this.currentDisplay,
     required this.onDisplaySelected,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final CollectionDisplayType currentDisplay;
   final Function(CollectionDisplayType) onDisplaySelected;

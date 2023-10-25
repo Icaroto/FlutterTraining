@@ -6,8 +6,8 @@ import '../models/enums.dart';
 class SortListBy extends StatelessWidget {
   const SortListBy({
     required this.onFilterSelected,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Function(FilterType) onFilterSelected;
   @override
