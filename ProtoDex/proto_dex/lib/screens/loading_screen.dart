@@ -75,7 +75,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
         pokedex = await fetchData(kServerPokedexLocation);
 
         localData.dex = serverData.dex;
-        FileManager.save('versions', jsonEncode(localData));
+        FileManager.save(kVersionsKey, jsonEncode(localData));
       }
     }
 

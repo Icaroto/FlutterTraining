@@ -30,8 +30,6 @@ TODO: List to Details image scaling (hero animation)
 TODO: Make the ball spin (animation on loading screen)
 TODO: Complete Games for Sword/Shield, 
 TODO: Later other games
-TODO: Search in forms
-
 
 TODO: Clean up (LF, FT and Collection have several methods that are similar)
 TODO FEATURE: List in grid view (squares)

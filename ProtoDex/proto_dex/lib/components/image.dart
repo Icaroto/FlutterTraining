@@ -54,28 +54,42 @@ class ListImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: (shadowOnly == true)
-          ? [
-              Image.network(
-                '$kImageLocalPrefix$image',
-                color: Colors.black87,
-                height: 60,
-              )
-            ]
-          : [
-              Image.network(
-                '$kImageLocalPrefix$image',
-                color: Colors.black87,
-                height: 60,
-              ),
-              Image.network(
-                '$kImageLocalPrefix$image',
-                height: 55,
-              ),
-            ],
+    return SizedBox(
+      height: 60,
+      width: 60,
+      child: Stack(
+        children: (shadowOnly == true)
+            ? [
+                getImage('$kImageLocalPrefix$image', 60, shadow: true),
+              ]
+            : [
+                getImage('$kImageLocalPrefix$image', 60, shadow: true),
+                getImage('$kImageLocalPrefix$image', 55),
+              ],
+      ),
     );
   }
+}
+
+getImage(String image, double size, {bool shadow = false}) {
+  return Image.network(
+    image,
+    loadingBuilder:
+        (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+      if (loadingProgress == null) return child;
+      return Center(
+        child: CircularProgressIndicator(
+          color: Colors.red,
+          value: loadingProgress.expectedTotalBytes != null
+              ? loadingProgress.cumulativeBytesLoaded /
+                  loadingProgress.expectedTotalBytes!
+              : null,
+        ),
+      );
+    },
+    color: (shadow) ? Colors.black87 : null,
+    height: size,
+  );
 }
 
 class TypeIcon extends StatelessWidget {
