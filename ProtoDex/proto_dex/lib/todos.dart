@@ -5,6 +5,7 @@ class Todos {
 TODO: Search return Form Name instead of main name (work arounds?)
 TODO: Image enhacement
   Types, Backgrounds on app
+  loading icon on lists
 TODO: Next Prev style
 TODO BUG iOS: Screenshot doesnt work on ios simulator
 TODO BUG iOS: Permission issue with mac desktop

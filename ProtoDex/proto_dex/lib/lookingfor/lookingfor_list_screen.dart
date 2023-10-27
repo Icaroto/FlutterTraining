@@ -15,7 +15,7 @@ import '../models/enums.dart';
 import '../models/group.dart';
 import '../models/item.dart';
 import '../models/pokemon.dart';
-import '../utils/looking_for_manager.dart';
+import '../utils/items_manager.dart';
 import 'lookingfor_cards.dart';
 import 'lookingfor_details_screen.dart';
 import 'lookingfor_tile.dart';
@@ -45,7 +45,7 @@ class _LookingForScreenState extends State<LookingForScreen> {
   @override
   void initState() {
     originalPokedex.addAll(kPokedex);
-    collection = getCollection();
+    collection = retrieveItems(kLookingFor);
     super.initState();
   }
 
@@ -207,21 +207,21 @@ class _LookingForScreenState extends State<LookingForScreen> {
   }
 
   void removeFromColletion(Item item) {
-    collection = getCollection();
+    collection = retrieveItems(kLookingFor);
     collection.removeWhere((element) => element.ref == item.ref);
-    saveCollection(collection);
+    saveItems(kLookingFor, collection);
     collection = collection.applyAllFilters(filters, _query);
   }
 
   void saveToCollection(Item item) {
-    collection = getCollection();
+    collection = retrieveItems(kLookingFor);
     final index = collection.indexWhere((element) => element.ref == item.ref);
     if (index == -1) {
       collection.add(item);
     } else {
       collection[index] = item;
     }
-    saveCollection(collection);
+    saveItems(kLookingFor, collection);
     collection = collection.applyAllFilters(filters, _query);
   }
 
@@ -231,7 +231,7 @@ class _LookingForScreenState extends State<LookingForScreen> {
           ? removeFilters([FilterType.byValue])
           : addFilter(FilterType.byValue);
 
-      collection = getCollection();
+      collection = retrieveItems(kLookingFor);
       collection = collection.applyAllFilters(filters, _query);
 
       originalPokedex = originalPokedex.applyAllFilters(filters, _query, null);
@@ -336,7 +336,7 @@ class _LookingForScreenState extends State<LookingForScreen> {
     Pokemon pokemon = pokemons.current(indexes);
     Game tempGame =
         Game(name: "Unknown", dex: "", number: "", notes: "", shinyLocked: "");
-    Item item = Item.fromDex(pokemon, tempGame, kLookingForBaseName);
+    Item item = Item.fromDex(pokemon, tempGame, kLookingFor);
     item.currentLocation = "Unknown";
     item.catchDate = DateTime.now().toString();
     return item;

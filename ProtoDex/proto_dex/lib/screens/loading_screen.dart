@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:proto_dex/models/preferences.dart';
 import 'package:proto_dex/models/version.dart';
@@ -36,43 +34,36 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   void loadFiles() async {
-    await FileManager.loadDirectory();
-
+    await FileManager.loadPreferences();
+    // FileManager.removeAllKeys();
     Data serverData =
         Data.fromJson(jsonDecode(await fetchData(kServerVersionLocation)));
 
-    FileManager fManager = FileManager();
     bool checkVersioning = true;
 
     //********* Resolve Versions file *********\\
-    File localDataFile = fManager.findFile('versions');
-    if (localDataFile.readAsStringSync().isEmpty) {
-      localDataFile.writeAsStringSync(jsonEncode(serverData));
-      checkVersioning = false;
-    }
-    //***************************************\\
+    Data localData = (FileManager.exists(kVersionsKey))
+        ? Data.fromJson(jsonDecode(FileManager.get(kVersionsKey)))
+        : serverData;
 
-    //********* Resolve Pokedex file *********\\
-    File pokedexLocalFile = fManager.findFile('pokedex');
-    if (pokedexLocalFile.readAsStringSync().isEmpty) {
-      String serverPokedex = await fetchData(kServerPokedexLocation);
-      pokedexLocalFile.writeAsStringSync(serverPokedex);
-    }
+    FileManager.save(kVersionsKey, jsonEncode(localData));
     //***************************************\\
 
     //********* Resolve Preferences file *********\\
-    File preferencesLocalFile = fManager.findFile('preferences');
-    if (preferencesLocalFile.readAsStringSync().isEmpty) {
-      String serverPreferences = await fetchData(kServerPreferences);
-      preferencesLocalFile.writeAsStringSync(serverPreferences);
-    }
+    kPreferences = (FileManager.exists(kPreferencesKey))
+        ? Preferences.fromJson(jsonDecode(FileManager.get(kPreferencesKey)))
+        : Preferences.fromJson(jsonDecode(await fetchData(kServerPreferences)));
 
-    kPreferences = Preferences.fromJson(
-        jsonDecode(preferencesLocalFile.readAsStringSync()));
+    FileManager.save(kPreferencesKey, jsonEncode(kPreferences));
     //***************************************\\
 
-    Data localData =
-        Data.fromJson(jsonDecode(localDataFile.readAsStringSync()));
+    //********* Resolve Pokedex file *********\\
+    String pokedex = (FileManager.exists(kPokedexKey))
+        ? FileManager.get(kPokedexKey)
+        : await fetchData(kServerPokedexLocation);
+
+    FileManager.save(kPokedexKey, pokedex);
+    //***************************************\\
 
     if (serverData.app > localData.app) {
       displayUpdateAlert();
@@ -81,11 +72,10 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
     if (checkVersioning) {
       if (serverData.dex > localData.dex) {
-        String latestPokedex = await fetchData(kServerPokedexLocation);
-        pokedexLocalFile.writeAsStringSync(latestPokedex);
+        pokedex = await fetchData(kServerPokedexLocation);
 
         localData.dex = serverData.dex;
-        localDataFile.writeAsStringSync(jsonEncode(localData));
+        FileManager.save('versions', jsonEncode(localData));
       }
     }
 
@@ -93,10 +83,73 @@ class _LoadingScreenState extends State<LoadingScreen> {
     // var file = await rootBundle.loadString(kPokedexFileLocation);
     // kPokedex = await Pokemon.createPokedex(file);
 
-    kPokedex = await Pokemon.createPokedex(pokedexLocalFile.readAsStringSync());
+    kPokedex = await Pokemon.createPokedex(pokedex);
     //await Future.delayed(const Duration(seconds: 2));
     pushNextScreen();
   }
+
+  // void loadFiles() async {
+  //   await FileManager.loadDirectory();
+
+  //   Data serverData =
+  //       Data.fromJson(jsonDecode(await fetchData(kServerVersionLocation)));
+
+  //   FileManager fManager = FileManager();
+  //   bool checkVersioning = true;
+
+  //   //********* Resolve Versions file *********\\
+  //   File localDataFile = fManager.findFile('versions');
+  //   if (localDataFile.readAsStringSync().isEmpty) {
+  //     localDataFile.writeAsStringSync(jsonEncode(serverData));
+  //     checkVersioning = false;
+  //   }
+  //   //***************************************\\
+
+  //   //********* Resolve Pokedex file *********\\
+  //   File pokedexLocalFile = fManager.findFile('pokedex');
+  //   if (pokedexLocalFile.readAsStringSync().isEmpty) {
+  //     String serverPokedex = await fetchData(kServerPokedexLocation);
+  //     pokedexLocalFile.writeAsStringSync(serverPokedex);
+  //   }
+  //   //***************************************\\
+
+  //   //********* Resolve Preferences file *********\\
+  //   File preferencesLocalFile = fManager.findFile('preferences');
+  //   if (preferencesLocalFile.readAsStringSync().isEmpty) {
+  //     String serverPreferences = await fetchData(kServerPreferences);
+  //     preferencesLocalFile.writeAsStringSync(serverPreferences);
+  //   }
+
+  //   kPreferences = Preferences.fromJson(
+  //       jsonDecode(preferencesLocalFile.readAsStringSync()));
+  //   //***************************************\\
+
+  //   Data localData =
+  //       Data.fromJson(jsonDecode(localDataFile.readAsStringSync()));
+
+  //   if (serverData.app > localData.app) {
+  //     displayUpdateAlert();
+  //     checkVersioning = false;
+  //   }
+
+  //   if (checkVersioning) {
+  //     if (serverData.dex > localData.dex) {
+  //       String latestPokedex = await fetchData(kServerPokedexLocation);
+  //       pokedexLocalFile.writeAsStringSync(latestPokedex);
+
+  //       localData.dex = serverData.dex;
+  //       localDataFile.writeAsStringSync(jsonEncode(localData));
+  //     }
+  //   }
+
+  //   //For debugging:
+  //   // var file = await rootBundle.loadString(kPokedexFileLocation);
+  //   // kPokedex = await Pokemon.createPokedex(file);
+
+  //   kPokedex = await Pokemon.createPokedex(pokedexLocalFile.readAsStringSync());
+  //   //await Future.delayed(const Duration(seconds: 2));
+  //   pushNextScreen();
+  // }
 
   //if major verison on server is higher, means a breaking change on files exists
   //eg. new properties on json or new reading/writing in files

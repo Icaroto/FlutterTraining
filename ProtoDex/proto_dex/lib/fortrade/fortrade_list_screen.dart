@@ -15,7 +15,7 @@ import '../models/enums.dart';
 import '../models/group.dart';
 import '../models/item.dart';
 import '../models/pokemon.dart';
-import '../utils/for_trade_manager.dart';
+import '../utils/items_manager.dart';
 import 'fortrade_cards.dart';
 import 'fortrade_details_screen.dart';
 import 'fortrade_tile.dart';
@@ -45,7 +45,7 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
   @override
   void initState() {
     originalPokedex.addAll(kPokedex);
-    collection = getCollection();
+    collection = retrieveItems(kForTrade);
     super.initState();
   }
 
@@ -207,21 +207,21 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
   }
 
   void removeFromColletion(Item item) {
-    collection = getCollection();
+    collection = retrieveItems(kForTrade);
     collection.removeWhere((element) => element.ref == item.ref);
-    saveCollection(collection);
+    saveItems(kForTrade, collection);
     collection = collection.applyAllFilters(filters, _query);
   }
 
   void saveToCollection(Item item) {
-    collection = getCollection();
+    collection = retrieveItems(kForTrade);
     final index = collection.indexWhere((element) => element.ref == item.ref);
     if (index == -1) {
       collection.add(item);
     } else {
       collection[index] = item;
     }
-    saveCollection(collection);
+    saveItems(kForTrade, collection);
     collection = collection.applyAllFilters(filters, _query);
   }
 
@@ -231,7 +231,7 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
           ? removeFilters([FilterType.byValue])
           : addFilter(FilterType.byValue);
 
-      collection = getCollection();
+      collection = retrieveItems(kForTrade);
       collection = collection.applyAllFilters(filters, _query);
 
       originalPokedex = originalPokedex.applyAllFilters(filters, _query, null);
@@ -336,7 +336,7 @@ class _ForTradeScreenState extends State<ForTradeScreen> {
     Pokemon pokemon = pokemons.current(indexes);
     Game tempGame =
         Game(name: "Unknown", dex: "", number: "", notes: "", shinyLocked: "");
-    Item item = Item.fromDex(pokemon, tempGame, kForTradeBaseName);
+    Item item = Item.fromDex(pokemon, tempGame, kForTrade);
     item.currentLocation = "Unknown";
     item.catchDate = DateTime.now().toString();
     return item;

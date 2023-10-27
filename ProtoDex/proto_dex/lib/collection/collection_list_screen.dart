@@ -15,7 +15,7 @@ import '../models/enums.dart';
 import '../models/group.dart';
 import '../models/item.dart';
 import '../models/pokemon.dart';
-import '../utils/collection_manager.dart';
+import '../utils/items_manager.dart';
 import 'collection_cards.dart';
 import 'collection_details_screen.dart';
 import 'collection_tile.dart';
@@ -45,7 +45,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
   @override
   void initState() {
     originalPokedex.addAll(kPokedex);
-    collection = getCollection();
+    collection = retrieveItems(kCollectionKey);
     super.initState();
   }
 
@@ -207,21 +207,21 @@ class _CollectionScreenState extends State<CollectionScreen> {
   }
 
   void removeFromColletion(Item item) {
-    collection = getCollection();
+    collection = retrieveItems(kCollectionKey);
     collection.removeWhere((element) => element.ref == item.ref);
-    saveCollection(collection);
+    saveItems(kCollectionKey, collection);
     collection = collection.applyAllFilters(filters, _query);
   }
 
   void saveToCollection(Item item) {
-    collection = getCollection();
+    collection = retrieveItems(kCollectionKey);
     final index = collection.indexWhere((element) => element.ref == item.ref);
     if (index == -1) {
       collection.add(item);
     } else {
       collection[index] = item;
     }
-    saveCollection(collection);
+    saveItems(kCollectionKey, collection);
     collection = collection.applyAllFilters(filters, _query);
   }
 
@@ -231,7 +231,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
           ? removeFilters([FilterType.byValue])
           : addFilter(FilterType.byValue);
 
-      collection = getCollection();
+      collection = retrieveItems(kCollectionKey);
       collection = collection.applyAllFilters(filters, _query);
 
       originalPokedex = originalPokedex.applyAllFilters(filters, _query, null);
@@ -336,7 +336,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
     Pokemon pokemon = pokemons.current(indexes);
     Game tempGame =
         Game(name: "Unknown", dex: "", number: "", notes: "", shinyLocked: "");
-    Item item = Item.fromDex(pokemon, tempGame, kCollectionBaseName);
+    Item item = Item.fromDex(pokemon, tempGame, kCollectionKey);
     item.currentLocation = "Unknown";
     item.catchDate = DateTime.now().toString();
     return item;

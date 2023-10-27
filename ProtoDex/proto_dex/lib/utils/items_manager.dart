@@ -1,22 +1,22 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:collection/collection.dart';
 import 'package:proto_dex/file_manager.dart';
-import '../constants.dart';
 import '../models/game.dart';
 import '../models/group.dart';
 import '../models/item.dart';
 
-getCollection() {
-  File file = FileManager().findFile(kLookingForBaseName);
-  String content = file.readAsStringSync();
+retrieveItems(String key) {
+  String content = FileManager.get(key);
   if (content.isEmpty) return List<Item>.empty(growable: true);
   return List<Item>.from(
       (jsonDecode(content)).map((model) => Item.fromJson(model)));
 }
 
-addItemsToCollection(List<Item> items) {
-  List<Item> collection = getCollection();
+saveItems(String key, List<Item> collection) =>
+    FileManager.save(key, jsonEncode(collection));
+
+addItems(String key, List<Item> items) {
+  List<Item> collection = retrieveItems(key);
   List<Item> toAddToCollection = [];
   for (var item in items) {
     if (item.forms.isEmpty) {
@@ -32,15 +32,8 @@ addItemsToCollection(List<Item> items) {
         element.ref == pokemon.ref && element.origin == pokemon.origin);
     collection.add(pokemon);
   }
-  collection.sort((a, b) => int.parse(a.number).compareTo(int.parse(b.number)));
-  saveCollection(collection);
-}
-
-saveCollection(List<Item> collection) {
-  File file = FileManager().findFile(kLookingForBaseName);
-  var encode = jsonEncode(collection);
-
-  file.writeAsString(encode);
+  // collection.sort((a, b) => int.parse(a.number).compareTo(int.parse(b.number)));
+  saveItems(key, collection);
 }
 
 groupByPokemon(List<Item> collection) {

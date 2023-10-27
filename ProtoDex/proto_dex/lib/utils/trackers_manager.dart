@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:collection/collection.dart';
 import 'package:proto_dex/file_manager.dart';
 import '../constants.dart';
@@ -12,34 +11,21 @@ import '../models/pokemon.dart';
 Future<List<Tracker>> getAllTrackers() async {
   List<Tracker> localTrackers = [];
 
-  var files = await FileManager().findFiles(kTrackerPrefix, "");
-  // await Future.delayed(const Duration(seconds: 2));
-  for (var element in files!) {
-    String content = element.readAsStringSync();
-    if (content.isNotEmpty) {
-      localTrackers.add(Tracker.fromJson(jsonDecode(content)));
-    }
+  var keys = FileManager.getAllByPrefix(kTrackerPrefix);
+  for (var key in keys) {
+    Tracker tracker = Tracker.fromJson(jsonDecode(FileManager.get(key)));
+    localTrackers.add(tracker);
   }
 
   return localTrackers;
 }
 
-getTracker(String ref) {
-  File file = FileManager().findFile(ref);
-  String content = file.readAsStringSync();
-  return Tracker.fromJson(jsonDecode(content));
-}
+getTracker(String ref) => Tracker.fromJson(jsonDecode(FileManager.get(ref)));
 
-saveTracker(Tracker tracker) {
-  File file = FileManager().findFile(tracker.ref);
-  var encode = jsonEncode(tracker);
+saveTracker(Tracker tracker) =>
+    FileManager.save(tracker.ref, jsonEncode(tracker));
 
-  file.writeAsString(encode);
-}
-
-deleteTracker(String name) {
-  FileManager().removeFile(name);
-}
+deleteTracker(String name) => FileManager.delete(name);
 
 Tracker createTracker(
     String trackerName, String gameName, String dexName, String trackerType) {

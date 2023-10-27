@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:proto_dex/constants.dart';
 
 import '../models/item.dart';
-import '../utils/collection_manager.dart';
+import '../utils/items_manager.dart';
 
 class ImportToCollectionButton extends StatelessWidget {
   const ImportToCollectionButton({
@@ -16,7 +17,7 @@ class ImportToCollectionButton extends StatelessWidget {
     return Center(
       child: TextButton(
         onPressed: () {
-          addItemsToCollection(listToImport);
+          addItems(kCollectionKey, listToImport);
         },
         style: ButtonStyle(
           shape: MaterialStateProperty.all(

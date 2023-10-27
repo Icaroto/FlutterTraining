@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:proto_dex/file_manager.dart';
 
 class Preferences {
@@ -23,8 +22,5 @@ class Preferences {
     };
   }
 
-  save() {
-    File preferencesLocalFile = FileManager().findFile('preferences');
-    preferencesLocalFile.writeAsStringSync(jsonEncode(this));
-  }
+  save() => FileManager.save('preferences', jsonEncode(this));
 }
