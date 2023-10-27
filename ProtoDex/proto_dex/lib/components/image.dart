@@ -55,8 +55,8 @@ class ListImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
-      width: 60,
+      height: 50,
+      width: 50,
       child: Stack(
         children: (shadowOnly == true)
             ? [
