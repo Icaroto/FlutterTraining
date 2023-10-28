@@ -8,13 +8,15 @@ class DetailsHeader extends StatelessWidget {
       required this.name,
       required this.number,
       required this.type1,
-      required this.type2});
+      required this.type2,
+      this.displayNumber = false});
 
   // final Pokemon pokemon;
   final String name;
   final String number;
   final PokemonType type1;
   final PokemonType? type2;
+  final bool displayNumber;
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +40,15 @@ class DetailsHeader extends StatelessWidget {
                   softWrap: true,
                 ),
               ),
-              Text(
-                "#$number",
-                style: const TextStyle(
-                  fontFamily: 'SigmarOne',
-                  fontSize: 15,
-                  color: Colors.black,
+              if (displayNumber && number.isNotEmpty)
+                Text(
+                  "#$number",
+                  style: const TextStyle(
+                    fontFamily: 'SigmarOne',
+                    fontSize: 15,
+                    color: Colors.black,
+                  ),
                 ),
-              ),
             ],
           ),
           const Divider(thickness: 2, color: Colors.black),

@@ -82,6 +82,7 @@ class _TrackerDetailsPageState extends State<TrackerDetailsPage> {
             number: displayPokemon.number,
             type1: displayPokemon.type1,
             type2: displayPokemon.type2,
+            displayNumber: true,
           ),
           Panel(tabs: giveMeATab(displayPokemon)),
           WillPopScope(

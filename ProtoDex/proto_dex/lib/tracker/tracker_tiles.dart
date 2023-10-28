@@ -157,7 +157,7 @@ class _TrackerTile extends State<TrackerTile> {
               pokemon.displayName,
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            Text("#${pokemon.number}")
+            if (pokemon.number != "") Text("#${pokemon.number}")
           ],
         ),
         trailing: Checkbox(

@@ -53,6 +53,7 @@ class _PokedexDetailsPage extends State<PokedexDetailsPage> {
             number: pokemon.number,
             type1: pokemon.type1,
             type2: pokemon.type2,
+            displayNumber: true,
           ),
           Panel(tabs: buildTab(pokemon)),
           WillPopScope(
