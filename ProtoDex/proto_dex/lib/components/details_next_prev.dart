@@ -22,13 +22,13 @@ class NextPrevButtons extends StatelessWidget {
               onTap: onLeftClick,
               child: (onLeftClick == null)
                   ? Container()
-                  : icon(Icons.keyboard_arrow_left),
+                  : icon(Icons.arrow_circle_left_outlined),
             ),
             GestureDetector(
               onTap: onRightClick,
               child: (onRightClick == null)
                   ? Container()
-                  : icon(Icons.keyboard_arrow_right),
+                  : icon(Icons.arrow_circle_right_outlined),
             ),
           ],
         ),
@@ -40,7 +40,7 @@ class NextPrevButtons extends StatelessWidget {
     return Icon(
       icon,
       size: 30,
-      color: Colors.black,
+      color: Colors.blueGrey[800],
     );
   }
 }

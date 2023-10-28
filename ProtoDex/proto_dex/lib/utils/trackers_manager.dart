@@ -108,7 +108,8 @@ Item? checkPokemon(Pokemon pokemon, gameName, dexName, entryOrigin,
   return item;
 }
 
-Item? createItem(pokemon, gameName, dexName, entryOrigin, isShinyTracker) {
+Item? createItem(
+    Pokemon pokemon, gameName, dexName, entryOrigin, isShinyTracker) {
   Game? game = pokemon.findGameDex(gameName, dexName);
   if (game != null) {
     if ((isShinyTracker && game.shinyLocked == "UNLOCKED") || !isShinyTracker) {
