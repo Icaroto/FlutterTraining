@@ -175,7 +175,7 @@ class Tracker {
     return values!.contains(type.name);
   }
 
-  CaptureType isPokemonCaptured(Item pokemon) {
+  static CaptureType isPokemonCaptured(Item pokemon) {
     if (pokemon.forms.isNotEmpty) {
       if (pokemon.forms.every((element) => element.captured == true)) {
         return CaptureType.full;
@@ -191,19 +191,15 @@ class Tracker {
     }
   }
 
-  static CaptureType keepTabOpen(Item pokemon) {
-    if (pokemon.forms.isNotEmpty) {
-      if (pokemon.forms.every((element) => element.captured == true)) {
-        return CaptureType.full;
-      }
-
-      if (pokemon.forms.every((element) => element.captured == false)) {
-        return CaptureType.empty;
-      }
-
-      return CaptureType.partial;
-    } else {
-      return (pokemon.captured) ? CaptureType.full : CaptureType.empty;
+  static bool keepTabOpen(Item pokemon) {
+    switch (isPokemonCaptured(pokemon)) {
+      case CaptureType.full:
+      case CaptureType.partial:
+        return true;
+      case CaptureType.empty:
+        return false;
+      default:
+        return false;
     }
   }
 }

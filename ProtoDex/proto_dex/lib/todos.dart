@@ -13,11 +13,10 @@ TODO BUG iOS: Back button on details screen overlaps with pokemon name
 TODO BUG iOS: List to have a back button on iOS
 TODO BUG iOS: Details page remove static height/width as it breaks on iOS
 TODO BUG iOS: Check why image looks smaller on iOS????
-TODO BUG iOS: Add swipe on detail page based on list
 TODO: On Living dex or any list tile of type Expand, keep it opened after ticking one
+
 TODO: Add generation property + generation filter (use to test the auto updates)
 TODO: Tracker is displaying forms that are not really catchable (eg. Mimiko hunger form, Ogerpon masks)
-TODO: Agree on design for FT/LT and match them (Tile)
 TODO: Scroll bar on other screens?
 TODO: Share button?
 TODO: Screenshot on tracker?

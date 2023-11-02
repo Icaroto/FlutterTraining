@@ -277,10 +277,8 @@ class _TrackerListScreenState extends State<TrackerListScreen> {
       ImportToCollectionButton(
         listToImport: filteredList
             .where((element) =>
-                widget.collection.isPokemonCaptured(element) ==
-                    CaptureType.full ||
-                widget.collection.isPokemonCaptured(element) ==
-                    CaptureType.partial)
+                Tracker.isPokemonCaptured(element) == CaptureType.full ||
+                Tracker.isPokemonCaptured(element) == CaptureType.partial)
             .toList(),
       )
     ];
