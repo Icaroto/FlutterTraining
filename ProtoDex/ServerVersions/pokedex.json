@@ -40914,7 +40914,7 @@
   },
   {
     "name": "Zacian",
-    "formName": "",
+    "formName": "Hero of Many Battles",
     "species": "Warrior Pokémon",
     "height": "2.8m",
     "weight": "110.0kg",
@@ -40935,8 +40935,8 @@
     "games": [],
     "forms": [
       {
-        "name": "Crowned Sword",
-        "formName": "",
+        "name": "Zacian",
+        "formName": "Crowned Sword",
         "species": "Warrior Pokémon",
         "height": "2.8m",
         "weight": "355.0kg",
@@ -40969,7 +40969,7 @@
   },
   {
     "name": "Zamazenta",
-    "formName": "",
+    "formName": "Hero of Many Battles",
     "species": "Warrior Pokémon",
     "height": "2.9m",
     "weight": "210.0kg",
@@ -40990,8 +40990,8 @@
     "games": [],
     "forms": [
       {
-        "name": "Crowned Shield",
-        "formName": "",
+        "name": "Zamazenta",
+        "formName": "Crowned Shield",
         "species": "Warrior Pokémon",
         "height": "2.9m",
         "weight": "785.0kg",
@@ -41389,7 +41389,7 @@
   },
   {
     "name": "Calyrex",
-    "formName": "",
+    "formName": "Calyrex",
     "species": "King Pokémon",
     "height": "1.1m",
     "weight": "7.7kg",
@@ -41417,8 +41417,8 @@
     "games": [],
     "forms": [
       {
-        "name": "Ice Rider",
-        "formName": "",
+        "name": "Calyrex",
+        "formName": "Ice Rider",
         "species": "High King Pokémon",
         "height": "2.4m",
         "weight": "809.1kg",
@@ -41439,8 +41439,8 @@
         "games": []
       },
       {
-        "name": "Shadow Rider",
-        "formName": "",
+        "name": "Calyrex",
+        "formName": "Shadow Rider",
         "species": "High King Pokémon",
         "height": "2.4m",
         "weight": "53.6kg",
