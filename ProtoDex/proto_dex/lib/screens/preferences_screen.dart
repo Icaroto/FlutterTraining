@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/components/app_bar.dart';
+import 'package:proto_dex/components/base_background.dart';
 import 'package:proto_dex/components/switch_option.dart';
 import 'package:proto_dex/constants.dart';
 import 'package:proto_dex/models/preferences.dart';
-import 'package:proto_dex/styles.dart';
 
 class PreferencesScreen extends StatefulWidget {
   const PreferencesScreen({super.key});
@@ -27,7 +27,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
       ),
       body: Stack(
         children: [
-          kBasicBackground,
+          const BaseBackground(),
           SafeArea(
             child: Column(
               children: [

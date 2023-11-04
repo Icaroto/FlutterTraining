@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proto_dex/components/app_bar.dart';
+import 'package:proto_dex/components/base_background.dart';
 import 'package:proto_dex/components/image.dart';
-import 'package:proto_dex/styles.dart';
 import '../models/tracker.dart';
 import '../models/game.dart';
 import '../tracker/tracker_list_screen.dart';
@@ -40,7 +40,7 @@ class _SelectTrackerScreenState extends State<SelectTrackerScreen> {
       ),
       body: Stack(
         children: <Widget>[
-          kBasicBackground,
+          const BaseBackground(),
           SafeArea(
             child: Column(
               children: [

@@ -3,9 +3,9 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:proto_dex/components/base_background.dart';
 import 'package:proto_dex/constants.dart';
 import 'package:proto_dex/models/game.dart';
-import 'package:proto_dex/styles.dart';
 import 'package:screenshot/screenshot.dart';
 import '../components/app_bar.dart';
 import '../components/filters_side_screen.dart';
@@ -79,7 +79,7 @@ class _LookingForScreenState extends State<LookingForScreen> {
       ),
       body: Stack(
         children: <Widget>[
-          kBasicBackground,
+          const BaseBackground(),
           SafeArea(
             child: Column(
               children: [

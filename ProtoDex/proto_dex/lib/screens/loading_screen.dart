@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:proto_dex/components/base_background.dart';
 import 'package:proto_dex/models/preferences.dart';
 import 'package:proto_dex/models/version.dart';
 import 'start_screen.dart';
 import 'package:proto_dex/file_manager.dart';
-import 'package:proto_dex/styles.dart';
 import 'package:proto_dex/models/pokemon.dart';
 import 'package:proto_dex/constants.dart';
 import 'package:http/http.dart' as http;
@@ -23,14 +23,24 @@ class _LoadingScreenState extends State<LoadingScreen> {
     super.initState();
   }
 
-  Future<String> fetchData(String url) async {
-    final response = await http.get(Uri.parse(url));
-
-    if (response.statusCode == 200) {
-      return response.body;
-    } else {
-      throw Exception('Failed to load server version');
-    }
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Stack(
+        children: [
+          BaseBackground(),
+          Center(
+            child: Text(
+              'Loading...',
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.amber,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   void loadFiles() async {
@@ -84,77 +94,21 @@ class _LoadingScreenState extends State<LoadingScreen> {
     // kPokedex = await Pokemon.createPokedex(file);
 
     kPokedex = await Pokemon.createPokedex(pokedex);
-    //await Future.delayed(const Duration(seconds: 2));
-    pushNextScreen();
+    // await Future.delayed(const Duration(seconds: 2));
+    openStartScreen();
   }
 
-  // void loadFiles() async {
-  //   await FileManager.loadDirectory();
+  Future<String> fetchData(String url) async {
+    final response = await http.get(Uri.parse(url));
 
-  //   Data serverData =
-  //       Data.fromJson(jsonDecode(await fetchData(kServerVersionLocation)));
+    if (response.statusCode == 200) {
+      return response.body;
+    } else {
+      throw Exception('Failed to load server version');
+    }
+  }
 
-  //   FileManager fManager = FileManager();
-  //   bool checkVersioning = true;
-
-  //   //********* Resolve Versions file *********\\
-  //   File localDataFile = fManager.findFile('versions');
-  //   if (localDataFile.readAsStringSync().isEmpty) {
-  //     localDataFile.writeAsStringSync(jsonEncode(serverData));
-  //     checkVersioning = false;
-  //   }
-  //   //***************************************\\
-
-  //   //********* Resolve Pokedex file *********\\
-  //   File pokedexLocalFile = fManager.findFile('pokedex');
-  //   if (pokedexLocalFile.readAsStringSync().isEmpty) {
-  //     String serverPokedex = await fetchData(kServerPokedexLocation);
-  //     pokedexLocalFile.writeAsStringSync(serverPokedex);
-  //   }
-  //   //***************************************\\
-
-  //   //********* Resolve Preferences file *********\\
-  //   File preferencesLocalFile = fManager.findFile('preferences');
-  //   if (preferencesLocalFile.readAsStringSync().isEmpty) {
-  //     String serverPreferences = await fetchData(kServerPreferences);
-  //     preferencesLocalFile.writeAsStringSync(serverPreferences);
-  //   }
-
-  //   kPreferences = Preferences.fromJson(
-  //       jsonDecode(preferencesLocalFile.readAsStringSync()));
-  //   //***************************************\\
-
-  //   Data localData =
-  //       Data.fromJson(jsonDecode(localDataFile.readAsStringSync()));
-
-  //   if (serverData.app > localData.app) {
-  //     displayUpdateAlert();
-  //     checkVersioning = false;
-  //   }
-
-  //   if (checkVersioning) {
-  //     if (serverData.dex > localData.dex) {
-  //       String latestPokedex = await fetchData(kServerPokedexLocation);
-  //       pokedexLocalFile.writeAsStringSync(latestPokedex);
-
-  //       localData.dex = serverData.dex;
-  //       localDataFile.writeAsStringSync(jsonEncode(localData));
-  //     }
-  //   }
-
-  //   //For debugging:
-  //   // var file = await rootBundle.loadString(kPokedexFileLocation);
-  //   // kPokedex = await Pokemon.createPokedex(file);
-
-  //   kPokedex = await Pokemon.createPokedex(pokedexLocalFile.readAsStringSync());
-  //   //await Future.delayed(const Duration(seconds: 2));
-  //   pushNextScreen();
-  // }
-
-  //if major verison on server is higher, means a breaking change on files exists
-  //eg. new properties on json or new reading/writing in files
-  //if that's the case, all updates will be skipped until the app is updated to latest
-  displayUpdateAlert() {
+  void displayUpdateAlert() {
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
@@ -171,7 +125,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     );
   }
 
-  void pushNextScreen() {
+  void openStartScreen() {
     Navigator.pop(context);
     Navigator.push(
       context,
@@ -179,26 +133,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
         builder: (context) {
           return const StartScreen();
         },
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Image.network(
-                '${kImageLocalPrefix}background/colored_ball.png'),
-          ),
-          const Text(
-            'Loading...',
-            style: loadingTextStyle,
-          )
-        ],
       ),
     );
   }

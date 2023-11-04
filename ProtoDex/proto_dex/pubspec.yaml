@@ -76,7 +76,7 @@ flutter:
   assets:
     - data/
     - images/
-    # - images/background/
+    - images/background/
     # - images/balls/
     # - images/icons/
     # - images/games/
