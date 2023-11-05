@@ -2,8 +2,6 @@ class Todos {
   Todos(this.listBase);
 /*
 
-TODO: Search return Form Name instead of main name (work arounds?)
-
 TODO: Image enhacement
   Types, Backgrounds on app
 TODO: Check permission for windows desktop
@@ -30,7 +28,7 @@ TODO FEATURE: List in grid view (squares)
 TODO FEATURE: SHINY COUNT
 TODO: Icon
 TODO: Import/Export json
-
+TODO: Search return Form Name instead of main name (work arounds?)
 */
 
 /*

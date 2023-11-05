@@ -8,10 +8,10 @@ class PokemonTiles extends StatefulWidget {
       {super.key,
       required this.pokemons,
       required this.indexes,
-      this.tileColor,
+      required this.isLowerTile,
       this.onStateChange});
 
-  final Color? tileColor;
+  final bool isLowerTile;
   final List<Pokemon> pokemons;
   final List<int> indexes;
   final Function(List<int>)? onStateChange;
@@ -27,7 +27,7 @@ class _PokemonTiles extends State<PokemonTiles> {
 
     return Card(
       child: ListTile(
-        tileColor: widget.tileColor,
+        tileColor: (widget.isLowerTile) ? null : Colors.black26,
         textColor: Colors.black,
         onTap: (widget.onStateChange == null)
             ? () => {
@@ -47,13 +47,16 @@ class _PokemonTiles extends State<PokemonTiles> {
                 widget.onStateChange!(widget.indexes);
               },
         leading: Hero(
-            tag: pokemon.ref,
-            child: ListImage(image: 'mons/${pokemon.image[0]}')),
+          tag: pokemon.ref,
+          child: ListImage(image: 'mons/${pokemon.image[0]}'),
+        ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Flexible(
+              fit: FlexFit.loose,
               child: Text(
+                //pokemon.name + " (" + pokemon.formName + ")",
                 (pokemon.formName == "") ? pokemon.name : pokemon.formName,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
@@ -74,16 +77,19 @@ class _PokemonTiles extends State<PokemonTiles> {
               ),
           ],
         ),
-        trailing: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              "#${pokemon.number}",
-              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(width: 36),
-          ],
-        ),
+        trailing: (!widget.isLowerTile)
+            ? Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    "#${pokemon.number}",
+                    style: const TextStyle(
+                        fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(width: 36),
+                ],
+              )
+            : null,
       ),
     );
   }

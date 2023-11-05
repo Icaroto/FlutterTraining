@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proto_dex/components/base_background.dart';
 import 'package:proto_dex/pokedex/pokedex_cards.dart';
 import 'package:proto_dex/components/custom_scrollbar.dart';
 import '../components/app_bar.dart';
@@ -56,7 +57,7 @@ class _PokedexListScreenState extends State<PokedexListScreen> {
       ),
       body: Stack(
         children: <Widget>[
-          // kBasicBackground,
+          const BaseBackground(),
           SafeArea(
             child: Column(
               children: [

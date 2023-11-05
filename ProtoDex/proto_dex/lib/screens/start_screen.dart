@@ -74,7 +74,7 @@ class _StartScreenState extends State<StartScreen> {
               ),
             ],
           ),
-          Disclaimer(),
+          const Disclaimer(),
         ],
       ),
     );

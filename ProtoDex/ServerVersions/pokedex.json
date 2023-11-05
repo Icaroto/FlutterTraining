@@ -8323,7 +8323,7 @@
         "ref": "143.1",
         "type1": "normal",
         "type2": null,
-        "image": ["143-normal-mf.png", "143-shiny-mf.png"],
+        "image": ["143-giga-normal-mf.png", "143-giga-shiny-mf.png"],
         "abilities": ["Immunity", "Thick Fat"],
         "hiddenAbility": "Gluttony",
         "weaknessquarter": [],

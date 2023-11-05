@@ -7,7 +7,7 @@ Widget createCards(
   List<Pokemon> pokemons,
   List<int> indexes, {
   Function(List<int>)? onStateChange,
-  subLevel = false,
+  isLowerTile = false,
 }) {
   final GlobalKey expansionTileKey = GlobalKey();
 
@@ -15,7 +15,7 @@ Widget createCards(
 
   if (pokemon.forms.isEmpty) {
     return PokemonTiles(
-      tileColor: (subLevel) ? null : Colors.black26,
+      isLowerTile: isLowerTile,
       pokemons: pokemons,
       indexes: indexes,
       onStateChange: onStateChange,
@@ -42,8 +42,8 @@ Widget createCards(
       },
       textColor: Colors.black,
       collapsedTextColor: Colors.black,
-      collapsedBackgroundColor: (subLevel) ? null : Colors.black26,
-      backgroundColor: (subLevel) ? Colors.black12 : Colors.black26,
+      collapsedBackgroundColor: (isLowerTile) ? null : Colors.black26,
+      backgroundColor: (isLowerTile) ? Colors.black12 : Colors.black26,
       leading: ListImage(
         image: "mons/${pokemon.image[0]}",
       ),
@@ -75,10 +75,11 @@ Widget createCards(
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            "#${pokemon.number}",
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-          ),
+          if (!isLowerTile)
+            Text(
+              "#${pokemon.number}",
+              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            ),
           const SizedBox(width: 20),
           Column(
             children: [
@@ -98,7 +99,7 @@ Widget createCards(
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index2) {
             return createCards(pokemons, [...indexes, index2],
-                onStateChange: onStateChange, subLevel: true);
+                onStateChange: onStateChange, isLowerTile: true);
           },
           itemCount: pokemon.forms.length,
           shrinkWrap: true,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proto_dex/constants.dart';
+import 'package:proto_dex/components/base_background.dart';
 import '../models/enums.dart';
 import '../models/pokemon.dart';
 
@@ -34,35 +34,7 @@ class TypeBackground extends StatelessWidget {
                 colors: fillColors(type1, type2),
               ),
             ),
-            child: Container(
-              height: 100,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  scale: 2.5,
-                  alignment: Alignment.topLeft,
-                  image: const NetworkImage(
-                      '${kImageLocalPrefix}background/ball_piece_4.png'),
-                  colorFilter: ColorFilter.mode(
-                    Colors.white.withOpacity(0.2),
-                    BlendMode.modulate,
-                  ),
-                ),
-              ),
-              child: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    alignment: Alignment.center,
-                    image: const NetworkImage(
-                        '${kImageLocalPrefix}background/ball_light.png'),
-                    scale: 0.5,
-                    colorFilter: ColorFilter.mode(
-                      Colors.white.withOpacity(0.2),
-                      BlendMode.modulate,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            child: const BaseBackground(),
           ),
         ),
       ],
