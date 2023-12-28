@@ -46786,5 +46786,445 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Archaludon",
+    "formName": "",
+    "species": "Alloy Pokémon",
+    "height": "2.0m",
+    "weight": "60.0kg",
+    "breeding": {
+        "groups": [
+            "Dragon",
+            "Mineral"
+        ],
+        "cycles": ""
+    },
+    "number": "1018",
+    "ref": "1018.0",
+    "type1": "steel",
+    "type2": "dragon",
+    "image": [
+        "1018-normal-mf.png",
+        "1018-shiny-mf.png"
+    ],
+    "abilities": [
+        "Stamina",
+        "Sturdy"
+    ],
+    "hiddenAbility": "Stalwart",
+    "weaknessquarter": [
+        "grass"
+    ],
+    "weaknesshalf": [
+        "normal",
+        "water",
+        "electric",
+        "flying",
+        "psychic",
+        "bug",
+        "rock",
+        "steel"
+    ],
+    "weaknessnone": [
+        "poison"
+    ],
+    "weaknessdouble": [
+        "fighting",
+        "ground"
+    ],
+    "weaknessquadruple": [],
+    "genderRatio": {
+        "male": "50",
+        "female": "50",
+        "genderless": "0"
+    },
+    "games": [],
+    "forms": []
+},
+{
+    "name": "Hydrapple",
+    "formName": "",
+    "species": "Apple Hydra Pokémon",
+    "height": "1.8m",
+    "weight": "93.0kg",
+    "breeding": {
+        "groups": [
+            "Dragon",
+            "Grass"
+        ],
+        "cycles": ""
+    },
+    "number": "1019",
+    "ref": "1019.0",
+    "type1": "grass",
+    "type2": "dragon",
+    "image": [
+        "1019-normal-mf.png",
+        "1019-shiny-mf.png"
+    ],
+    "abilities": [
+        "Supersweet Syrup",
+        "Regenerator"
+    ],
+    "hiddenAbility": "Sticky Hold",
+    "weaknessquarter": [
+        "water",
+        "electric",
+        "grass"
+    ],
+    "weaknesshalf": [
+        "ground"
+    ],
+    "weaknessnone": [],
+    "weaknessdouble": [
+        "poison",
+        "flying",
+        "bug",
+        "dragon",
+        "fairy"
+    ],
+    "weaknessquadruple": [
+        "ice"
+    ],
+    "genderRatio": {
+        "male": "50",
+        "female": "50",
+        "genderless": "0"
+    },
+    "games": [],
+    "forms": []
+},
+{
+    "name": "Gouging Fire",
+    "formName": "",
+    "species": "Paradox Pokémon",
+    "height": "3.5m",
+    "weight": "590.0kg",
+    "breeding": {
+        "groups": [
+            "Undiscovered"
+        ],
+        "cycles": ""
+    },
+    "number": "1020",
+    "ref": "1020.0",
+    "type1": "fire",
+    "type2": "dragon",
+    "image": [
+        "1020-normal-g.png",
+        "1020-shiny-g.png"
+    ],
+    "abilities": [
+        "Protosynthesis"
+    ],
+    "hiddenAbility": "",
+    "weaknessquarter": [
+        "fire",
+        "grass"
+    ],
+    "weaknesshalf": [
+        "electric",
+        "bug",
+        "steel"
+    ],
+    "weaknessnone": [],
+    "weaknessdouble": [
+        "ground",
+        "rock",
+        "dragon"
+    ],
+    "weaknessquadruple": [],
+    "genderRatio": {
+        "male": "0",
+        "female": "0",
+        "genderless": "100"
+    },
+    "games": [],
+    "forms": []
+},
+{
+    "name": "Raging Bolt",
+    "formName": "",
+    "species": "Paradox Pokémon",
+    "height": "5.2m",
+    "weight": "480.0kg",
+    "breeding": {
+        "groups": [
+            "Undiscovered"
+        ],
+        "cycles": ""
+    },
+    "number": "1021",
+    "ref": "1021.0",
+    "type1": "electric",
+    "type2": "dragon",
+    "image": [
+        "1021-normal-g.png",
+        "1021-shiny-g.png"
+    ],
+    "abilities": [
+        "Protosynthesis"
+    ],
+    "hiddenAbility": "",
+    "weaknessquarter": [
+        "electric"
+    ],
+    "weaknesshalf": [
+        "fire",
+        "water",
+        "grass",
+        "flying",
+        "steel"
+    ],
+    "weaknessnone": [],
+    "weaknessdouble": [
+        "ice",
+        "ground",
+        "dragon",
+        "fairy"
+    ],
+    "weaknessquadruple": [],
+    "genderRatio": {
+        "male": "0",
+        "female": "0",
+        "genderless": "100"
+    },
+    "games": [],
+    "forms": []
+},
+{
+    "name": "Iron Boulder",
+    "formName": "",
+    "species": "Paradox Pokémon",
+    "height": "1.5m",
+    "weight": "162.5kg",
+    "breeding": {
+        "groups": [
+            "Undiscovered"
+        ],
+        "cycles": ""
+    },
+    "number": "1022",
+    "ref": "1022.0",
+    "type1": "rock",
+    "type2": "psychic",
+    "image": [
+        "1022-normal-g.png",
+        "1022-shiny-g.png"
+    ],
+    "abilities": [
+        "Quark Drive"
+    ],
+    "hiddenAbility": "",
+    "weaknessquarter": [],
+    "weaknesshalf": [
+        "normal",
+        "fire",
+        "poison",
+        "flying",
+        "psychic"
+    ],
+    "weaknessnone": [],
+    "weaknessdouble": [
+        "water",
+        "grass",
+        "ground",
+        "bug",
+        "ghost",
+        "dark",
+        "steel"
+    ],
+    "weaknessquadruple": [],
+    "genderRatio": {
+        "male": "0",
+        "female": "0",
+        "genderless": "100"
+    },
+    "games": [],
+    "forms": []
+},
+{
+    "name": "Iron Crown",
+    "formName": "",
+    "species": "Paradox Pokémon",
+    "height": "1.6m",
+    "weight": "156.0kg",
+    "breeding": {
+        "groups": [
+            "Undiscovered"
+        ],
+        "cycles": ""
+    },
+    "number": "1023",
+    "ref": "1023.0",
+    "type1": "steel",
+    "type2": "psychic",
+    "image": [
+        "1023-normal-g.png",
+        "1023-shiny-g.png"
+    ],
+    "abilities": [
+        "Quark Drive"
+    ],
+    "hiddenAbility": "",
+    "weaknessquarter": [
+        "psychic"
+    ],
+    "weaknesshalf": [
+        "normal",
+        "grass",
+        "ice",
+        "flying",
+        "rock",
+        "dragon",
+        "steel",
+        "fairy"
+    ],
+    "weaknessnone": [
+        "poison"
+    ],
+    "weaknessdouble": [
+        "fire",
+        "ground",
+        "ghost",
+        "dark"
+    ],
+    "weaknessquadruple": [],
+    "genderRatio": {
+        "male": "0",
+        "female": "0",
+        "genderless": "100"
+    },
+    "games": [],
+    "forms": []
+},
+{
+    "name": "Terapagos",
+    "formName": "Normal Form",
+    "species": "Tera Pokémon",
+    "height": "0.2m",
+    "weight": "6.5kg",
+    "breeding": {
+        "groups": [
+            "Undiscovered"
+        ],
+        "cycles": ""
+    },
+    "number": "1024",
+    "ref": "1024.0",
+    "type1": "normal",
+    "type2": null,
+    "image": [
+        "1024-001-normal-mf.png",
+        "1024-001-shiny-mf.png"
+    ],
+    "abilities": [
+        "Tera Shift"
+    ],
+    "hiddenAbility": "",
+    "weaknessquarter": [],
+    "weaknesshalf": [],
+    "weaknessnone": [
+        "ghost"
+    ],
+    "weaknessdouble": [
+        "fighting"
+    ],
+    "weaknessquadruple": [],
+    "genderRatio": {
+        "male": "50",
+        "female": "50",
+        "genderless": "0"
+    },
+    "games": [],
+    "forms": [
+        {
+            "name": "Terapagos",
+            "formName": "Terastal Form",
+            "species": "Tera Pokémon",
+            "height": "0.3m",
+            "weight": "16.0kg",
+            "breeding": {
+                "groups": [
+                    "Undiscovered"
+                ],
+                "cycles": ""
+            },
+            "number": "1024",
+            "ref": "1024.1",
+            "type1": "normal",
+            "type2": null,
+            "image": [
+                "1024-002-normal-mf.png",
+                "1024-002-shiny-mf.png"
+            ],
+            "abilities": [
+                "Tera Shell"
+            ],
+            "hiddenAbility": "",
+            "weaknessquarter": [],
+            "weaknesshalf": [],
+            "weaknessnone": [
+                "ghost"
+            ],
+            "weaknessdouble": [
+                "fighting"
+            ],
+            "weaknessquadruple": [],
+            "genderRatio": {
+                "male": "50",
+                "female": "50",
+                "genderless": "0"
+            },
+            "games": [
+                {
+                    "name": "The Indigo Disk",
+                    "dex": "",
+                    "number": "0240"
+                }
+            ]
+        },
+        {
+            "name": "Terapagos",
+            "formName": "Stellar Form",
+            "species": "Tera Pokémon",
+            "height": "1.7m",
+            "weight": "77.0kg",
+            "breeding": {
+                "groups": [
+                    "Undiscovered"
+                ],
+                "cycles": ""
+            },
+            "number": "1024",
+            "ref": "1024.2",
+            "type1": "normal",
+            "type2": null,
+            "image": [
+                "1024-003-normal-mf.png",
+                "1024-003-shiny-mf.png"
+            ],
+            "abilities": [
+                "Teraform Zero"
+            ],
+            "hiddenAbility": "",
+            "weaknessquarter": [],
+            "weaknesshalf": [],
+            "weaknessnone": [
+                "ghost"
+            ],
+            "weaknessdouble": [
+                "fighting"
+            ],
+            "weaknessquadruple": [],
+            "genderRatio": {
+                "male": "50",
+                "female": "50",
+                "genderless": "0"
+            },
+            "games": []
+        }
+    ]
   }
 ]
