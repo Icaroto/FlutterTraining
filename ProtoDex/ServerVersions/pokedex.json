@@ -47177,13 +47177,7 @@
                 "female": "50",
                 "genderless": "0"
             },
-            "games": [
-                {
-                    "name": "The Indigo Disk",
-                    "dex": "",
-                    "number": "0240"
-                }
-            ]
+            "games": []
         },
         {
             "name": "Terapagos",
