@@ -73,6 +73,7 @@ class GeneralInformationCard extends StatelessWidget {
                             RichText(
                               text: TextSpan(
                                 text: "${pokemon.hiddenAbility}",
+                                style: const TextStyle(color: Colors.white),
                                 children: const <TextSpan>[
                                   TextSpan(
                                     text: ' (hidden ability)',

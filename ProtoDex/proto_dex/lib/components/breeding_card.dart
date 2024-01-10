@@ -89,6 +89,9 @@ class BreedingInformationCard extends StatelessWidget {
                         RichText(
                           text: TextSpan(
                             text: pokemon.breeding.cycles,
+                            style: const TextStyle(
+                              color: Colors.white,
+                            ),
                             children: <TextSpan>[
                               TextSpan(
                                 text: " cycles${pokemon.breeding.getSteps()}",

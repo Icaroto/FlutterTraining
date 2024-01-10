@@ -208,120 +208,273 @@ import { parse } from 'csv-parse';
 //   writeToFile("database/last_result.json", data);
 // });
 
-test('Add a new Dex', async ({ baseURL, page }) => {
+test('Add a single dex', async ({ baseURL, page }) => {
 
-    // const csvFilePath = "D://Side-Projects//FlutterTraining//ProtoDex//DataFetcher//database//dexes//teal-mask.csv";
-    const gameA = "Pokemon Sword";
-    const gameB = "Pokemon Shield";
-    const dexName = "Regional";
-    const dexCsvFileName = "swordshield.csv";
+  // const csvFilePath = "D://Side-Projects//FlutterTraining//ProtoDex//DataFetcher//database//dexes//teal-mask.csv";
+  const game = "Pokemon Legends: Arceus";
+  const dexName = "Regional";
+  const dexCsvFileName = "arceus.csv";
 
-    const csvFilePath = "/Users/itorres/Documents/Repos/FlutterTraining/ProtoDex/DataFetcher/database/dexes/" + dexCsvFileName;
-    const headers = ['number','ref','name','shinyLocked','exclusive'];
-    const fileContent = fs.readFileSync(csvFilePath, { encoding: 'utf-8' });
-    
-    
-  parse(fileContent, {
-    delimiter: ',',
-    columns: headers,
-  }, (error, csvFile: record[]) => {
-    if (error) {
-      console.error(error);
-    }
+  // const csvFilePath = "/Users/itorres/Documents/Repos/FlutterTraining/ProtoDex/DataFetcher/database/dexes/" + dexCsvFileName;
+  const csvFilePath = "D://Side-Projects//FlutterTraining//ProtoDex//DataFetcher//database//dexes//" + dexCsvFileName;
+  const headers = ['number','ref','name','shinyLocked','exclusive'];
+  const fileContent = fs.readFileSync(csvFilePath, { encoding: 'utf-8' });
+  
+  
+parse(fileContent, {
+  delimiter: ',',
+  columns: headers,
+}, (error, csvFile: record[]) => {
+  if (error) {
+    console.error(error);
+  }
 
-    for (let index = 0; index < csvFile.length; index++) {
-      for (let i = 0; i < data.length; i++) {
-        if(data[i].name == csvFile[index].name){ //pokemon found in biglist
+  for (let index = 0; index < csvFile.length; index++) {
+    for (let i = 0; i < data.length; i++) {
+      if(data[i].name == csvFile[index].name){ //pokemon found in biglist
+        
+        var newGames = createGames(csvFile[index]);
+        
+        if(csvFile[index].ref == "") {
 
-          var newGames = createGames(csvFile[index]);
-          
-          if(csvFile[index].ref == "") {
+           data[i].games = [...data[i].games, ...newGames];
 
-             data[i].games = [...data[i].games, ...newGames];
+           for (let j = 0; j < data[i].forms.length; j++) {
+            var form = data[i].forms[j];
+            if(form.name.indexOf("Mega") === -1 && 
+              form.name.indexOf("Gigantamax") === -1 &&
+              form.name.indexOf("Alola") === -1 &&
+              form.name.indexOf("Hisui") === -1 &&
+              form.name.indexOf("Galar") === -1 &&
+              form.name.indexOf("Paldea") === -1 ){
 
-             for (let j = 0; j < data[i].forms.length; j++) {
-              var form = data[i].forms[j];
-              form.games = [...form.games, ...newGames];
-             }
-          }
-          else {
-            if (csvFile[index].ref.includes(".0")) {
-              data[i].games = [...data[i].games, ...newGames];
-            }
-
-            for (let j = 0; j < data[i].forms.length; j++) {
-              var form = data[i].forms[j];
-              var refs = csvFile[index].ref.split("|");
-              if (refs.includes(form.ref) ) {
                 form.games = [...form.games, ...newGames];
-              }
-             }
+            }
+           }
+        }
+        else {
+          if (csvFile[index].ref.includes(".0")) {
+            data[i].games = [...data[i].games, ...newGames];
           }
+
+          processFormsRecursive (data[i].forms, csvFile, index, newGames);
         }
       }
-     }
-
-     writeToFile("database/result.json", data);
-  });
-
-  function createGames(record) {
-    var aNotes = "";
-    var bNotes = "";
-
-    if (record.exclusive == getGameExclusiveTag(gameA)) {
-        bNotes = getGameExclusiveTag(gameA).toUpperCase() +  " Exclusive";
     }
-    else if(record.exclusive == getGameExclusiveTag(gameB)){
-        aNotes = getGameExclusiveTag(gameB).toUpperCase() + " Exclusive";
+   }
+
+   writeToFile("database/result.json", data);
+});
+
+function processFormsRecursive(forms, csvFile, index, newGames) {
+  for (let j = 0; j < forms.length; j++) {
+    var form = forms[j];
+    var refs = csvFile[index].ref.split("|");
+    if (refs.includes(form.ref)) {
+      form.games = [...form.games, ...newGames];
     }
-    
-    var lock = convertStatus(record.shinyLocked);
-    var num = toDexNumber(record.number);
-    var toAdd = 
-        [
-        {"name":gameA, "dex":dexName, "number": num, "shinyLocked": lock, "notes": aNotes},
-        {"name":gameB, "dex":dexName, "number": num, "shinyLocked": lock, "notes": bNotes}
-        ]
+
+    // Check if the current form has nested forms
+    if (form.forms && form.forms.length > 0) {
+      // Recursive call to process nested forms
+      processFormsRecursive(form.forms, csvFile, index, newGames);
+    }
+  }
+}
+
+function createGames(record) {
+  var notes = "";
+
+  var lock = convertStatus(record.shinyLocked);
+  var num = toDexNumber(record.number);
+  var toAdd = 
+      [
+      {"name":game, "dex":dexName, "number": num, "shinyLocked": lock, "notes": notes}
+      ]
+      
+  return toAdd;
+}
+
+function getGameExclusiveTag(gameName: string): string {
+  const words = gameName.split(' ');
+
+  if (words.length >= 2) {
+      return words[1].toUpperCase();
+  } else {
+      return '';
+  }
+}
+
+function toDexNumber(num)
+{
+  if (num == "") return "";
+  while(num.length < 3) num = "0" + num;
+  return num;
+}
+
+function convertStatus(status){
+  switch (status) {
+    case "FALSE":
+      return "UNLOCKED";
+    case "TRUE":
+      return "LOCKED";
+    case "EVENT_ONLY":
+      return "EVENT_ONLY";
+    default:
+      return "";
+  }
+}
+
+type record = {
+  number: string;
+  ref: string;
+  name: string;
+  shinyLocked: string;
+  exclusive: string;
+};
+});
+
+test('Add a new Dex', async ({ baseURL, page }) => {
+
+  // const csvFilePath = "D://Side-Projects//FlutterTraining//ProtoDex//DataFetcher//database//dexes//teal-mask.csv";
+  const gameA = "Pokemon Sword";
+  const gameB = "Pokemon Shield";
+  const dexName = "Dynamax Adventure Bosses";
+  const dexCsvFileName = "arceus.csv";
+
+  // const csvFilePath = "/Users/itorres/Documents/Repos/FlutterTraining/ProtoDex/DataFetcher/database/dexes/" + dexCsvFileName;
+  const csvFilePath = "D://Side-Projects//FlutterTraining//ProtoDex//DataFetcher//database//dexes//" + dexCsvFileName;
+  const headers = ['number','ref','name','shinyLocked','exclusive'];
+  const fileContent = fs.readFileSync(csvFilePath, { encoding: 'utf-8' });
+  
+  
+parse(fileContent, {
+  delimiter: ',',
+  columns: headers,
+}, (error, csvFile: record[]) => {
+  if (error) {
+    console.error(error);
+  }
+
+  for (let index = 0; index < csvFile.length; index++) {
+    for (let i = 0; i < data.length; i++) {
+      if(data[i].name == csvFile[index].name){ //pokemon found in biglist
         
-    return toAdd;
-  }
+        var newGames = createGames(csvFile[index]);
+        
+        if(csvFile[index].ref == "") {
 
-  function getGameExclusiveTag(gameName: string): string {
-    const words = gameName.split(' ');
+           data[i].games = [...data[i].games, ...newGames];
 
-    if (words.length >= 2) {
-        return words[1].toUpperCase();
-    } else {
-        return '';
+           for (let j = 0; j < data[i].forms.length; j++) {
+            var form = data[i].forms[j];
+            if(form.name.indexOf("Mega") === -1 && 
+              form.name.indexOf("Gigantamax") === -1 &&
+              form.name.indexOf("Alola") === -1 &&
+              form.name.indexOf("Hisui") === -1 &&
+              form.name.indexOf("Galar") === -1 &&
+              form.name.indexOf("Paldea") === -1 ){
+
+                form.games = [...form.games, ...newGames];
+            }
+           }
+        }
+        else {
+          if (csvFile[index].ref.includes(".0")) {
+            data[i].games = [...data[i].games, ...newGames];
+          }
+
+          processFormsRecursive (data[i].forms, csvFile, index, newGames);
+          // for (let j = 0; j < data[i].forms.length; j++) {
+          //   var form = data[i].forms[j];
+          //   var refs = csvFile[index].ref.split("|");
+          //   if (refs.includes(form.ref) ) {
+          //     form.games = [...form.games, ...newGames];
+          //   }
+          //  }
+        }
+      }
+    }
+   }
+
+   writeToFile("database/result.json", data);
+});
+
+function processFormsRecursive(forms, csvFile, index, newGames) {
+  for (let j = 0; j < forms.length; j++) {
+    var form = forms[j];
+    var refs = csvFile[index].ref.split("|");
+    if (refs.includes(form.ref)) {
+      form.games = [...form.games, ...newGames];
+    }
+
+    // Check if the current form has nested forms
+    if (form.forms && form.forms.length > 0) {
+      // Recursive call to process nested forms
+      processFormsRecursive(form.forms, csvFile, index, newGames);
     }
   }
+}
 
-  function toDexNumber(num)
-  {
-    while(num.length < 3) num = "0" + num;
-    return num;
+function createGames(record) {
+  var aNotes = "";
+  var bNotes = "";
+
+  if (record.exclusive == getGameExclusiveTag(gameA)) {
+      bNotes = gameA.split(' ')[1] +  " Exclusive";
   }
-
-  function convertStatus(status){
-    switch (status) {
-      case "FALSE":
-        return "UNLOCKED";
-      case "TRUE":
-        return "LOCKED";
-      case "EVENT_ONLY":
-        return "EVENT_ONLY";
-      default:
-        return "";
-    }
+  else if(record.exclusive == getGameExclusiveTag(gameB)){
+      aNotes = gameB.split(' ')[1] + " Exclusive";
   }
+  
+  var lock = convertStatus(record.shinyLocked);
+  var num = toDexNumber(record.number);
+  var toAdd = 
+      [
+      {"name":gameA, "dex":dexName, "number": num, "shinyLocked": lock, "notes": aNotes},
+      {"name":gameB, "dex":dexName, "number": num, "shinyLocked": lock, "notes": bNotes}
+      ]
+      
+  return toAdd;
+}
 
-  type record = {
-    number: string;
-    ref: string;
-    name: string;
-    shinyLocked: string;
-    exclusive: string;
-  };
+function getGameExclusiveTag(gameName: string): string {
+  const words = gameName.split(' ');
+
+  if (words.length >= 2) {
+      return words[1].toUpperCase();
+  } else {
+      return '';
+  }
+}
+
+function toDexNumber(num)
+{
+  if (num == "") return "";
+  while(num.length < 3) num = "0" + num;
+  return num;
+}
+
+function convertStatus(status){
+  switch (status) {
+    case "FALSE":
+      return "UNLOCKED";
+    case "TRUE":
+      return "LOCKED";
+    case "EVENT_ONLY":
+      return "EVENT_ONLY";
+    default:
+      return "";
+  }
+}
+
+type record = {
+  number: string;
+  ref: string;
+  name: string;
+  shinyLocked: string;
+  exclusive: string;
+};
 });
 
 function writeToFile(file, content){

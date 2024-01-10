@@ -35,6 +35,10 @@ TODO: Search return Form Name instead of main name (work arounds?)
 GOOD TO KNOW
 ON MAC, for web app, files are here: /Users/itorres/Library/Containers/com.example.protoDex/Data/Documents
 
+To run on web and be able to connect with the mobile browser:
+flutter run -d web-server --web-port 8080 --web-hostname 0.0.0.0
+flutter run -d web-server --web-port 8080 --web-hostname 0.0.0.0 --debug --web-renderer canvaskit
+ 192.168.1.192:8080
  */
   String listBase;
 }

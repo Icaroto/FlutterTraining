@@ -49,6 +49,7 @@ dependencies:
   http: ^1.1.0
   confetti: ^0.7.0
   shared_preferences: ^2.2.2
+  file_saver: ^0.2.9
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,5 @@
-import 'dart:typed_data';
-
+import 'package:file_saver/file_saver.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -262,7 +262,13 @@ class _CollectionScreenState extends State<CollectionScreen> {
         IconButton(
           icon: const Icon(Icons.camera_enhance),
           onPressed: () async {
-            final image = await controller.capture();
+            Uint8List? image;
+            try {
+              image = await controller.capture();
+            } catch (e) {
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(SnackBar(content: Text('here: $e')));
+            }
             if (image == null) return;
             await saveImage(image);
           },
@@ -342,17 +348,21 @@ class _CollectionScreenState extends State<CollectionScreen> {
     return item;
   }
 
-  Future<String> saveImage(Uint8List bytes) async {
-    await [Permission.storage].request();
-
+  Future<void> saveImage(Uint8List bytes) async {
     final time = DateTime.now()
         .toIso8601String()
         .replaceAll('.', '-')
         .replaceAll(':', '-');
 
     final name = 'collection_$time';
-    final result = await ImageGallerySaver.saveImage(bytes, name: name);
-    return result['filePath'];
+
+    if (kIsWeb) {
+      FileSaver.instance.saveFile(name: '$name.png', bytes: bytes);
+    } else {
+      await [Permission.storage].request();
+      // final result = await ImageGallerySaver.saveImage(bytes, name: name);
+      await ImageGallerySaver.saveImage(bytes, name: name);
+    }
   }
 
   String getSubTitle(displayType) {
