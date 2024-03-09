@@ -61932,14 +61932,14 @@
         "name": "Pokemon Sword",
         "dex": "Isle of Armor",
         "number": "101",
-        "shinyLocked": "UNLOCKED",
+        "shinyLocked": "LOCKED",
         "notes": ""
       },
       {
         "name": "Pokemon Shield",
         "dex": "Isle of Armor",
         "number": "101",
-        "shinyLocked": "UNLOCKED",
+        "shinyLocked": "LOCKED",
         "notes": ""
       }
     ],
@@ -61969,14 +61969,14 @@
             "name": "Pokemon Sword",
             "dex": "Isle of Armor",
             "number": "101",
-            "shinyLocked": "UNLOCKED",
+            "shinyLocked": "LOCKED",
             "notes": ""
           },
           {
             "name": "Pokemon Shield",
             "dex": "Isle of Armor",
             "number": "101",
-            "shinyLocked": "UNLOCKED",
+            "shinyLocked": "LOCKED",
             "notes": ""
           }
         ],
@@ -62057,14 +62057,14 @@
             "name": "Pokemon Sword",
             "dex": "Isle of Armor",
             "number": "101",
-            "shinyLocked": "UNLOCKED",
+            "shinyLocked": "LOCKED",
             "notes": ""
           },
           {
             "name": "Pokemon Shield",
             "dex": "Isle of Armor",
             "number": "101",
-            "shinyLocked": "UNLOCKED",
+            "shinyLocked": "LOCKED",
             "notes": ""
           }
         ],
