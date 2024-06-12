@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
 import DexPage from '../pages/base.page';
 import { Pokemon } from "../models/pokemon";
-import { appendFile, readFileSync, writeFile } from 'fs';
+import { readFileSync, writeFile } from 'fs';
 
 test('Capture Data', async ({ baseURL, page }) => {
-  var data = "bulbasaur";
-  var limit = 1008;
+  var data = "pecharunt";
+  var limit = 1;
   await page.goto("https://pokemondb.net/pokedex/" + data);
   
   const dexList : Pokemon[] = [];

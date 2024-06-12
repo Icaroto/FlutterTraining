@@ -29,10 +29,10 @@ export default class Utils {
   }
 
   public createSingleGame(record, dexName, game) {
-    var notes = "";
-  
+
     var lock = this.convertStatus(record.shinyLocked);
     var num = this.toDexNumber(record.number);
+    var notes = (record.notes != "") ? record.notes : "";
     var toAdd = 
         [
         {"name":game, "dex":dexName, "number": num, "shinyLocked": lock, "notes": notes}
@@ -46,10 +46,10 @@ export default class Utils {
     var bNotes = "";
   
     if (record.exclusive == this.getGameExclusiveTag(gameA)) {
-        bNotes = gameA.split(' ')[1] +  " Exclusive";
+        bNotes = gameA.split(' ')[2] +  " Exclusive";
     }
     else if(record.exclusive == this.getGameExclusiveTag(gameB)){
-        aNotes = gameB.split(' ')[1] + " Exclusive";
+        aNotes = gameB.split(' ')[2] + " Exclusive";
     }
     
     var lock = this.convertStatus(record.shinyLocked);
@@ -66,7 +66,10 @@ export default class Utils {
   public getGameExclusiveTag(gameName: string): string {
     const words = gameName.split(' ');
   
-    if (words.length >= 2) {
+    if (words.length == 3) {
+      return words[2].toUpperCase();
+    }
+    else if (words.length == 2) {
         return words[1].toUpperCase();
     } else {
         return '';

@@ -4,11 +4,11 @@ import { Pokemon } from "../models/pokemon";
 import { Breeding } from "../models/breeding";
 import { GenderRatio } from "../models/genderRatio";
 import { Game } from "../models/game";
-import {Utils} from "../utils/utils";
+import Utils from "../utils/utils";
 
 export default class DexPage {
 
-  private utils:Utils = new Utils();
+  private utils = new Utils();
 
   readonly nextPageButton : Locator;
   readonly formsLocator : Locator;

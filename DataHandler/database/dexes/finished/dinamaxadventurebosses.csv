@@ -1,0 +1,48 @@
+number,ref,name,shinyLocked,exclusive
+,,Articuno,FALSE,
+,,Zapdos,FALSE,
+,,Moltres,FALSE,
+,,Mewtwo,FALSE,
+,,Raikou,FALSE,
+,,Entei,FALSE,
+,,Suicune,FALSE,
+,,Lugia,FALSE,SHIELD
+,,Ho-oh,FALSE,SWORD
+,,Latias,FALSE,SHIELD
+,,Latios,FALSE,SWORD
+,382.0,Kyogre,FALSE,SHIELD
+,383.0,Groudon,FALSE,SWORD
+,,Rayquaza,FALSE,
+,,Uxie,FALSE,
+,,Mesprit,FALSE,
+,,Azelf,FALSE,
+,483.0,Dialga,FALSE,SWORD
+,484.0,Palkia,FALSE,SHIELD
+,,Heatran,FALSE,
+,487.0,Giratina,FALSE,
+,,Cresselia,FALSE,
+,641.0,Tornadus,FALSE,SWORD
+,642.0,Thundurus,FALSE,SHIELD
+,,Reshiram,FALSE,SWORD
+,,Zekrom,FALSE,SHIELD
+,645.0,Landorus,FALSE,
+,646.0,Kyurem,FALSE,
+,,Xerneas,FALSE,SWORD
+,,Yveltal,FALSE,SHIELD
+,718.2,Zygarde,FALSE,
+,,Tapu Koko,FALSE,
+,,Tapu Lele,FALSE,
+,,Tapu Bulu,FALSE,
+,,Tapu Fini,FALSE,
+,,Solgaleo,FALSE,SWORD
+,,Lunala,FALSE,SHIELD
+,,Nihilego,FALSE,
+,,Buzzwole,FALSE,
+,,Pheromosa,FALSE,
+,,Xurkitree,FALSE,
+,,Celesteela,FALSE,
+,,Kartana,FALSE,
+,,Guzzlord,FALSE,
+,800.0,Necrozma,FALSE,
+,,Stakataka,FALSE,
+,,Blacephalon,FALSE,

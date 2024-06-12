@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.29.2",
-    "@types/node": "^18.11.18"
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^18.19.7"
   },
   "dependencies": {
     "csv-parse": "^5.3.3"
